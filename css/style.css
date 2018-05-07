@@ -1,0 +1,96 @@
+/**
+ * Title: Geoff Groenendale - Portfolio
+ * Author: Geoff Groenendale
+ * Date: 5/7/2018
+ * Description: This is the primary style sheet 
+ * and it is the mobile styles by default
+ *  
+ */
+
+/*
+=============================================
+			Root Styles
+=============================================
+ */
+:root {
+	--main-bgcolor: ;
+	--main-font: ;
+}
+
+/* 
+====================================================
+	http://meyerweb.com/eric/tools/css/reset/ 
+	v2.0 | 20110126
+	License: none (public domain)
+====================================================
+*/
+
+*, *:before, *:after {
+  /* suppressing the tap highlight */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  /* this is a personal preference */
+  box-sizing: border-box;
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+*:focus {
+  /* the default outline doesn't play well with a mobile application, 
+     I usually start without it,
+     but don't forget to research further to make your mobile app accessible. */
+  outline: 0;
+}
+
+input {
+  border-radius: 0;
+}
+
+html, body {
+  /* we don't want to allow users to select text everywhere,
+     you can enable it on the places you think appropriate */
+  user-select: none;
+}
+
+
+/*
+=============================================
+			Texts and Fonts
+=============================================
+ */
+
+h1 {
+
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+h5 {
+	
+}
+
+h6 {
+	
+}
+
+p {
+
+}
+
+/*
+=============================================
+			Main Body Styles
+=============================================
+ */

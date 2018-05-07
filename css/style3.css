@@ -3,20 +3,20 @@
  * Author: Geoff Groenendale
  * Date: 5/7/2018
  * Description: This is the style sheet for all
- * desktop styles
+ * large screen styles
  *  
  */
 
 /* Large screens ----------- */
-@media only screen  and (min-width : 1824px) {
+@media only screen  and (min-width : 1601px) {
 
-/* 
-====================================================
-	http://meyerweb.com/eric/tools/css/reset/ 
-	v2.0 | 20110126
-	License: none (public domain)
-====================================================
-*/
+	/* 
+	====================================================
+		http://meyerweb.com/eric/tools/css/reset/ 
+		v2.0 | 20110126
+		License: none (public domain)
+	====================================================
+	*/
 
 	html, body, div, span, applet, object, iframe,
 	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -62,11 +62,45 @@
 		border-spacing: 0;
 	}
 
-/*
-====================================================
+	/*
+	=============================================
+				Large Screen Font Sizes
+	=============================================
+	*/
 
-====================================================
-*/
+	h1 {
+
+	}
+
+	h2 {
+		
+	}
+
+	h3 {
+		
+	}
+
+	h4 {
+		
+	}
+
+	h5 {
+		
+	}
+
+	h6 {
+		
+	}
+
+	p {
+
+	}
+
+	/*
+	====================================================
+			
+	====================================================
+	*/
 
 
 }

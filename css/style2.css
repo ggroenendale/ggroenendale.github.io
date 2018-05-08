@@ -16,12 +16,18 @@
  *    
  * Standard Format Rules
  * 	#element-name {
- * 		display: ;
- * 	 	position: ;
- * 	 	floats: ;
- * 	 	width: ;
+ * 		display: ;  		---Display type always first
+ * 	 	position: ; 		---Positioning next including top,left,right
+ * 	 	top: ;
+ * 	 	left: ;
+ * 	 	floats: ;			---floats will likely end up here 
+ * 	 	width: ;			---sizing of the actual element here
  * 	 	height: ;
- * 	 	background-color: ;
+ * 	 	margin: ;			---Margin always before padding
+ * 	 	padding: ;
+ * 	 	overflow: ; 		---Overflow status
+ * 	 	--colors--	
+ * 	 	background-color: ; ---All colors fall in place after positions and size
  * 	 	color: ;
  * 	  	list-styletypes
  * 	}
@@ -113,6 +119,7 @@
 	=============================================
 	*/
 
+	/*===== Primary grid Area - Sidebar and Content/Main ===== */
 	/* Declaring CSS Grid Areas*/
 	.grid-side 		{ grid-area: side; }
 	.grid-content 	{ grid-area: main; }
@@ -124,7 +131,7 @@
 		height: 100%;
 		grid-template-areas: 
 			'side main main main main main main';
-
+		grid-auto-columns: calc(100% * 1 / 7);
 	}
 
 	/*
@@ -185,8 +192,10 @@
 	}
 
 	#content {
+		overflow: scroll;
 		background-color: var(--color-co-bg);
 		color: var(--color-font-co);
+
 	}
 
 	/*

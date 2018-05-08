@@ -20,9 +20,10 @@
 =============================================
  */
 :root {
-	--main-bgcolor: #403D39;
-	--main-font: #DFEDE3;
-	--main-green: #5E926A;
+	--color-bg: 	 #403D39;
+	--color-font: 	 #DFEDE3;
+	--color-content: #DFEDE3;
+	--color-green: 	 #5E926A;
 }
 
 /* Large screens ----------- */

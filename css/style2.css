@@ -20,9 +20,10 @@
 =============================================
  */
 :root {
-	--main-bgcolor: #403D39;
-	--main-font: #DFEDE3;
-	--main-green: #5E926A;
+	--color-bg: 	 #403D39;
+	--color-font: 	 #DFEDE3;
+	--color-content: #DFEDE3;
+	--color-green: 	 #5E926A;
 }
 
 /*
@@ -90,6 +91,22 @@
 
 	/*
 	=============================================
+				Grid Styles
+	=============================================
+	*/
+
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		display: grid;
+		grid-template-areas: 
+			'side main main main main main main';
+	}
+
+	/*
+	=============================================
 				Laptop and Desktop Font Sizes
 	=============================================
 	*/
@@ -141,26 +158,15 @@
 	}
 
 	#sidebar {
-		
+		background-color: var(--color-bg);
+	}
+
+	#content {
+		background-color: var(--color-content);
 	}
 
 
-	/*
-	=============================================
-				Grid Styles
-	=============================================
-	*/
 
-	/* Declaring CSS Grid Areas*/
-	.grid-side 		{ grid-area: side; }
-	.grid-content 	{ grid-area: main; }
-
-	.grid-container {
-		display: grid;
-		grid-template-areas: 
-			'side main main main main main main';
-		background-color: var(--main-bgcolor);
-	}
 
 
 
@@ -232,6 +238,22 @@
 
 	/*
 	=============================================
+				Grid Styles
+	=============================================
+	*/
+
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		display: grid;
+		grid-template-areas: 
+			'side main main main main main main';
+	}
+
+	/*
+	=============================================
 				Laptop and Desktop Font Sizes
 	=============================================
 	*/
@@ -283,25 +305,13 @@
 	}
 
 	#sidebar {
-
+		background-color: var(--color-bg);
 	}
 
-	/*
-	=============================================
-				Grid Styles
-	=============================================
-	*/
-
-	/* Declaring CSS Grid Areas*/
-	.grid-side 		{ grid-area: side; }
-	.grid-content 	{ grid-area: main; }
-
-	.grid-container {
-		display: grid;
-		grid-template-areas: 
-			'side main main main main main main';
-		background-color: var(--main-bgcolor);
+	#content {
+		background-color: var(--color-content);
 	}
+
 
 
 

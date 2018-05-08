@@ -33,12 +33,16 @@
 =============================================
  */
 :root {
-	--color-bg: 	 #403D39;
-	--color-font: 	 #DFEDE3;
-	--color-content: #DFEDE3;
+	--color-si-bg: 	 #403D39;
+	--color-co-bg:   #DFEDE3;
+	--color-font-si: #DFEDE3;
+	--co-font-sihov: #DFEDE3;
+	--color-font-co: #181715;
+	--co-font-cohov: #181715;
 	--color-green: 	 #5E926A;
 
-	--font-header: 'Dosis', sans-serif;
+	--font-header: 	'Dosis', sans-serif;
+	--font-para: 	'Arapey', serif;
 }
 
 /* 

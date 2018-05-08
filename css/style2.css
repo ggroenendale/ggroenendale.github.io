@@ -152,10 +152,10 @@
 
 	/*===== Social Links grid Area - Sidebar ===== */
 	/* Declaring CSS Grid Areas*/
-	.soc-in 	{ grid-area: lin; }
+	/*.soc-in 	{ grid-area: lin; }
 	.soc-git 	{ grid-area: git; }
 	.soc-inst 	{ grid-area: inst; }
-	.soc-tu 	{ grid-area: tu; }
+	.soc-tu 	{ grid-area: tu; }*/
 
 	#soc-links {
 		display: inline-grid;

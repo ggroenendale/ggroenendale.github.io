@@ -160,8 +160,7 @@
 	#soc-links {
 		display: inline-grid;
 		grid-template-columns: auto auto auto auto;
-		grid-column-gap: 5%;
-		grid-row-gap: 5%;
+		padding: 5%;
 	}
 
 	/*
@@ -285,10 +284,10 @@
 	}
 
 	#sidefoot {
-		margin: auto;
 	}
 
 	#soc-links {
+		width: 100%;
 		margin: auto;
 		list-style-type: none;
 	}
@@ -299,11 +298,10 @@
 
 	#soc-links>a>li {
 		width: 35px;
-		height: auto;
+		margin: auto;
 	}
 
 	#soc-links>a>li>img {
-		width: 100%;
 		max-width: 100%;
 		max-height: 100%;
 	}

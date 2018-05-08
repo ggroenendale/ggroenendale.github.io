@@ -23,7 +23,7 @@ function setup() {
 
 function load_workhorse() {
 	let tag = document.createElement('script');
-	tag.src = 'workhorse.js';
+	tag.src = '/js/workhorse.js';
 	document.getElementById('scripts').appendChild(tag);
 }
 

@@ -147,7 +147,8 @@
 	}
 
 	h2 {
-		
+		font-family: var(--font-header);
+		font-size: 26px;
 	}
 
 	h3 {
@@ -207,6 +208,18 @@
 
 	#sidebar {
 		background-color: var(--color-si-bg);
+	}
+
+	#cur-page {
+		color: var(--color-font-si);
+	}
+
+	#gr-rect {
+		height: 5px;
+		width: 85%;
+		margin-left: auto;
+		margin-right: auto;
+		background: var(--color-green);
 	}
 
 	nav {

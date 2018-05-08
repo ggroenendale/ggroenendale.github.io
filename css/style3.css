@@ -2,8 +2,10 @@
  * Title: Geoff Groenendale - Portfolio
  * Author: Geoff Groenendale
  * Date: 5/7/2018
+ * 
  * Description: This is the style sheet for all
  * large screen styles
+ * 
  * Sources:
  *  - Media queries from
  *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
@@ -11,6 +13,18 @@
  *    http://meyerweb.com/eric/tools/css/reset/
  *  - Mobile CSS Reset
  *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
+ *    
+ * Standard Format Rules
+ * 	#element-name {
+ * 		display: ;
+ * 	 	position: ;
+ * 	 	floats: ;
+ * 	 	width: ;
+ * 	 	height: ;
+ * 	 	background-color: ;
+ * 	 	color: ;
+ * 	  	list-styletypes
+ * 	}
  *  
  */
 
@@ -24,6 +38,8 @@
 	--color-font: 	 #DFEDE3;
 	--color-content: #DFEDE3;
 	--color-green: 	 #5E926A;
+
+	--font-header: 'Dosis', sans-serif;
 }
 
 /* Large screens ----------- */

@@ -2,8 +2,10 @@
  * Title: Geoff Groenendale - Portfolio
  * Author: Geoff Groenendale
  * Date: 5/7/2018
+ * 
  * Description: This is the style sheet for all laptop
  * and desktop styles. 
+ * 
  * Sources:
  *  - Media queries from
  *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
@@ -11,7 +13,18 @@
  *    http://meyerweb.com/eric/tools/css/reset/
  *  - Mobile CSS Reset
  *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
- *  
+ *    
+ * Standard Format Rules
+ * 	#element-name {
+ * 		display: ;
+ * 	 	position: ;
+ * 	 	floats: ;
+ * 	 	width: ;
+ * 	 	height: ;
+ * 	 	background-color: ;
+ * 	 	color: ;
+ * 	  	list-styletypes
+ * 	}
  */
 
 /*
@@ -24,6 +37,8 @@
 	--color-font: 	 #DFEDE3;
 	--color-content: #DFEDE3;
 	--color-green: 	 #5E926A;
+
+	--font-header: 'Dosis', sans-serif;
 }
 
 /*
@@ -101,8 +116,12 @@
 
 	.grid-container {
 		display: grid;
+		position: fixed;
+		width: 100%;
+		height: 100%;
 		grid-template-areas: 
 			'side main main main main main main';
+
 	}
 
 	/*
@@ -112,7 +131,8 @@
 	*/
 
 	h1 {
-
+		font-family: var(--font-header);
+		font-size: 32px;
 	}
 
 	h2 {
@@ -158,7 +178,7 @@
 	}
 
 	#wrapper {
-		position: fixed;
+
 	}
 
 	#sidebar {
@@ -310,6 +330,8 @@
 
 	#wrapper {
 		position: fixed;
+		width: 100%;
+		height: 100%;
 	}
 
 	#sidebar {

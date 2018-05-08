@@ -14,6 +14,17 @@
  *  
  */
 
+/*
+=============================================
+			Root Styles
+=============================================
+ */
+:root {
+	--main-bgcolor: #403D39;
+	--main-font: #DFEDE3;
+	--main-green: #5E926A;
+}
+
 /* Large screens ----------- */
 @media only screen  and (min-width : 1601px) {
 

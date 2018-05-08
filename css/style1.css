@@ -13,6 +13,24 @@
  *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
  */
 
+/*
+=============================================
+			Root Styles
+=============================================
+ */
+:root {
+	--main-bgcolor: #403D39;
+	--main-font: #DFEDE3;
+	--main-green: #5E926A;
+}
+
+
+/*
+=============================================
+			Media Queries
+=============================================
+ */
+
 /* ----------- iPad 1, 2, Mini and Air ----------- */
 
 /* Portrait and Landscape */

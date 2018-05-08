@@ -15,6 +15,17 @@
  */
 
 /*
+=============================================
+			Root Styles
+=============================================
+ */
+:root {
+	--main-bgcolor: #403D39;
+	--main-font: #DFEDE3;
+	--main-green: #5E926A;
+}
+
+/*
 ==========================================================================================================
 			Non-Retina Screen Styles
 ==========================================================================================================
@@ -134,6 +145,24 @@
 	}
 
 
+	/*
+	=============================================
+				Grid Styles
+	=============================================
+	*/
+
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		grid-template-areas: 
+			'side main main main main main main';
+		background-color: var(--main-bgcolor);
+	}
+
+
+
 }
 
 /*
@@ -249,11 +278,27 @@
 	}
 
 	#wrapper {
-		
+
 	}
 
 	#sidebar {
-		
+
+	}
+
+	/*
+	=============================================
+				Grid Styles
+	=============================================
+	*/
+
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		grid-template-areas: 
+			'side main main main main main main';
+		background-color: var(--main-bgcolor);
 	}
 
 

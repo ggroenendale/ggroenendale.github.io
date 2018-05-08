@@ -29,6 +29,7 @@ function load_workhorse() {
 
 function change_page_name() {
 	let cur_class = document.getElementsByTagName('html').className;
+	console.log(cur_class);
 	let cur_name = cur_class.substring(search(cur_class.search("cur-page_")), search(cur_class.search(" ")));
 	cur_name = first_l_UP(cur_name);
 	console.log(cur_name);

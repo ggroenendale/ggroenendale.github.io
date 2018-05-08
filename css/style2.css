@@ -26,10 +26,14 @@
  * 	 	margin: ;			---Margin always before padding
  * 	 	padding: ;
  * 	 	overflow: ; 		---Overflow status
+ * 	 	--fonts-- 			
+ * 	 	font-family: ;		---All font styles starting with font family then sizes then weights, decorations
+ * 	 	font-size: ;
+ * 	 	text-decoration: ;
+ * 	 	list-styletypes: ;
  * 	 	--colors--	
- * 	 	background-color: ; ---All colors fall in place after positions and size
- * 	 	color: ;
- * 	  	list-styletypes
+ * 	 	color: ; 			---All colors fall in place after positions and size
+ * 	 	background-color: ;
  * 	}
  */
 
@@ -39,6 +43,7 @@
 =============================================
  */
 :root {
+	--port-head-co:  #A5C2AC;
 	--color-si-bg: 	 #403D39;
 	--color-co-bg:   #DFEDE3;
 	--color-font-si: #DFEDE3;
@@ -47,8 +52,9 @@
 	--co-font-cohov: #181715;
 	--color-green: 	 #5E926A;
 
-	--font-header: 	'Dosis', sans-serif;
-	--font-para: 	'Arapey', serif;
+	--font-header: 	 'Dosis', sans-serif;
+	--font-para: 	 'Arapey', serif;
+	--port-head-fo:	 'Dosis', sans-serif;
 }
 
 /*
@@ -176,7 +182,7 @@
 
 	h2 {
 		font-family: var(--font-header);
-		font-size: 26px;
+		font-size: 1.45em;
 	}
 
 	h3 {
@@ -237,7 +243,11 @@
 		text-align: center;
 	}
 
-	#port-name
+	#port-name {
+		font-family: var(--port-head-fo);
+		color: var(--port-head-co);
+		font-size: 1.6em;
+	}
 
 	nav>ul {
 		display: inline-block;
@@ -265,7 +275,7 @@
 	nav>ul>a>li {
 		display: inline-block;
 		font-family: var(--font-header);
-		font-size: 1.3em;
+		font-size: 1.25em;
 		margin-top: 4%;
 		margin-bottom: 4%;
 	}
@@ -286,6 +296,7 @@
 	}
 
 	#sidefoot {
+
 	}
 
 	#soc-links {

@@ -201,11 +201,12 @@
 
 	nav {
 		width: 100%;
+		text-align: center;
 	}
 
 	nav>ul {
 		display: inline-block;
-		text-align: center;
+		text-align: left;
 	}
 
 	nav>ul>a>li {

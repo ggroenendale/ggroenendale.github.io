@@ -156,6 +156,7 @@
 	.grid-content 	{ grid-area: main; }
 
 	.grid-container {
+		display: grid;
 		grid-template-areas: 
 			'side main main main main main main';
 		background-color: var(--main-bgcolor);
@@ -296,6 +297,7 @@
 	.grid-content 	{ grid-area: main; }
 
 	.grid-container {
+		display: grid;
 		grid-template-areas: 
 			'side main main main main main main';
 		background-color: var(--main-bgcolor);

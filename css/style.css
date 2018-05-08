@@ -138,3 +138,28 @@ p {
 			Main Body Styles
 =============================================
  */
+
+html, body {
+	height: 100%;
+}
+
+html {
+
+}
+
+body {
+
+}
+
+#wrapper {
+	position: fixed;
+}
+
+#sidebar {
+	background-color: var(--color-bg);
+}
+
+#content {
+	background-color: var(--color-content);
+}
+

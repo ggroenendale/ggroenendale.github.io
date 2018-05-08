@@ -16,14 +16,24 @@
  *    
  * Standard Format Rules
  * 	#element-name {
- * 		display: ;
- * 	 	position: ;
- * 	 	floats: ;
- * 	 	width: ;
+ * 		display: ;  		---Display type always first
+ * 	 	position: ; 		---Positioning next including top,left,right
+ * 	 	top: ;
+ * 	 	left: ;
+ * 	 	floats: ;			---floats will likely end up here 
+ * 	 	width: ;			---sizing of the actual element here
  * 	 	height: ;
+ * 	 	margin: ;			---Margin always before padding
+ * 	 	padding: ;
+ * 	 	overflow: ; 		---Overflow status
+ * 	 	--fonts-- 			
+ * 	 	font-family: ;		---All font styles starting with font family then sizes then weights, decorations
+ * 	 	font-size: ;
+ * 	 	text-decoration: ;
+ * 	 	list-styletypes: ;
+ * 	 	--colors--	
+ * 	 	color: ; 			---All colors fall in place after positions and size
  * 	 	background-color: ;
- * 	 	color: ;
- * 	  	list-styletypes
  * 	}
  *  
  */

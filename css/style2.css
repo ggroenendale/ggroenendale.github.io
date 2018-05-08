@@ -243,6 +243,10 @@
 		text-align: center;
 	}
 
+	#port-link {
+		text-decoration: none;
+	}
+
 	#port-name {
 		font-family: var(--port-head-fo);
 		color: var(--port-head-co);

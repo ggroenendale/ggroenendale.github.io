@@ -135,6 +135,19 @@
 		grid-auto-columns: calc(100% * 1 / 7);
 	}
 
+	/*===== Sidebar grid Area - Sidebar ===== */
+	/* Declaring CSS Grid Areas*/
+	nav 		{ grid-area: top; }
+	#sidemid 	{ grid-area: mid; }
+	#sidefoot	{ grid-area: foot; }
+
+	#sidebar {
+		display: grid;
+		grid-template-areas: 
+			'top'
+			'mid'
+			'foot';
+	}
 	/*
 	=============================================
 				Laptop and Desktop Font Sizes
@@ -233,7 +246,7 @@
 		height: 5px;
 		width: 100%;
 		margin-top: 2%;
-		margin-bottom: 6%;
+		margin-bottom: 2%;
 		margin-left: auto;
 		margin-right: auto;
 		background: var(--color-green);

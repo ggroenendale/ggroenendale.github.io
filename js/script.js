@@ -14,8 +14,9 @@ window.onresize = function() {
 	let side 	 = document.getElementById('sidebar');
 	let width 	 = side.clientWidth;
 	let gr_rect  = document.getElementById('gr-rect');
-	let rect_wid = width * 0.85;
-	gr_rect.style.width = rect_wid;
+	let rect_wid = Math.floor(width * 0.85) + "px";
+	gr_rect.setAttribute("style","width:" + rect_wid);
+	console.log('New width ' + rect_wid);
 }
 
 function setup() {

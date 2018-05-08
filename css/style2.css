@@ -465,13 +465,6 @@
 
 	}
 
-	
-	#content {
-		overflow: scroll;
-		background-color: var(--color-co-bg);
-		color: var(--color-font-co);
-	}
-
 	/*
 	=============================================
 				Sidebar Styles
@@ -479,27 +472,51 @@
 	*/
 
 	#sidebar {
-		background-color: var(--color-bg);
+		background-color: var(--color-si-bg);
 	}
 
 	nav {
 		width: 100%;
+		margin-top: 8%;
 		text-align: center;
 	}
 
 	nav>ul {
 		display: inline-block;
 		text-align: left;
+		width: 80%;
+	}
+
+	#cur-page {
+		margin-top: 8%;
+		color: var(--color-font-si);
+		margin-left: 15%;
+	}
+
+	#gr-rect {
+		position: relative;
+		height: 5px;
+		width: 100%;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: auto;
+		margin-right: auto;
+		background: var(--color-green);
 	}
 
 	nav>ul>a>li {
 		display: inline-block;
+		font-family: var(--font-header);
+		font-size: 1.3em;
+		margin-top: 4%;
+		margin-bottom: 4%;
 	}
 
 	nav>ul>a {
 		display: block;
 		text-decoration: none;
 		color: var(--color-font-si);
+		margin-left: 18%;
 	}
 
 	nav>ul>a:hover {
@@ -508,6 +525,45 @@
 
 	nav>ul>a:visited {
 		color: var(--color-font-si);
+	}
+
+	#sidefoot {
+	}
+
+	#soc-links {
+		width: 100%;
+		margin: auto;
+		list-style-type: none;
+	}
+
+	#soc-links>a {
+		
+	}
+
+	#soc-links>a>li {
+		width: 35px;
+		margin: auto;
+	}
+
+	#soc-links>a>li>img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	/*
+	=============================================
+				Content Styles
+	=============================================
+	*/
+
+	#content {
+		overflow: scroll;
+		background-color: var(--color-co-bg);
+		color: var(--color-font-co);
+	}
+
+	#content::-webkit-scrollbar {
+		display: none;
 	}
 
 

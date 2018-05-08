@@ -224,7 +224,7 @@
 	#gr-rect {
 		position: relative;
 		height: 5px;
-		width: 150%;
+		width: calc(100% * 1.5);
 		left: calc(100% / 2 - 75%);
 		margin-top: 2%;
 		margin-bottom: 6%;

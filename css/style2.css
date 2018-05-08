@@ -33,9 +33,12 @@
 =============================================
  */
 :root {
-	--color-bg: 	 #403D39;
-	--color-font: 	 #DFEDE3;
-	--color-content: #DFEDE3;
+	--color-si-bg: 	 #403D39;
+	--color-co-bg:   #DFEDE3;
+	--color-font-si: #DFEDE3;
+	--co-font-sihov: #DFEDE3;
+	--color-font-co: #181715;
+	--co-font-cohov: #181715;
 	--color-green: 	 #5E926A;
 
 	--font-header: 'Dosis', sans-serif;
@@ -182,7 +185,8 @@
 	}
 
 	#content {
-		background-color: var(--color-content);
+		background-color: var(--color-co-bg);
+		color: var(--color-font-co);
 	}
 
 	/*
@@ -209,10 +213,15 @@
 
 	nav>ul>a {
 		text-decoration: none;
+		color: var(--color-font-si);
 	}
 
-	nav>ul>a>li:hover {
-		
+	nav>ul>a:hover {
+		color: var(--co-font-sihov);
+	}
+
+	nav>ul>a:visited {
+		color: var(--color-font-si);
 	}
 
 
@@ -361,7 +370,8 @@
 
 	
 	#content {
-		background-color: var(--color-content);
+		background-color: var(--color-co-bg);
+		color: var(--color-font-co);
 	}
 
 	/*

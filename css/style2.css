@@ -4,6 +4,13 @@
  * Date: 5/7/2018
  * Description: This is the style sheet for all laptop
  * and desktop styles. 
+ * Sources:
+ *  - Media queries from
+ *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+ *  - CSS Reset
+ *    http://meyerweb.com/eric/tools/css/reset/
+ *  - Mobile CSS Reset
+ *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
  *  
  */
 
@@ -110,6 +117,23 @@
 	=============================================
 	*/
 
+	html {
+
+	}
+
+	body {
+
+	}
+
+	#wrapper {
+		
+	}
+
+	#sidebar {
+		
+	}
+
+
 }
 
 /*
@@ -215,5 +239,23 @@
 				Body Styles
 	=============================================
 	*/
+
+	html {
+
+	}
+
+	body {
+
+	}
+
+	#wrapper {
+		
+	}
+
+	#sidebar {
+		
+	}
+
+
 
 }

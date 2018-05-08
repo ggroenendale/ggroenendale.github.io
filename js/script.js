@@ -9,5 +9,5 @@
 window.onload = setup();
 
 function setup() {
-	alert('This works.');
+	
 }

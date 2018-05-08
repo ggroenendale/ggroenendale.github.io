@@ -4,7 +4,13 @@
  * Date: 5/7/2018
  * Description: This is the primary style sheet 
  * and it is the mobile styles by default
- *  
+ * Sources:
+ *  - Media queries from
+ *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+ *  - CSS Reset
+ *    http://meyerweb.com/eric/tools/css/reset/
+ *  - Mobile CSS Reset
+ *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
  */
 
 /*
@@ -13,14 +19,16 @@
 =============================================
  */
 :root {
-	--main-bgcolor: ;
-	--main-font: ;
+	--main-bgcolor: #403D39;
+	--main-font: #DFEDE3;
+	--main-green: #5E926A;
 }
 
 /* 
 ====================================================
-	http://meyerweb.com/eric/tools/css/reset/ 
-	v2.0 | 20110126
+	A better reset for the mobile web
+	https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
+	v | 20150409
 	License: none (public domain)
 ====================================================
 */

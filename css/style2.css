@@ -237,6 +237,8 @@
 		text-align: center;
 	}
 
+	#port-name
+
 	nav>ul {
 		display: inline-block;
 		text-align: left;
@@ -416,11 +418,13 @@
 	*/
 
 	h1 {
-
+		font-family: var(--font-header);
+		font-size: 32px;
 	}
 
 	h2 {
-		
+		font-family: var(--font-header);
+		font-size: 26px;
 	}
 
 	h3 {
@@ -440,7 +444,7 @@
 	}
 
 	p {
-
+		font-family: var(--font-para);
 	}
 
 	/*

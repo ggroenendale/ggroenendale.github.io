@@ -152,6 +152,7 @@
 		grid-template-areas: 
 			'top'
 			'mid'
+			'mid'
 			'foot';
 		grid-auto-rows: calc(100% / 3);
 	}
@@ -269,7 +270,7 @@
 		position: relative;
 		height: 5px;
 		width: 100%;
-		margin-top: 2%;
+		margin-top: 4%;
 		margin-bottom: 2%;
 		margin-left: auto;
 		margin-right: auto;

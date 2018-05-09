@@ -17,22 +17,12 @@ window.onresize = function() {
 }
 
 function setup() {
-	load_workhorse();
 	change_page_name();
 }
 
-function load_workhorse() {
-	let tag = document.createElement('script');
-	tag.src = '/js/workhorse.js';
-	document.getElementById('scripts').appendChild(tag);
-}
-
 function change_page_name() {
-	let cur_class = document.getElementsByTagName('html')[0].className;
-	console.log(cur_class);
-	let cur_name = cur_class.substring((cur_class.search("cur-page_") + 9), cur_class.search(" "));
+	let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 	cur_name = first_l_UP(cur_name);
-	console.log(cur_name);
 	let page_name = document.getElementById('cur-page');
 	page_name.innerText = cur_name;
 }

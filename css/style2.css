@@ -151,10 +151,12 @@
 		display: grid;
 		grid-template-areas: 
 			'top'
+			'top'
+			'mid'
 			'mid'
 			'mid'
 			'foot';
-		grid-auto-rows: calc(100% / 3);
+		grid-auto-rows: calc(100% / 6);
 	}
 
 	/*===== Social Links grid Area - Sidebar ===== */

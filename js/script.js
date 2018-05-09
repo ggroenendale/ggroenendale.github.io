@@ -22,7 +22,19 @@ function setup() {
 
 function change_page_name() {
 	let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
-	cur_name = first_l_UP(cur_name);
+	let new_name = first_l_UP(cur_name);
 	let page_name = document.getElementById('cur-page');
-	page_name.innerText = cur_name;
+	if (cur_name === 'home') {
+
+	}
+	else if (cur_name === 'photography') {
+		page_name.innerText = new_name;
+	}
+	else if (cur_name === 'projects') {
+		page_name.innerText = new_name;
+	}
+	else {
+		page_name.innerText = new_name;
+	}
+	
 }

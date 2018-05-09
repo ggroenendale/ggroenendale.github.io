@@ -50,6 +50,7 @@
 	--co-font-sihov: #DFEDE3;
 	--color-font-co: #181715;
 	--co-font-cohov: #181715;
+	--co-gall-bord:	 #000000;
 	--color-green: 	 #5E926A;
 
 	--font-header: 	 'Dosis', sans-serif;
@@ -161,10 +162,6 @@
 
 	/*===== Social Links grid Area - Sidebar ===== */
 	/* Declaring CSS Grid Areas*/
-	/*.soc-in 	{ grid-area: lin; }
-	.soc-git 	{ grid-area: git; }
-	.soc-inst 	{ grid-area: inst; }
-	.soc-tu 	{ grid-area: tu; }*/
 
 	#soc-links {
 		display: inline-grid;
@@ -326,10 +323,14 @@
 		max-height: 100%;
 	}
 
+	#copyright-div {
+		text-align: center;
+	}
+
 	/*
-	=============================================
-				Content Styles
-	=============================================
+	================================================
+					Content Styles
+	================================================
 	*/
 
 	#content {
@@ -342,6 +343,42 @@
 		display: none;
 	}
 
+	/*
+	=================================
+		Photography Content Styles
+	=================================
+	*/
+
+	/*===== Photography Galleries Grid Area ===== */
+	/* Declaring CSS Grid Areas*/
+
+	#gall-container {
+		display: inline-grid;
+		grid-template-columns: auto auto auto;
+		padding: 5%;
+		margin: auto;
+	}
+
+	.gall-block {
+
+	}
+
+	.gall-header {
+
+	}
+
+	.gall-img-wrapper {
+		border: 3px solid var(--co-gall-bord);
+	}
+
+	.gall-img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.gall-blurb {
+
+	}
 
 }
 

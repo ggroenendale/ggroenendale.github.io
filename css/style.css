@@ -96,73 +96,44 @@ html, body {
   user-select: none;
 }
 
-
 /*
 =============================================
-			Fonts and Families
+		Mobile Font Families and Sizes
 =============================================
  */
 
 h1 {
 	font-family: var(--font-header);
-}
-
-h2 {
-	font-family: var(--font-header);	
-}
-
-h3 {
-	font-family: var(--font-header);
-}
-
-h4 {
-	font-family: var(--font-header);
-}
-
-h5 {
-	font-family: var(--font-header);
-}
-
-h6 {
-	font-family: var(--font-header);
-}
-
-p {
-	font-family: var(--font-para);
-}
-
-
-/*
-=============================================
-			Mobile Font Sizes
-=============================================
- */
-
-h1 {
 	font-size: 32px;
 }
 
 h2 {
+	font-family: var(--font-header);
 	font-size: 1.45em;
 }
 
 h3 {
+	font-family: var(--font-header);
 	font-size: 1.3em;
 }
 
 h4 {
+	font-family: var(--font-header);
 	font-size: 1.2em;	
 }
 
 h5 {
+	font-family: var(--font-header);
 	font-size: 1.1em;
 }
 
 h6 {
+	font-family: var(--font-header);
 	font-size: 1.05em;
 }
 
 p {
+	font-family: var(--font-para);
 	font-size: 1em;
 }
 

@@ -1,6 +1,7 @@
-food = '[{
-  "food": {
-    "name": "Food Photography",
+landscapes = {
+  "landscapes": {
+    "name": "Landscapes",
+    "desc": "This is a gallery full of landscape images.",
     "images": [
       {
         "name": "Bread",
@@ -20,4 +21,4 @@ food = '[{
       }
     ]
   }
-}]'
+}

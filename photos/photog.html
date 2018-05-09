@@ -39,30 +39,33 @@
 		<div id="content" class="grid-content">
 			<h1>These are galleries of some of my Photography work</h1>
 			<div id="gall-container">
+				<div id="tooltip">
+					<!-- Dynamically insert gallery info here.-->
+				</div>
 				<div class="gall-block gall1">
 					<h3 class="gall-header">Food Photography</h3>
-						<div class="gall-img-wrap" data-gallname="food">
+						<div class="gall-img-wrap" data-gallname="food" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall2">
 					<h3 class="gall-header">Masquerade</h3>
-						<div class="gall-img-wrap" data-gallname="masquerade">
+						<div class="gall-img-wrap" data-gallname="masquerade" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall3">
 					<h3 class="gall-header">Landscapes</h3>
-						<div class="gall-img-wrap" data-gallname="landscapes">
+						<div class="gall-img-wrap" data-gallname="landscapes" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall4">
 					<h3 class="gall-header">Boudoir</h3>
-						<div class="gall-img-wrap" data-gallname="boudoir">
+						<div class="gall-img-wrap" data-gallname="boudoir" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
@@ -76,14 +79,14 @@
 				</div>
 				<div class="gall-block gall6">
 					<h3 class="gall-header">Macro Photography</h3>
-						<div class="gall-img-wrap" data-gallname="macro">
+						<div class="gall-img-wrap" data-gallname="macro" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall7">
 					<h3 class="gall-header">Nature Photography</h3>
-						<div class="gall-img-wrap" data-gallname="nature">
+						<div class="gall-img-wrap" data-gallname="nature" onmouseover="change_tooltip(this)" onmouseout="hide_tooltip()">
 							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
 					<p class="gall-blurb"></p>
@@ -113,12 +116,13 @@
 	<div id="scripts">
 		<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
 		<!-- Load all of the Gallery json files from each folder -->
-		<script type="text/javascript" src="/photos/galleries/food/gallery.json"></script>
-		<script type="text/javascript" src="/photos/galleries/masquerade/gallery.json"></script>
-		<script type="text/javascript" src="/photos/galleries/boudoir/gallery.json"></script>
-		<script type="text/javascript" src="/photos/galleries/landscapes/gallery.json"></script>
-		<script type="text/javascript" src="/photos/galleries/urban/gallery.json"></script>
-		<script type="text/javascript" src="/photos/galleries/macro/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/food/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/masquerade/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/boudoir/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/landscapes/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/urban/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/macro/gallery.js"></script>
+		<script type="text/javascript" src="/photos/galleries/nature/gallery.js"></script>
 		<script type="text/javascript" src="/js/workhorse.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
 	</div>

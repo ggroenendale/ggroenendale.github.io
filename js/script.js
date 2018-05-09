@@ -88,3 +88,20 @@ function open_gallery(gal_set) {
 	let folder = base + '/photos/galleries/' + gal_set;
 	let data = JSON.parse(gal_set.name)
 }
+
+/**
+ * Add Coolio tooltips to each gallery image
+ */
+
+var tooltip = document.getElementById('tooltip');
+
+window.onmousemove = function(event) {
+	let x = event.clientX;
+	let y = event.clientY;
+	tooltip.style.top = (y + 20) + 'px';
+	tooltip.style.left = (x + 20) + 'px';
+}
+
+function change_tooltip(gall) {
+	tooltip.innerHTML = 
+}

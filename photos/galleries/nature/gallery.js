@@ -1,6 +1,7 @@
-landscapes = '[{
-  "landscapes": {
-    "name": "Landscapes",
+nature = {
+  "nature": {
+    "name": "Nature Photography",
+    "desc": "I like nature and here are some of my shots."
     "images": [
       {
         "name": "Bread",
@@ -20,4 +21,4 @@ landscapes = '[{
       }
     ]
   }
-}]'
+}

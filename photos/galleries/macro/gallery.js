@@ -1,6 +1,7 @@
-food = '[{
+macro = {
   "food": {
-    "name": "Food Photography",
+    "name": "Macro Photography",
+    "desc": "Close up shots are fun and here are a few of mine.",
     "images": [
       {
         "name": "Bread",
@@ -20,4 +21,4 @@ food = '[{
       }
     ]
   }
-}]'
+}

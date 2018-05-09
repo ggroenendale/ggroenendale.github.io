@@ -1,6 +1,7 @@
-food = '[{
-  "food": {
-    "name": "Food Photography",
+urban = {
+  "urban": {
+    "name": "Urban Photography",
+    "desc": "This is a gallery of some of my urban photography.",
     "images": [
       {
         "name": "Bread",
@@ -11,13 +12,13 @@ food = '[{
         "location": "NULL"
       },
       {
-        "name": "Roast",
-        "blurb": "This is a cool way to do a chicken roast",
-        "filename": "img2",
+        "name": "first",
+        "blurb": "blah blah blah",
+        "filename": "img1",
         "date": "2018-01-12T00:00:00.000Z",
-        "modelname": "NULL",
-        "location": "NULL"
+        "modelname": "Haley Garoutte",
+        "location": "Prosser"
       }
     ]
   }
-}]'
+}

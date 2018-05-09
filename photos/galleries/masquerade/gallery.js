@@ -1,6 +1,7 @@
-food = '[{
-  "food": {
-    "name": "Food Photography",
+masquerade = {
+  "masquerade": {
+    "name": "Masquerade",
+    "desc": "This is an ongoing art project to show that whats behind the mask is just as important as what isn't.",
     "images": [
       {
         "name": "Bread",
@@ -20,4 +21,4 @@ food = '[{
       }
     ]
   }
-}]'
+}

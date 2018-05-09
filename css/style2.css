@@ -342,6 +342,53 @@
 
 	}
 
+	/*
+	=================================
+		Photography Gallery Styles
+	=================================
+	*/
+
+	.hidden-gall {
+		display: none;
+	}
+
+	#gall-viewer {
+		grid-area: view;
+		background-color: #000000;
+	}
+
+	.gall-closer {
+
+	}
+
+	#slide-container {
+
+	}
+
+	#slide-wrap {
+
+	}
+
+	.img-thumb-wrap {
+
+	}
+
+	.img-thumb {
+
+	}
+
+	.slide {
+
+	}
+
+	.photo {
+
+	}
+
+	.prev, .next {
+
+	}
+
 }
 
 /*

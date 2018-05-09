@@ -37,67 +37,88 @@
 			</div>
 		</aside> <!-- This closes the sidebar -->
 		<div id="content" class="grid-content">
-			<h1>Here are some galleries</h1>
+			<h1>These are galleries of some of my Photography work</h1>
 			<div id="gall-container">
 				<div class="gall-block gall1">
 					<h3 class="gall-header">Food Photography</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="food">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall2">
 					<h3 class="gall-header">Masquerade</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="masquerade">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall3">
 					<h3 class="gall-header">Landscapes</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="landscapes">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall4">
 					<h3 class="gall-header">Boudoir</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="boudoir">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall5">
 					<h3 class="gall-header">Urban Photography</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="urban">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
 					<p class="gall-blurb"></p>
 				</div>
 				<div class="gall-block gall6">
 					<h3 class="gall-header">Macro Photography</h3>
-					<a class="gall-link" href="">
-						<div class="gall-img-wrap">
-							<img class="gall-img" src="">
+						<div class="gall-img-wrap" data-gallname="macro">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
 						</div>
-					</a>
+					<p class="gall-blurb"></p>
+				</div>
+				<div class="gall-block gall7">
+					<h3 class="gall-header">Nature Photography</h3>
+						<div class="gall-img-wrap" data-gallname="nature">
+							<img class="gall-img" src="https://baconmockup.com/300/300">
+						</div>
 					<p class="gall-blurb"></p>
 				</div>
 			</div> <!-- This closes the gallery container -->
+			<div id="gall-viewer">
+				<span class="gall-closer">&times;</span>
+				<div id="slide-container">
+					<div id="slide-wrap">
+						<div class="img-thumb-wrap" data-img-num="img1">
+							<img class="img-thumb" src="">
+						</div>
+					</div>
+					<span class="slide prev">&#10094;</span>
+					<span class="slide next">&#10095;</span>
+				</div> <!-- Closes the slide container -->
+				<div id="photo-container">
+					<div id="photo-wrap">
+						<img class="photo-img" src="">
+					</div>
+					<span class="photo prev">&#10094;</span>
+					<span class="photo next">&#10095;</span>
+				</div> <!-- Closes the photo container -->
+			</div> <!-- This closes the gallery view --> 
 		</div> <!-- This closes the content area -->
 	</div> <!-- This closes the wrapper -->
 	<div id="scripts">
 		<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+		<!-- Load all of the Gallery json files from each folder -->
+		<script type="text/javascript" src="/photos/galleries/food/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/masquerade/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/boudoir/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/landscapes/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/urban/gallery.json"></script>
+		<script type="text/javascript" src="/photos/galleries/macro/gallery.json"></script>
 		<script type="text/javascript" src="/js/workhorse.js"></script>
 		<script type="text/javascript" src="/js/script.js"></script>
 	</div>

@@ -1,0 +1,23 @@
+boudoir = '[{
+  "boudoir": {
+    "name": "Boudoir",
+    "images": [
+      {
+        "name": "Longing",
+        "blurb": "She looks longingly outside",
+        "filename": "img1",
+        "date": "2018-01-12T00:00:00.000Z",
+        "modelname": "NULL",
+        "location": "NULL"
+      },
+      {
+        "name": "Pensive",
+        "blurb": "blah blah blah",
+        "filename": "img2",
+        "date": "2018-01-12T00:00:00.000Z",
+        "modelname": "NULL",
+        "location": "NULL"
+      }
+    ]
+  }
+}]'

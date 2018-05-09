@@ -8,6 +8,13 @@
  * the workhorse.js file that has several clerical functions.
  */
 
+/**
+ * Just like in the html files specify a base variable that
+ * holds the domain and hostname
+ * @type {string}
+ */
+let base = document.location.hostname;
+
 window.onload = function() {
 	setup();
 }
@@ -33,8 +40,51 @@ function change_page_name() {
 	else if (cur_name === 'projects') {
 		page_name.innerText = new_name;
 	}
+	else if (cur_name === 'hobbies') {
+		page_name.innerText = new_name;
+	}
+	else if (cur_name === 'about') {
+		page_name.innerText = new_name;
+	}
+	else if (cur_name === 'contact') {
+		page_name.innerText = new_name;
+	}
 	else {
 		page_name.innerText = new_name;
 	}
-	
+}
+
+/**
+ * ========================================================================================
+ * These sets of Functions purely handle the image and 
+ * photo manipulation on the photography pages.
+ * ========================================================================================
+ */
+
+
+/**
+ * Adds a listener to each gallery image that will load the gallery view
+ * @param  {Object} event) {	let        gallery [description]
+ * @return {[type]}        [description]
+ */
+$(".gall-img-wrap").click(function(event) {
+	let gallery = {
+		name : event.target.getAttribute('data-gallname');
+
+	}
+	open_gallery(gallery);
+});
+
+/**
+ * This function will load the gallery view with images
+ * and thumbnails. Thumbnails get inserted into a slider
+ * with event listeners to change to the appropriate photo.
+ * 1) Load info from JSON file associated with gallery object
+ * @param  {Object} gal_set 		This is an object parameter with required info
+ * @param  {string} gal_set.name  	Name of the gallery
+ * @return {[type]}         [description]
+ */
+function open_gallery(gal_set) {
+	let folder = base + '/photos/galleries/' + gal_set;
+	let data = JSON.parse(gal_set.name)
 }

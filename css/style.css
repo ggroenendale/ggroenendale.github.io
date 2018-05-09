@@ -230,3 +230,99 @@ body {
 #content {
 	background-color: var(--color-co-bg);
 }
+
+/*
+=================================
+	Photography Content Styles
+=================================
+*/
+
+/*===== Photography Galleries Grid Area ===== */
+/* Declaring CSS Grid Areas*/
+
+#gall-container {
+	display: inline-grid;
+	grid-template-columns: auto auto auto;
+	grid-column-gap: 4%;
+	grid-row-gap: 30px;
+	padding: 5%;
+	width: 100%;
+	margin: auto;
+}
+
+.gall-block {
+
+}
+
+.gall-header {
+	text-align: center;
+	font-size: 1.5em;
+	padding-bottom: 4px;
+}
+
+.gall-link {
+	display: block;
+}
+
+.gall-img-wrap {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	border: 3px solid var(--co-gall-bord);
+}
+
+.gall-img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.gall-blurb {
+
+}
+
+/*
+=================================
+	Photography Gallery Styles
+=================================
+*/
+
+.hidden-gall {
+	display: none;
+}
+
+#gall-viewer {
+	grid-area: view;
+	background-color: #000000;
+}
+
+.gall-closer {
+
+}
+
+#slide-container {
+
+}
+
+#slide-wrap {
+
+}
+
+.img-thumb-wrap {
+
+}
+
+.img-thumb {
+
+}
+
+.slide {
+
+}
+
+.photo {
+
+}
+
+.prev, .next {
+
+}

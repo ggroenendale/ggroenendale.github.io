@@ -43,16 +43,19 @@
 =============================================
  */
 :root {
+	--port-head-co:  #A5C2AC;
 	--color-si-bg: 	 #403D39;
 	--color-co-bg:   #DFEDE3;
 	--color-font-si: #DFEDE3;
 	--co-font-sihov: #DFEDE3;
 	--color-font-co: #181715;
 	--co-font-cohov: #181715;
+	--co-gall-bord:	 #000000;
 	--color-green: 	 #5E926A;
 
-	--font-header: 	'Dosis', sans-serif;
-	--font-para: 	'Arapey', serif;
+	--font-header: 	 'Dosis', sans-serif;
+	--font-para: 	 'Arapey', serif;
+	--port-head-fo:	 'Dosis', sans-serif;
 }
 
 /* 
@@ -101,31 +104,31 @@ html, body {
  */
 
 h1 {
-
+	font-family: var(--font-header);
 }
 
 h2 {
-	
+	font-family: var(--font-header);	
 }
 
 h3 {
-	
+	font-family: var(--font-header);
 }
 
 h4 {
-	
+	font-family: var(--font-header);
 }
 
 h5 {
-	
+	font-family: var(--font-header);
 }
 
 h6 {
-	
+	font-family: var(--font-header);
 }
 
 p {
-
+	font-family: var(--font-para);
 }
 
 

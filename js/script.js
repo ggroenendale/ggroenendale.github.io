@@ -68,9 +68,9 @@ function change_page_name() {
  * @return {[type]}        [description]
  */
 $(".gall-img-wrap").click(function(event) {
+	let gname = event.target.getAttribute('data-gallname');
 	let gallery = {
-		name : event.target.getAttribute('data-gallname');
-
+		name : gname
 	}
 	open_gallery(gallery);
 });

@@ -51,6 +51,7 @@
 	--color-font-co: #181715;
 	--co-font-cohov: #181715;
 	--co-gall-bord:	 #000000;
+	--co-copyright:  #B7C2BA;
 	--color-green: 	 #5E926A;
 
 	--font-header: 	 'Dosis', sans-serif;
@@ -325,6 +326,7 @@
 
 	#copyright-div {
 		text-align: center;
+		color: var(--co-copyright);
 	}
 
 	/*

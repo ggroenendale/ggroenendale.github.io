@@ -43,15 +43,16 @@
 =============================================
  */
 :root {
-	--port-head-co:  #A5C2AC;
-	--color-si-bg: 	 #403D39;
-	--color-co-bg:   #DFEDE3;
-	--color-font-si: #DFEDE3;
-	--co-font-sihov: #DFEDE3;
-	--color-font-co: #181715;
-	--co-font-cohov: #181715;
-	--co-gall-bord:	 #000000;
-	--color-green: 	 #5E926A;
+	--port-head-co:  #A5C2AC; 	/* --- Color for the portfolio header/logo */
+	--color-si-bg: 	 #403D39; 	/* --- Color for the sidebar background */
+	--color-co-bg:   #DFEDE3; 	/* --- Color for the content background */ 
+	--color-font-si: #DFEDE3; 	/* --- Color for the sidebar font */
+	--co-font-sihov: #DFEDE3; 	/* --- Color for the sidebar font on hover */
+	--color-font-co: #181715; 	/* --- Color for the content font */
+	--co-font-cohov: #181715; 	/* --- Color for the content font on hover */
+	--co-gall-bord:	 #000000; 	/* --- Color for the gallery borders */
+	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
+	--color-green: 	 #5E926A; 	/* --- Color for the green */
 
 	--font-header: 	 'Dosis', sans-serif;
 	--font-para: 	 'Arapey', serif;
@@ -241,13 +242,7 @@ body {
 /* Declaring CSS Grid Areas*/
 
 #gall-container {
-	display: inline-grid;
-	grid-template-columns: auto auto auto;
-	grid-column-gap: 4%;
-	grid-row-gap: 30px;
-	padding: 5%;
-	width: 100%;
-	margin: auto;
+
 }
 
 .gall-block {
@@ -268,7 +263,6 @@ body {
 	width: 300px;
 	height: 300px;
 	margin: auto;
-	border: 3px solid var(--co-gall-bord);
 }
 
 .gall-img {
@@ -291,7 +285,6 @@ body {
 }
 
 #gall-viewer {
-	grid-area: view;
 	background-color: #000000;
 }
 

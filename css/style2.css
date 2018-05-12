@@ -43,16 +43,18 @@
 =============================================
  */
 :root {
-	--port-head-co:  #A5C2AC;
-	--color-si-bg: 	 #403D39;
-	--color-co-bg:   #DFEDE3;
-	--color-font-si: #DFEDE3;
-	--co-font-sihov: #DFEDE3;
-	--color-font-co: #181715;
-	--co-font-cohov: #181715;
-	--co-gall-bord:	 #000000;
-	--co-copyright:  #B7C2BA;
-	--color-green: 	 #5E926A;
+	--port-head-co:  #A5C2AC; 	/* --- Color for the portfolio header/logo */
+	--color-si-bg: 	 #403D39; 	/* --- Color for the sidebar background */
+	--color-co-bg:   #DFEDE3; 	/* --- Color for the content background */ 
+	--color-font-si: #DFEDE3; 	/* --- Color for the sidebar font */
+	--co-font-sihov: #DFEDE3; 	/* --- Color for the sidebar font on hover */
+	--color-font-co: #181715; 	/* --- Color for the content font */
+	--co-font-cohov: #181715; 	/* --- Color for the content font on hover */
+	--co-gall-bord:	 #000000; 	/* --- Color for the gallery borders */
+	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
+	--co-cube-bg:    #403D39;   /* --- Color for the cube faces */
+
+	--color-green: 	 #5E926A; 	/* --- Color for the green */
 
 	--font-header: 	 'Dosis', sans-serif;
 	--font-para: 	 'Arapey', serif;
@@ -295,6 +297,56 @@
 
 	/*
 	=================================
+		Home Content Styles
+	=================================
+	*/
+
+	#splash-wrap {
+		height: 340px;
+		width: 100%;
+		vertical-align: middle;
+		text-align: center;
+		display: grid;
+		grid-auto-rows: calc(100% / 3);
+	}
+
+	#splash {
+		margin: auto;
+	}
+
+	#greet {
+		font-size: 2.5em;
+		display: block;
+	}
+
+	#greet-blurb {
+		display: block;
+		margin-top: 30px;
+		font-size: 1.4em;
+	}
+
+	#service-wrap {
+		margin-top: 100px;
+	}
+
+	#service-wrap h2 {
+		text-align: center;
+		font-size: 1.9em;
+	}
+
+	#services {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		padding: 5%;
+	}
+
+	.service-block h3 {
+		text-align: center;
+	}
+
+
+	/*
+	=================================
 		Photography Content Styles
 	=================================
 	*/
@@ -302,19 +354,63 @@
 	/*===== Photography Galleries Grid Area ===== */
 	/* Declaring CSS Grid Areas*/
 
+	#gall-wrapper {
+		display: grid;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+
 	#gall-container {
 		display: inline-grid;
 		grid-template-columns: auto auto auto;
-		grid-column-gap: 4%;
-		grid-row-gap: 30px;
-		padding: 5%;
-		width: 100%;
+		grid-gap: 40px;
 		margin: auto;
 	}
 
 	.gall-block {
+		width: 350px;
+		height: 350px;
+		perspective: 1050px; 
+		margin: auto;
+	}
+
+	.cube {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: translateZ(-175px);
+		transition: transform 0.5s;
+	}
+
+	.cube-face {
+		position: absolute;
+		width: 350px;
+		height: 350px;
+	}
+
+	.cube-face.front 	{ transform: rotateY(   0deg) translateZ(175px); } 
+	.cube-face.right 	{ transform: rotateY(  90deg) translateZ(175px); }
+	.cube-face.left 	{ transform: rotateY( -90deg) translateZ(175px); }
+	.cube-face.back 	{ transform: rotateY( 180deg) translateZ(175px); }
+	.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
+	.cube-face.bottom 	{ 
+		transform: rotateX( -90deg) translateZ(315px); 
+		background-color: rgba(0,0,0,0.2);
+		box-shadow: 0px 0px 100px 50px rgba(0,0,0,0.2);
+		left: 75px;
+		width: 200px;
+		height: 200px;
 
 	}
+
+	.cube.show-front 	{ transform: translateZ(-175px) rotateY(    0deg); }
+	.cube.show-right 	{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-back 	{ transform: translateZ(-175px) rotateY( -180deg); }
+	.cube.show-left 	{ transform: translateZ(-175px) rotateY(   90deg); }
+	.cube.show-top 		{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-bottom 	{ transform: translateZ(-175px) rotateY(   90deg); }
 
 	.gall-header {
 		text-align: center;
@@ -327,10 +423,11 @@
 	}
 
 	.gall-img-wrap {
-		width: 300px;
-		height: 300px;
+		display: flex;
+		background-color: var(--co-cube-bg);
+		width: 350px;
+		height: 350px;
 		margin: auto;
-		border: 3px solid var(--co-gall-bord);
 	}
 
 	#tooltip {
@@ -344,8 +441,16 @@
 	}
 
 	.gall-img {
+		width: 100%;
 		max-width: 100%;
 		max-height: 100%;
+		margin: auto;
+	}
+
+	.gall-info {
+		width: 350px;
+		height: 350px;
+		background-color: var(--co-cube-bg);
 	}
 
 	.gall-blurb {
@@ -363,12 +468,63 @@
 	}
 
 	#gall-viewer {
-		grid-area: view;
 		background-color: #000000;
 	}
 
-	.gall-closer {
+	#caro-container {
+		margin: 40px 0;
+		position: relative;
+		width: 720px;
+		height: 520px;
+		margin: 80px auto;
+		perspective: 1000px;
+	}
 
+	#carousel {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform: translateZ(-288px);
+		transform-style: preserve-3d;
+		transition: transform 1s;
+	}
+
+	.carousel-cell {
+		display: flex;
+		position: absolute;
+		width: 700px;
+		height: 500px;
+		left: 10px;
+		top: 10px;
+		align-items: center;
+		justify-content: center;
+		transition: transform 1s, opacity 1s;
+	}
+
+	.no-img {
+		width: 700px;
+		height: 500px;
+		background-color: gray;
+	}
+
+	#controls {
+		width: 100%;
+		text-align: center;
+	}
+
+	.iter {
+		color: white;
+		font-size: 3em;
+		padding: 5px;
+	}
+
+	.gall-closer {
+		font-size: 3em;
+		font-weight: bold;
+		float: right;
+		color: white;
+		margin-right: 10px;
+		margin-top: 10px;
 	}
 
 	#slide-container {
@@ -391,12 +547,46 @@
 
 	}
 
-	.photo {
+	/*
+	=================================
+		Contact Styles
+	=================================
+	*/
 
+	#cont-greet {
+		text-align: center;
+		width: 100%;
+		padding: 2%;
 	}
 
-	.prev, .next {
+	#cont-info {
+		display: grid;
+	}
 
+	#message-wrap {
+		display: grid;
+		grid-template-columns: auto auto auto auto auto;
+		margin-top: 20px;
+	}
+
+	form {
+		display: grid;
+		grid-template-rows: auto auto auto auto;
+		grid-gap: 15px;
+	}
+
+	.mess-comp {
+		border: 1px solid #AAA;
+		font-size: 1.2em;
+		padding: 8px;
+	}
+
+	form>input {
+		font-family: var(--font-header);
+	}
+
+	#message {
+		height: 200px;
 	}
 
 }

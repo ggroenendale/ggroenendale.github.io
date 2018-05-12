@@ -1,0 +1,227 @@
+set = {
+	"galleries": [
+		{
+			"name" : "food",
+			"avail": true,
+			"display_name" : "Food Photography",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'img3.jpg',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1.jpg",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img2.jpg",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img3.jpg",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img4",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img5",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img6",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img7",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "boudoir",
+			"avail": false,
+			"display_name" : "Boudoir",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'main',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "masquerade",
+			"avail": true,
+			"display_name" : "Masquerade",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'main',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "landscapes",
+			"avail": true,
+			"display_name" : "Landscapes",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'main',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "urban",
+			"avail": false,
+			"display_name" : "Urban Photography",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'main',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "macro",
+			"avail": true,
+			"display_name" : "Macro Photography",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'img1.png',
+			"images" : [
+				{
+					"name": "Death Metal Dragonfly",
+			        "blurb": "This dragonfly was sitting on my car antena one day.",
+			        "filename": "img1.png",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		},
+		{
+			"name" : "nature",
+			"avail": false,
+			"display_name" : "Nature Photography",
+			"desc" : "I like nature and here are some of my shots.",
+			"mainimg" : 'main',
+			"images" : [
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"
+				},
+				{
+					"name": "Bread",
+			        "blurb": "This is a picture of a loaf of bread I took",
+			        "filename": "img1",
+			        "date": "2018-01-12T00:00:00.000Z",
+			        "modelname": "NULL",
+			        "location": "NULL"	
+				}
+
+			]
+		}
+
+	]
+}

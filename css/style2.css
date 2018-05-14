@@ -137,23 +137,24 @@
 	}
 
 	h3 {
-		
+		font-size: 1.1em;
 	}
 
 	h4 {
-		
+		font-size: 1.1em;
 	}
 
 	h5 {
-		
+		font-size: 1.1em;
 	}
 
 	h6 {
-		
+		font-size: 1.1em;
 	}
 
 	p {
 		font-family: var(--font-para);
+		font-size: 1em;
 	}
 
 	/*
@@ -184,7 +185,19 @@
 	=============================================
 	*/
 
+	#show-menu {
+		display: none;
+	}
+
+	.slide-menu	{
+		left: unset;
+	}
+
 	#sidebar {
+		position: static;
+		width: unset;
+		height: unset;
+		left: 0;
 		background-color: var(--color-si-bg);
 	}
 
@@ -297,7 +310,7 @@
 
 	/*
 	=================================
-		Home Content Styles
+			Home Content Styles
 	=================================
 	*/
 
@@ -336,6 +349,7 @@
 
 	#services {
 		display: grid;
+		grid-template-rows: unset;
 		grid-template-columns: auto auto auto;
 		padding: 5%;
 	}
@@ -549,9 +563,14 @@
 
 	/*
 	=================================
-		Contact Styles
+			Contact Styles
 	=================================
 	*/
+
+	.contact-grid {
+		display: grid;
+		grid-template-rows: 5% 10% 5% 60% 10% 10%;
+	}
 
 	#cont-greet {
 		text-align: center;
@@ -559,14 +578,57 @@
 		padding: 2%;
 	}
 
+	#message-wrap {
+		display: grid;
+		grid-template-columns: 14.5% 25% 11% 35% 14.5%;
+		margin-top: 20px;
+	}
+
+	#cont-info-grid {
+		display: grid;
+		grid-row-gap: 20px;
+	}
+
 	#cont-info {
 		display: grid;
 	}
 
-	#message-wrap {
+	.info-key {
+		display: inline;
+	}
+
+	#caddress {
+		display: inline;
+		vertical-align: top;
+	}
+
+	#address { 
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#c-soc-wrap {
+		margin: auto;
+	}
+
+	#c-soc-links {
 		display: grid;
-		grid-template-columns: auto auto auto auto auto;
-		margin-top: 20px;
+		grid-template-columns: 60px 60px 60px 60px;
+		grid-gap: 12px;
+		list-style-type: none;
+	}
+
+	#c-soc-links>a>li {
+		margin: auto;
+	}
+
+	#c-soc-links>a>li>img {
+		width: 100%;
+		max-height: 100%
+	}
+
+	#cont-info p {
+		font-size: 1.3em;
 	}
 
 	form {
@@ -588,6 +650,74 @@
 	#message {
 		height: 200px;
 	}
+
+	/*
+	=================================
+			About Styles
+	=================================
+	*/
+
+	.about-grid {
+		display: inline-grid;
+		grid-template-areas: 'prof-pic-info' 'cols';
+	}
+
+	#prof-pic-info {
+		grid-area: prof-pic-info;
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+
+	#prof-pic {
+
+	}
+
+	#prof-infos {
+		
+	}
+
+	#cols {
+		grid-area: cols;
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+
+	#col1 {
+		display: grid;
+		grid-template-areas: 'exp' 'skills' 'achieve';
+	}
+
+	#col2 {
+		display: grid;
+		grid-template-areas: 'educ' 'certs' 'extra';
+	}
+
+	#experience {
+		grid-area: exp;
+	}
+
+	#education {
+		grid-area: educ;	
+	}
+
+	#skills {
+		grid-area: skills;
+	}
+
+	#certs {
+		grid-area: certs;
+	}
+
+	#achievements {
+		grid-area: achieve;
+	}
+
+	#extra {
+		grid-area: extra;
+	}
+
+
+
 
 }
 

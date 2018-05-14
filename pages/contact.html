@@ -23,6 +23,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Arapey|Dosis" rel="stylesheet">
 </head>
 <body>
+	<div id="show-menu">
+		<div id="bar-grid">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</div>
+	</div>
 	<div id="wrapper" class="grid-container">
 		<aside id="sidebar" class="grid-side">
 			<nav>
@@ -31,8 +38,8 @@
 					<div id="gr-rect"></div>
 					<a href="projs/projs.html"><li>Projects</li></a>
 					<a href="photos/photog.html"><li>Photography</li></a>
-					<a href="hobby/hobbies.html"><li>Hobbies</li></a>
 					<a href="pages/about.html"><li>About</li></a>
+					<a href="blog/blog.html"><li>Blog</li></a>
 					<a href="pages/contact.html"><li>Contact</li></a>
 				</ul>
 			</nav>
@@ -49,16 +56,38 @@
 				<div id="copyright-div"><h5 id="copyright"><span>&copy;</span> 2017 Geoff Groenendale</h5><p>All Rights Reserved</p></div>
 			</div>
 		</aside> <!-- This closes the sidebar -->
-		<div id="content" class="grid-content">
+		<div id="content" class="grid-content contact-grid">
+			<div></div>
 			<h1 id="cont-greet">Let's Chat!</h1>
-			<p></p>
+			<div></div>
 			<div id="message-wrap">
 				<div></div>
-				<div id="cont-info">
-					<p>Phone</p>
-					<p>Email</p>
-					<p>Address</p>
-					<p>Socials</p>
+				<div id="cont-info-grid">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div id="cont-info">
+						<p><span class="info-key">Phone: </span>(509) 439-0773</p>
+						<p><span class="info-key">Email: </span>g.groenendale@gmail.com</p>
+						<div class="info-key">
+							<p class="info-key">
+								<span id="caddress">Address: </span>
+							</p>
+							<div id="address">
+								<p>PO Box 17451</p>
+								<p>Portland, OR 97217</p>
+							</div>
+						</div>
+						<div id="c-soc-wrap">
+							<div id="c-soc-links">
+								<a class="soc-in" href="https://www.linkedin.com/in/ggroenendale/"><li><img src="icons/in.png"></li></a>
+								<a class="soc-git" href="https://github.com/ggroenendale"><li><img src="icons/git.png"></li></a>
+								<a class="soc-inst" href=""><li><img src="icons/inst.png"></li></a>
+								<a class="soc-tu" href=""><li><img src="icons/tube.png"></li></a>
+							</div>
+						</div>						
+					</div>
+					<div></div>
 				</div>
 				<div></div>
 				<form action="https://formspree.io/g.groenendale@wsu.edu" method="POST">
@@ -70,6 +99,8 @@
 				</form>
 				<div></div>
 			</div>
+			<div></div>
+			<div></div>
 		</div> <!-- This closes the content -->
 	</div> <!-- This closes the wrapper -->
 	<div id="scripts">

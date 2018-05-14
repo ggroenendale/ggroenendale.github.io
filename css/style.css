@@ -52,6 +52,8 @@
 	--co-font-cohov: #181715; 	/* --- Color for the content font on hover */
 	--co-gall-bord:	 #000000; 	/* --- Color for the gallery borders */
 	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
+	--co-cube-bg:    #403D39;   /* --- Color for the cube faces */
+
 	--color-green: 	 #5E926A; 	/* --- Color for the green */
 
 	--font-header: 	 'Dosis', sans-serif;
@@ -169,37 +171,37 @@ html, body {
 
 h1 {
 	font-family: var(--font-header);
-	font-size: 32px;
+	font-size: 6em;
 }
 
 h2 {
 	font-family: var(--font-header);
-	font-size: 1.45em;
+	font-size: 5em;
 }
 
 h3 {
 	font-family: var(--font-header);
-	font-size: 1.3em;
+	font-size: 4em;
 }
 
 h4 {
 	font-family: var(--font-header);
-	font-size: 1.2em;	
+	font-size: 3.4em;	
 }
 
 h5 {
 	font-family: var(--font-header);
-	font-size: 1.1em;
+	font-size: 2.9em;
 }
 
 h6 {
 	font-family: var(--font-header);
-	font-size: 1.05em;
+	font-size: 2.5em;
 }
 
 p {
 	font-family: var(--font-para);
-	font-size: 1em;
+	font-size: 2em;
 }
 
 /*
@@ -221,15 +223,225 @@ body {
 }
 
 #wrapper {
-	position: fixed;
+	position: static;
+}
+
+/*
+=================================
+	Sidebar Styles
+=================================
+*/
+
+nav 		{ grid-area: top; }
+#sidemid 	{ grid-area: mid; }
+
+#sidebar {
+	display: grid;
+	grid-template-areas: 
+		'top'
+		'top'
+		'top'
+		'mid'
+		'mid'
+		'foot';
+	grid-auto-rows: calc(100% / 6);
+}
+
+#show-menu {
+	width: 95px;
+	height: 120px;
+	left: -1px;
+	background-color: var(--color-si-bg);
+	position: absolute;
+	top: 1%;
+	z-index: 5;
+	border-radius: 0px 7px 7px 0px;
+	transition: 0.5s;
+}
+
+#bar-wrap {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+#bar-grid {
+	display: grid;
+	height: inherit;
+	grid-template-rows: auto;
+	grid-gap: 24%;
+	padding: 20% 13%;
+	margin: auto;
+}
+
+.bar {
+	background-color: var(--color-font-si);
+	width: 100%;
+	border-radius: 4px;
 }
 
 #sidebar {
+	position: absolute;
+	width: 80%;
+	height: 100%;
+	left: -80%;
+	z-index: 10;
 	background-color: var(--color-si-bg);
 }
 
+nav {
+	width: 100%;
+	margin-top: 8%;
+	text-align: center;
+}
+
+#port-link {
+	text-decoration: none;
+}
+
+#port-name {
+	font-family: var(--port-head-fo);
+	color: var(--port-head-co);
+	font-size: 4.4em;
+}
+
+nav>ul {
+	display: inline-block;
+	text-align: left;
+	width: 90%;
+}
+
+#cur-page {
+	margin-top: 8%;
+	color: var(--color-font-si);
+	margin-left: 15%;
+}
+
+#gr-rect {
+	position: relative;
+	height: 5px;
+	width: 90%;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	background: var(--color-green);
+}
+
+nav>ul>a>li {
+	display: inline-block;
+	font-family: var(--font-header);
+	font-size: 5.25em;
+	margin-top: 4%;
+	margin-bottom: 3%;
+}
+
+nav>ul>a {
+	display: block;
+	text-decoration: none;
+	color: var(--color-font-si);
+	margin-left: 18%;
+}
+
+nav>ul>a:hover {
+	color: var(--co-font-sihov);
+}
+
+nav>ul>a:visited {
+	color: var(--color-font-si);
+}
+
+#sidefoot {
+	grid-area: foot;
+}
+
+#soc-links {
+	display: inline-grid;
+	grid-template-columns: auto auto auto auto;
+	padding: 5%;
+	width: 100%;
+	margin: auto;
+	list-style-type: none;
+}
+
+#soc-links>a {
+	
+}
+
+#soc-links>a>li {
+	width: 100px;
+	margin: auto;
+}
+
+#soc-links>a>li>img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#copyright-div {
+	text-align: center;
+	color: var(--co-copyright);
+}
+
+#copyright-div>h5 {
+	font-size: 
+}
+
+/*
+=================================
+		Content Styles
+=================================
+*/
+
 #content {
 	background-color: var(--color-co-bg);
+}
+
+#content::-webkit-scrollbar {
+	display: none;
+}
+
+/*
+=================================
+		Home Content Styles
+=================================
+*/
+
+#splash-wrap {
+	padding-top: 15%;
+	text-align: center
+}
+
+#splash {
+
+}
+
+#greet {
+
+}
+
+#greet-blurb {
+	margin-top: 2%;
+}
+
+#service-wrap {
+	margin-top: 100px;
+	background-color: #403D39;
+}
+
+#service-wrap h2 {
+	text-align: center;
+}
+
+#services {
+	display: grid;
+	grid-template-rows: auto auto auto;
+	padding: 5%;
+
+}
+
+.service-block h3 {
+	text-align: center;
 }
 
 /*
@@ -237,6 +449,15 @@ body {
 	Photography Content Styles
 =================================
 */
+
+#photo-greet {
+	width: 75%;
+	margin: auto;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	text-align: center;
+	font-size: 4em;
+}
 
 /*===== Photography Galleries Grid Area ===== */
 /* Declaring CSS Grid Areas*/
@@ -260,8 +481,8 @@ body {
 }
 
 .gall-img-wrap {
-	width: 300px;
-	height: 300px;
+	width: 770px;
+	height: 550px;
 	margin: auto;
 }
 

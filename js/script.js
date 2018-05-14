@@ -60,7 +60,44 @@ function change_page_name() {
 
 /**
  * ========================================================================================
- * These sets of Functions purely handle the image and 
+ * 						Sidebar Functions
+ * ========================================================================================
+ * These functions handle some of the special elements
+ * within the sidebar including the show function when
+ * on mobile.
+ * ========================================================================================
+ */
+
+$('#show-menu').click(function(){
+	if (this.classList[0] == 'slide-in') {
+		$(this)
+		.removeClass('slide-in')
+		.css({'left':'0px','transition':'0.5s'})
+		$('#sidebar').css({'left':'-80%','transition':'0.5s'});
+	}
+	else {
+		$(this)
+		.addClass('slide-in')
+		.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+		$('#sidebar').css({'left':'0','transition':'0.5s'});
+	}
+});
+
+
+/**
+ * ========================================================================================
+ * 						Responsive Functions
+ * ========================================================================================
+ * These functions aim to assist with some of the responsive
+ * functions.
+ * ========================================================================================
+ */
+
+/**
+ * ========================================================================================
+ * 						Photography Page Functions
+ * ========================================================================================
+ * These functions purely handle the image and 
  * photo manipulation on the photography pages.
  * ========================================================================================
  */
@@ -73,30 +110,66 @@ function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
 	let gallery = set.galleries;
-	gallery.forEach( function(gallery){
-		if(gallery.avail == true) {
-			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
-			html_payload +=	`<div class="cube">`;
-			html_payload += `<div class="cube-face front">`;
-			html_payload += `<div class="gall-img-wrap">`;
-			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}">`;
-			html_payload += `</div>`;
-			html_payload += `</div>`;
-			html_payload += `<div class="cube-face right">`;
-			html_payload += `<div class="gall-info">`;
-			html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-			html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
-			html_payload += `</div>`;
-			html_payload += `</div>`;
-			html_payload += `<div class="cube-face back"></div>`;
-			html_payload += `<div class="cube-face left"></div>`;
-			html_payload += `<div class="cube-face top"></div>`;
-			html_payload += `<div class="cube-face bottom"></div>`;
-			html_payload += `</div>`;
-			html_payload += `</div>`;
-			grid.innerHTML = html_payload;
-		}
-	});
+	//let swidth = $(window).width();
+	let swidth = window.innerWidth;
+	//let swidth = $(document).width();
+	console.log(swidth);
+	//Conditional on screen width 
+	//Target for Mobile
+	if (swidth < 768) {  
+		gallery.forEach( function(gallery){
+			if(gallery.avail == true) {
+				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+				html_payload += `<div class="gall-img-wrap">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}">`;
+				html_payload += `</div>`;
+				html_payload += `<div class="cube-face right">`;
+				html_payload += `<div class="gall-info">`;
+				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				grid.innerHTML = html_payload;
+				console.log(html_payload)
+			}
+		});
+	}
+	//Target for tablets
+	else if ((swidth > 768) && (swidth < 1200)) { 
+		gallery.forEach( function(gallery){
+			if(gallery.avail == true) {
+				console.log(html_payload)
+			}
+		});
+	}
+	//Target for Desktop
+	else if ((swidth > 1200) && (swidth < 1600)) {  
+		gallery.forEach( function(gallery){
+			if(gallery.avail == true) {
+				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+				html_payload +=	`<div class="cube">`;
+				html_payload += `<div class="cube-face front">`;
+				html_payload += `<div class="gall-img-wrap">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}">`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				html_payload += `<div class="cube-face right">`;
+				html_payload += `<div class="gall-info">`;
+				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				html_payload += `<div class="cube-face back"></div>`;
+				html_payload += `<div class="cube-face left"></div>`;
+				html_payload += `<div class="cube-face top"></div>`;
+				html_payload += `<div class="cube-face bottom"></div>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				grid.innerHTML = html_payload;
+			}
+		});
+	}
 }
 
 let cube = document.querySelector('.cube')

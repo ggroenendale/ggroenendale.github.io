@@ -130,11 +130,12 @@ function load_galleries() {
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
-				html_payload += swidth;
-				grid.innerHTML = html_payload;
-				console.log(html_payload)
+				html_payload += `<p>${swidth}</p>`;
+				
 			}
 		});
+		grid.innerHTML = html_payload;
+		console.log(html_payload)
 	}
 	//Target for tablets
 	else if ((swidth > 768) && (swidth < 1200)) { 
@@ -145,7 +146,7 @@ function load_galleries() {
 			}
 		});
 		grid.innerHTML = html_payload;
-				console.log(html_payload)
+		console.log(html_payload)
 	}
 	//Target for Desktop
 	else if ((swidth > 1200) && (swidth < 1600)) {  
@@ -173,6 +174,9 @@ function load_galleries() {
 				grid.innerHTML = html_payload;
 			}
 		});
+	}
+	else {
+		html_payload += `<p>There was an error loading galleries!</p>`;
 	}
 }
 

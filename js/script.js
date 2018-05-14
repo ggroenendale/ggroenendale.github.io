@@ -130,6 +130,7 @@ function load_galleries() {
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
+				html_payload += swidth;
 				grid.innerHTML = html_payload;
 				console.log(html_payload)
 			}
@@ -139,9 +140,12 @@ function load_galleries() {
 	else if ((swidth > 768) && (swidth < 1200)) { 
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
-				console.log(html_payload)
+				html_payload += `<p>${swidth}</p>`;
+				
 			}
 		});
+		grid.innerHTML = html_payload;
+				console.log(html_payload)
 	}
 	//Target for Desktop
 	else if ((swidth > 1200) && (swidth < 1600)) {  

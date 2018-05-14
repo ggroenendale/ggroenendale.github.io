@@ -365,6 +365,12 @@
 	=================================
 	*/
 
+	#photo-greet {
+		padding-top: 4%;
+		padding-bottom: 2%;
+		font-size: 2em;
+	}
+
 	/*===== Photography Galleries Grid Area ===== */
 	/* Declaring CSS Grid Areas*/
 

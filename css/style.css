@@ -363,6 +363,14 @@ nav>ul>a:visited {
 	grid-area: foot;
 }
 
+#foot-inner {
+	position: absolute;
+	left: 50%;
+	bottom: 5px;
+	width: 100%;
+	transform: translate(-50%,0);
+}
+
 #soc-links {
 	display: inline-grid;
 	grid-template-columns: auto auto auto auto;

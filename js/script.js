@@ -508,7 +508,7 @@ function change_tooltip(gall) {
 function hide_tooltip() {
 
 }
-
+alert(document.fullscreenElement);
 if(document.fullscreenElement) {
 	alert('Is Full screen');
 }

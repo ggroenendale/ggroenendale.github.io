@@ -149,14 +149,15 @@ class Swipe {
 /**
  * This function enables the sidebar to resize depending on orientation or device
  * and is the way I got around the chrome mobile address bar. The link for this
- * solution comes from a forum post on stackoverflow https://stackoverflow.com/a/40156488
+ * solution comes from a forum post on stackoverflow https://stackoverflow.com/a/40156488.
+ * I had to modify the jquery function slightly to allow for the address bar in chrome.
  * @param  {[type]} element [description]
  * @return {[type]}         [description]
  */
 function calcVH(element) {
 	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-	alert(height);
-	$(`#${element}`).innerHeight( $(this).innerHeight() );
+	//alert(height);
+	$(`#${element}`).innerHeight( height );
 	console.log('Changing sidebar height');
 }
 (function($) {

@@ -19,6 +19,7 @@ if (base == 'localhost') {
 	folio = '/newfolio';
 }
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
+let SWidth = window.innerWidth;
 
 window.onload = function() {
 	setup();
@@ -56,6 +57,91 @@ function change_page_name() {
 	else {
 		page_name.innerText = new_name;
 	}
+}
+
+/**
+ * ========================================================================================
+ * 						Mobile UI Functions
+ * ========================================================================================
+ * These functions handle some of the special movements on mobile.
+ * Below is a class for swipe that allows special callbacks based on
+ * A swipe motion.
+ * ========================================================================================
+ */
+
+
+class Swipe {
+    constructor(element) {
+        this.xDown = null;
+        this.yDown = null;
+        this.element = typeof(element) === 'string' ? document.querySelector(element) : element;
+
+        this.element.addEventListener('touchstart', function(evt) {
+            this.xDown = evt.touches[0].clientX;
+            this.yDown = evt.touches[0].clientY;
+        }.bind(this), false);
+
+    }
+
+    onLeft(callback) {
+        this.onLeft = callback;
+
+        return this;
+    }
+
+    onRight(callback) {
+        this.onRight = callback;
+
+        return this;
+    }
+
+    onUp(callback) {
+        this.onUp = callback;
+
+        return this;
+    }
+
+    onDown(callback) {
+        this.onDown = callback;
+
+        return this;
+    }
+
+    handleTouchMove(evt) {
+        if ( ! this.xDown || ! this.yDown ) {
+            return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        this.xDiff = this.xDown - xUp;
+        this.yDiff = this.yDown - yUp;
+
+        if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
+            if ( this.xDiff > 0 ) {
+                this.onLeft();
+            } else {
+                this.onRight();
+            }
+        } else {
+            if ( this.yDiff > 0 ) {
+                this.onUp();
+            } else {
+                this.onDown();
+            }
+        }
+
+        // Reset values.
+        this.xDown = null;
+        this.yDown = null;
+    }
+
+    run() {
+        this.element.addEventListener('touchmove', function(evt) {
+            this.handleTouchMove(evt);
+        }.bind(this), false);
+    }
 }
 
 /**
@@ -110,46 +196,35 @@ function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
 	let gallery = set.galleries;
-	//let swidth = $(window).width();
-	let swidth = window.innerWidth;
-	//let swidth = $(document).width();
-	console.log(swidth);
+	
 	//Conditional on screen width 
 	//Target for Mobile
-	if (swidth < 768) {  
+	if (SWidth < 768) {  
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
 				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}">`;
-				html_payload += `</div>`;
-				html_payload += `<div class="cube-face right">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}">`;
 				html_payload += `<div class="gall-info">`;
 				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
-				html_payload += `<p>${swidth}</p>`;
-				
 			}
 		});
 		grid.innerHTML = html_payload;
-		console.log(html_payload)
 	}
 	//Target for tablets
-	else if ((swidth > 768) && (swidth < 1200)) { 
+	else if ((SWidth > 768) && (SWidth < 1200)) { 
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
-				html_payload += `<p>${swidth}</p>`;
 				
 			}
 		});
 		grid.innerHTML = html_payload;
-		console.log(html_payload)
 	}
 	//Target for Desktop
-	else if ((swidth > 1200) && (swidth < 1600)) {  
+	else if ((SWidth > 1200) && (SWidth < 1600)) {  
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -207,21 +282,47 @@ function reveal_norm(block) {
  */
 $(".gall-block").click(function(event) {
 	let ctarget = event.target.classList;
-	//console.log(event.target);
+	console.log(event.target);
 	let gname;
-	if ( ctarget[0].includes('gall-info')) {
-		//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
-		gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
+	if (SWidth < 768) {
+		if ( ctarget[0].includes('gall-img')) {
+			console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
+			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
+		}
+		else {
+
+		}
 	}
-	else if ( ctarget[0].includes('gall-block')) {
-		console.log(event.target.getAttribute('data-gallname'))
-		gname = event.target.getAttribute('data-gallname');
+	else if ((SWidth > 768) && (SWidth < 1200)) { 
+
 	}
-	let gallery = {
-		name : gname
+	else if ((SWidth > 1200) && (SWidth < 1600)) { 
+		if ( ctarget[0].includes('gall-info')) {
+			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
+			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
+		}
+		else if ( ctarget[0].includes('gall-block')) {
+			console.log(event.target.getAttribute('data-gallname'))
+			gname = event.target.getAttribute('data-gallname');
+		}
 	}
-	open_gallery(gallery);
+	else {
+
+	}
+	if (gname != null) {
+		let gallery = {
+			name : gname
+		}
+		open_gallery(gallery);
+	}
+	
 });
+
+
+/**
+ * All of the code below handles the movement of the gallery including the rotation
+ * and loading the gallery and calculating theta and the radius.
+ */
 
 let viewer = document.getElementById('gall-viewer');
 let content = document.getElementById('content');
@@ -247,6 +348,7 @@ function rotateCarousel() {
  * @return {[type]}         [description]
  */
 function open_gallery(gal_set) {
+	console.log('opening gallery ' + gal_set.name);
 	let galleries = set.galleries;
 	let gallery = gal_set.name;
 	//Reveal the gallery viewer
@@ -255,31 +357,63 @@ function open_gallery(gal_set) {
 	viewer.classList.add('grid-content');
 	viewer.classList.remove('hidden-gall');
 	//Reveal the images
-	galleries.forEach(function(gall){
-		if (gall.name == gallery) {
-			gall_size = gall.images.length;
-			gall.images.forEach(function(img,i){
-				let source = `photos/galleries/${gallery}/${img.filename}`;
-				$.get(source)
-					.done(function(){
-						$('#carousel').append(`
-							<div id="img${i+1}" class="carousel-cell" style="color:white">
-								<img class="gall-img" src="${source}">
-							</div>
+	if (SWidth < 768 ) {
+		galleries.forEach(function(gall){
+			if (gall.name == gallery) {
+				gall_size = gall.images.length;
+				gall.images.forEach(function(img,i){
+					let source = `photos/galleries/${gallery}/${img.filename}`;
+					$.get(source)
+						.done(function(){
+							$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="mgallery-img" src="${source}">
+								</div
+								`);
+							position_cell(i);
+						})
+						.fail(function(err){
+							$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
 							`);
-						position_cell(i);
-					})
-					.fail(function(err){
-						$('#carousel').append(`
-							<div id="img${i+1}" data-num="${i}" class="carousel-cell" style="color:white">
-								<div class="no-img"></div>
-							</div>
-						`);
-						position_cell(i);
-					});
-			});
-		}
-	});
+							position_cell(i);
+						});
+				});
+			}
+		});
+	}
+	else if ((SWidth > 768) && (SWidth < 1200)) { 
+
+	}
+	else if ((SWidth > 1200) && (SWidth < 1600)) { 
+		galleries.forEach(function(gall){
+			if (gall.name == gallery) {
+				gall_size = gall.images.length;
+				gall.images.forEach(function(img,i){
+					let source = `photos/galleries/${gallery}/${img.filename}`;
+					$.get(source)
+						.done(function(){
+							$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="gallery-img" src="${source}">
+								</div>
+								`);
+							position_cell(i);
+						})
+						.fail(function(err){
+							$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
+							`);
+							position_cell(i);
+						});
+				});
+			}
+		});
+	}
 }
 
 function position_cell(it) {
@@ -318,6 +452,20 @@ $('#photo-next').click(function(){
 	rotateCarousel();
 });
 
+
+/**
+ * Add event listeners for swiping on mobile
+ */
+let swiper = new Swipe(document.getElementById('carousel'));
+swiper.onLeft(function(){
+	selectedIndex++;
+	rotateCarousel();
+});
+swiper.onRight(function(){
+	selectedIndex--;
+	rotateCarousel();
+});
+swiper.run();
 
 
 /**

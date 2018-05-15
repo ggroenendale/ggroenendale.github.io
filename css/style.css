@@ -290,7 +290,7 @@ nav 		{ grid-area: top; }
 #sidebar {
 	position: absolute;
 	width: 80%;
-	height: 100%;
+	height: calc(100% + 20px);
 	top: 0px;
 	left: -80%;
 	z-index: 10;
@@ -387,13 +387,13 @@ nav>ul>a:visited {
 }
 
 #copyright-div {
-	margin-top: 50px;
+	margin-top: 5px;
 	text-align: center;
 	color: var(--co-copyright);
 }
 
 #copyright-div>h5 {
-	font-size: 
+
 }
 
 /*

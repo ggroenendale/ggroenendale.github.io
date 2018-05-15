@@ -146,6 +146,20 @@ class Swipe {
     }
 }
 
+// class CalcVH {
+// 	constructor(element) {
+
+// 	}
+// }
+function calcVH(element) {
+	element = typeof(element) === 'string' ? document.querySelector(element) : element;
+	let vH = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	element.setAttribute("style", `height:${vH}px;`);
+	console.log(`I am setting ${element} to ${vH}px`)
+}
+window.addEventListener('orientationchange', calcVH('#sidebar'), true);
+window.addEventListener('resize', calcVH('#sidebar'), true);
+
 /**
  * ========================================================================================
  * 						Sidebar Functions
@@ -507,8 +521,4 @@ function change_tooltip(gall) {
 
 function hide_tooltip() {
 
-}
-alert(document.fullscreenElement);
-if(document.fullscreenElement) {
-	alert('Is Full screen');
 }

@@ -273,6 +273,14 @@
 
 	}
 
+	#foot-inner {
+		position: unset;
+		left: unset;
+		bottom: unset;
+		width: unset;
+		transform: unset;
+	}
+
 	#soc-links {
 		width: 100%;
 		margin: auto;

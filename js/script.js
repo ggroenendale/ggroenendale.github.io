@@ -69,7 +69,9 @@ function change_page_name() {
  * ========================================================================================
  */
 
-
+/**
+ * This Class borrowed from stackoverflow answer found at https://stackoverflow.com/a/39545306
+ */
 class Swipe {
     constructor(element) {
         this.xDown = null;
@@ -160,12 +162,14 @@ $('#show-menu').click(function(){
 		.removeClass('slide-in')
 		.css({'left':'0px','transition':'0.5s'})
 		$('#sidebar').css({'left':'-80%','transition':'0.5s'});
+		$('html').css({'position':'unset'});
 	}
 	else {
 		$(this)
 		.addClass('slide-in')
 		.css({'left':'calc(80% - 1px)','transition':'0.5s'});
 		$('#sidebar').css({'left':'0','transition':'0.5s'});
+		$('html').css({'position':'fixed'});
 	}
 });
 

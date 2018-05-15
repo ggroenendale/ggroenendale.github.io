@@ -404,6 +404,7 @@ nav>ul>a:visited {
 
 #content {
 	background-color: var(--color-co-bg);
+	height: 100%;
 }
 
 #content::-webkit-scrollbar {

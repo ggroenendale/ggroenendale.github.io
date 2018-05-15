@@ -161,14 +161,14 @@ $('#show-menu').click(function(){
 		$(this)
 		.removeClass('slide-in')
 		.css({'left':'0px','transition':'0.5s'})
-		$('#sidebar').css({'left':'-80%','transition':'0.5s'});
+		$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
 		$('html').css({'position':'unset','overflow':'unset'});
 	}
 	else {
 		$(this)
 		.addClass('slide-in')
 		.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-		$('#sidebar').css({'left':'0','transition':'0.5s'});
+		$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
 		$('html').css({'position':'fixed','overflow':'hidden'});
 	}
 });

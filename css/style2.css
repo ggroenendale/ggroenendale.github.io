@@ -185,6 +185,10 @@
 	=============================================
 	*/
 
+	#under-show {
+		display: none;
+	}
+
 	#show-menu {
 		display: none;
 	}
@@ -195,10 +199,12 @@
 
 	#sidebar {
 		position: static;
+		overflow: hidden;
 		width: unset;
 		height: unset;
 		left: 0;
 		background-color: var(--color-si-bg);
+		box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);
 	}
 
 	nav {
@@ -288,6 +294,7 @@
 	}
 
 	#copyright-div {
+		margin-top: 10px;
 		text-align: center;
 		color: var(--co-copyright);
 	}
@@ -340,6 +347,7 @@
 
 	#service-wrap {
 		margin-top: 100px;
+		background-color: #514E4B;
 	}
 
 	#service-wrap h2 {

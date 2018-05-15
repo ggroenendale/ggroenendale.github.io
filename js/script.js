@@ -162,14 +162,14 @@ $('#show-menu').click(function(){
 		.removeClass('slide-in')
 		.css({'left':'0px','transition':'0.5s'})
 		$('#sidebar').css({'left':'-80%','transition':'0.5s'});
-		$('html').css({'position':'unset'});
+		$('html').css({'position':'unset','overflow':'unset'});
 	}
 	else {
 		$(this)
 		.addClass('slide-in')
 		.css({'left':'calc(80% - 1px)','transition':'0.5s'});
 		$('#sidebar').css({'left':'0','transition':'0.5s'});
-		$('html').css({'position':'fixed'});
+		$('html').css({'position':'fixed','overflow':'hidden'});
 	}
 });
 
@@ -286,11 +286,11 @@ function reveal_norm(block) {
  */
 $(".gall-block").click(function(event) {
 	let ctarget = event.target.classList;
-	console.log(event.target);
+	//console.log(event.target);
 	let gname;
 	if (SWidth < 768) {
 		if ( ctarget[0].includes('gall-img')) {
-			console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
+			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
 			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
 		}
 		else {
@@ -306,7 +306,7 @@ $(".gall-block").click(function(event) {
 			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
 		}
 		else if ( ctarget[0].includes('gall-block')) {
-			console.log(event.target.getAttribute('data-gallname'))
+			//console.log(event.target.getAttribute('data-gallname'))
 			gname = event.target.getAttribute('data-gallname');
 		}
 	}
@@ -352,7 +352,7 @@ function rotateCarousel() {
  * @return {[type]}         [description]
  */
 function open_gallery(gal_set) {
-	console.log('opening gallery ' + gal_set.name);
+	//console.log('opening gallery ' + gal_set.name);
 	let galleries = set.galleries;
 	let gallery = gal_set.name;
 	//Reveal the gallery viewer
@@ -443,7 +443,19 @@ $('.gall-closer').click(function(){
 	content.classList.remove('hidden-gall');
 	//empty the carousel
 	carousel.innerHTML = '';
-})
+});
+
+$('#show-menu').click(function(){
+	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
+		//Swap styles to normal
+		viewer.classList.remove('grid-content');
+		viewer.classList.add('hidden-gall');
+		content.classList.add('grid-content');
+		content.classList.remove('hidden-gall');
+		//empty the carousel
+		carousel.innerHTML = '';
+	}
+});
 
 $('#photo-prev').click(function(){
 	selectedIndex--;
@@ -460,17 +472,18 @@ $('#photo-next').click(function(){
 /**
  * Add event listeners for swiping on mobile
  */
-let swiper = new Swipe(document.getElementById('carousel'));
-swiper.onLeft(function(){
-	selectedIndex++;
-	rotateCarousel();
-});
-swiper.onRight(function(){
-	selectedIndex--;
-	rotateCarousel();
-});
-swiper.run();
-
+if (( cur_name == 'photography' ) && (viewer.classList[0].includes('grid-content'))) {
+	let swiper = new Swipe(document.getElementById('carousel'));
+	swiper.onLeft(function(){
+		selectedIndex++;
+		rotateCarousel();
+	});
+	swiper.onRight(function(){
+		selectedIndex--;
+		rotateCarousel();
+	});
+	swiper.run();
+}
 
 /**
  * Add Coolio tooltips to each gallery image
@@ -494,4 +507,8 @@ function change_tooltip(gall) {
 
 function hide_tooltip() {
 
+}
+
+if(document.fullscreenElement) {
+	alert('Is Full screen');
 }

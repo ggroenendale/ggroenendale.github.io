@@ -154,6 +154,8 @@ class Swipe {
  * @return {[type]}         [description]
  */
 function calcVH(element) {
+	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+	alert(height);
 	$(`#${element}`).innerHeight( $(this).innerHeight() );
 	console.log('Changing sidebar height');
 }

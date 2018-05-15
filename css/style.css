@@ -546,7 +546,7 @@ nav>ul>a:visited {
 	position: relative;
 	width: 340px;
 	height: 249px;
-	margin: 80px auto;
+	margin: 130px auto;
 	perspective: 1000px;
 	overflow: hidden;
 }
@@ -596,12 +596,16 @@ nav>ul>a:visited {
 }
 
 .gall-closer {
-	font-size: 3em;
+	position: fixed;
+	line-height: 1em;
+	font-size: 4em;
 	font-weight: bold;
 	float: right;
 	color: white;
-	margin-right: 10px;
-	margin-top: 10px;
+	top: 0px;
+	right: 0px;
+	margin-right: 15px;
+	margin-top: 0px;
 }
 
 #slide-container {

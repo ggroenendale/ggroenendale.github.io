@@ -172,31 +172,37 @@ html, body {
 h1 {
 	font-family: var(--font-header);
 	font-size: 2.3em;
+	font-weight: 400;
 }
 
 h2 {
 	font-family: var(--font-header);
 	font-size: 2.1em;
+	font-weight: 400;
 }
 
 h3 {
 	font-family: var(--font-header);
 	font-size: 1.9em;
+	font-weight: 400;
 }
 
 h4 {
 	font-family: var(--font-header);
-	font-size: 1.7em;	
+	font-size: 1.7em;
+	font-weight: 400;	
 }
 
 h5 {
 	font-family: var(--font-header);
 	font-size: 1.5em;
+	font-weight: 400;
 }
 
 h6 {
 	font-family: var(--font-header);
 	font-size: 1.2em;
+	font-weight: 400;
 }
 
 p {
@@ -211,6 +217,7 @@ p {
 */
 
 html, body {
+	width: 100%;
 	height: 100%;
 }
 
@@ -434,8 +441,16 @@ nav>ul>a:visited {
 
 }
 
-#greet {
+#splash::after {
+	content: ' ';
+	box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
+	width: 80%;
+	transform: translateX(-50%) translateY(60px);
+	position: absolute;
+}
 
+#greet {
+	
 }
 
 #greet-blurb {
@@ -443,12 +458,14 @@ nav>ul>a:visited {
 }
 
 #service-wrap {
+	color: white;
 	margin-top: 100px;
 	background-color: #403D39;
 }
 
 #service-wrap h2 {
 	text-align: center;
+	padding-top: 20px;
 }
 
 #services {
@@ -456,6 +473,10 @@ nav>ul>a:visited {
 	grid-template-rows: auto auto auto;
 	padding: 5%;
 
+}
+
+.service-block {
+	padding-bottom: 50px;
 }
 
 .service-block h3 {
@@ -481,7 +502,9 @@ nav>ul>a:visited {
 /* Declaring CSS Grid Areas*/
 
 #gall-container {
-
+	padding-top: 10%;
+	padding-bottom: 10%;
+	background-color: var(--color-si-bg);
 }
 
 .gall-block {
@@ -503,7 +526,7 @@ nav>ul>a:visited {
 	width: 300px;
 	max-height: 215px;
 	margin: auto;
-	box-shadow: 1px 1px 10px 1px #999;
+	box-shadow: 1px 1px 10px 1px #222;
 }
 
 .gall-img {
@@ -617,22 +640,193 @@ nav>ul>a:visited {
 	margin-top: 0px;
 }
 
-#slide-container {
+/*
+=================================
+		Contact Styles
+=================================
+*/
 
+[data-pagename="contact"] #wrapper {
+	height: calc(100% + 300px);
 }
 
-#slide-wrap {
-
+.contact-grid {
+	display: grid;
+	grid-template-rows: 2% 8% 2% 84% 2% 2%;
 }
 
-.img-thumb-wrap {
-
+#cont-greet {
+	text-align: center;
+	width: 100%;
+	padding: 2%;
 }
 
-.img-thumb {
-
+#message-wrap {
+	display: grid;
+	grid-template-rows: 1% 33% 4% 60% 2%;
+	margin-top: 20px;
 }
 
-.slide {
+#cont-info-grid {
+	display: grid;
+	grid-template-columns: 2% 3% 5% 80% 10%;
+	grid-row-gap: unset;
+}
 
+#cont-info {
+	display: grid;
+}
+
+.info-key {
+	display: inline;
+	margin: auto;
+}
+
+#caddress {
+	display: inline;
+	vertical-align: top;
+}
+
+#address { 
+	display: inline-block;
+	vertical-align: top;
+}
+
+#c-soc-wrap {
+	margin: auto;
+}
+
+#c-soc-links {
+	display: grid;
+	grid-template-columns: 60px 60px 60px 60px;
+	grid-gap: 12px;
+	list-style-type: none;
+}
+
+#c-soc-links>a>li {
+	margin: auto;
+}
+
+#c-soc-links>a>li>img {
+	width: 100%;
+	max-height: 100%
+}
+
+#cont-info p {
+	font-size: 1.3em;
+	margin: auto;
+}
+
+form {
+	padding: 5%;
+	display: grid;
+	grid-template-rows: auto auto auto auto auto;
+	grid-gap: 15px;
+}
+
+.mess-comp {
+	border: 1px solid #AAA;
+	font-size: 1.2em;
+	padding: 8px;
+}
+
+form>input {
+	font-family: var(--font-header);
+}
+
+form>button[type="submit"] {
+	margin: auto;
+	background-color: #74716F;
+	border: none;
+	line-height: 1.35em;
+	height: 30px;
+	color: white;
+	font-size: 1.35em;
+	width: 40%;
+}
+
+#mail-icon {
+	display: inline-block;
+	width: 33%;
+	height: 1.35em;
+}
+
+#mail-icon>img {
+	width: 100%;
+	height: 100%;
+}
+
+#message {
+	height: 200px;
+}
+
+/*
+=================================
+		About Styles
+=================================
+*/
+
+.about-grid {
+	display: inline-grid;
+	grid-template-areas: 'prof-pic-info' 'cols';
+}
+
+#prof-pic-info {
+	grid-area: prof-pic-info;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+#prof-pic {
+	width: 200px;
+	height: 200px;
+}
+
+#prof-pic-img {
+	width: 100%;
+	height: 100%;
+}
+
+#prof-infos {
+	
+}
+
+#cols {
+	grid-area: cols;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+#col1 {
+	display: grid;
+	grid-template-areas: 'exp' 'skills' 'achieve';
+}
+
+#col2 {
+	display: grid;
+	grid-template-areas: 'educ' 'certs' 'extra';
+}
+
+#experience {
+	grid-area: exp;
+}
+
+#education {
+	grid-area: educ;	
+}
+
+#skills {
+	grid-area: skills;
+}
+
+#certs {
+	grid-area: certs;
+}
+
+#achievements {
+	grid-area: achieve;
+}
+
+#extra {
+	grid-area: extra;
 }

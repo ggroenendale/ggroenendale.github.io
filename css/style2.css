@@ -198,9 +198,9 @@
 	}
 
 	#sidebar {
-		position: static;
+		position: fixed;
 		overflow: hidden;
-		width: unset;
+		width: calc(100% * 1 / 7);
 		height: unset;
 		left: 0;
 		background-color: var(--color-si-bg);
@@ -330,6 +330,7 @@
 	*/
 
 	#splash-wrap {
+		padding-top: 5%;
 		height: 340px;
 		width: 100%;
 		vertical-align: middle;
@@ -340,7 +341,17 @@
 
 	#splash {
 		margin: auto;
+		height: 100%;
 	}
+
+	#splash::after {
+		content: ' ';
+		box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
+		width: 40%;
+		transform: translateX(-50%) translateY(120px);
+		position: absolute;
+	}
+
 
 	#greet {
 		font-size: 2.5em;
@@ -366,7 +377,8 @@
 	#services {
 		display: grid;
 		grid-template-rows: unset;
-		grid-template-columns: auto auto auto;
+		grid-template-columns: 30% 30% 30%;
+		grid-column-gap: 5%;
 		padding: 5%;
 	}
 
@@ -398,10 +410,12 @@
 	}
 
 	#gall-container {
+		background-color: unset;
 		display: inline-grid;
 		grid-template-columns: auto auto auto;
 		grid-gap: 40px;
 		margin: auto;
+		padding-top: 5%;
 	}
 
 	.gall-block {
@@ -578,26 +592,6 @@
 		margin-top: 10px;
 	}
 
-	#slide-container {
-
-	}
-
-	#slide-wrap {
-
-	}
-
-	.img-thumb-wrap {
-
-	}
-
-	.img-thumb {
-
-	}
-
-	.slide {
-
-	}
-
 	/*
 	=================================
 			Contact Styles
@@ -623,6 +617,7 @@
 
 	#cont-info-grid {
 		display: grid;
+		grid-template-columns: unset;
 		grid-row-gap: 20px;
 	}
 
@@ -669,6 +664,7 @@
 	}
 
 	form {
+		padding: unset;
 		display: grid;
 		grid-template-rows: auto auto auto auto;
 		grid-gap: 15px;

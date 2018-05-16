@@ -158,7 +158,6 @@ function calcVH(element) {
 	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 	//alert(height);
 	$(`#${element}`).innerHeight( height );
-	console.log('Changing sidebar height');
 }
 (function($) {
 	calcVH('sidebar');
@@ -352,6 +351,10 @@ $(".gall-block").click(function(event) {
 let viewer = document.getElementById('gall-viewer');
 let content = document.getElementById('content');
 let carousel = document.getElementById('carousel');
+let gswipe;
+if (viewer) {
+	gswipe = new Swipe(viewer);
+}
 let selectedIndex = 0;
 let radius;
 let theta;
@@ -493,17 +496,18 @@ $('#photo-next').click(function(){
 /**
  * Add event listeners for swiping on mobile
  */
-if (( cur_name == 'photography' ) && (viewer.classList[0].includes('grid-content'))) {
-	let swiper = new Swipe(document.getElementById('carousel'));
-	swiper.onLeft(function(){
+
+if (viewer) {
+	console.log('Still fires');
+	gswipe.onLeft(function(){
 		selectedIndex++;
 		rotateCarousel();
 	});
-	swiper.onRight(function(){
+	gswipe.onRight(function(){
 		selectedIndex--;
 		rotateCarousel();
 	});
-	swiper.run();
+	gswipe.run();
 }
 
 /**

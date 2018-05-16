@@ -233,6 +233,13 @@ body {
 	position: static;
 }
 
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar, 
+#wrapper::-webkit-scrollbar, 
+#content::-webkit-scrollbar {
+	display: none;
+}
+
 /*
 =================================
 	Sidebar Styles

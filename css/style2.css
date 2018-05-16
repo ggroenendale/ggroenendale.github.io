@@ -201,7 +201,7 @@
 		position: fixed;
 		overflow: hidden;
 		width: calc(100% * 1 / 7);
-		height: unset;
+		height: 100%;
 		left: 0;
 		background-color: var(--color-si-bg);
 		box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);

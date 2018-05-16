@@ -448,13 +448,13 @@ nav>ul>a:visited {
 
 }
 
-#splash::after {
+/*#splash::after {
 	content: ' ';
 	box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
 	width: 80%;
 	transform: translateX(-50%) translateY(60px);
 	position: absolute;
-}
+}*/
 
 #greet {
 	

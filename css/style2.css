@@ -344,13 +344,13 @@
 		height: 100%;
 	}
 
-	#splash::after {
+	/*#splash::after {
 		content: ' ';
 		box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
 		width: 40%;
 		transform: translateX(-50%) translateY(120px);
 		position: absolute;
-	}
+	}*/
 
 
 	#greet {
@@ -371,7 +371,7 @@
 
 	#service-wrap h2 {
 		text-align: center;
-		font-size: 1.9em;
+		font-size: 2.2em;
 	}
 
 	#services {
@@ -384,6 +384,8 @@
 
 	.service-block h3 {
 		text-align: center;
+		font-size: 1.9em;
+		padding-bottom: 3%;
 	}
 
 

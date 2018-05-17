@@ -70,52 +70,149 @@
 					<img id="prof-pic-img" src="http://via.placeholder.com/400x400">
 				</div>
 				<div id="prof-infos">
+					<div id="prof-infos-head">
+						<h2>About</h2>
+						<button id="do-resume">
+							<div id="down-wrap">
+								<img src="icons/down.svg">
+							</div>
+							<p>Download Resume</p>
+						</button>
+					</div>
 					<p><span>Name: </span>Geoff Groenendale</p>
 					<p><span>Phone: </span>(509) 439-0773</p>
 					<p><span>Address: </span>PO Box 17451 Portland, OR</p>
+					<br>
 					<p id="goals"><span>Goals: </span>To be the very best.</p>
 				</div> <!-- This closes infos -->
 			</div>
 			<div id="cols">
 				<div id="col1">
-					<div id="experience">
+					<div id="experience" class="resume-block">
 						<h3>Experience</h3>
-						<p>Business Intelligence Manager</p>
-						<p>Beverage Technician</p>
-						<p>Research Brewer</p>
-						<p>Assistant Buyer</p>
-						<p>Engineer Intern</p>
-						<p>Research Assistant</p>
+						<h6>Business Intelligence Manager</h6>
+						<h6>Beverage Technician</h6>
+						<h6>Research Brewer</h6>
+						<h6>Assistant Buyer</h6>
+						<h6>Engineer Intern</h6>
+						<h6>Research Assistant</h6>
 					</div><!-- This closes experience -->
-					<div id="skills">
+					<div id="skills" class="resume-block">
 						<h3>Skills</h3>
-						<p>Project Management</p>
-						<p>Data Management</p>
-						<p>Data Analysis</p>
-						<p>Web Development</p>
-						<p>Photography</p>
-						<p>--- ---</p>
-						<p>Photoshop</p>
-						<p>Illustrator</p>
-						<p>InDesign</p>
-						<p>--- ---</p>
-						<p>SQL</p> <!-- Maybe have a tooltip for what I know in these bubbles-->
-						<p>Neo4j</p>
-						<p>C#</p>
-						<p>Python</p>
-						<p>R</p>
-						<p>HTML</p>
-						<p>CSS</p>
-						<p>JavaScript</p>
-						<p>PHP</p>
+						<div id="pm-skill" class="skill">
+							<h6>Project Management</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="dm-skill" class="skill">
+							<h6>Data Management</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="da-skill" class="skill">
+							<h6>Data Analysis</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="wb-skill" class="skill">
+							<h6>Web Development</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="photo-skill" class="skill">
+							<h6>Photography</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<h3>Softwares</h3>
+						<div id="ps-skill" class="skill">
+							<h6>Photoshop</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ill-skill" class="skill">
+							<h6>Illustrator</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ind-skill" class="skill">
+							<h6>InDesign</h6>
+							<div id="" class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<h3>Programming Languages</h3>
+						<div id="prog-grid">
+							<div id="sql-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>SQL</h6> <!-- Maybe have a tooltip for what I know in these bubbles-->
+							</div>
+							<div id="neo-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>Neo4j</h6>
+							</div>
+							<div id="csharp-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>C#</h6>
+							</div>
+							<div id="python-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>Python</h6>
+							</div>
+							<div id="r-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>R</h6>
+							</div>
+							<div id="html-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>HTML</h6>
+							</div>
+							<div id="css-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>CSS</h6>
+							</div>
+							<div id="js-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>JavaScript</h6>
+							</div>
+							<div id="php-bubble" class="prog-bubble">
+								<div id="" class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>PHP</h6>
+							</div>
+						</div>
 					</div> <!-- This closes skills -->
-					<div id="achievements">
+					<div id="achievements" class="resume-block">
 						<h3>Achievements</h3>
 						<p>Eagle Scout</p>
 					</div> <!-- This closes achievements -->
 				</div>
 				<div id="col2">
-					<div id="education">
+					<div id="education" class="resume-block">
 						<h3>Education</h3>
 						<p>Washington State University</p>
 						<p>Bachelors:</p>
@@ -124,7 +221,7 @@
 						<p>Columbia Basin Community College</p>
 						<p>Associates</p>
 					</div> <!-- This closes education -->
-					<div id="certs">
+					<div id="certs" class="resume-block">
 						<h3>Certifications</h3>
 						<!-- CAPM will go here--> 
 						<p>CAPM Certification</p>
@@ -132,7 +229,7 @@
 						<p>SQL Certification</p>
 						<p>Web Design Certification</p>
 					</div> <!-- This closes certs -->
-					<div id="extra">
+					<div id="extra" class="resume-block">
 						<h3>Extra Curricular</h3>
 					</div> <!-- This closes extras -->
 				</div>

@@ -440,6 +440,7 @@
 		position: absolute;
 		width: 350px;
 		height: 350px;
+		border: 1px solid var(--co-cube-bg);
 	}
 
 	.cube-face.front 	{ transform: rotateY(   0deg) translateZ(175px); } 
@@ -447,7 +448,10 @@
 	.cube-face.left 	{ transform: rotateY( -90deg) translateZ(175px); }
 	.cube-face.back 	{ transform: rotateY( 180deg) translateZ(175px); }
 	.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
-	.cube-face.bottom 	{ 
+	.cubeface.bottom 	{ 
+		position: absolute;
+		width: 350px;
+		height: 350px;
 		transform: rotateX( -90deg) translateZ(315px); 
 		background-color: rgba(0,0,0,0.2);
 		box-shadow: 0px 0px 100px 50px rgba(0,0,0,0.2);
@@ -524,6 +528,9 @@
 	}
 
 	#gall-viewer {
+		position: unset;
+		width: unset;
+		height: unset;
 		background-color: #000000;
 	}
 
@@ -534,6 +541,7 @@
 		height: 520px;
 		margin: 80px auto;
 		perspective: 1000px;
+		overflow: unset;
 	}
 
 	#carousel {
@@ -590,6 +598,8 @@
 		font-weight: bold;
 		float: right;
 		color: white;
+		top: 0px;
+		right: 0px;
 		margin-right: 10px;
 		margin-top: 10px;
 	}
@@ -602,7 +612,7 @@
 
 	.contact-grid {
 		display: grid;
-		grid-template-rows: 5% 10% 5% 60% 10% 10%;
+		grid-template-rows: 5% 10% 5% 40% 10% 10%;
 	}
 
 	#cont-greet {
@@ -614,13 +624,14 @@
 	#message-wrap {
 		display: grid;
 		grid-template-columns: 14.5% 25% 11% 35% 14.5%;
+		grid-template-rows: unset;
 		margin-top: 20px;
 	}
 
 	#cont-info-grid {
 		display: grid;
 		grid-template-columns: unset;
-		grid-row-gap: 20px;
+		grid-row-gap: 10px;
 	}
 
 	#cont-info {
@@ -678,8 +689,32 @@
 		padding: 8px;
 	}
 
-	form>input {
-		font-family: var(--font-header);
+	form>button[type="submit"] {
+		margin: auto;
+		background-color: #74716F;
+		border: none;
+		line-height: unset;
+		height: 30px;
+		width: 50%;
+		font-size: unset;
+	}
+
+	form>button[type="submit"]>h3 {
+		line-height: 1.35em;
+		height: inherit;
+		color: white;
+		font-size: 1.35em;
+		width: 35%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	form>button[type="submit"]>#mail-icon {
+		display: inline-block;
+		width: 33%;
+		padding: 1%;
+		height: inherit;
+		margin: auto;
 	}
 
 	#message {
@@ -700,15 +735,16 @@
 	#prof-pic-info {
 		grid-area: prof-pic-info;
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-areas: 'pic infos';
 	}
 
 	#prof-pic {
-
+		width: 50%;
+		padding: 1%
 	}
 
 	#prof-infos {
-		
+		background-color: var(--color-co-bg);
 	}
 
 	#cols {
@@ -725,6 +761,11 @@
 	#col2 {
 		display: grid;
 		grid-template-areas: 'educ' 'certs' 'extra';
+		height: 100%;
+	}
+
+	.resume-block {
+		padding-top: 20px;
 	}
 
 	#experience {
@@ -732,11 +773,193 @@
 	}
 
 	#education {
-		grid-area: educ;	
+		grid-area: educ;
+		margin: unset;	
 	}
+
+	#certs {
+		margin: unset;
+	}
+
+	#extra {
+		margin: unset;
+	}
+
+	/**
+	 * Below are all of the skill styles including skill
+	 * bars and skill bubbles
+	 */
 
 	#skills {
 		grid-area: skills;
+	}
+
+	#skills h3 {
+		margin-top: 20px;
+	}
+
+	.skill {
+		padding-top: 10px;
+	}
+
+	.skillbar {
+		border: 2px solid black;
+		height: 20px;
+		width: 65%;
+		overflow: hidden;
+	}
+
+	.skillfill {
+		background-color: black;
+		height: inherit;
+		width: 60%;
+	}
+
+	/* Define specific skill fills here */
+
+	#pm-skill .skillbar .skillfill 		{ width: 75%; }
+	#dm-skill .skillbar .skillfill 		{ width: 85%; }
+	#da-skill .skillbar .skillfill 		{ width: 70%; }
+	#wb-skill .skillbar .skillfill 		{ width: 65%; }
+	#photo-skill .skillbar .skillfill 	{ width: 60%; }
+	#ps-skill .skillbar .skillfill 		{ width: 65%; }
+	#ill-skill .skillbar .skillfill 	{ width: 70%; }
+	#ind-skill .skillbar .skillfill 	{ width: 70%; }
+
+	/**
+	 * Below are a set of styles that display the program bubbles in a grid
+	 * The styles for these bubbles were adapted from a tutorial that 
+	 * can be found on a youtube video linked here:
+	 * Pure Css Water Wave Loading - Css Wave Effects - No Image or SVG for Wave effects
+	 * https://www.youtube.com/watch?v=dQw9v7bWbPE
+	 */
+
+	#prog-grid {
+		display: inline-grid;
+		width: 95%;
+		margin-top: 15px;
+		grid-template-columns: 15% 15% 15% 15% 15%;
+		grid-column-gap: 6%;
+		grid-row-gap: 20px; 
+	}
+
+	.circle {
+		margin: auto;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border: 2px solid black;
+		border-radius: 50%;
+		background-color: #000;
+		overflow: hidden;
+	}
+
+	.wave {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	.wave:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		height: 200%;
+		width: 200%;
+		background-color: #74716F;
+		transform: translate(-50%, -75%);
+	}
+
+	.circle:hover .wave:before {
+		border-radius: 35%;
+	}
+
+	/* Set specific bubble capacities here*/
+	#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -85%); }
+	#sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 3s linear infinite; }
+
+	#neo-bubble .circle .wave:before 		{ transform: translate(-50%, -88%); }
+	#neo-bubble .circle:hover .wave:before 	{ animation: neo-wave 3s linear infinite; }
+
+	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
+	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 3s linear infinite; }
+
+	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -70%); }
+	#python-bubble .circle:hover .wave:before{ animation: python-wave 3s linear infinite; }
+
+	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
+	#r-bubble .circle:hover .wave:before 	{ animation: r-wave 3s linear infinite; }
+
+	#html-bubble .circle .wave:before 		{ transform: translate(-50%, -94%); }
+	#html-bubble .circle:hover .wave:before { animation: html-wave 3s linear infinite; }
+
+	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
+	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 3s linear infinite; }
+
+	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -84%); }
+	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 3s linear infinite; }
+
+	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 3s linear infinite; }
+
+	/**
+	 * Animations for above circles and waves. Note: The translates below match those above
+	 * Without the translate being in both places the circle goes to a default position
+	 * on the page
+	 */
+	@keyframes sql-wave {
+		0% { transform: translate(-50%, -85%) rotate(0deg); }
+		100% { transform: translate(-50%, -85%) rotate(360deg);	}
+	}
+
+	@keyframes neo-wave {
+		0% { transform: translate(-50%, -88%) rotate(0deg); }
+		100% { transform: translate(-50%, -88%) rotate(360deg);	}
+	}
+	@keyframes csharp-wave {
+		0% { transform: translate(-50%, -85%) rotate(0deg);	}
+		100% { transform: translate(-50%, -85%) rotate(360deg);	}
+	}
+	@keyframes python-wave {
+		0% { transform: translate(-50%, -70%) rotate(0deg);	}
+		100% { transform: translate(-50%, -70%) rotate(360deg); }
+	}
+	@keyframes r-wave {
+		0% { transform: translate(-50%, -64%) rotate(0deg); }
+		100% { transform: translate(-50%, -64%) rotate(360deg);	}
+	}
+	@keyframes html-wave {
+		0% { transform: translate(-50%, -94%) rotate(0deg);	}
+		100% { transform: translate(-50%, -94%) rotate(360deg);	}
+	}
+	@keyframes css-wave {
+		0% { transform: translate(-50%, -90%) rotate(0deg); }
+		100% { transform: translate(-50%, -90%) rotate(360deg); }
+	}
+	@keyframes js-wave {
+		0% { transform: translate(-50%, -84%) rotate(0deg);	}
+		100% { transform: translate(-50%, -84%) rotate(360deg); }
+	}
+	@keyframes php-wave {
+		0% { transform: translate(-50%, -75%) rotate(0deg); }
+		100% { transform: translate(-50%, -75%) rotate(360deg); }
+	}
+
+	/*
+		Animation Template
+	
+	 @keyframes css-wave {
+		0% {
+			transform: translate(-50%, -75%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-50%, -75%) rotate(360deg);
+		}
+	}*/
+
+	.prog-bubble h6{
+		text-align: center;
 	}
 
 	#certs {

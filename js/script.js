@@ -167,6 +167,90 @@ function calcVH(element) {
 })(jQuery);
 
 /**
+ * [description]
+ * @param  {[type]} ) {	if         ((viewer) && (viewer.classList[0].includes('grid-content'))) {		console.log('Change swipe setting when gallery open');	}	else {		sidebar_slide();	}} [description]
+ * @return {[type]}   [description]
+ */
+$(document).ready(function() {
+	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
+		console.log('Change swipe setting when gallery open');
+	}
+	else {
+		sidebar_slide();
+	}
+})
+
+function sidebar_switcher(prov) {
+
+}
+
+
+/**
+ * [sidebar_slide description]
+ * @return {[type]} [description]
+ */
+function sidebar_slide(prov) {
+	if (!viewer) {
+		let sideswipe = new Swipe('#wrapper');
+		//console.log('Sidebar slide');
+		sideswipe.onLeft(function(){
+			//console.log('actually its thisone is on');
+			$('#show-menu')
+				.removeClass('slide-in')
+				.css({'left':'0px','transition':'0.5s'})
+				$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+				$('html').css({'position':'unset','overflow':'unset'});
+		});
+		sideswipe.onRight(function(){
+			$('#show-menu')
+				.addClass('slide-in')
+				.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+				$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+				$('html').css({'position':'fixed','overflow':'hidden'});
+		});
+		sideswipe.run();
+	}
+	else {
+		if (viewer.classList[0].includes('hidden-gall')) {
+			let sideswipe = new Swipe('#wrapper');
+			//console.log('Sidebar ready');
+			sideswipe.onLeft(function(){
+				console.log('thisone is on');
+				$('#show-menu')
+					.removeClass('slide-in')
+					.css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
+			});
+			sideswipe.onRight(function(){
+				$('#show-menu')
+					.addClass('slide-in')
+					.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+					$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+					$('html').css({'position':'fixed','overflow':'hidden'});
+			});
+			sideswipe.run();
+		}
+		else if (viewer.classList[0].includes('grid-content')){
+			let sideswipe = new Swipe('#wrapper');
+			//console.log('reset here');
+			sideswipe.onRight(function(){
+				//console.log('Setting new function');
+				$('#show-menu')
+					.removeClass('slide-in')
+					.css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
+			});
+			sideswipe.onLeft(function(){ 
+				console.log('turn off');
+			});
+			sideswipe.run();
+		}
+	}
+}
+
+/**
  * ========================================================================================
  * 						Sidebar Functions
  * ========================================================================================
@@ -267,7 +351,7 @@ function load_galleries() {
 				html_payload += `<div class="cube-face back"></div>`;
 				html_payload += `<div class="cube-face left"></div>`;
 				html_payload += `<div class="cube-face top"></div>`;
-				html_payload += `<div class="cube-face bottom"></div>`;
+				html_payload += `<div class="cubeface bottom"></div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				grid.innerHTML = html_payload;
@@ -411,6 +495,9 @@ function open_gallery(gal_set) {
 				});
 			}
 		});
+		if (viewer.classList[0].includes('grid-content')) {
+			sidebar_slide();
+		}
 	}
 	else if ((SWidth > 768) && (SWidth < 1200)) { 
 
@@ -467,6 +554,7 @@ $('.gall-closer').click(function(){
 	content.classList.remove('hidden-gall');
 	//empty the carousel
 	carousel.innerHTML = '';
+	sidebar_slide();
 });
 
 $('#show-menu').click(function(){
@@ -478,6 +566,7 @@ $('#show-menu').click(function(){
 		content.classList.remove('hidden-gall');
 		//empty the carousel
 		carousel.innerHTML = '';
+		sidebar_slide();
 	}
 });
 
@@ -498,7 +587,6 @@ $('#photo-next').click(function(){
  */
 
 if (viewer) {
-	console.log('Still fires');
 	gswipe.onLeft(function(){
 		selectedIndex++;
 		rotateCarousel();

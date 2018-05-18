@@ -6,6 +6,29 @@
  * functions for the portfolio website. These functions
  * are unique to the portfolio site but this file references
  * the workhorse.js file that has several clerical functions.
+ * 
+ *  - Big section letters are generated on this website using the "nancyj" style
+ *    Sub headings are made using the "thick" style
+ *    http://www.messletters.com/en/big-text/
+ *    
+ */
+
+/**
+ * ========================================================================================
+ * 						Mobile UI Functions
+ * ========================================================================================
+ * These functions handle some of the special movements on mobile.
+ * Below is a class for swipe that allows special callbacks based on
+ * A swipe motion.
+ * ========================================================================================
+
+									 .88888.  dP          dP                dP          
+									d8'   `88 88          88                88          
+									88        88 .d8888b. 88d888b. .d8888b. 88 .d8888b. 
+									88   YP88 88 88'  `88 88'  `88 88'  `88 88 Y8ooooo. 
+									Y8.   .88 88 88.  .88 88.  .88 88.  .88 88       88 
+									 `88888'  dP `88888P' 88Y8888' `88888P8 dP `88888P' 
+ * ========================================================================================
  */
 
 /**
@@ -67,10 +90,20 @@ function change_page_name() {
  * Below is a class for swipe that allows special callbacks based on
  * A swipe motion.
  * ========================================================================================
+ * 
+ *							8888ba.88ba           dP       oo dP             dP     dP dP 
+ *							88  `8b  `8b          88          88             88     88 88 
+ *							88   88   88 .d8888b. 88d888b. dP 88 .d8888b.    88     88 88 
+ *							88   88   88 88'  `88 88'  `88 88 88 88ooood8    88     88 88 
+ *							88   88   88 88.  .88 88.  .88 88 88 88.  ...    Y8.   .8P 88 
+ *							dP   dP   dP `88888P' 88Y8888' dP dP `88888P'    `Y88888P' dP
+ * ========================================================================================
  */
 
 /**
+ * ========================================================================================
  * This Class borrowed from stackoverflow answer found at https://stackoverflow.com/a/39545306
+ * ========================================================================================
  */
 class Swipe {
     constructor(element) {
@@ -82,30 +115,25 @@ class Swipe {
             this.xDown = evt.touches[0].clientX;
             this.yDown = evt.touches[0].clientY;
         }.bind(this), false);
-
     }
 
     onLeft(callback) {
         this.onLeft = callback;
-
         return this;
     }
 
     onRight(callback) {
         this.onRight = callback;
-
         return this;
     }
 
     onUp(callback) {
         this.onUp = callback;
-
         return this;
     }
 
     onDown(callback) {
         this.onDown = callback;
-
         return this;
     }
 
@@ -147,12 +175,14 @@ class Swipe {
 }
 
 /**
+ * ========================================================================================
  * This function enables the sidebar to resize depending on orientation or device
  * and is the way I got around the chrome mobile address bar. The link for this
  * solution comes from a forum post on stackoverflow https://stackoverflow.com/a/40156488.
  * I had to modify the jquery function slightly to allow for the address bar in chrome.
  * @param  {[type]} element [description]
  * @return {[type]}         [description]
+ * ========================================================================================
  */
 function calcVH(element) {
 	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -167,9 +197,11 @@ function calcVH(element) {
 })(jQuery);
 
 /**
+ * ========================================================================================
  * [description]
  * @param  {[type]} ) {	if         ((viewer) && (viewer.classList[0].includes('grid-content'))) {		console.log('Change swipe setting when gallery open');	}	else {		sidebar_slide();	}} [description]
  * @return {[type]}   [description]
+ * ========================================================================================
  */
 $(document).ready(function() {
 	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
@@ -180,14 +212,11 @@ $(document).ready(function() {
 	}
 })
 
-function sidebar_switcher(prov) {
-
-}
-
-
 /**
+ * ========================================================================================
  * [sidebar_slide description]
  * @return {[type]} [description]
+ * ========================================================================================
  */
 function sidebar_slide(prov) {
 	if (!viewer) {
@@ -250,6 +279,12 @@ function sidebar_slide(prov) {
 	}
 }
 
+$('.service-block').on('click', function() {
+	if (SWidth < 768) {
+		$(this).find('.serv-blurb').toggle();
+	}
+});
+
 /**
  * ========================================================================================
  * 						Sidebar Functions
@@ -258,8 +293,23 @@ function sidebar_slide(prov) {
  * within the sidebar including the show function when
  * on mobile.
  * ========================================================================================
+
+								.d88888b  oo       dP          dP                         
+								88.    "'          88          88                         
+								`Y88888b. dP .d888b88 .d8888b. 88d888b. .d8888b. 88d888b. 
+								      `8b 88 88'  `88 88ooood8 88'  `88 88'  `88 88'  `88 
+								d8'   .8P 88 88.  .88 88.  ... 88.  .88 88.  .88 88       
+								 Y88888P  dP `88888P8 `88888P' 88Y8888' `88888P8 dP       
+ * ========================================================================================
  */
 
+/**
+ * ========================================================================================
+ * [description]
+ * @param  {[type]} ){	if (this.classList[0] [description]
+ * @return {[type]}        [description]
+ * ========================================================================================
+ */
 $('#show-menu').click(function(){
 	if (this.classList[0] == 'slide-in') {
 		$(this)
@@ -285,7 +335,23 @@ $('#show-menu').click(function(){
  * These functions aim to assist with some of the responsive
  * functions.
  * ========================================================================================
+
+	 888888ba                                                        oo                   
+	 88    `8b                                                                            
+	a88aaaa8P' .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. .d8888b. dP dP   .dP .d8888b. 
+	 88   `8b. 88ooood8 Y8ooooo. 88'  `88 88'  `88 88'  `88 Y8ooooo. 88 88   d8' 88ooood8 
+	 88     88 88.  ...       88 88.  .88 88.  .88 88    88       88 88 88 .88'  88.  ... 
+	 dP     dP `88888P' `88888P' 88Y888P' `88888P' dP    dP `88888P' dP 8888P'   `88888P' 
+ * ============================= 88 =======================================================
+	                             dP                                                       
  */
+
+window.onresize = function() {
+	if (cur_name == 'photography') {
+		adjust_cubes();
+	}
+}
+
 
 /**
  * ========================================================================================
@@ -294,12 +360,27 @@ $('#show-menu').click(function(){
  * These functions purely handle the image and 
  * photo manipulation on the photography pages.
  * ========================================================================================
+
+ 888888ba  dP                  dP                                                dP                
+ 88    `8b 88                  88                                                88                
+a88aaaa8P' 88d888b. .d8888b. d8888P .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. 88d888b. dP    dP 
+ 88        88'  `88 88'  `88   88   88'  `88 88'  `88 88'  `88 88'  `88 88'  `88 88'  `88 88    88 
+ 88        88    88 88.  .88   88   88.  .88 88.  .88 88       88.  .88 88.  .88 88    88 88.  .88 
+ dP        dP    dP `88888P'   dP   `88888P' `8888P88 dP       `88888P8 88Y888P' dP    dP `8888P88 
+* =============================================== .88 ================= 88 =================== .88 
+                                              d8888P                    dP                 d8888P  
  */
 
 if ( cur_name == 'photography' ) {
 	load_galleries();
 }
 
+/**
+ * ========================================================================================
+ * [load_galleries description]
+ * @return {[type]} [description]
+ * ========================================================================================
+ */
 function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
@@ -354,13 +435,133 @@ function load_galleries() {
 				html_payload += `<div class="cubeface bottom"></div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
-				grid.innerHTML = html_payload;
 			}
 		});
+		grid.innerHTML = html_payload;
+		adjust_cubes();
 	}
 	else {
 		html_payload += `<p>There was an error loading galleries!</p>`;
 	}
+}
+
+/**
+ * ========================================================================================
+ * This code was required in order to run specific math calculations
+ * that could not be handled through css. For instance calculating a
+ * perspective value that is based on the width of the area
+ * and the ratio of the available width to the desired perspective
+ * @return {[type]} [description]
+ * ========================================================================================
+ */
+function adjust_cubes() {
+	//Run code to perfectly space the cube elements
+	//1) Get the width of the gallery wrapper and use it to space and size the cubes
+	let grid_area_w = document.getElementById('gall-wrapper').offsetWidth;
+	console.log(`The gallery wrapper is ${grid_area_w}px wide`);
+
+	//2) Put the 'jsresp' style element into a variable 
+	//   if it doesnt exist add it to the document.
+	let sheet 
+	if ( document.getElementById('jsresp')) {
+		sheet = document.getElementById('jsresp');
+		sheet.innerHTML = '';
+	}
+	else {
+		sheet  = document.createElement('style');
+		sheet.id= "jsresp";
+	}
+	let sty_mu = '';
+
+	//3)Change The width and height of every .gall-container grid cell, 
+	//  .gall-block, .cube, .cube-face
+	//    3a) .gall-container { grid-template-columns, grid-column-gap, grid-row-gap}
+	//    sty_mu += `\n`;
+	let col_width 	= Math.round((grid_area_w * 0.9)/3);
+	let col_gap		= Math.round((grid_area_w - (col_width * 3)) / 2);
+	sty_mu += `#gall-container { \n`;
+	sty_mu += `		grid-template-columns: ${col_width}px ${col_width}px ${col_width}px; \n`;
+	sty_mu += `		grid-column-gap: ${col_gap}px;\n`;
+	sty_mu += `		grid-row-gap: ${Math.round(col_width / 3)}px;\n`;
+	sty_mu += `}\n\n`;
+
+	//    3b) .gall-block {width(350px), height(350px), perspective(1050px)}
+	sty_mu += `.gall-block { \n`;
+	sty_mu += `		width: ${col_width}px;\n`;
+	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `		perspective: ${col_width * 3}px;\n`;
+	sty_mu += `}\n\n`;
+
+	//    3c) .cube {transform translateZ(-175px)}
+	sty_mu += `.cube { \n`;
+	sty_mu += `		transform: translateZ(${Math.round(col_width * 0.5) * -1}px);\n`;
+	sty_mu += `}\n\n`;
+
+	//    3d) .cube-face {width(350px) height(350px)}
+	sty_mu += `.cube-face { \n`;
+	sty_mu += `		width: ${col_width}px;\n`;
+	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `}\n\n`;
+
+	//    3e) .cube-face each side 
+	//    	.cube-face.front 	{ transform: rotateY(   0deg) translateZ(175px); } 
+	// 		.cube-face.right 	{ transform: rotateY(  90deg) translateZ(175px); }
+	// 		.cube-face.left 	{ transform: rotateY( -90deg) translateZ(175px); }
+	// 		.cube-face.back 	{ transform: rotateY( 180deg) translateZ(175px); }
+	// 		.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
+	sty_mu += `.cube-face.front	{ transform: rotateY(  0deg) translateZ(${Math.round(col_width * 0.5)}px);}\n`;
+	sty_mu += `.cube-face.right	{ transform: rotateY( 90deg) translateZ(${Math.round(col_width * 0.5)}px);}\n`;
+	sty_mu += `.cube-face.left 	{ transform: rotateY(-90deg) translateZ(${Math.round(col_width * 0.5)}px);}\n`;
+	sty_mu += `.cube-face.back 	{ transform: rotateY(180deg) translateZ(${Math.round(col_width * 0.5)}px);}\n`;
+	sty_mu += `.cube-face.top		{ transform: rotateX( 90deg) translateZ(${Math.round(col_width * 0.5)}px);}\n\n`;
+	
+	//    3f) .cube-face each side show
+	//    	.cube.show-front 	{ transform: translateZ(-175px) rotateY(    0deg); }
+	// 		.cube.show-right 	{ transform: translateZ(-175px) rotateY(  -90deg); }
+	// 		.cube.show-back 	{ transform: translateZ(-175px) rotateY( -180deg); }
+	// 		.cube.show-left 	{ transform: translateZ(-175px) rotateY(   90deg); }
+	// 		.cube.show-top 		{ transform: translateZ(-175px) rotateY(  -90deg); }
+	// 		.cube.show-bottom 	{ transform: translateZ(-175px) rotateY(   90deg); }
+	sty_mu += `.cube.show-front	{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateY(0deg);}\n`;
+	sty_mu += `.cube.show-right	{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateY(-90deg);}\n`;
+	sty_mu += `.cube.show-back 	{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateY(-180deg);}\n`;
+	sty_mu += `.cube.show-left 	{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateY(90deg);}\n`;
+	sty_mu += `.cube.show-top		{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateX(-90deg);}\n`;
+	sty_mu += `.cube.show-bottom	{ transform: translateZ(${Math.round(col_width * 0.5) * -1}px) rotateX(90deg);}\n\n`;
+	
+	//    3g) .cubeface.bottom {width(200px) height(200px) translate(315px)
+	//        left(75px) box-shadow(0px 0px 100px 50px rgba(0,0,0,0.2))}
+	let b_width = Math.round(col_width * (200/350));
+	let b_left 	= Math.round((col_width - b_width) / 2);
+	let b_shad	= Math.round((col_width) * (100/350));
+	let b_stre	= Math.round((col_width) * (50/350));
+	sty_mu += `.cubeface.bottom { \n`;
+	sty_mu += `		width: ${b_width}px;\n`;
+	sty_mu += `		height: ${b_width}px;\n`;
+	sty_mu += `		transform: rotateX(-90deg) translateZ(${Math.round(col_width * (315/175/2))}px);\n`;
+	sty_mu += `		left: ${b_left}px;\n`;
+	sty_mu += `		box-shadow: 0px 0px ${b_shad}px ${b_stre}px rgba(0,0,0,0.2);\n`;
+	sty_mu += `}\n\n`;
+	
+	//    3h) .gall-img-wrap {width(350px) height(350px)
+	sty_mu += `.gall-img-wrap { \n`;
+	sty_mu += `		width: ${col_width}px;\n`;
+	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `}\n\n`;
+	
+	//    3i) .gall-info {width(350px) height(350px)
+	sty_mu += `.gall-info { \n`;
+	sty_mu += `		width: ${col_width}px;\n`;
+	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `}\n\n`;
+	
+	//4)Load all of the styles into the new sheet element
+	//sheet.innerHTML = "#content{border: 2px solid yellow;}";
+	console.log(sty_mu);
+	sheet.innerHTML = sty_mu;
+	
+	//5)Load the new element onto the page
+	document.body.appendChild(sheet);
 }
 
 let cube = document.querySelector('.cube')
@@ -384,9 +585,11 @@ function reveal_norm(block) {
 }
 
 /**
+ * ========================================================================================
  * Adds a listener to each gallery image that will load the gallery view
  * @param  {Object} event) {	let        gallery [description]
  * @return {[type]}        [description]
+ * ========================================================================================
  */
 $(".gall-block").click(function(event) {
 	let ctarget = event.target.classList;
@@ -426,11 +629,24 @@ $(".gall-block").click(function(event) {
 	
 });
 
-
 /**
+ * ========================================================================================
+ * 						Photography Page Functions
+ * ========================================================================================
  * All of the code below handles the movement of the gallery including the rotation
  * and loading the gallery and calculating theta and the radius.
+ * ========================================================================================
+
+ 888888ba  dP                  dP                .88888.           dP dP                            
+ 88    `8b 88                  88               d8'   `88          88 88                            
+a88aaaa8P' 88d888b. .d8888b. d8888P .d8888b.    88        .d8888b. 88 88 .d8888b. 88d888b. dP    dP 
+ 88        88'  `88 88'  `88   88   88'  `88    88   YP88 88'  `88 88 88 88ooood8 88'  `88 88    88 
+ 88        88    88 88.  .88   88   88.  .88    Y8.   .88 88.  .88 88 88 88.  ... 88       88.  .88 
+ dP        dP    dP `88888P'   dP   `88888P'     `88888'  `88888P8 dP dP `88888P' dP       `8888P88 
+ * ============================================================================================ .88 
+                                                                                            d8888P  
  */
+
 
 let viewer = document.getElementById('gall-viewer');
 let content = document.getElementById('content');
@@ -444,6 +660,10 @@ let radius;
 let theta;
 let gall_size;
 
+/**
+ * [rotateCarousel description]
+ * @return {[type]} [description]
+ */
 function rotateCarousel() {
 	let angle = theta * selectedIndex * -1;
 	$('#carousel').css({"transform": `translateZ(-${radius}px) rotateY(${angle}deg`})
@@ -621,3 +841,40 @@ function change_tooltip(gall) {
 function hide_tooltip() {
 
 }
+
+/**
+ * ========================================================================================
+ * 						About Page Functions
+ * ========================================================================================
+ * All of the code below handles some of the functions on the about page including 
+ * the custom tooltips with more details
+ * ========================================================================================
+
+											 .d888888  dP                           dP   
+											d8'    88  88                           88   
+											88aaaaa88a 88d888b. .d8888b. dP    dP d8888P 
+											88     88  88'  `88 88'  `88 88    88   88   
+											88     88  88.  .88 88.  .88 88.  .88   88   
+											88     88  88Y8888' `88888P' `88888P'   dP
+ * ========================================================================================
+ */
+
+$('.prog-bubble').mouseenter( function() {
+	let progtip = $(this).find('.abouttool')[0];
+	let tip_h = $(this).find('.abouttool').outerHeight();
+	let limit = window.innerHeight;
+	window.onmousemove = function(event) {
+		//console.log(event.pageX + ', ' + event.pageY + 'client' + event.clientX + ', ' + event.clientY + 'screen height' + window.innerHeight);
+		let x = event.clientX;
+		let y = event.clientY;
+		if (progtip) {
+			( y + tip_h + 15 < limit)
+			? (progtip.style.top = ((y + 20) + 'px'),
+			  progtip.style.borderRadius = '0 10px 10px 10px')
+			: ( progtip.style.top = ((y - 10 - tip_h) + 'px'),
+			  progtip.style.borderRadius = '10px 10px 10px 0');
+			progtip.style.left = 
+				(x + 20) + 'px';
+		}
+	}
+})

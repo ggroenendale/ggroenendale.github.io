@@ -10,6 +10,7 @@ set = {
 			"images" : [
 				{
 					"name": "Bread",
+					"alttext": "Alt text goes here."
 			        "blurb": "This is a picture of a loaf of bread I took",
 			        "filename": "img1",
 			        "date": "2018-01-12T00:00:00.000Z",

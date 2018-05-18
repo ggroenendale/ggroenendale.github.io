@@ -13,6 +13,8 @@
  *    http://meyerweb.com/eric/tools/css/reset/
  *  - Mobile CSS Reset
  *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
+ *  - Big section letters are generated on this website using the "univers" style
+ *    http://www.messletters.com/en/big-text/
  *    
  * Standard Format Rules
  * 	#element-name {
@@ -41,7 +43,18 @@
 =============================================
 			Root Styles
 =============================================
- */
+===================================================================================================
+
+												88888888ba                                      
+												88      "8b                              ,d     
+												88      ,8P                              88     
+												88aaaaaa8P'   ,adPPYba,    ,adPPYba,   MM88MMM  
+												88""""88'    a8"     "8a  a8"     "8a    88     
+												88    `8b    8b       d8  8b       d8    88     
+												88     `8b   "8a,   ,a8"  "8a,   ,a8"    88,    
+												88      `8b   `"YbbdP"'    `"YbbdP"'     "Y888  
+===================================================================================================
+*/
 :root {
 	--port-head-co:  #A5C2AC; 	/* --- Color for the portfolio header/logo */
 	--color-si-bg: 	 #403D39; 	/* --- Color for the sidebar background */
@@ -54,10 +67,30 @@
 	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
 	--co-cube-bg:    #403D39;   /* --- Color for the cube faces */
 
+	--co-gray: 		 #74716F;
+	--co-gray2:		 #6A6765;	/* --- Color for the grays */
+	--co-gray3:		 #8D8A89;
+
+	--co-yhigh:		 #FFB997;
+	--co-yhigh2:	 #FFC5A9;
+	--co-yhigh3: 	 #E6D1A5;	/* --- Color for the highlights */
+	--co-yhigh4:	 #E8D5AD;
+	--co-yhigh5:	 #F2C47E;
+
+	--co-highlight2: #67D1FA;
+	--co-highlight3: #8DDCFB;	/* --- Color for the other options */
+	--co-highlight4: #B3E8FC;
+
 	--color-green: 	 #5E926A; 	/* --- Color for the green */
+	--color-green2:  #A5C2AC;
+	--color-green3:  #ADC7B3;
+	--color-green4:  #B5CDBB;
+	--color-green5:  #B7CEBD;
 
 	--font-header: 	 'Dosis', sans-serif;
+	--font-header2:	 'Fira Sans', sans-serif;
 	--font-para: 	 'Arapey', serif;
+	--font-para2:	 'Lora', serif;
 	--port-head-fo:	 'Dosis', sans-serif;
 }
 
@@ -76,6 +109,18 @@
 	=============================================
 				Grid Styles
 	=============================================
+	===================================================================================================
+                                            
+														  ,ad8888ba,               88           88  
+														 d8"'    `"8b              ""           88  
+														d8'                                     88  
+														88             8b,dPPYba,  88   ,adPPYb,88  
+														88      88888  88P'   "Y8  88  a8"    `Y88  
+														Y8,        88  88          88  8b       88  
+														 Y8a.    .a88  88          88  "8a,   ,d88  
+														  `"Y88888P"   88          88   `"8bbdP"Y8  
+	===================================================================================================
+	*/
 	*/
 
 	/*===== Primary grid Area - Sidebar and Content/Main ===== */
@@ -124,6 +169,18 @@
 	=============================================
 				Laptop and Desktop Font Sizes
 	=============================================
+	===================================================================================================
+                                                           
+											88888888888                                                
+											88                                       ,d                
+											88                                       88                
+											88aaaaa       ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYba,  
+											88"""""      a8"     "8a  88P'   `"8a    88     I8[    ""  
+											88           8b       d8  88       88    88      `"Y8ba,   
+											88           "8a,   ,a8"  88       88    88,    aa    ]8I  
+											88            `"YbbdP"'   88       88    "Y888  `"YbbdP"' 
+	===================================================================================================
+	*/
 	*/
 
 	h1 {
@@ -137,30 +194,52 @@
 	}
 
 	h3 {
+		font-family: var(--font-header);
 		font-size: 1.1em;
 	}
 
 	h4 {
+		font-family: var(--font-header2);
 		font-size: 1.1em;
 	}
 
 	h5 {
+		font-family: var(--font-header2);
 		font-size: 1.1em;
 	}
 
 	h6 {
+		font-family: var(--font-header2);
 		font-size: 1.1em;
 	}
 
 	p {
-		font-family: var(--font-para);
+		font-family: var(--font-para2);
 		font-size: 1em;
+	}
+
+	li {
+		font-family: var(--font-para2);
+		font-size: 1em;	
 	}
 
 	/*
 	=============================================
 				Body Styles
 	=============================================
+	====================================================================================================
+                                                    
+													88888888ba                         88               
+													88      "8b                        88               
+													88      ,8P                        88               
+													88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+													88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+													88      `8b  8b       d8  8b       88   `8b   d8'   
+													88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+													88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+	========================================================================================== d8' =====
+													                                          d8'     
+	
 	*/
 
 	html, body {
@@ -183,6 +262,17 @@
 	=============================================
 				Sidebar Styles
 	=============================================
+	===================================================================================================
+							                                                                               
+							 ad88888ba   88           88              88                                   
+							d8"     "8b  ""           88              88                                   
+							Y8,                       88              88                                   
+							`Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+							  `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+							        `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+							Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+							 "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+	===================================================================================================
 	*/
 
 	#under-show {
@@ -249,16 +339,16 @@
 	nav>ul>a>li {
 		display: inline-block;
 		font-family: var(--font-header);
-		font-size: 1.25em;
-		margin-top: 4%;
-		margin-bottom: 4%;
+		font-size: 1.4em;
+		margin-top: 6%;
+		margin-bottom: 6%;
 	}
 
 	nav>ul>a {
 		display: block;
 		text-decoration: none;
 		color: var(--color-font-si);
-		margin-left: 18%;
+		margin-left: 10%;
 	}
 
 	nav>ul>a:hover {
@@ -307,14 +397,28 @@
 		color: var(--co-copyright);
 	}
 
+	#copyright-div h5{
+		font-family: var(--font-header);
+	}
+
 	/*
 	================================================
 					Content Styles
 	================================================
+	===================================================================================================
+					                                                                                    
+					  ,ad8888ba,                                                                        
+					 d8"'    `"8b                              ,d                                ,d     
+					d8'                                        88                                88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,   MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     a8P_____88  88P'   `"8a    88     
+					Y8,            8b       d8  88       88    88     8PP"""""""  88       88    88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    "8b,   ,aa  88       88    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888   `"Ybbd8"'  88       88    "Y888  
+	===================================================================================================
 	*/
 
 	#content {
-		overflow: scroll;
 		background-color: var(--color-co-bg);
 		color: var(--color-font-co);
 	}
@@ -327,6 +431,17 @@
 	=================================
 			Home Content Styles
 	=================================
+	===================================================================================================
+                                                           
+											88        88                                               
+											88        88                                               
+											88        88                                               
+											88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+											88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+											88        88  8b       d8  88      88      88  8PP"""""""  
+											88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+											88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+	===================================================================================================
 	*/
 
 	#splash-wrap {
@@ -388,12 +503,34 @@
 		padding-bottom: 3%;
 	}
 
+	.serv-blurb {
+		display: block;
+		margin: auto;
+		width: 75%;
+	}
+
 
 	/*
 	=================================
 		Photography Content Styles
 	=================================
+	===================================================================================================
+                                                             
+											88888888ba   88                                              
+											88      "8b  88                          ,d                  
+											88      ,8P  88                          88                  
+											88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+											88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+											88           88       88  8b       d8    88     8b       d8  
+											88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+											88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+	===================================================================================================
 	*/
+
+	[data-pagename="photography"]:root {
+		--column-width: 28%;
+		--column-gap: calc((100% - (var(--column-width) * 3)) / 2 );
+	}
 
 	#photo-greet {
 		padding-top: 4%;
@@ -409,15 +546,17 @@
 		margin: auto;
 		margin-top: 20px;
 		margin-bottom: 40px;
+		width: 90%;
 	}
 
 	#gall-container {
-		background-color: unset;
-		display: inline-grid;
-		grid-template-columns: auto auto auto;
-		grid-gap: 40px;
-		margin: auto;
 		padding-top: 5%;
+		background-color: unset;
+		margin: auto;
+		display: grid;
+		grid-template-columns: var(--column-width) var(--column-width) var(--column-width);
+		grid-column-gap: var(--column-gap);
+		grid-row-gap: 60px;
 	}
 
 	.gall-block {
@@ -450,15 +589,12 @@
 	.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
 	.cubeface.bottom 	{ 
 		position: absolute;
-		width: 350px;
-		height: 350px;
 		transform: rotateX( -90deg) translateZ(315px); 
 		background-color: rgba(0,0,0,0.2);
 		box-shadow: 0px 0px 100px 50px rgba(0,0,0,0.2);
 		left: 75px;
 		width: 200px;
 		height: 200px;
-
 	}
 
 	.cube.show-front 	{ transform: translateZ(-175px) rotateY(    0deg); }
@@ -521,6 +657,18 @@
 	=================================
 		Photography Gallery Styles
 	=================================
+	===================================================================================================
+                                                                        
+								  ,ad8888ba,               88  88                                       
+								 d8"'    `"8b              88  88                                       
+								d8'                        88  88                                       
+								88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+								88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+								Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+								 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+								  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+	========================================================================================== d8' ====
+								                                                              d8'       
 	*/
 
 	.hidden-gall {
@@ -608,11 +756,26 @@
 	=================================
 			Contact Styles
 	=================================
+	===================================================================================================
+					                                                                                   
+					  ,ad8888ba,                                                                       
+					 d8"'    `"8b                              ,d                               ,d     
+					d8'                                        88                               88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+					Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+	===================================================================================================
 	*/
+
+	[data-pagename="contact"] #wrapper {
+		height: calc(100%);
+	}
 
 	.contact-grid {
 		display: grid;
-		grid-template-rows: 5% 10% 5% 40% 10% 10%;
+		grid-template-rows: 5% 10% 5% 70% 10%;
 	}
 
 	#cont-greet {
@@ -623,7 +786,8 @@
 
 	#message-wrap {
 		display: grid;
-		grid-template-columns: 14.5% 25% 11% 35% 14.5%;
+		padding: 5%;
+		grid-template-columns: 50% 50%;
 		grid-template-rows: unset;
 		margin-top: 20px;
 	}
@@ -677,7 +841,7 @@
 	}
 
 	form {
-		padding: unset;
+		padding: 5%;
 		display: grid;
 		grid-template-rows: auto auto auto auto;
 		grid-gap: 15px;
@@ -725,92 +889,310 @@
 	=================================
 			About Styles
 	=================================
+	===================================================================================================
+									                                                                  
+									       db         88                                              
+									      d88b        88                                       ,d     
+									     d8'`8b       88                                       88     
+									    d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+									   d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+									  d8""""""""8b    88       d8  8b       d8  88       88    88     
+									 d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+									d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+	===================================================================================================
 	*/
+
+	/* ========= Start With Grids ============*/
 
 	.about-grid {
 		display: inline-grid;
 		grid-template-areas: 'prof-pic-info' 'cols';
 	}
 
+	#cols {
+		grid-area: cols;
+		display: grid;
+		grid-template: 
+				'exp educ' minmax(12.5%, auto)
+				'exp educ' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'extra certs'minmax(12.5%, auto) / 50% 50%;
+		background-color: var(--co-gray3);
+		height: 100%;
+	}
+
+	/* ====== Prof pic and info ============ */
+
 	#prof-pic-info {
 		grid-area: prof-pic-info;
 		display: grid;
 		grid-template-areas: 'pic infos';
+		grid-template-columns: 50% 50%;
+		height: fit-content;
 	}
 
 	#prof-pic {
-		width: 50%;
-		padding: 1%
+		width: 400px;
+		height: 400px;
+		margin: 5% auto 5% auto;
+		padding: unset;
 	}
 
 	#prof-infos {
+		padding-top: 10px;
 		background-color: var(--color-co-bg);
 	}
 
-	#cols {
-		grid-area: cols;
-		display: grid;
-		grid-template-columns: auto auto;
+	#prof-infos-head {
+		margin: unset;
 	}
 
-	#col1 {
-		display: grid;
-		grid-template-areas: 'exp' 'skills' 'achieve';
+	#prof-infos .infos {
+		font-size: 1.1em;
+		margin: 0.75%;
 	}
 
-	#col2 {
-		display: grid;
-		grid-template-areas: 'educ' 'certs' 'extra';
+	#bio {
+		width: 80%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		margin: 0.75%;
+	}
+
+	#bio span{
+		font-size: 1.1em;
+	}
+
+	#prof-infos>a {
+		box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.5);
+		width: 45%;
+		height: 30px;
+		margin-left: 1%;
+		display: inline-block;
+	}
+
+	#prof-infos>a:active {
+		box-shadow: unset;
+	}
+
+	#prof-infos>a:hover>#do-resume {
+		background-color: #B7CEBD;
+	}
+
+	#prof-infos-head h2 {
+		font-size: 2.6em;
+		color: var(--color-font-co);
+	}
+
+	#do-resume {
+		display: inline-block;
+		width: 100%;
+		height: 30px;
+		border: none;
+		color: var(--color-si-bg);
+		background-color: #A5C2AC;
+	}
+
+	#down-wrap {
+		display: inline-block;
+		height: inherit;
+		width: 100%;
+		text-align: center;
+	}
+
+	.icon-wrap {
+		display: inline-block;
+		width: 20%;
+		height: 100%;
+		padding: 0.75%;
+	}
+
+	.icon-wrap img { 
+		display: inline-block;
+		width: 100%;
 		height: 100%;
 	}
 
+	#do-resume p {
+		width: 60%;
+		height: 100%;
+		display: inline-block;
+		line-height: 30px;
+		font-size: 1.1em;
+		transform: translate(0, -50%);
+		vertical-align: -webkit-baseline-middle;
+	}
+
+	/* =========================== Fonts ===================================*/
+
+	.resume-block h3{
+		color: var(--co-yhigh4);
+		font-size: 1.5em;
+		padding-bottom: 2%;
+		padding-top: 6%;
+	}
+
+	.resume-block h4{
+		font-family: var(--font-header2);
+		color: var(--co-font-sihov);
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 1.25em;
+	}
+
+	.resume-block h5{
+		font-family: var(--font-header2);
+		color: var(--color-green4);
+		padding-top: 0.5%;
+		padding-bottom: 0.5%;
+		padding-left: 2%;
+	}
+
+	.resume-block h6{
+		font-size: 1em;
+	}
+
+	.resume-block p{
+		padding-left: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		color: #000;
+	}
+
+	.resume-block ul {
+		padding-left: 20px;
+	}
+
+	.resume-block ul li {
+		font-size: 1em;
+		line-height: 1em;
+		padding-bottom: 1%;
+		color: #000;
+		list-style-type: circle;	
+	}
+
+	#achievements a{
+		text-decoration: none;
+		color: var(--color-font-si);
+	}
+
+	/* =================  Resume Styles ================= */
+
 	.resume-block {
 		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 
-	#experience {
-		grid-area: exp;
+	#achievements {
+		grid-area: unset;
+		margin: 0 auto 0 auto;
+		width: 80%;
 	}
 
-	#education {
-		grid-area: educ;
-		margin: unset;	
+	#achievements h4{
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	#achievements h5{
+		padding-top: 0.5%;
+		padding-bottom: 2%;
+		padding-left: unset;
 	}
 
 	#certs {
 		margin: unset;
+		grid-area: certs;
+	}
+
+	#education {
+		grid-area: educ;
+		margin: unset;
+		width: 95%;
+	}
+
+	#education>h5 {
+		padding-top: 2%;
+		padding-bottom: 1%;
+		padding-left: 2%;
+	}
+
+	#education>h6 {
+		padding-left: 2%;
+	}
+
+	#course-list {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-column-gap: 1%;
+	}
+
+	#experience {
+		grid-area: exp;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	.exp-block>h4 {
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	.exp-block>h5 {
+		padding-bottom: 1%;
+		padding-left: unset;
 	}
 
 	#extra {
 		margin: unset;
+		grid-area: extra;
+		margin: 0 auto 0 auto;
+		width: 80%;
 	}
 
-	/**
-	 * Below are all of the skill styles including skill
-	 * bars and skill bubbles
-	 */
+	[data-pagename="about"] #extra a {
+		color: var(--color-green2);
+	}
+
+	[data-pagename="about"] #extra a:visited {
+		color: var(--color-green2);
+	}
 
 	#skills {
 		grid-area: skills;
+		width: 100%;
 	}
 
-	#skills h3 {
-		margin-top: 20px;
+	#skills h3{
+		padding-bottom: unset;
 	}
+
+	/**
+	 * ==========================================================================================
+	 * Below are all of the skill styles including skill
+	 * bars and skill bubbles
+	 * ==========================================================================================
+	 */
 
 	.skill {
-		padding-top: 10px;
+		padding-top: 1%;
 	}
 
 	.skillbar {
-		border: 2px solid black;
-		height: 20px;
-		width: 65%;
+		border: 2px solid #333;
+		height: 18px;
+		width: 75%;
 		overflow: hidden;
 	}
 
 	.skillfill {
-		background-color: black;
+		background-color: #333;
 		height: inherit;
 		width: 60%;
 	}
@@ -819,12 +1201,18 @@
 
 	#pm-skill .skillbar .skillfill 		{ width: 75%; }
 	#dm-skill .skillbar .skillfill 		{ width: 85%; }
-	#da-skill .skillbar .skillfill 		{ width: 70%; }
+	#da-skill .skillbar .skillfill 		{ width: 75%; }
+	#sa-skill .skillbar .skillfill 		{ width: 70%; }
 	#wb-skill .skillbar .skillfill 		{ width: 65%; }
 	#photo-skill .skillbar .skillfill 	{ width: 60%; }
+
+	#bi-skill .skillbar .skillfill 		{ width: 85%; }
+	#ta-skill .skillbar .skillfill 		{ width: 75%; }
+	#sf-skill .skillbar .skillfill 		{ width: 75%; }
 	#ps-skill .skillbar .skillfill 		{ width: 65%; }
 	#ill-skill .skillbar .skillfill 	{ width: 70%; }
 	#ind-skill .skillbar .skillfill 	{ width: 70%; }
+	#mo-skill .skillbar .skillfill 		{ width: 95%; }
 
 	/**
 	 * Below are a set of styles that display the program bubbles in a grid
@@ -836,21 +1224,21 @@
 
 	#prog-grid {
 		display: inline-grid;
-		width: 95%;
+		width: 90%;
 		margin-top: 15px;
-		grid-template-columns: 15% 15% 15% 15% 15%;
-		grid-column-gap: 6%;
+		grid-template-columns: 18% 18% 18% 18% 18%;
+		grid-column-gap: 2.5%;
 		grid-row-gap: 20px; 
 	}
 
 	.circle {
 		margin: auto;
 		position: relative;
-		width: 40px;
-		height: 40px;
-		border: 2px solid black;
+		width: 50px;
+		height: 50px;
+		border: 2px solid #111;
 		border-radius: 50%;
-		background-color: #000;
+		background-color: #333;
 		overflow: hidden;
 	}
 
@@ -867,7 +1255,7 @@
 		left: 50%;
 		height: 200%;
 		width: 200%;
-		background-color: #74716F;
+		background-color: var(--co-gray3);
 		transform: translate(-50%, -75%);
 	}
 
@@ -877,31 +1265,31 @@
 
 	/* Set specific bubble capacities here*/
 	#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -85%); }
-	#sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 3s linear infinite; }
+	#sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 1.5s ease 1; }
 
 	#neo-bubble .circle .wave:before 		{ transform: translate(-50%, -88%); }
-	#neo-bubble .circle:hover .wave:before 	{ animation: neo-wave 3s linear infinite; }
+	#neo-bubble .circle:hover .wave:before 	{ animation: neo-wave 1.5s ease 1; }
 
 	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
-	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 3s linear infinite; }
+	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
 
 	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -70%); }
-	#python-bubble .circle:hover .wave:before{ animation: python-wave 3s linear infinite; }
+	#python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
 
 	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
-	#r-bubble .circle:hover .wave:before 	{ animation: r-wave 3s linear infinite; }
+	#r-bubble .circle:hover .wave:before 	{ animation: r-wave 1.5s ease 1; }
 
 	#html-bubble .circle .wave:before 		{ transform: translate(-50%, -94%); }
-	#html-bubble .circle:hover .wave:before { animation: html-wave 3s linear infinite; }
+	#html-bubble .circle:hover .wave:before { animation: html-wave 1.5s ease 1; }
 
 	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
-	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 3s linear infinite; }
+	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 1.5s ease 1; }
 
 	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -84%); }
-	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 3s linear infinite; }
+	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
 
 	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
-	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 3s linear infinite; }
+	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
 
 	/**
 	 * Animations for above circles and waves. Note: The translates below match those above
@@ -909,41 +1297,41 @@
 	 * on the page
 	 */
 	@keyframes sql-wave {
-		0% { transform: translate(-50%, -85%) rotate(0deg); }
-		100% { transform: translate(-50%, -85%) rotate(360deg);	}
+		from { transform: translate(-50%, -85%) rotate(0deg); }
+		to { transform: translate(-50%, -85%) rotate(180deg);	}
 	}
 
 	@keyframes neo-wave {
 		0% { transform: translate(-50%, -88%) rotate(0deg); }
-		100% { transform: translate(-50%, -88%) rotate(360deg);	}
+		100% { transform: translate(-50%, -88%) rotate(180deg);	}
 	}
 	@keyframes csharp-wave {
 		0% { transform: translate(-50%, -85%) rotate(0deg);	}
-		100% { transform: translate(-50%, -85%) rotate(360deg);	}
+		100% { transform: translate(-50%, -85%) rotate(180deg);	}
 	}
 	@keyframes python-wave {
 		0% { transform: translate(-50%, -70%) rotate(0deg);	}
-		100% { transform: translate(-50%, -70%) rotate(360deg); }
+		100% { transform: translate(-50%, -70%) rotate(180deg); }
 	}
 	@keyframes r-wave {
 		0% { transform: translate(-50%, -64%) rotate(0deg); }
-		100% { transform: translate(-50%, -64%) rotate(360deg);	}
+		100% { transform: translate(-50%, -64%) rotate(180deg);	}
 	}
 	@keyframes html-wave {
 		0% { transform: translate(-50%, -94%) rotate(0deg);	}
-		100% { transform: translate(-50%, -94%) rotate(360deg);	}
+		100% { transform: translate(-50%, -94%) rotate(180deg);	}
 	}
 	@keyframes css-wave {
 		0% { transform: translate(-50%, -90%) rotate(0deg); }
-		100% { transform: translate(-50%, -90%) rotate(360deg); }
+		100% { transform: translate(-50%, -90%) rotate(180deg); }
 	}
 	@keyframes js-wave {
 		0% { transform: translate(-50%, -84%) rotate(0deg);	}
-		100% { transform: translate(-50%, -84%) rotate(360deg); }
+		100% { transform: translate(-50%, -84%) rotate(180deg); }
 	}
 	@keyframes php-wave {
 		0% { transform: translate(-50%, -75%) rotate(0deg); }
-		100% { transform: translate(-50%, -75%) rotate(360deg); }
+		100% { transform: translate(-50%, -75%) rotate(180deg); }
 	}
 
 	/*
@@ -959,31 +1347,106 @@
 	}*/
 
 	.prog-bubble h6{
+		margin-top: 5%;
 		text-align: center;
+		color: #B7CEBD;
 	}
 
-	#certs {
-		grid-area: certs;
+	.abouttool {
+		position: fixed;
+		display: none;
+		background-color: #5E926A;
+		color: white;
+		padding: 1%;
+		z-index: 200;
+		border-radius: 10% 10% 10% 0;
 	}
 
-	#achievements {
-		grid-area: achieve;
+	.abouttool h6{
+		padding-bottom: 5%;
 	}
 
-	#extra {
-		grid-area: extra;
+	.prog-bubble:hover .abouttool {
+		display: block;
 	}
 
+	/*
+	=================================
+			About Styles
+	=================================
+	===================================================================================================
+                                                                                         
+			88888888ba                               88                                              
+			88      "8b                              ""                            ,d                
+			88      ,8P                                                            88                
+			88aaaaaa8P'  8b,dPPYba,   ,adPPYba,      88   ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+			88""""""'    88P'   "Y8  a8"     "8a     88  a8P_____88  a8"     ""    88     I8[    ""  
+			88           88          8b       d8     88  8PP"""""""  8b            88      `"Y8ba,   
+			88           88          "8a,   ,a8"     88  "8b,   ,aa  "8a,   ,aa    88,    aa    ]8I  
+			88           88           `"YbbdP"'      88   `"Ybbd8"'   `"Ybbd8"'    "Y888  `"YbbdP"'  
+	=============================================== ,88 ===============================================                                            
+			                                      888P"                                                
+	*/
 
+	[data-pagename="projects"] #content > h1 {
+		text-align: center;
+		margin-top: 2%;
+	}
 
+	#proj-grid {
+		display: grid;
+		margin-top: 5%;
+		padding-bottom: 5%;
+		background-color: #74716F;
+	}
+
+	.proj-block {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin: 4%;
+	}
+
+	.proj-img{
+		margin: auto;
+	}
+
+	.proj-link {
+		display: block;
+		margin: auto;
+	}
+
+	.proj-info {
+		margin-top: 3%;
+	}
+
+	.proj-info h4 {
+		font-size: 1.6em;
+		padding-bottom: 3%;
+		color: var(--co-yhigh3);
+	}
+
+	.proj-info p {
+		color: var(--color-font-si);
+		font-size: 1.1em;
+	}
 
 }
-
 /*
 ==========================================================================================================
 			Retina Screen Styles
 ==========================================================================================================
- */
+==========================================================================================================
+										                                                               
+										88888888ba                        88                           
+										88      "8b                ,d     ""                           
+										88      ,8P                88                                  
+										88aaaaaa8P'   ,adPPYba,  MM88MMM  88  8b,dPPYba,   ,adPPYYba,  
+										88""""88'    a8P_____88    88     88  88P'   `"8a  ""     `Y8  
+										88    `8b    8PP"""""""    88     88  88       88  ,adPPPPP88  
+										88     `8b   "8b,   ,aa    88,    88  88       88  88,    ,88  
+										88      `8b   `"Ybbd8"'    "Y888  88  88       88  `"8bbdP"Y8  
+==========================================================================================================
+*/
 
 @media screen 
   and (min-device-width: 1200px) 

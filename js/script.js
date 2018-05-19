@@ -281,7 +281,7 @@ function sidebar_slide(prov) {
 
 $('.service-block').on('click', function() {
 	if (SWidth < 768) {
-		$(this).find('.serv-blurb').toggle();
+		$(this).find('.serv-blurb').toggle(300);
 	}
 });
 

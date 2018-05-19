@@ -690,7 +690,7 @@
 		position: relative;
 		width: 720px;
 		height: 520px;
-		margin: 80px auto;
+		margin: 5% auto;
 		perspective: 1000px;
 		overflow: unset;
 	}

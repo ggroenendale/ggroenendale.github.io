@@ -407,10 +407,29 @@ function load_galleries() {
 	else if ((SWidth > 768) && (SWidth < 1200)) { 
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
-				
+				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+				html_payload +=	`<div class="cube">`;
+				html_payload += `<div class="cube-face front">`;
+				html_payload += `<div class="gall-img-wrap">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}" alt="${gallery.mainalt}">`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				html_payload += `<div class="cube-face right">`;
+				html_payload += `<div class="gall-info">`;
+				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
+				html_payload += `<div class="cube-face back"></div>`;
+				html_payload += `<div class="cube-face left"></div>`;
+				html_payload += `<div class="cube-face top"></div>`;
+				html_payload += `<div class="cubeface bottom"></div>`;
+				html_payload += `</div>`;
+				html_payload += `</div>`;
 			}
 		});
 		grid.innerHTML = html_payload;
+		adjust_cubes();
 	}
 	//Target for Desktop
 	else if ((SWidth > 1200) && (SWidth < 1600)) {  
@@ -605,7 +624,14 @@ $(".gall-block").click(function(event) {
 		}
 	}
 	else if ((SWidth > 768) && (SWidth < 1200)) { 
-
+		if ( ctarget[0].includes('gall-info')) {
+			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
+			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
+		}
+		else if ( ctarget[0].includes('gall-block')) {
+			//console.log(event.target.getAttribute('data-gallname'))
+			gname = event.target.getAttribute('data-gallname');
+		}
 	}
 	else if ((SWidth > 1200) && (SWidth < 1600)) { 
 		if ( ctarget[0].includes('gall-info')) {
@@ -720,7 +746,31 @@ function open_gallery(gal_set) {
 		}
 	}
 	else if ((SWidth > 768) && (SWidth < 1200)) { 
-
+		galleries.forEach(function(gall){
+			if (gall.name == gallery) {
+				gall_size = gall.images.length;
+				gall.images.forEach(function(img,i){
+					let source = `photos/galleries/${gallery}/${img.filename}`;
+					$.get(source)
+						.done(function(){
+							$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="gallery-img" src="${source}">
+								</div>
+								`);
+							position_cell(i);
+						})
+						.fail(function(err){
+							$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
+							`);
+							position_cell(i);
+						});
+				});
+			}
+		});
 	}
 	else if ((SWidth > 1200) && (SWidth < 1600)) { 
 		galleries.forEach(function(gall){

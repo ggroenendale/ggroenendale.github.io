@@ -1372,7 +1372,7 @@
 
 	/*
 	=================================
-			About Styles
+			Project Styles
 	=================================
 	===================================================================================================
                                                                                          
@@ -1403,16 +1403,24 @@
 	.proj-block {
 		display: grid;
 		grid-template-columns: 50% 50%;
-		margin: 4%;
+		margin: 5%;
+	}
+
+	.proj-link {
+		width: 80%;
+		display: block;
+		margin: auto;
 	}
 
 	.proj-img{
 		margin: auto;
+		width: inherit;
+		height: inherit;
 	}
 
-	.proj-link {
-		display: block;
-		margin: auto;
+	.proj-img img{
+		width: 100%;
+		height: 100%;
 	}
 
 	.proj-info {
@@ -1428,6 +1436,10 @@
 	.proj-info p {
 		color: var(--color-font-si);
 		font-size: 1.1em;
+	}
+
+	#proj-grid a{
+		color: var(--color-font-si);
 	}
 
 }

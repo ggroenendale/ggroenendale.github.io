@@ -6,11 +6,11 @@ set = {
 			"display_name" : "Template",
 			"desc" : "Description here is placed onto right cube face",
 			"mainimg" : 'filename.jpg|png This file should be 350px BY 350px',
-			"mobmainimg" : 'filename.jpg|png This file should be 300px BY 215px ',
+			"mobmainimg" : 'filename.jpg|png This file should be 300px BY 215px',
 			"images" : [
 				{
 					"name": "Bread",
-					"alttext": "Alt text goes here."
+					"alttext": "Alt text goes here.",
 			        "blurb": "This is a picture of a loaf of bread I took",
 			        "filename": "img1",
 			        "date": "2018-01-12T00:00:00.000Z",
@@ -35,27 +35,31 @@ set = {
 			"desc" : "I like nature and here are some of my shots.",
 			"mainimg" : 'img3.jpg',
 			"mobmainimg" : 'img3.jpg',
+			"mainalt" : "",
 			"images" : [
 				{
 					"name": "Bread",
 			        "blurb": "This is a picture of a loaf of bread I took",
 			        "filename": "img1.jpg",
+			        "alttext": "",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"
 				},
 				{
-					"name": "Bread",
-			        "blurb": "This is a picture of a loaf of bread I took",
+					"name": "Cheesecake n Beer",
+			        "blurb": "I brewed a raspberry wheat ale and it matched really well to this cheesecake.",
 			        "filename": "img2.jpg",
+			        "alttext": "cheesecake and beer",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	
 				},
 				{
 					"name": "Bread",
-			        "blurb": "This is a picture of a loaf of bread I took",
+			        "blurb": "I like to make bread and take photos. I think this was a sourdough I made.",
 			        "filename": "img3.jpg",
+			        "alttext": "bread",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	

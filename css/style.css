@@ -1437,3 +1437,73 @@ form>button[type="submit"]>h3 {
 .prog-bubble:hover .abouttool {
 	display: block;
 }
+
+/*
+=================================
+		Project Styles
+=================================
+===================================================================================================
+                                                                                     
+		88888888ba                               88                                              
+		88      "8b                              ""                            ,d                
+		88      ,8P                                                            88                
+		88aaaaaa8P'  8b,dPPYba,   ,adPPYba,      88   ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+		88""""""'    88P'   "Y8  a8"     "8a     88  a8P_____88  a8"     ""    88     I8[    ""  
+		88           88          8b       d8     88  8PP"""""""  8b            88      `"Y8ba,   
+		88           88          "8a,   ,a8"     88  "8b,   ,aa  "8a,   ,aa    88,    aa    ]8I  
+		88           88           `"YbbdP"'      88   `"Ybbd8"'   `"Ybbd8"'    "Y888  `"YbbdP"'  
+=============================================== ,88 ===============================================                                            
+		                                      888P"                                                
+*/
+
+[data-pagename="projects"] #content > h1 {
+	text-align: center;
+	padding-top: 2%;
+}
+
+#proj-grid {
+	display: grid;
+	margin-top: 5%;
+	padding-bottom: 5%;
+	background-color: #74716F;
+}
+
+.proj-block {
+	margin: 10% 5%;
+}
+
+.proj-link {
+	width: 80%;
+	display: block;
+	margin: auto;
+}
+
+.proj-img{
+	margin: auto;
+	width: inherit;
+	height: inherit;
+}
+
+.proj-img img{
+	width: 100%;
+	height: 100%;
+}
+
+.proj-info {
+	margin-top: 3%;
+}
+
+.proj-info h4 {
+	font-size: 1.6em;
+	padding-bottom: 3%;
+	color: var(--co-yhigh3);
+}
+
+.proj-info p {
+	color: var(--color-font-si);
+	font-size: 1.1em;
+}
+
+#proj-grid a{
+	color: var(--color-font-si);
+}

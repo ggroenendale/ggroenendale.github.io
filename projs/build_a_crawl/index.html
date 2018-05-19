@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map Project</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div id="map-wrapper">
+    <!-- <div id="title_container">
+      <h1>Make a pub crawl!</h1>
+    </div> -->
+    <!-- <div id="mode-selector" class="controls">
+        <input type="radio" name="type" id="changemode-walking" checked="checked">
+        <label for="changemode-walking">Walking</label>
+
+        <input type="radio" name="type" id="changemode-transit">
+        <label for="changemode-transit">Transit</label>
+
+        <input type="radio" name="type" id="changemode-driving">
+        <label for="changemode-driving">Driving</label>
+    </div> --> <!-- Closes the selectors for mode selectors -->
+    <div id="map-container">
+      <div id="map"></div> <!-- Closes the map -->
+    </div> <!-- Closes map container -->
+  </div> <!-- Closes map wrapper -->
+
+  <div id="op-wrap" class="" >
+    <input id="origin-input" class="controls" type="text" placeholder="Enter an origin location">
+    <!-- <input id="destination-input" class="controls" type="text" placeholder="Enter a destination location"> --> -->
+    <input type="button" value="Click Me!" name="Test Config" onClick="search_for_loc()">
+    <input id="rad-input" class="controls" type="text" placeholder="Enter a radius in Miles">
+    <div id="dollar-sel">
+      <input type="checkbox" name="dollars" id="dollars1" value="1">
+      <label for="dollars1">$</label>
+      <input type="checkbox" name="dollars" id="dollars2" value="2">
+      <label for="dollars2">$$</label>
+      <input type="checkbox" name="dollars" id="dollars3" value="3">
+      <label for="dollars3">$$$</label>
+      <input type="checkbox" name="dollars" id="dollars4" value="4">
+      <label for="dollars4">$$$$</label>
+    </div>
+    <div id="bar-list">
+      <h1>Bar options will go here</h1>
+      
+    </div>
+    
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://dtc-wsuv.org/ggroenendale17/.data/config.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
+</body>
+
+</html>
+

@@ -420,7 +420,7 @@ function load_galleries() {
 				html_payload +=	`<div class="cube">`;
 				html_payload += `<div class="cube-face front">`;
 				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}" alt="${gallery.mainalt}">`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				html_payload += `<div class="cube-face right">`;
@@ -699,7 +699,7 @@ function open_gallery(gal_set) {
 						.done(function(){
 							$('#carousel').append(`
 								<div id="img${i+1}" class="carousel-cell">
-									<img class="mgallery-img" src="${source}">
+									<img class="mgallery-img" src="${source}" alt="${img.alttext}">
 								</div
 								`);
 							position_cell(i);

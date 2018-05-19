@@ -645,6 +645,7 @@ nav>ul>a:visited {
 	text-align: center;
 	font-size: 1.5em;
 	padding-bottom: 4px;
+	color: var(--co-yhigh4)
 }
 
 .gall-link {
@@ -683,7 +684,7 @@ nav>ul>a:visited {
 }
 
 .gall-blurb {
-
+	color: var(--color-green5);
 }
 
 /*
@@ -939,16 +940,6 @@ form>button[type="submit"]>h3 {
 
 .about-grid {
 	display: grid;
-	grid-template-areas:
-		'pic'
-		'infos'
-		'exp' 
-		'educ' 
-		'certs' 
-		'skills' 
-		'achieve' 
-		'extra'
-	;
 }
 
 /* =========================== Fonts ===================================*/
@@ -1135,7 +1126,7 @@ form>button[type="submit"]>h3 {
 	width: 100%;
 	margin: auto;
 	display: grid;
-	grid-template-areas: 'exp' 'educ' 'certs' 'skills' 'achieve' 'extra';
+	grid-template-areas: 'exp' 'educ' 'skills' 'achieve' 'extra' 'certs';
 	background-color: #74716F;
 }
 

@@ -608,6 +608,7 @@
 		text-align: center;
 		font-size: 1.5em;
 		padding-bottom: 4px;
+		color: var(--co-yhigh4)
 	}
 
 	.gall-link {
@@ -650,7 +651,9 @@
 	}
 
 	.gall-blurb {
-
+		line-height: 1.1em;
+		width: 85%;
+		margin: auto;
 	}
 
 	/*

@@ -546,7 +546,7 @@ nav>ul>a:visited {
 */
 
 #splash-wrap {
-	padding-top: 15%;
+	padding-top: 8%;
 	text-align: center
 }
 
@@ -572,7 +572,7 @@ nav>ul>a:visited {
 
 #service-wrap {
 	color: white;
-	margin-top: 100px;
+	margin-top: 40px;
 	background-color: #403D39;
 }
 
@@ -590,6 +590,8 @@ nav>ul>a:visited {
 
 .service-block {
 	padding-bottom: 50px;
+	margin: 0 auto;
+	width: 85%;
 }
 
 .service-block h3 {
@@ -599,7 +601,31 @@ nav>ul>a:visited {
 .serv-blurb {
 	display: none;
 	margin: auto;
-	width: 75%;
+	width: 95%;
+}
+
+.serv-blurb p {
+	font-size: 1em;
+}
+
+.serv-blurb ul {
+	padding-top: 5px;
+	padding-left: 20px;
+	list-style-type: disc;
+	/*list-style-position: inside;*/
+}
+
+.serv-blurb ul li {
+	padding-top: 5px;
+	font-size: 1em;
+}
+
+.serv-blurb a {
+	color: white;
+}
+
+.serv-blurb a:visited {
+
 }
 
 /*

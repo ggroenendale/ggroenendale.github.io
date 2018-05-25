@@ -8,7 +8,7 @@
 		let current_host = document.location.hostname;
 		console.log(current_host);
 		if (current_host == 'localhost') {
-			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost:8080/newfolio/");
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
 		}
 		else {
 			console.log('On github');
@@ -24,8 +24,12 @@
 	  gtag('config', 'UA-119421108-1');
 	</script>
 	<title>Geoff Groenendale - Portfolio</title>
-	<meta name = "pinterest" content = "nopin" description = "Sorry, you can't save from my website!" />
-	<meta name="viewport" content="width=device-width">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="icons/fav.png" type="image/png">
+	<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/style1.css">
 	<link rel="stylesheet" type="text/css" href="css/style2.css">
@@ -49,7 +53,7 @@
 				<ul>
 					<div id="gr-rect"></div>
 					<a href="projs/projs.html"><li>Projects</li></a>
-					<a href="photos/photog.html"><li>Photography</li></a>
+					<a href="photos/photog.html"><li>Galleries</li></a>
 					<a href="pages/about.html"><li>About</li></a>
 					<!-- <a href="blog/blog.html"><li>Blog</li></a> -->
 					<a href="pages/contact.html"><li>Contact</li></a>
@@ -75,35 +79,82 @@
 		</aside> <!-- This closes the sidebar -->
 		<div id="content" class="grid-content">
 			<div id="splash-wrap">
-				<div></div>
 				<div id="splash">
 					<h1 id="greet">Hi, my name is Geoff.</h1>
+					<h4>Developer, Designer, Entrepreneur</h4>
 					<p id="greet-blurb">Let's build something better.</p>
 				</div>
-				<div></div>
 			</div>
 			<div id="service-wrap">
-				<h2>Services</h2>
-				<div id="services">
+				<h2>Information Services</h2>
+				<div id="iservices" class="services">
 					<div id="serv1" class="service-block">
 						<h3>Data Management</h3>
 						<img src="icons/data.svg">
 						<div class="serv-blurb">
-							<p>Utilizing several databasing technologies and documentation procedures I can optimize how your data is recorded, stored, managed, and extracted.</p>
+							<!-- <p>Utilizing several databasing technologies and documentation procedures I can optimize how your data is recorded, stored, managed, and extracted.</p> -->
+							<p>Let's optimize how your data is recorded, stored, managed, and extracted.</p>
+							<ul>
+								<li>Neo4j Graph Databases</li>
+								<li>SQL Server</li>
+								<li>MySQL</li>
+								<li>MS Access</li>
+							</ul>
 						</div>
 					</div>
 					<div id="serv2" class="service-block">
 						<h3>Analytics</h3>
 						<img src="icons/analysis.svg">
 						<div class="serv-blurb">
-							<p>My knowledge of various softwares amd my ability to write custom applications to analyze data will help you find more value for your endeavors.</p>
+							<p>I'll analyze your data and help you find more value in your endeavors.</p>
+							<ul>
+								<li>R Studio</li>
+								<li>Python</li>
+								<li>MS Power BI</li>
+								<li>MS Excel</li>
+							</ul>
 						</div>
 					</div>
 					<div id="serv3" class="service-block">
 						<h3>Development</h3>
 						<img src="icons/web.svg">
 						<div class="serv-blurb">
-							<p>Using some of the latest languages and practices I can help your team by writing extensive web applications, backend applications, and desktop applications.</p>
+							<p>Website development and desktop applications for any purpose.</p>
+							<ul>
+								<li>HTML, CSS, JavaScript, PHP</li>
+								<li>Applications in C#</li>
+								<li>Visual Basic</li>
+								<li>Python</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<h2>Design Services</h2>
+				<div id="dservices" class="services">
+					<div id="serv4" class="service-block">
+						<h3>Graphic Design</h3>
+						<img src="icons/graphic.svg">
+						<div class="serv-blurb">
+							<p>Latest tech solutions and design principles. <a href="photos/photog.html">See my work here!</a></p>
+							<ul>
+								<li>Adobe Photoshop</li>
+								<li>Adobe Illustrator</li>
+								<li>Adobe InDesign</li>
+							</ul>
+						</div>
+					</div>
+					<div id="serv5" class="service-block">
+						<h3>UI & UX Design</h3>
+						<img src="icons/uiux.svg">
+						<div class="serv-blurb">
+							<p>Results that are usable and effective. I make sure to pay attention to all details in my projects. User requirements and resource limitations are considered in my design process.</p>
+						</div>
+					</div>
+					<div id="serv6" class="service-block">
+						<h3>Photography</h3>
+						<img src="icons/camera.svg">
+						<div class="serv-blurb">
+							<p>Check out my <a href="photos/photog.html">galleries</a> for examples of my work.</p>
 						</div>
 					</div>
 				</div>

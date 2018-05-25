@@ -342,21 +342,23 @@
 		font-size: 1.4em;
 		margin-top: 6%;
 		margin-bottom: 6%;
+		color: var(--color-font-si);
 	}
 
 	nav>ul>a {
 		display: block;
 		text-decoration: none;
-		color: var(--color-font-si);
-		margin-left: 10%;
+		color: unset;
+		margin-left: 0%;
 	}
 
-	nav>ul>a:hover {
+	nav>ul>a>li:hover {
 		color: var(--co-font-sihov);
+		font-weight: bold;
 	}
 
 	nav>ul>a:visited {
-		color: var(--color-font-si);
+		color: none;
 	}
 
 	#sidefoot {
@@ -445,18 +447,20 @@
 	*/
 
 	#splash-wrap {
-		padding-top: 5%;
-		height: 340px;
+		position: relative;
+		padding-top: unset;
+		height: 160px;
 		width: 100%;
 		vertical-align: middle;
 		text-align: center;
-		display: grid;
-		grid-auto-rows: calc(100% / 3);
 	}
 
 	#splash {
+		position: absolute;
 		margin: auto;
-		height: 100%;
+		width: 100%;
+		top: 50%;
+		transform: translate( 0, -50%);
 	}
 
 	/*#splash::after {
@@ -473,14 +477,20 @@
 		display: block;
 	}
 
+	#splash h4 {
+		padding-top: 10px;
+		font-weight: 200;
+		font-size: 1.8em;
+	}
+
 	#greet-blurb {
 		display: block;
-		margin-top: 30px;
-		font-size: 1.4em;
+		margin-top: 10px;
+		font-size: 1.3em;
 	}
 
 	#service-wrap {
-		margin-top: 100px;
+		margin-top: 20px;
 		background-color: #514E4B;
 	}
 
@@ -489,12 +499,17 @@
 		font-size: 2.2em;
 	}
 
-	#services {
+	.services {
 		display: grid;
 		grid-template-rows: unset;
-		grid-template-columns: 30% 30% 30%;
-		grid-column-gap: 5%;
-		padding: 5%;
+		grid-template-columns: 26% 26% 26%;
+		grid-column-gap: 11%;
+		padding: 2% 5%;
+	}
+
+	.service-block {
+		width: unset;
+		padding-bottom: 20px;
 	}
 
 	.service-block h3 {
@@ -506,9 +521,32 @@
 	.serv-blurb {
 		display: block;
 		margin: auto;
-		width: 75%;
+		width: 115%;
 	}
 
+	.serv-blurb p {
+		font-size: 1em;
+	}
+
+	.serv-blurb ul {
+		padding-top: 5px;
+		padding-left: 20px;
+		list-style-type: disc;
+		/*list-style-position: inside;*/
+	}
+
+	.serv-blurb ul li {
+		padding-top: 5px;
+		font-size: 1em;
+	}
+
+	.serv-blurb a {
+		color: white;
+	}
+
+	.serv-blurb a:visited {
+
+	}
 
 	/*
 	=================================
@@ -1011,7 +1049,7 @@
 
 	.icon-wrap {
 		display: inline-block;
-		width: 20%;
+		width: 15%;
 		height: 100%;
 		padding: 0.75%;
 	}
@@ -1023,7 +1061,7 @@
 	}
 
 	#do-resume p {
-		width: 60%;
+		width: 75%;
 		height: 100%;
 		display: inline-block;
 		line-height: 30px;

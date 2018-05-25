@@ -1262,9 +1262,9 @@
 	#photo-skill .skillbar .skillfill 	{ width: 60%; }
 
 	#bi-skill .skillbar .skillfill 		{ width: 85%; }
-	#ta-skill .skillbar .skillfill 		{ width: 75%; }
-	#sf-skill .skillbar .skillfill 		{ width: 75%; }
-	#ps-skill .skillbar .skillfill 		{ width: 65%; }
+	#ta-skill .skillbar .skillfill 		{ width: 50%; }
+	#sf-skill .skillbar .skillfill 		{ width: 60%; }
+	#ps-skill .skillbar .skillfill 		{ width: 70%; }
 	#ill-skill .skillbar .skillfill 	{ width: 70%; }
 	#ind-skill .skillbar .skillfill 	{ width: 70%; }
 	#mo-skill .skillbar .skillfill 		{ width: 95%; }

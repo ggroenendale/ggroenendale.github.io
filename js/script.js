@@ -348,7 +348,9 @@ $('#show-menu').click(function(){
 
 window.onresize = function() {
 	if (cur_name == 'photography') {
-		adjust_cubes();
+		if(SWidth > 768){
+			adjust_cubes();
+		}
 	}
 }
 

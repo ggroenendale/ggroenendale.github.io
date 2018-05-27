@@ -33,7 +33,7 @@ set = {
 			"avail": true,
 			"display_name" : "Food Photography",
 			"desc" : "I like nature and here are some of my shots.",
-			"mainimg" : 'img3.jpg',
+			"mainimg" : 'main.jpg',
 			"mobmainimg" : 'img3.jpg',
 			"mainalt" : "",
 			"images" : [
@@ -67,7 +67,7 @@ set = {
 				{
 					"name": "Bread",
 			        "blurb": "This is a picture of a loaf of bread I took",
-			        "filename": "img4",
+			        "filename": "img4.jpg",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	
@@ -75,7 +75,7 @@ set = {
 				{
 					"name": "Bread",
 			        "blurb": "This is a picture of a loaf of bread I took",
-			        "filename": "img5",
+			        "filename": "img5.jpg",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	
@@ -83,7 +83,7 @@ set = {
 				{
 					"name": "Bread",
 			        "blurb": "This is a picture of a loaf of bread I took",
-			        "filename": "img6",
+			        "filename": "img6.jpg",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	
@@ -91,7 +91,7 @@ set = {
 				{
 					"name": "Bread",
 			        "blurb": "This is a picture of a loaf of bread I took",
-			        "filename": "img7",
+			        "filename": "img7.jpg",
 			        "date": "2018-01-12T00:00:00.000Z",
 			        "modelname": "NULL",
 			        "location": "NULL"	

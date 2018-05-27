@@ -66,6 +66,7 @@
 	--co-gall-bord:	 #000000; 	/* --- Color for the gallery borders */
 	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
 	--co-cube-bg:    #403D39;   /* --- Color for the cube faces */
+	--co-home-bg:	 #514E4B;	/* --- Color option for content background */
 
 	--co-gray: 		 #74716F;
 	--co-gray2:		 #6A6765;	/* --- Color for the grays */
@@ -516,6 +517,7 @@
 		text-align: center;
 		font-size: 1.9em;
 		padding-bottom: 3%;
+		color: var(--co-yhigh3);
 	}
 
 	.serv-blurb {
@@ -526,12 +528,14 @@
 
 	.serv-blurb p {
 		font-size: 1em;
+		color: var(--color-font-si);
 	}
 
 	.serv-blurb ul {
 		padding-top: 5px;
 		padding-left: 20px;
 		list-style-type: disc;
+		color: var(--color-font-si);
 		/*list-style-position: inside;*/
 	}
 
@@ -831,6 +835,7 @@
 		grid-template-columns: 50% 50%;
 		grid-template-rows: unset;
 		margin-top: 20px;
+		background-color: var(--co-home-bg);
 	}
 
 	#cont-info-grid {
@@ -845,6 +850,7 @@
 
 	.info-key {
 		display: inline;
+		margin: unset;
 	}
 
 	#caddress {
@@ -879,6 +885,9 @@
 
 	#cont-info p {
 		font-size: 1.3em;
+		color: var(--color-co-bg);
+		text-align: left;
+		margin: unset;
 	}
 
 	form {
@@ -902,6 +911,7 @@
 		height: 30px;
 		width: 50%;
 		font-size: unset;
+		z-index: 5;
 	}
 
 	form>button[type="submit"]>h3 {
@@ -924,6 +934,10 @@
 
 	#message {
 		height: 200px;
+	}
+
+	#message-und {
+		background-color: var(--co-home-bg);
 	}
 
 	/*
@@ -962,7 +976,7 @@
 				'achieve skills' minmax(12.5%, auto)
 				'achieve skills' minmax(12.5%, auto)
 				'extra certs'minmax(12.5%, auto) / 50% 50%;
-		background-color: var(--co-gray3);
+		background-color: var(--co-home-bg);
 		height: 100%;
 	}
 
@@ -1081,7 +1095,7 @@
 
 	.resume-block h4{
 		font-family: var(--font-header2);
-		color: var(--co-font-sihov);
+		color: #fff;
 		padding-top: 1%;
 		padding-bottom: 1%;
 		font-size: 1.25em;
@@ -1089,7 +1103,7 @@
 
 	.resume-block h5{
 		font-family: var(--font-header2);
-		color: var(--color-green4);
+		color: var(--co-yhigh5);
 		padding-top: 0.5%;
 		padding-bottom: 0.5%;
 		padding-left: 2%;
@@ -1103,7 +1117,7 @@
 		padding-left: 10px;
 		font-size: 1em;
 		line-height: 1.2em;
-		color: #000;
+		color: var(--color-font-si);
 	}
 
 	.resume-block ul {
@@ -1114,7 +1128,7 @@
 		font-size: 1em;
 		line-height: 1em;
 		padding-bottom: 1%;
-		color: #000;
+		color: var(--color-font-si);
 		list-style-type: circle;	
 	}
 
@@ -1181,7 +1195,7 @@
 	}
 
 	.exp-block>h4 {
-		padding-top: 2%;
+		padding-top: 4%;
 		padding-bottom: 2%;
 	}
 
@@ -1226,14 +1240,14 @@
 	}
 
 	.skillbar {
-		border: 2px solid #333;
+		border: 2px solid #111;
 		height: 18px;
 		width: 75%;
 		overflow: hidden;
 	}
 
 	.skillfill {
-		background-color: #333;
+		background-color: #222;
 		height: inherit;
 		width: 60%;
 	}
@@ -1248,9 +1262,9 @@
 	#photo-skill .skillbar .skillfill 	{ width: 60%; }
 
 	#bi-skill .skillbar .skillfill 		{ width: 85%; }
-	#ta-skill .skillbar .skillfill 		{ width: 75%; }
-	#sf-skill .skillbar .skillfill 		{ width: 75%; }
-	#ps-skill .skillbar .skillfill 		{ width: 65%; }
+	#ta-skill .skillbar .skillfill 		{ width: 50%; }
+	#sf-skill .skillbar .skillfill 		{ width: 60%; }
+	#ps-skill .skillbar .skillfill 		{ width: 70%; }
 	#ill-skill .skillbar .skillfill 	{ width: 70%; }
 	#ind-skill .skillbar .skillfill 	{ width: 70%; }
 	#mo-skill .skillbar .skillfill 		{ width: 95%; }
@@ -1279,7 +1293,7 @@
 		height: 50px;
 		border: 2px solid #111;
 		border-radius: 50%;
-		background-color: #333;
+		background-color: #222;
 		overflow: hidden;
 	}
 
@@ -1296,7 +1310,7 @@
 		left: 50%;
 		height: 200%;
 		width: 200%;
-		background-color: var(--co-gray3);
+		background-color: var(--co-home-bg);
 		transform: translate(-50%, -75%);
 	}
 
@@ -1438,7 +1452,7 @@
 		display: grid;
 		margin-top: 5%;
 		padding-bottom: 5%;
-		background-color: #74716F;
+		background-color: var(--co-home-bg);
 	}
 
 	.proj-block {

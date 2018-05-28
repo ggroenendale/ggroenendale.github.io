@@ -283,6 +283,18 @@ $('.service-block').on('click', function() {
 	if (SWidth < 768) {
 		$(this).find('.serv-blurb').toggle(300);
 	}
+	else if (SWidth > 768 && SWidth <= 1366) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+});
+
+$('.service-block img').on('click', function() {
+	if (SWidth < 768) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+	else if (SWidth > 768 && SWidth <= 1366) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
 });
 
 /**
@@ -404,7 +416,7 @@ function load_galleries() {
 		grid.innerHTML = html_payload;
 	}
 	//Target for tablets
-	else if ((SWidth > 768) && (SWidth < 1200)) { 
+	else if ((SWidth >= 768) && (SWidth <= 1366)) { 
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -429,10 +441,9 @@ function load_galleries() {
 			}
 		});
 		grid.innerHTML = html_payload;
-		adjust_cubes();
 	}
 	//Target for Desktop
-	else if ((SWidth > 1200) && (SWidth < 1600)) {  
+	else if ((SWidth > 1366) && (SWidth < 1600)) {  
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -461,6 +472,7 @@ function load_galleries() {
 	}
 	else {
 		html_payload += `<p>There was an error loading galleries!</p>`;
+		grid.innerHTML = html_payload;
 	}
 }
 

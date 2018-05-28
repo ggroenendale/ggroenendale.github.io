@@ -8,7 +8,7 @@
 		let current_host = document.location.hostname;
 		console.log(current_host);
 		if (current_host == 'localhost') {
-			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost:8080/newfolio/");
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
 		}
 		else {
 			console.log('On github');

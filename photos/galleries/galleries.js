@@ -34,7 +34,7 @@ set = {
 			"display_name" : "Food Photography",
 			"desc" : "I like nature and here are some of my shots.",
 			"mainimg" : 'main.jpg',
-			"mobmainimg" : 'img3.jpg',
+			"mobmainimg" : 'img2.jpg',
 			"mainalt" : "",
 			"images" : [
 				{

@@ -446,7 +446,7 @@ nav>ul>a {
 	display: block;
 	text-decoration: none;
 	color: var(--color-font-si);
-	margin-left: 18%;
+	margin-left: 5%;
 }
 
 nav>ul>a:hover {

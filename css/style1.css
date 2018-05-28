@@ -266,6 +266,7 @@
   .service-block {
     width: 95%;
     text-align: center;
+    cursor: pointer;
   }
 
   .service-block h3 {
@@ -274,6 +275,7 @@
 
   .service-block img {
     width: 75%;
+    cursor: pointer;
   }
 
   .serv-blurb p {
@@ -306,18 +308,59 @@
 
   .gall-img-wrap {
     width: 420px;
-    height: 301px;
-    max-height: 301px;
+    height: 300px;
+    max-height: 300px;
   }
 
   .gall-img {
     width: 420px;
-    height: 301px;
+    height: 300px;
   }
 
   .gall-info {
     width: 420px;
     height: 35px;
+  }
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    position: unset;
+    width: unset;
+    height: unset;
+    background-color: #000000;
+  }
+
+  #caro-container {
+    margin: 50% auto;
+    width: 420px;
+    height: 300px;
+  }
+
+  .carousel-cell {
+    width: 420px;
+    height: 300px;
+  }
+
+  .tgallery-img {
+    width: 420px;
+    height: 300px;
   }
 
   /*
@@ -338,14 +381,43 @@
   */
 
   #prof-infos>a {
-    width: 45%;
+    width: 40%;
     display: inline-block;
-    margin: 5% 5% 5% 5%;
   }
 
-  #prof-infos>a:first-child {
-    margin: 5% 5% 5% 5%;
-    border: 1px solid yellow;
+  #prof-infos>#a-resume {
+    margin-right: 2%;
+    margin-left: 7.5%;
+  }
+
+  #prof-infos>#a-contact {
+    margin-left: 2%;
+    margin-right: 7.5%;
+  }
+
+    /*
+  =================================
+      Contact Styles
+  =================================
+  ===================================================================================================
+                                                                                             
+            ,ad8888ba,                                                                       
+           d8"'    `"8b                              ,d                               ,d     
+          d8'                                        88                               88     
+          88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+          88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+          Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+           Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+            `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+  ===================================================================================================
+  */
+
+  #cont-info p {
+    margin: unset;
+  }
+
+  .info-key {
+    margin: unset;
   }
 
 }
@@ -365,6 +437,44 @@
   and (max-device-width: 1024px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    overflow: hidden;
+  }
+
+  #caro-container {
+    margin: 23% auto;
+    width: 650px;
+    height: 470px;
+  }
+/*504X360*/
+  .carousel-cell {
+    width: 630px;
+    height: 450px;
+  }
+
+  .tgallery-img {
+    width: 630px;
+    height: 450px;
+  }
 
 }
 

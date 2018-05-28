@@ -220,31 +220,11 @@ $(document).ready(function() {
  */
 function sidebar_slide(prov) {
 	if (!viewer) {
-		let sideswipe = new Swipe('#wrapper');
-		//console.log('Sidebar slide');
-		sideswipe.onLeft(function(){
-			//console.log('actually its thisone is on');
-			$('#show-menu')
-				.removeClass('slide-in')
-				.css({'left':'0px','transition':'0.5s'})
-				$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-				$('html').css({'position':'unset','overflow':'unset'});
-		});
-		sideswipe.onRight(function(){
-			$('#show-menu')
-				.addClass('slide-in')
-				.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-				$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-				$('html').css({'position':'fixed','overflow':'hidden'});
-		});
-		sideswipe.run();
-	}
-	else {
-		if (viewer.classList[0].includes('hidden-gall')) {
+		if (SWidth < 768) {
 			let sideswipe = new Swipe('#wrapper');
-			//console.log('Sidebar ready');
+			//console.log('Sidebar slide');
 			sideswipe.onLeft(function(){
-				console.log('thisone is on');
+				//console.log('actually its thisone is on');
 				$('#show-menu')
 					.removeClass('slide-in')
 					.css({'left':'0px','transition':'0.5s'})
@@ -260,42 +240,82 @@ function sidebar_slide(prov) {
 			});
 			sideswipe.run();
 		}
+	}
+	else {
+		if (viewer.classList[0].includes('hidden-gall')) {
+			if (SWidth < 768) {
+				let sideswipe = new Swipe('#wrapper');
+				//console.log('Sidebar ready');
+				sideswipe.onLeft(function(){
+					console.log('thisone is on');
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+				});
+				sideswipe.onRight(function(){
+					$('#show-menu')
+						.addClass('slide-in')
+						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+						$('html').css({'position':'fixed','overflow':'hidden'});
+				});
+				sideswipe.run();
+			}
+		}
 		else if (viewer.classList[0].includes('grid-content')){
-			let sideswipe = new Swipe('#wrapper');
-			//console.log('reset here');
-			sideswipe.onRight(function(){
-				//console.log('Setting new function');
-				$('#show-menu')
-					.removeClass('slide-in')
-					.css({'left':'0px','transition':'0.5s'})
-					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-					$('html').css({'position':'unset','overflow':'unset'});
-			});
-			sideswipe.onLeft(function(){ 
-				console.log('turn off');
-			});
-			sideswipe.run();
+			if (SWidth < 768) {
+				let sideswipe = new Swipe('#wrapper');
+				//console.log('reset here');
+				sideswipe.onRight(function(){
+					//console.log('Setting new function');
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+				});
+				sideswipe.onLeft(function(){ 
+					console.log('turn off');
+				});
+				sideswipe.run();
+			}
 		}
 	}
 }
+
+let user_agent = navigator.userAgent.toLowerCase();
+let ios_devices = user_agent.match(/(iphone|ipod|ipad)/) ? "touchstart" : "click";
+console.log(ios_devices);
 
 $('.service-block').on('click', function() {
 	if (SWidth < 768) {
 		$(this).find('.serv-blurb').toggle(300);
 	}
-	else if (SWidth > 768 && SWidth <= 1366) {
+	else if (SWidth >= 768 && SWidth <= 1366) {
+		console.log('runs but no toggle');
 		$(this).find('.serv-blurb').toggle(300);
 	}
 });
 
-$('.service-block img').on('click', function() {
-	if (SWidth < 768) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-	else if (SWidth > 768 && SWidth <= 1366) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-});
+/* All of this here was trying to figure out why blocks wouldn't expand on an iPad tablet.
+   The problem actually had to do with screens that were exactly 768 pixels wide which
+   required a >= comparator in the conditional statement. In doing this I also discovered'
+   the "touchstart" event and utilizing it with pure javaScript.
+*/
+// // document.getElementById('serv1').ontouchstart = function(){
+// // 	console.log('Hey this works');
+// // }
+
+// $('.service-block').bind('touchstart', function(){
+// 	if (SWidth < 768) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// 	else if (SWidth >= 768 && SWidth <= 1366) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// });
 
 /**
  * ========================================================================================
@@ -425,7 +445,7 @@ function load_galleries() {
 				html_payload +=	`<div class="cube">`;
 				html_payload += `<div class="cube-face front">`;
 				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}" alt="${gallery.mainalt}">`;
+				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 				html_payload += `<div class="cube-face right">`;
@@ -637,17 +657,18 @@ $(".gall-block").click(function(event) {
 
 		}
 	}
-	else if ((SWidth > 768) && (SWidth < 1200)) { 
-		if ( ctarget[0].includes('gall-info')) {
-			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
+	else if ((SWidth >= 768) && (SWidth <= 1366)) {
+		console.log(ctarget[0]); 
+		if ( ctarget[0].includes('gall-img')) {
+			console.log(event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
+			gname = event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('data-gallname');
 		}
 		else if ( ctarget[0].includes('gall-block')) {
 			//console.log(event.target.getAttribute('data-gallname'))
 			gname = event.target.getAttribute('data-gallname');
 		}
 	}
-	else if ((SWidth > 1200) && (SWidth < 1600)) { 
+	else if ((SWidth > 1366) && (SWidth < 1600)) { 
 		if ( ctarget[0].includes('gall-info')) {
 			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
 			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
@@ -759,7 +780,7 @@ function open_gallery(gal_set) {
 			sidebar_slide();
 		}
 	}
-	else if ((SWidth > 768) && (SWidth < 1200)) { 
+	else if ((SWidth >= 768) && (SWidth <= 1366)) { 
 		galleries.forEach(function(gall){
 			if (gall.name == gallery) {
 				gall_size = gall.images.length;
@@ -769,7 +790,7 @@ function open_gallery(gal_set) {
 						.done(function(){
 							$('#carousel').append(`
 								<div id="img${i+1}" class="carousel-cell">
-									<img class="gallery-img" src="${source}">
+									<img class="tgallery-img" src="${source}">
 								</div>
 								`);
 							position_cell(i);
@@ -786,7 +807,7 @@ function open_gallery(gal_set) {
 			}
 		});
 	}
-	else if ((SWidth > 1200) && (SWidth < 1600)) { 
+	else if ((SWidth > 1366) && (SWidth < 1600)) { 
 		galleries.forEach(function(gall){
 			if (gall.name == gallery) {
 				gall_size = gall.images.length;

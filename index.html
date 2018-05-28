@@ -8,7 +8,7 @@
 		let current_host = document.location.hostname;
 		console.log(current_host);
 		if (current_host == 'localhost') {
-			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost:8080/newfolio/");
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
 		}
 		else {
 			console.log('On github');
@@ -89,9 +89,9 @@
 			<div id="service-wrap">
 				<h2>Information Services</h2>
 				<div id="iservices" class="services">
-					<div id="serv1" class="service-block">
+					<div id="serv1" class="service-block" onclick="">
 						<h3>Data Management</h3>
-						<img src="icons/data.svg">
+						<img src="icons/data.svg" onclick="" >
 						<div class="serv-blurb">
 							<!-- <p>Utilizing several databasing technologies and documentation procedures I can optimize how your data is recorded, stored, managed, and extracted.</p> -->
 							<p>Let's optimize how your data is recorded, stored, managed, and extracted.</p>
@@ -103,9 +103,9 @@
 							</ul>
 						</div>
 					</div>
-					<div id="serv2" class="service-block">
+					<div id="serv2" class="service-block" onclick="">
 						<h3>Analytics</h3>
-						<img src="icons/analysis.svg">
+						<img src="icons/analysis.svg" onclick="">
 						<div class="serv-blurb">
 							<p>I'll analyze your data and help you find more value in your endeavors.</p>
 							<ul>
@@ -116,9 +116,9 @@
 							</ul>
 						</div>
 					</div>
-					<div id="serv3" class="service-block">
+					<div id="serv3" class="service-block" onclick="">
 						<h3>Development</h3>
-						<img src="icons/web.svg">
+						<img src="icons/web.svg" onclick="">
 						<div class="serv-blurb">
 							<p>Website development and desktop applications for any purpose.</p>
 							<ul>
@@ -132,9 +132,9 @@
 				</div>
 				<h2>Design Services</h2>
 				<div id="dservices" class="services">
-					<div id="serv4" class="service-block">
+					<div id="serv4" class="service-block" onclick="">
 						<h3>Graphic Design</h3>
-						<img src="icons/graphic.svg">
+						<img src="icons/graphic.svg" onclick="">
 						<div class="serv-blurb">
 							<p>Latest tech solutions and design principles. <a href="photos/photog.html">See my work here!</a></p>
 							<ul>
@@ -144,16 +144,16 @@
 							</ul>
 						</div>
 					</div>
-					<div id="serv5" class="service-block">
+					<div id="serv5" class="service-block" onclick="">
 						<h3>UI & UX Design</h3>
-						<img src="icons/uiux.svg">
+						<img src="icons/uiux.svg" onclick="">
 						<div class="serv-blurb">
 							<p>Results that are usable and effective. I make sure to pay attention to all details in my projects. User requirements and resource limitations are considered in my design process.</p>
 						</div>
 					</div>
-					<div id="serv6" class="service-block">
+					<div id="serv6" class="service-block" onclick="">
 						<h3>Photography</h3>
-						<img src="icons/camera.svg">
+						<img src="icons/camera.svg" onclick="">
 						<div class="serv-blurb">
 							<p>Check out my <a href="photos/photog.html">galleries</a> for examples of my work.</p>
 						</div>

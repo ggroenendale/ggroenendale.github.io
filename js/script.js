@@ -43,6 +43,7 @@ if (base == 'localhost') {
 }
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 let SWidth = window.innerWidth;
+let MD = new MobileDetect(window.navigator.userAgent);
 
 window.onload = function() {
 	setup();
@@ -286,14 +287,16 @@ function sidebar_slide(prov) {
 }
 
 let user_agent = navigator.userAgent.toLowerCase();
+// console.log(user_agent);
 let ios_devices = user_agent.match(/(iphone|ipod|ipad)/) ? "touchstart" : "click";
-console.log(ios_devices);
+// console.log(ios_devices);
 
 $('.service-block').on('click', function() {
-	if (SWidth < 768) {
+	if (MD.phone()) {
 		$(this).find('.serv-blurb').toggle(300);
 	}
-	else if (SWidth >= 768 && SWidth <= 1366) {
+	else if (MD.tablet()) {
+		alert("I detected a tap");
 		console.log('runs but no toggle');
 		$(this).find('.serv-blurb').toggle(300);
 	}
@@ -305,29 +308,31 @@ $('.service-block').on('click', function() {
    the "touchstart" event and utilizing it with pure javaScript.
 */
 
-let servblock = document.getElementById('serv1');
-servblock.ontouchstart = function(){
-	console.log(servblock.childNodes[5]);
-	servblock.childNodes[5].style.display = 'block';
-}
+// let servblock = document.getElementById('serv1');
+// 	if (!servblock == null) {
+// 	servblock.ontouchstart = function(){
+// 		console.log(servblock.childNodes[5]);
+// 		servblock.childNodes[5].style.display = 'block';
+// 	}
+// }
 
-$('.service-block').bind('touchstart', function(){
-	if (SWidth < 768) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-	else if (SWidth >= 768 && SWidth <= 1366) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-});
+// $('.service-block').bind('touchstart', function(){
+// 	if (SWidth < 768) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// 	else if (SWidth >= 768 && SWidth <= 1366) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// });
 
-$('.service-block').bind('tap', function(){
-	if (SWidth < 768) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-	else if (SWidth >= 768 && SWidth <= 1366) {
-		$(this).find('.serv-blurb').toggle(300);
-	}
-});
+// $('.service-block').bind('tap', function(){
+// 	if (SWidth < 768) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// 	else if (SWidth >= 768 && SWidth <= 1366) {
+// 		$(this).find('.serv-blurb').toggle(300);
+// 	}
+// });
 
 /**
  * ========================================================================================
@@ -393,7 +398,7 @@ $('#show-menu').click(function(){
  
  window.onresize = function() {
 	if (cur_name == 'photography') {
-		if(SWidth > 768){
+		if(SWidth > 1366){
 			adjust_cubes();
 		}
 	}
@@ -432,10 +437,13 @@ function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
 	let gallery = set.galleries;
+
+	// console.log(MD.phone());
+	// console.log(MD.is('DesktopMode'));
 	
 	//Conditional on screen width 
 	//Target for Mobile
-	if (SWidth < 768) {  
+	if (MD.phone()) {  
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -451,7 +459,7 @@ function load_galleries() {
 		grid.innerHTML = html_payload;
 	}
 	//Target for tablets
-	else if ((SWidth >= 768) && (SWidth <= 1366)) { 
+	else if (MD.tablet()) { 
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -478,7 +486,7 @@ function load_galleries() {
 		grid.innerHTML = html_payload;
 	}
 	//Target for Desktop
-	else if ((SWidth > 1366) && (SWidth < 1600)) {  
+	else if (!MD.phone() && !MD.tablet()) {  
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -524,7 +532,7 @@ function adjust_cubes() {
 	//Run code to perfectly space the cube elements
 	//1) Get the width of the gallery wrapper and use it to space and size the cubes
 	let grid_area_w = document.getElementById('gall-wrapper').offsetWidth;
-	console.log(`The gallery wrapper is ${grid_area_w}px wide`);
+	// console.log(`The gallery wrapper is ${grid_area_w}px wide`);
 
 	//2) Put the 'jsresp' style element into a variable 
 	//   if it doesnt exist add it to the document.
@@ -623,7 +631,7 @@ function adjust_cubes() {
 	
 	//4)Load all of the styles into the new sheet element
 	//sheet.innerHTML = "#content{border: 2px solid yellow;}";
-	console.log(sty_mu);
+	// console.log(sty_mu);
 	sheet.innerHTML = sty_mu;
 	
 	//5)Load the new element onto the page

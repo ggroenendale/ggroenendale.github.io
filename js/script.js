@@ -297,7 +297,6 @@ $('.service-block').on('click', function() {
 	}
 	else if (MD.tablet()) {
 		alert("I detected a tap");
-		console.log('runs but no toggle');
 		$(this).find('.serv-blurb').toggle(300);
 	}
 });
@@ -437,6 +436,8 @@ function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
 	let gallery = set.galleries;
+
+	alert('loading galleries');
 
 	// console.log(MD.phone());
 	// console.log(MD.is('DesktopMode'));

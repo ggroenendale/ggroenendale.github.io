@@ -390,7 +390,8 @@ $('#show-menu').click(function(){
 	                             dP                                                       
  */
 
-window.onresize = function() {
+ 
+ window.onresize = function() {
 	if (cur_name == 'photography') {
 		if(SWidth > 768){
 			adjust_cubes();

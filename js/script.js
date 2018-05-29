@@ -308,14 +308,14 @@ $('.service-block').on('click', function() {
 // // 	console.log('Hey this works');
 // // }
 
-// $('.service-block').bind('touchstart', function(){
-// 	if (SWidth < 768) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// 	else if (SWidth >= 768 && SWidth <= 1366) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// });
+$('.service-block').bind('touchstart', function(){
+	if (SWidth < 768) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+	else if (SWidth >= 768 && SWidth <= 1366) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+});
 
 /**
  * ========================================================================================

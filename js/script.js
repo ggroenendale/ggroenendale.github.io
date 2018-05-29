@@ -304,11 +304,23 @@ $('.service-block').on('click', function() {
    required a >= comparator in the conditional statement. In doing this I also discovered'
    the "touchstart" event and utilizing it with pure javaScript.
 */
-// // document.getElementById('serv1').ontouchstart = function(){
-// // 	console.log('Hey this works');
-// // }
+
+let servblock = document.getElementById('serv1');
+servblock.ontouchstart = function(){
+	console.log(servblock.childNodes[5]);
+	servblock.childNodes[5].style.display = 'block';
+}
 
 $('.service-block').bind('touchstart', function(){
+	if (SWidth < 768) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+	else if (SWidth >= 768 && SWidth <= 1366) {
+		$(this).find('.serv-blurb').toggle(300);
+	}
+});
+
+$('.service-block').bind('tap', function(){
 	if (SWidth < 768) {
 		$(this).find('.serv-blurb').toggle(300);
 	}

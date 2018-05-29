@@ -44,6 +44,21 @@ if (base == 'localhost') {
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 let SWidth = window.innerWidth;
 let MD = new MobileDetect(window.navigator.userAgent);
+let ORI = orientation();
+
+function orientation() {
+	if (window.innerWidth < window.innerHeight) {
+		orient = 'port';
+	}
+	else {
+		orient = 'land';
+	}
+	return orient;
+}
+
+$(window).on('orientationchange', function(){
+	orientation();
+})
 
 window.onload = function() {
 	setup();
@@ -221,61 +236,143 @@ $(document).ready(function() {
  */
 function sidebar_slide(prov) {
 	if (!viewer) {
-		if (SWidth < 768) {
+		if (MD.phone()) {
 			let sideswipe = new Swipe('#wrapper');
 			//console.log('Sidebar slide');
 			sideswipe.onLeft(function(){
 				//console.log('actually its thisone is on');
-				$('#show-menu')
-					.removeClass('slide-in')
-					.css({'left':'0px','transition':'0.5s'})
-					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-					$('html').css({'position':'unset','overflow':'unset'});
+				if(ORI == 'port') {
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+				}
+				else if (ORI == 'land') {
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+				}
+				else {
+					console.log('Could not detect orientation')
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+				}
 			});
 			sideswipe.onRight(function(){
-				$('#show-menu')
-					.addClass('slide-in')
-					.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-					$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-					$('html').css({'position':'fixed','overflow':'hidden'});
+				if(ORI == 'port') {
+					$('#show-menu')
+						.addClass('slide-in')
+						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+						$('html').css({'position':'fixed','overflow':'hidden'});
+				}
+				else if (ORI == 'land') {
+					$('#show-menu')
+						.addClass('slide-in')
+						.css({'left':'calc(50% - 1px)','transition':'0.5s'});
+						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+						$('html').css({'position':'fixed','overflow':'hidden'});	
+				}
+				else {
+					$('#show-menu')
+						.addClass('slide-in')
+						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+						$('html').css({'position':'fixed','overflow':'hidden'});
+				}
 			});
 			sideswipe.run();
 		}
 	}
 	else {
 		if (viewer.classList[0].includes('hidden-gall')) {
-			if (SWidth < 768) {
+			if (MD.phone()) {
 				let sideswipe = new Swipe('#wrapper');
 				//console.log('Sidebar ready');
 				sideswipe.onLeft(function(){
-					console.log('thisone is on');
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
+					if(ORI == 'port') {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
+					else if (ORI == 'land') {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
+					else {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
+
 				});
 				sideswipe.onRight(function(){
-					$('#show-menu')
-						.addClass('slide-in')
-						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-						$('html').css({'position':'fixed','overflow':'hidden'});
+					if(ORI == 'port') {
+						$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});
+					}
+					else if (ORI == 'land') {
+						$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(50% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});
+					}
+					else {
+						$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});
+					}
+
 				});
 				sideswipe.run();
 			}
 		}
 		else if (viewer.classList[0].includes('grid-content')){
-			if (SWidth < 768) {
+			if (MD.phone()) {
 				let sideswipe = new Swipe('#wrapper');
 				//console.log('reset here');
 				sideswipe.onRight(function(){
 					//console.log('Setting new function');
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
+					if(ORI == 'port') {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
+					else if (ORI == 'land') {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
+					else {
+						$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+					}
 				});
 				sideswipe.onLeft(function(){ 
 					console.log('turn off');
@@ -286,17 +383,11 @@ function sidebar_slide(prov) {
 	}
 }
 
-let user_agent = navigator.userAgent.toLowerCase();
-// console.log(user_agent);
-let ios_devices = user_agent.match(/(iphone|ipod|ipad)/) ? "touchstart" : "click";
-// console.log(ios_devices);
-
 $('.service-block').on('click', function() {
 	if (MD.phone()) {
 		$(this).find('.serv-blurb').toggle(300);
 	}
 	else if (MD.tablet()) {
-		alert("I detected a tap");
 		$(this).find('.serv-blurb').toggle(300);
 	}
 });
@@ -360,18 +451,52 @@ $('.service-block').on('click', function() {
  */
 $('#show-menu').click(function(){
 	if (this.classList[0] == 'slide-in') {
-		$(this)
-		.removeClass('slide-in')
-		.css({'left':'0px','transition':'0.5s'})
-		$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-		$('html').css({'position':'unset','overflow':'unset'});
+		if (ORI == 'port') {
+			$(this)
+			.removeClass('slide-in')
+			.css({'left':'0px','transition':'0.5s'})
+			$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+			$('html').css({'position':'unset','overflow':'unset'});
+		}
+		else if (ORI == 'land') {
+			$(this)
+			.removeClass('slide-in')
+			.css({'left':'0px','transition':'0.5s'})
+			$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+			$('html').css({'position':'unset','overflow':'unset'});	
+		}
+		else {
+			console.log('Could not detect orientation')
+			$(this)
+			.removeClass('slide-in')
+			.css({'left':'0px','transition':'0.5s'})
+			$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+			$('html').css({'position':'unset','overflow':'unset'});
+		}
 	}
 	else {
-		$(this)
-		.addClass('slide-in')
-		.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-		$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-		$('html').css({'position':'fixed','overflow':'hidden'});
+		if (ORI == 'port') {
+			$(this)
+			.addClass('slide-in')
+			.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+			$('html').css({'position':'fixed','overflow':'hidden'});
+		}
+		else if (ORI == 'land') {
+			$(this)
+			.addClass('slide-in')
+			.css({'left':'calc(50% - 1px)','transition':'0.5s'});
+			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+			$('html').css({'position':'fixed','overflow':'hidden'});	
+		}
+		else {
+			console.log('Could not detect orientation')
+			$(this)
+			.addClass('slide-in')
+			.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+			$('html').css({'position':'fixed','overflow':'hidden'});
+		}
 	}
 });
 
@@ -437,8 +562,6 @@ function load_galleries() {
 	let html_payload = '';
 	let gallery = set.galleries;
 
-	alert('loading galleries');
-
 	// console.log(MD.phone());
 	// console.log(MD.is('DesktopMode'));
 	
@@ -464,22 +587,11 @@ function load_galleries() {
 		gallery.forEach( function(gallery){
 			if(gallery.avail == true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
-				html_payload +=	`<div class="cube">`;
-				html_payload += `<div class="cube-face front">`;
 				html_payload += `<div class="gall-img-wrap">`;
 				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `<div class="cube-face right">`;
 				html_payload += `<div class="gall-info">`;
 				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
 				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `<div class="cube-face back"></div>`;
-				html_payload += `<div class="cube-face left"></div>`;
-				html_payload += `<div class="cube-face top"></div>`;
-				html_payload += `<div class="cubeface bottom"></div>`;
 				html_payload += `</div>`;
 				html_payload += `</div>`;
 			}
@@ -670,7 +782,7 @@ $(".gall-block").click(function(event) {
 	let ctarget = event.target.classList;
 	//console.log(event.target);
 	let gname;
-	if (SWidth < 768) {
+	if (MD.phone()) {
 		if ( ctarget[0].includes('gall-img')) {
 			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
 			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
@@ -679,18 +791,17 @@ $(".gall-block").click(function(event) {
 
 		}
 	}
-	else if ((SWidth >= 768) && (SWidth <= 1366)) {
-		console.log(ctarget[0]); 
+	else if (MD.tablet()) {
 		if ( ctarget[0].includes('gall-img')) {
-			console.log(event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.parentNode.parentNode.parentNode.parentNode.getAttribute('data-gallname');
+			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
+			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
 		}
 		else if ( ctarget[0].includes('gall-block')) {
 			//console.log(event.target.getAttribute('data-gallname'))
 			gname = event.target.getAttribute('data-gallname');
 		}
 	}
-	else if ((SWidth > 1366) && (SWidth < 1600)) { 
+	else if (!MD.tablet() && !MD.phone()) { 
 		if ( ctarget[0].includes('gall-info')) {
 			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
 			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');

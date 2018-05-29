@@ -128,7 +128,7 @@ set = {
 		},
 		{
 			"name" : "masquerade",
-			"avail": true,
+			"avail": false,
 			"display_name" : "Masquerade",
 			"desc" : "I like nature and here are some of my shots.",
 			"mainimg" : 'main',
@@ -155,7 +155,7 @@ set = {
 		},
 		{
 			"name" : "landscapes",
-			"avail": true,
+			"avail": false,
 			"display_name" : "Landscapes",
 			"desc" : "I like nature and here are some of my shots.",
 			"mainimg" : 'main',

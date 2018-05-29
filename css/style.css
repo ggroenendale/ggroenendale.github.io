@@ -857,7 +857,7 @@ nav>ul>a:visited {
 
 .info-key {
 	display: inline;
-	margin: auto;
+	margin: unset;
 }
 
 #caddress {
@@ -893,7 +893,7 @@ nav>ul>a:visited {
 
 #cont-info p {
 	font-size: 1.3em;
-	margin: auto;
+	margin: unset;
 }
 
 form {
@@ -1523,4 +1523,164 @@ form>button[type="submit"]>h3 {
 
 #proj-grid a{
 	color: var(--color-font-si);
+}
+
+/*
+=================================
+		Contact Styles
+=================================
+===================================================================================================
+                                                                                                               
+88                                             88                                                              
+88                                             88                                                              
+88                                             88                                                              
+88           ,adPPYYba,  8b,dPPYba,    ,adPPYb,88  ,adPPYba,   ,adPPYba,  ,adPPYYba,  8b,dPPYba,    ,adPPYba,  
+88           ""     `Y8  88P'   `"8a  a8"    `Y88  I8[    ""  a8"     ""  ""     `Y8  88P'    "8a  a8P_____88  
+88           ,adPPPPP88  88       88  8b       88   `"Y8ba,   8b          ,adPPPPP88  88       d8  8PP"""""""  
+88           88,    ,88  88       88  "8a,   ,d88  aa    ]8I  "8a,   ,aa  88,    ,88  88b,   ,a8"  "8b,   ,aa  
+88888888888  `"8bbdP"Y8  88       88   `"8bbdP"Y8  `"YbbdP"'   `"Ybbd8"'  `"8bbdP"Y8  88`YbbdP"'    `"Ybbd8"'  
+                                                                                      88                       
+                                                                                      88                       
+===================================================================================================
+*/
+
+
+@media only screen and (orientation: landscape) {
+
+/*
+=============================================
+			Sidebar Styles
+=============================================
+===================================================================================================
+						                                                                               
+						 ad88888ba   88           88              88                                   
+						d8"     "8b  ""           88              88                                   
+						Y8,                       88              88                                   
+						`Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+						  `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+						        `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+						Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+						 "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+===================================================================================================
+*/
+
+	#sidebar {
+		width: 50%;
+		display: grid;
+		grid-template-areas: 
+			'top'
+			'top'
+			'mid'
+			'foot'
+			'foot';
+		grid-auto-rows: calc(100% / 5);
+	}
+
+	nav {
+		margin-top: 3%;
+	}
+
+	#gr-rect {
+		margin-top: 2%;
+	}
+
+	nav>ul>a>li {
+		margin-top: 1%;
+		margin-bottom: 1%;
+	}
+
+	#soc-links {
+		padding: 2% 13%;
+
+	}
+
+	#copyright-div h5 {
+		font-size: 1em;
+	}
+
+/*
+=================================
+	Photography Content Styles
+=================================
+===================================================================================================
+                                                         
+										88888888ba   88                                              
+										88      "8b  88                          ,d                  
+										88      ,8P  88                          88                  
+										88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+										88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+										88           88       88  8b       d8    88     8b       d8  
+										88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+										88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+===================================================================================================
+*/
+
+	.gall-img-wrap {
+		overflow: hidden;
+		width: 420px;
+		max-height: 301px;
+		margin: auto;
+		box-shadow: 1px 1px 10px 1px #222;
+	}
+
+	.gall-img {
+		width: 420px;
+	    height: 301px;
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+/*
+=================================
+	Photography Gallery Styles
+=================================
+===================================================================================================
+                                                                    
+							  ,ad8888ba,               88  88                                       
+							 d8"'    `"8b              88  88                                       
+							d8'                        88  88                                       
+							88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+							88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+							Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+							 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+							  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+========================================================================================== d8' ====
+							                                                              d8'       
+*/
+
+	#caro-container {
+		margin: 10px auto;
+	}
+
+	
+
+/*
+=================================
+		Contact Styles
+=================================
+===================================================================================================
+				                                                                                   
+				  ,ad8888ba,                                                                       
+				 d8"'    `"8b                              ,d                               ,d     
+				d8'                                        88                               88     
+				88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+				88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+				Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+				 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+				  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+===================================================================================================
+*/
+
+	[data-pagename="contact"] #wrapper {
+		height: calc(100% + 450px);
+	}
+
+	#cont-info p {
+		font-size: 1em;
+	}
+
+	#c-soc-wrap {
+		padding-top: 4%;
+	}
+
 }

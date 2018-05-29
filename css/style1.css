@@ -906,3 +906,11 @@
 
 }
 
+/* Landscape */
+
+@media only screen 
+  and (min-device-width: 800px) 
+  and (max-device-width: 1280px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+

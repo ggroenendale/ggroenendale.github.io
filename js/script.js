@@ -44,21 +44,25 @@ if (base == 'localhost') {
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 let SWidth = window.innerWidth;
 let MD = new MobileDetect(window.navigator.userAgent);
-let ORI = orientation();
+let ORI = orientationcheck();
 
-function orientation() {
-	if (window.innerWidth < window.innerHeight) {
+function orientationcheck() {
+	let ori_theta = window.orientation;
+	if (ori_theta == 0 ) {
 		orient = 'port';
 	}
-	else {
+	else if (ori_theta == 90) {
 		orient = 'land';
 	}
 	return orient;
 }
 
-$(window).on('orientationchange', function(){
-	orientation();
-})
+window.addEventListener('orientationchange', function(){
+	ORI = orientationcheck();
+	console.log(`Changed orientation to ${ORI}`);
+	sidebar_slide();
+
+},true);
 
 window.onload = function() {
 	setup();
@@ -235,12 +239,85 @@ $(document).ready(function() {
  * ========================================================================================
  */
 function sidebar_slide(prov) {
-	if (!viewer) {
+	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
 		if (MD.phone()) {
 			let sideswipe = new Swipe('#wrapper');
 			//console.log('Sidebar slide');
-			sideswipe.onLeft(function(){
 				//console.log('actually its thisone is on');
+				if(ORI == 'port') {
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+						sideswipe.onLeft(function(){
+							$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+						});
+						sideswipe.onRight(function(){
+							$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});
+						});
+				}
+				else if (ORI == 'land') {
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+						sideswipe.onLeft(function(){
+							$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+						});
+						sideswipe.onRight(function(){
+							$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(50% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});	
+						});
+
+				}
+				else {
+					console.log('Could not detect orientation')
+					$('#show-menu')
+						.removeClass('slide-in')
+						.css({'left':'0px','transition':'0.5s'})
+						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+						$('html').css({'position':'unset','overflow':'unset'});
+						sideswipe.onLeft(function(){
+							$('#show-menu')
+							.removeClass('slide-in')
+							.css({'left':'0px','transition':'0.5s'})
+							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+							$('html').css({'position':'unset','overflow':'unset'});
+						});
+						sideswipe.onRight(function(){
+							$('#show-menu')
+							.addClass('slide-in')
+							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+							$('html').css({'position':'fixed','overflow':'hidden'});
+						});
+				}
+			sideswipe.run();
+		}
+	}
+	else if (viewer.classList[0].includes('grid-content')){
+		if (MD.phone()) {
+			let sideswipe = new Swipe('#wrapper');
+			//console.log('reset here');
+			sideswipe.onRight(function(){
+				//console.log('Setting new function');
 				if(ORI == 'port') {
 					$('#show-menu')
 						.removeClass('slide-in')
@@ -256,7 +333,6 @@ function sidebar_slide(prov) {
 						$('html').css({'position':'unset','overflow':'unset'});
 				}
 				else {
-					console.log('Could not detect orientation')
 					$('#show-menu')
 						.removeClass('slide-in')
 						.css({'left':'0px','transition':'0.5s'})
@@ -264,121 +340,10 @@ function sidebar_slide(prov) {
 						$('html').css({'position':'unset','overflow':'unset'});
 				}
 			});
-			sideswipe.onRight(function(){
-				if(ORI == 'port') {
-					$('#show-menu')
-						.addClass('slide-in')
-						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-						$('html').css({'position':'fixed','overflow':'hidden'});
-				}
-				else if (ORI == 'land') {
-					$('#show-menu')
-						.addClass('slide-in')
-						.css({'left':'calc(50% - 1px)','transition':'0.5s'});
-						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-						$('html').css({'position':'fixed','overflow':'hidden'});	
-				}
-				else {
-					$('#show-menu')
-						.addClass('slide-in')
-						.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-						$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-						$('html').css({'position':'fixed','overflow':'hidden'});
-				}
+			sideswipe.onLeft(function(){ 
+				console.log('turn off');
 			});
 			sideswipe.run();
-		}
-	}
-	else {
-		if (viewer.classList[0].includes('hidden-gall')) {
-			if (MD.phone()) {
-				let sideswipe = new Swipe('#wrapper');
-				//console.log('Sidebar ready');
-				sideswipe.onLeft(function(){
-					if(ORI == 'port') {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-					else if (ORI == 'land') {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-					else {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-
-				});
-				sideswipe.onRight(function(){
-					if(ORI == 'port') {
-						$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});
-					}
-					else if (ORI == 'land') {
-						$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(50% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});
-					}
-					else {
-						$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});
-					}
-
-				});
-				sideswipe.run();
-			}
-		}
-		else if (viewer.classList[0].includes('grid-content')){
-			if (MD.phone()) {
-				let sideswipe = new Swipe('#wrapper');
-				//console.log('reset here');
-				sideswipe.onRight(function(){
-					//console.log('Setting new function');
-					if(ORI == 'port') {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-					else if (ORI == 'land') {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-					else {
-						$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-					}
-				});
-				sideswipe.onLeft(function(){ 
-					console.log('turn off');
-				});
-				sideswipe.run();
-			}
 		}
 	}
 }

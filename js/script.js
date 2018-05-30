@@ -61,7 +61,7 @@ window.addEventListener('orientationchange', function(){
 	ORI = orientationcheck();
 	console.log(`Changed orientation to ${ORI}`);
 	sidebar_slide();
-
+	window.scrollTo(0,1);
 },true);
 
 window.onload = function() {

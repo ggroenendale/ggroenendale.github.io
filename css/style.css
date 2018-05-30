@@ -743,11 +743,12 @@ nav>ul>a:visited {
 }
 
 #caro-container {
-	margin: 40px 0;
+	margin: 0 auto;
+	top: 50%;
+	transform: translate(0, -50%);
 	position: relative;
 	width: 340px;
 	height: 249px;
-	margin: 130px auto;
 	perspective: 1000px;
 	overflow: hidden;
 }
@@ -1649,7 +1650,7 @@ form>button[type="submit"]>h3 {
 */
 
 	#caro-container {
-		margin: 10px auto;
+		margin: 0 auto;
 	}
 
 	

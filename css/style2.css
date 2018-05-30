@@ -2142,11 +2142,9 @@
 	}
 
 	#caro-container {
-		margin: 40px 0;
 		position: relative;
 		width: 720px;
 		height: 520px;
-		margin: 5% auto;
 		perspective: 1000px;
 		overflow: unset;
 	}

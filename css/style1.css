@@ -109,7 +109,7 @@
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 768px) 
+  and (min-device-width: 813px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
 
@@ -360,6 +360,7 @@
     margin: 50% auto;
     width: 420px;
     height: 300px;
+    transform: translate(0, -50%);
   }
 
   .carousel-cell {
@@ -470,7 +471,6 @@
   }
 
   #caro-container {
-    margin: 23% auto;
     width: 650px;
     height: 470px;
   }
@@ -584,7 +584,7 @@
 
 /* Portrait and Landscape */
 @media only screen 
-  and (min-device-width: 800px) 
+  and (min-device-width: 813px) 
   and (max-device-width: 1280px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -832,9 +832,11 @@
   }
 
   #caro-container {
-    margin: 50% auto;
+    margin: 0 auto;
     width: 420px;
     height: 300px;
+    top: 50%;
+    transform: translate(0,-50%);
   }
 
   .carousel-cell {
@@ -909,8 +911,17 @@
 /* Landscape */
 
 @media only screen 
-  and (min-device-width: 800px) 
+  and (min-device-width: 813px) 
   and (max-device-width: 1280px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 1) {
+
+  #caro-container {
+      margin: 0 auto;
+      width: 602px;
+      height: 430px;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+  }
 

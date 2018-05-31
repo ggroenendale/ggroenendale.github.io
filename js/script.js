@@ -490,7 +490,7 @@ $('#show-menu').click(function(){
  
  window.onresize = function() {
 	if (cur_name == 'photography') {
-		if(SWidth > 1366){
+		if(!MD.phone() && !MD.tablet()){
 			adjust_cubes();
 		}
 	}
@@ -612,7 +612,10 @@ function load_galleries() {
 function adjust_cubes() {
 	//Run code to perfectly space the cube elements
 	//1) Get the width of the gallery wrapper and use it to space and size the cubes
+	//	 also grab the border width to make things dynamic
 	let grid_area_w = document.getElementById('gall-wrapper').offsetWidth;
+	let border_width_px = $('.cube-face').css("border-top-width");
+	let border_width = border_width_px.substring(0,1);
 	// console.log(`The gallery wrapper is ${grid_area_w}px wide`);
 
 	//2) Put the 'jsresp' style element into a variable 
@@ -632,7 +635,8 @@ function adjust_cubes() {
 	//  .gall-block, .cube, .cube-face
 	//    3a) .gall-container { grid-template-columns, grid-column-gap, grid-row-gap}
 	//    sty_mu += `\n`;
-	let col_width 	= Math.round((grid_area_w * 0.9)/3);
+	let col_wid 	= Math.round((grid_area_w * 0.9)/3);
+	let col_width   = col_wid + (border_width * 2);
 	let col_gap		= Math.round((grid_area_w - (col_width * 3)) / 2);
 	sty_mu += `#gall-container { \n`;
 	sty_mu += `		grid-template-columns: ${col_width}px ${col_width}px ${col_width}px; \n`;
@@ -700,14 +704,14 @@ function adjust_cubes() {
 	
 	//    3h) .gall-img-wrap {width(350px) height(350px)
 	sty_mu += `.gall-img-wrap { \n`;
-	sty_mu += `		width: ${col_width}px;\n`;
-	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `		width: ${col_wid}px;\n`;
+	sty_mu += `		height: ${col_wid}px;\n`;
 	sty_mu += `}\n\n`;
 	
 	//    3i) .gall-info {width(350px) height(350px)
 	sty_mu += `.gall-info { \n`;
-	sty_mu += `		width: ${col_width}px;\n`;
-	sty_mu += `		height: ${col_width}px;\n`;
+	sty_mu += `		width: ${col_wid}px;\n`;
+	sty_mu += `		height: ${col_wid}px;\n`;
 	sty_mu += `}\n\n`;
 	
 	//4)Load all of the styles into the new sheet element

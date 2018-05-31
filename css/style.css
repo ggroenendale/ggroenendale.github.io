@@ -1341,7 +1341,7 @@ form>button[type="submit"]>h3 {
 	left: 50%;
 	height: 200%;
 	width: 200%;
-	background-color: var(--co-gray3);
+	background-color: var(--co-gray);
 	transform: translate(-50%, -75%);
 }
 
@@ -1684,9 +1684,4 @@ form>button[type="submit"]>h3 {
 		padding-top: 4%;
 	}
 
-}
-
-
-@media only screen and (orientation: landscape) {
-	
 }

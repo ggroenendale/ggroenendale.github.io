@@ -54,6 +54,9 @@ function orientationcheck() {
 	else if (ori_theta == 90) {
 		orient = 'land';
 	}
+	else {
+		orient = 'desk';
+	}
 	return orient;
 }
 

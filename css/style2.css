@@ -103,7 +103,7 @@
 
 @media screen 
   and (min-device-width: 1366px) 
-  and (max-device-width: 1600px) 
+  and (max-device-width: 1800px) 
   and (pointer: fine)
   and (-webkit-min-device-pixel-ratio: 1) {
 
@@ -728,11 +728,9 @@
 	}
 
 	#caro-container {
-		margin: 40px 0;
 		position: relative;
 		width: 720px;
 		height: 520px;
-		margin: 5% auto;
 		perspective: 1000px;
 		overflow: unset;
 	}
@@ -773,8 +771,11 @@
 	}
 
 	#controls {
+		position: relative;
 		width: 100%;
 		text-align: center;
+		bottom: 0%;
+		transform: translate(0, 150%);
 	}
 
 	.iter {

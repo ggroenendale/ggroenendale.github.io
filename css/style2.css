@@ -1329,7 +1329,7 @@
 	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
 	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
 
-	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -70%); }
+	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -95%); }
 	#python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
 
 	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
@@ -1341,10 +1341,10 @@
 	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
 	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 1.5s ease 1; }
 
-	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -84%); }
+	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
 	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
 
-	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -95%); }
 	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
 
 	/**
@@ -2743,7 +2743,7 @@
 	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
 	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
 
-	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -70%); }
+	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -90%); }
 	#python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
 
 	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
@@ -2755,10 +2755,10 @@
 	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
 	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 1.5s ease 1; }
 
-	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -84%); }
+	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
 	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
 
-	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -95%); }
 	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
 
 	/**

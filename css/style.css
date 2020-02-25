@@ -993,6 +993,8 @@ form>button[type="submit"]>h3 {
 	padding-left: 2%;
 }
 
+
+
 .resume-block h6{
 	font-size: 1em;
 }
@@ -1349,7 +1351,7 @@ form>button[type="submit"]>h3 {
 }
 
 /* Set specific bubble capacities here*/
-#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -85%); }
+#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -95%); }
 #sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 1.5s ease 1; }
 
 #neo-bubble .circle .wave:before 		{ transform: translate(-50%, -88%); }
@@ -1358,7 +1360,7 @@ form>button[type="submit"]>h3 {
 #csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
 #csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
 
-#python-bubble .circle .wave:before 	{ transform: translate(-50%, -70%); }
+#python-bubble .circle .wave:before 	{ transform: translate(-50%, -90%); }
 #python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
 
 #r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
@@ -1373,7 +1375,7 @@ form>button[type="submit"]>h3 {
 #js-bubble .circle .wave:before 		{ transform: translate(-50%, -84%); }
 #js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
 
-#php-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+#php-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
 #php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
 
 /**
@@ -1395,8 +1397,8 @@ form>button[type="submit"]>h3 {
 	100% { transform: translate(-50%, -85%) rotate(180deg);	}
 }
 @keyframes python-wave {
-	0% { transform: translate(-50%, -70%) rotate(0deg);	}
-	100% { transform: translate(-50%, -70%) rotate(180deg); }
+	0% { transform: translate(-50%, -90%) rotate(0deg);	}
+	100% { transform: translate(-50%, -90%) rotate(180deg); }
 }
 @keyframes r-wave {
 	0% { transform: translate(-50%, -64%) rotate(0deg); }
@@ -1415,8 +1417,8 @@ form>button[type="submit"]>h3 {
 	100% { transform: translate(-50%, -84%) rotate(180deg); }
 }
 @keyframes php-wave {
-	0% { transform: translate(-50%, -75%) rotate(0deg); }
-	100% { transform: translate(-50%, -75%) rotate(180deg); }
+	0% { transform: translate(-50%, -95%) rotate(0deg); }
+	100% { transform: translate(-50%, -95%) rotate(180deg); }
 }
 
 /*

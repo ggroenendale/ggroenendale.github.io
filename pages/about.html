@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html data-pagename="about">
+<head>
+	<base href="https://ggroenendale.github.io/">
+	<script type="text/javascript">
+		//This is a bit of development code in order to modify
+		//the base href depending on where the site is hosted.
+		let current_host = document.location.hostname;
+		console.log(current_host);
+		if (current_host === 'localhost') {
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
+		}
+		else if (current_host === '0.0.0.0') {
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://0.0.0.0:8000/");
+		}
+		else {
+			console.log('On github');
+		}
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119421108-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-119421108-1');
+	</script>
+	<title>Geoff Groenendale - Portfolio</title>
+	<link rel="alternate" href="https://ggroenendale.github.io" hreflang="en-us">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Go to this page for credential and experience information.">
+	<link rel="shortcut icon" href="icons/fav.png" type="image/png">
+	<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/style3.css">
+	<link href="https://fonts.googleapis.com/css?family=Arapey|Dosis|Lora|Fira+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+	<!-- <div id="abouttool">
+		 Dynamically insert gallery info here.
+	</div> -->
+	<div id="under-show">
+		<div id="show-menu">
+			<div id="bar-grid">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+		</div>
+	</div>
+	<div id="wrapper" class="grid-container">
+		<aside id="sidebar" class="grid-side slide-menu">
+			<nav>
+				<a href="" id="port-link"><h1 id="port-name">Geoff Groenendale Portfolio</h1></a>
+				<div id="gr-rect"></div>
+				<ul>
+					<li><a href="pages/projs.html">Projects</a></li>
+					<li><a href="pages/photog.html">Galleries</a></li>
+					<li><a href="pages/about.html">About</a></li>
+					<!-- <a href="blog/blog.html"><li>Blog</li></a> -->
+					<li><a href="pages/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div id="sidemid">
+				<h2 id="cur-page"></h2>
+			</div>
+			<div id="sidefoot">
+				<div id="foot-inner">
+					<div id="soc-links">
+						<a class="soc-in" href="https://www.linkedin.com/in/ggroenendale/"><li><img src="img/icons/in.png"></li></a>
+						<a class="soc-git" href="https://github.com/ggroenendale"><li><img src="img/icons/git.png"></li></a>
+						<a class="soc-inst" href="https://www.instagram.com/ggroenendale/"><li><img src="img/icons/inst.png"></li></a>
+						<a class="soc-tu" href="https://www.youtube.com/channel/UCPYuKG1N9rvx6xceztT37Jg"><li><img src="img/icons/tube.png"></li></a>
+					</div>
+					<div id="copyright-div"><h5 id="copyright">
+						<span>&copy;</span> 2018 Geoff Groenendale</h5>
+						<p>All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</aside> <!-- This closes the sidebar -->
+		<div id="content" class="grid-content about-grid">
+			<div id="prof-pic-info">
+				<div id="prof-pic">
+					<img id="prof-pic-img" src="img/profile.jpeg">
+				</div>
+				<div id="prof-infos">
+					<div id="prof-infos-head">
+						<h2>About Me</h2>
+					</div>
+					<p class="infos"><span>Name: </span>Geoff Groenendale</p>
+					<p class="infos"><span>Location: </span>Vancouver, WA 98665</p>
+					<p id="bio"><span>Bio: </span>Hello, my name is Geoff with a G. I enjoy working with technology to solve complex problems and exploring new technologies in doing so. My unique perspective on data and how it can be utilized helps those I work with to achieve greater results. Perhaps I can build you a new database, data processor, or web portal to get more out of the data that you already have<!-- <br><br>If my perspective sounds interesting check out my resum&#233;! If you are ready to work together conact me! --></p>
+					<a id="a-resume" href="docs/resume.pdf" target="_blank">
+						<div class="do-resume">
+							<div class="down-wrap">
+								<div class="icon-wrap">
+									<img src="img/icons/down.svg">
+								</div>
+								<p>Download Resume</p>
+							</div>
+						</div>
+					</a>
+					<a id="a-contact" href="pages/contact.html">
+						<div class="do-resume">
+							<div class="down-wrap">
+								<div class="icon-wrap">
+									<img src="img/icons/mail2.svg">
+								</div>
+								<p>Contact Me</p>
+							</div>
+						</div>
+					</a>
+				</div> <!-- This closes infos -->
+			</div>
+			<div id="cols">
+					<div id="experience" class="resume-block">
+						<h3>Experience</h3>
+						<div class="exp-block">
+							<h4>Business Data Analyst</h4>
+							<h5>Rexel</h5>
+							<ul>
+								<li>Worked with Department leaders to gather important KPI’s to track and inform leadership of performance and impact to business using Power BI for the visuals.</li>
+								<li>Developed a process to analyze the links between API Routes and Database Resources.</li>
+								<li>Implemented Azure DevOps Wiki for database documentation, process documentation, and other team resources</li>
+								<li>Modeled the data entities and relationships for internal sales application to guide integration of newly acquired business.</li>
+								<li>Documented Integration process to guide additional application integrations and for future business acquisitions.</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Business Systems Analyst</h4>
+							<h5>The Standard</h5>
+							<ul>
+								<li>Analyzed project costs to forecast future costs and program status</li>
+								<li>Developed new website sitemap and project plan</li>
+								<li>Assisted operations team by completing special tech projects</li>
+								<li>Maintained documentation of ongoing system analysis</li>
+								<li>Developed Data Dictionary for key performance data fields</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Data Analytics Teaching Assistant</h4>
+							<h5>University of Oregon / 2U</h5>
+							<ul>
+								<li>Analyzed project costs to forecast future costs and program status</li>
+								<li>Developed new website sitemap and project plan</li>
+								<li>Assisted operations team by completing special tech projects</li>
+								<li>Maintained documentation of ongoing system analysis</li>
+								<li>Developed Data Dictionary for key performance data fields</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Technology Analyst</h4>
+							<h5>TEC Equipment</h5>
+							<ul>
+								<li>Analyzed project costs to forecast future costs and program status</li>
+								<li>Developed new website sitemap and project plan</li>
+								<li>Assisted operations team by completing special tech projects</li>
+								<li>Maintained documentation of ongoing system analysis</li>
+								<li>Developed Data Dictionary for key performance data fields</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Business Intelligence Analyst</h4>
+							<h5>Market Contractors</h5>
+							<ul>
+								<li>Analyzed project costs to forecast future costs and program status</li>
+								<li>Developed new website sitemap and project plan</li>
+								<li>Assisted operations team by completing special tech projects</li>
+								<li>Maintained documentation of ongoing system analysis</li>
+								<li>Developed Data Dictionary for key performance data fields</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Assistant Buyer</h4>
+							<h5>Crown Enterprises - TriState Outfitters</h5>
+							<ul>
+								<li>Purchased inventory from hardware and houseware vendors</li> 
+								<li>Recorded order data into Retail Management System for inventory, accounting, and sales</li> 
+								<li>Analyzed, corrected, and adjusted inventory</li> 
+								<li>Adjust Prices for clearance or for term sales</li> 
+								<li>Provide customer service to customers in the homebrew section by suggesting equipment, ingredients, or recipes.</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Beverage Technician</h4>
+							<h5>Levy Restaurants</h5>
+							<ul>
+								<li>Maintained beverage systems inside the Rose Quarter Moda Center events arena</li>
+								<li>Part of the team that beat the record for all time beer sales - excess of $300,000 in a single night</li>
+								<li>Prepared all beverage systems and necessary reserves prior to events</li>
+								<li>Handled maintenance issues and assisted bartenders with any issues especially during busy periods</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Engineer Intern</h4>
+							<h5>Washington State DOT</h5>
+							<ul>
+								<li>Inspected work of sub-contractors to ensure project was done to specifications</li>
+								<li>Communicated with project managers and contractors about schedule and scope requirements</li> 
+								<li>Projects were all asphalt resurfacing and road repair</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Research Brewer</h4>
+							<h5>WSU IAREC</h5>
+							<ul>
+								<li>Brewed beer using experimental hops for pesticide and fertilizer residue levels</li>
+								<li>Brewed consistent batches using detailed procedures and reasonably identical ingredients</li>
+								<!-- <li>Hops used were sprayed with different chemicals or fed different amounts of fertilizers</li> -->
+								<li>Used keg fermentation system to reduce oxygen levels</li>
+								<li>Kept detailed records of alchol levels, ingredient amounts, and the time required during each process</li>
+							</ul>
+						</div>
+						<div class="exp-block">
+							<h4>Laboratory Assistant</h4>
+							<h5>WSU IAREC</h5>
+							<ul>
+								<li>Collected samples from research crops</li>
+								<li>Recorded population counts of various insects</li>
+								<li>Built insect traps for various situations and crops to test different theories.</li>
+								<li>Research crops included hops, poplar trees, wine and juice grapes, alfalfa, and mint. Job also included general labor such as cleaning cars, irrigation repair, cleaning, watering plants, etc.</li>
+							</ul>
+						</div>
+					</div><!-- This closes experience -->
+					<div id="skills" class="resume-block">
+						<h3>Skills</h3>
+						<div id="pm-skill" class="skill">
+							<h4>Project Management</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="dm-skill" class="skill">
+							<h4>Data Management</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="da-skill" class="skill">
+							<h4>Data Analysis</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="sa-skill" class="skill">
+							<h4>System Analysis</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="wb-skill" class="skill">
+							<h4>Web Development</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="photo-skill" class="skill">
+							<h4>Photography</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<h3>Softwares</h3>
+						<div id="bi-skill" class="skill">
+							<h4>Power BI</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ta-skill" class="skill">
+							<h4>Tableau</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="sf-skill" class="skill">
+							<h4>Salesforce</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ps-skill" class="skill">
+							<h4>Photoshop</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ill-skill" class="skill">
+							<h4>Illustrator</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="ind-skill" class="skill">
+							<h4>InDesign</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<div id="mo-skill" class="skill">
+							<h4>Microsoft Office</h4>
+							<div class="skillbar">
+								<div class="skillfill"></div>
+							</div>
+						</div>
+						<h3>Programming Languages</h3>
+						<div id="prog-grid">
+							<div id="sql-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>SQL</h6> <!-- Maybe have a tooltip for what I know in these bubbles-->
+							</div>
+							<div id="neo-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>Neo4j</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="csharp-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>C#</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="python-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>Python</h6>
+								<div class="abouttool">
+									<h6>Known Libraries:</h6>
+									<ul>
+										<li>Numpy</li>
+										<li>Matplotlib</li>
+										<li>Pandas</li>
+										<li>Flask</li>
+										<li>Scipy</li>
+										<li>SQLAlchemy</li>
+										<li>NLTK</li>
+										<li>Watchdog</li>
+									</ul>
+								</div>
+							</div>
+							<div id="r-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>R</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="html-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>HTML</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="css-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>CSS</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="js-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>JavaScript</h6>
+								<div class="abouttool">
+									<h6>Known Libraries:</h6>
+									<ul>
+										<li>jQuery</li>
+										<li>AngularJS</li>
+										<li>Node.js</li>
+										<li>D3.js</li>
+										<li>Leaflet.js</li>
+										<li>Plotly.js</li>
+										<li>Three.js</li>
+									</ul>
+								</div>
+							</div>
+							<div id="php-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>PHP</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+							<div id="lua-bubble" class="prog-bubble">
+								<div class="circle">
+									<div class="wave"></div>
+								</div>
+								<h6>Lua</h6>
+								<!-- <div class="abouttool">
+									<h6></h6>
+									<ul>
+										<li></li>
+									</ul>
+								</div> <! -- Uncomment for tooltip -->
+							</div>
+						</div>
+					</div> <!-- This closes skills -->
+					<div id="education" class="resume-block">
+						<h3>Education</h3>
+						<h4>Washington State University</h4>
+						<h5>Bachelors in Business Administration</h5>
+						<p>December 2018</p>
+						<p>Major: Management of Information Systems</p>
+						<p>Minor: Digital Technology and Culture</p>
+						<h4>Columbia Basin Community College</h4>
+						<h5>Associates in Arts and Sciences</h5>
+						<p>May 2011</p>
+						<p>Focus: Mechanical Engineering Prep</p>
+						<h3>Courses</h3>
+						<div id="course-list">
+							<ul>
+								<li>Data Management (SQL)</li>
+								<li>System Analysis</li>
+								<li>Business App Development (C#)</li>
+								<li>Project Management</li>
+								<li>Multimedia Authoring (HTML, CSS, JS)</li>
+								
+							</ul>
+							<ul>
+								<li>Design and Composition</li>
+								<li>Business Statistics</li>
+								<li>Business Law</li>
+								<li>E-commerce</li>
+								<li>Small Business Stategy and Planning</li>
+							</ul>
+						</div>
+					</div> <!-- This closes education -->
+					<div id="achievements" class="resume-block">
+						<h3>Accomplishments</h3>
+						<h4>Publication</h4>
+						<a href="https://www.asbcnet.org/publications/journal/vol/2016/Pages/ASBCJ-2016-1115-02.aspx" target="_blank"><h5>Evaluation of Pesticide Residues from Conventional, Organic, and Nontreated Hops on Conventionally Hopped, Late-Hopped, and Wet-Hopped Beers</h5></a>
+						<p>I brewed batches of beer as part of this project. It required a consistent process and detailed records. I worked with several scientists and researchers from WSU and OSU.</p>
+						<!-- <p>This article describes a research project in which different hops were treated with various conventional pesticides at conventional levels. Those hops were then harvested and used to make consistent five gallon batches of beer using the same hops and the same lot of liquid malt extract. 90 batches of beer were brewed. One trial of hops was brewed 4 different ways according to hop addition schedules - from no hop controls to late hop and dry hop batches (adding the hops while the beer ferments in its secondary fermentation phase). Samples were then pulled and sent off for chemical analysis in order to determine if pesticide residue levels were safe in the beer. The analysis determined that of the pesticides that were detected at the highest levels a 200-lb man would need to drink 86 pints of beer to even reach the Acceptable Daily Intake level. It is possible the brewing process denatures most of the remaining residue levels after harvest. However that was not the determination of the project, it simply determined that these pesticides don't seem to transfer from hops to finished beer at conventional pesticide use levels no matter how the hops are utilized.</p> -->
+						<h4>Honor & Award</h4>
+						<h5>Eagle Scout</h5>
+						<p>Boy Scouts of America's highest rank. I achieved this before I turned 18. In this same time frame I finished high school, earned my AA degree, and recieved my Vigil Honor from the Boy Scouts honor society called the Order of the Arrow.</p>
+					</div> <!-- This closes achievements -->
+					<div id="extra" class="resume-block">
+						<h3>Extra Curricular</h3>
+						<h5>Startup Weekend</h5>
+						<p>This event challenged me to build a business from idea to a minimum viable product in 56 hours. If this sounds interesting check out <a href="https://startupweekend.org/" target="_blank">this link</a> for an event near you.</p>
+					</div> <!-- This closes extras -->
+			</div>
+		</div> <!-- This closes the content -->
+	</div> <!-- This closes the wrapper -->
+	<div id="scripts">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+		<script type="text/javascript" src="js/mobile-detect.js"></script>
+		<script type="text/javascript" src="js/workhorse.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</div>
+</body>
+</html>

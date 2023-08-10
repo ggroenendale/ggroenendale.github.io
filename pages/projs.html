@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html data-pagename="projects">
+<head>
+	<base href="https://ggroenendale.github.io/">
+	<script type="text/javascript">
+		//This is a bit of development code in order to modify
+		//the base href depending on where the site is hosted.
+		let current_host = document.location.hostname;
+		console.log(current_host);
+		if (current_host === 'localhost') {
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
+		}
+		else if (current_host === '0.0.0.0') {
+			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://0.0.0.0:8000/");
+		}
+		else {
+			console.log('On github');
+		}
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119421108-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-119421108-1');
+	</script>
+	<title>Geoff Groenendale - Portfolio</title>
+	<link rel="alternate" href="https://ggroenendale.github.io" hreflang="en-us">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="View examples of my work from previous projects I have worked on.">
+	<link rel="shortcut icon" href="icons/fav.png" type="image/png">
+	<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style1.css">
+	<link rel="stylesheet" type="text/css" href="css/style2.css">
+	<link rel="stylesheet" type="text/css" href="css/style3.css">
+	<link href="https://fonts.googleapis.com/css?family=Arapey|Dosis|Lora|Fira+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+	<div id="under-show">
+		<div id="show-menu">
+			<div id="bar-grid">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+		</div>
+	</div>
+	<div id="wrapper" class="grid-container">
+		<aside id="sidebar" class="grid-side">
+			<nav>
+				<a href="" id="port-link"><h1 id="port-name">Geoff Groenendale Portfolio</h1></a>
+				<div id="gr-rect"></div>
+				<ul>
+					<li><a href="pages/projs.html">Projects</a></li>
+					<li><a href="pages/photog.html">Galleries</a></li>
+					<li><a href="pages/about.html">About</a></li>
+					<!-- <a href="blog/blog.html"><li>Blog</li></a> -->
+					<li><a href="pages/contact.html">Contact</a></li>
+				</ul>
+			</nav>
+			<div id="sidemid">
+				<h2 id="cur-page"></h2>
+				
+			</div>
+			<div id="sidefoot">
+				<div id="foot-inner">
+					<div id="soc-links">
+						<a class="soc-in" href="https://www.linkedin.com/in/ggroenendale/"><li><img src="img/icons/in.png"></li></a>
+						<a class="soc-git" href="https://github.com/ggroenendale"><li><img src="img/icons/git.png"></li></a>
+						<a class="soc-inst" href="https://www.instagram.com/ggroenendale/"><li><img src="img/icons/inst.png"></li></a>
+						<a class="soc-tu" href="https://www.youtube.com/channel/UCPYuKG1N9rvx6xceztT37Jg"><li><img src="img/icons/tube.png"></li></a>
+					</div>
+					<div id="copyright-div"><h5 id="copyright">
+						<span>&copy;</span> 2018 Geoff Groenendale</h5>
+						<p>All Rights Reserved</p>
+					</div>
+				</div>
+			</div>
+		</aside> <!-- This closes the sidebar -->
+		<div id="content" class="grid-content">
+			<h1>Here is some of my work.</h1>
+			<div id="proj-grid" class="">
+				<div class="proj-block">
+					<a class="proj-link" href="projs/" target="_blank">
+						<div class="proj-img">
+							<img src="http://via.placeholder.com/300x300">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>MyRPGList</h4>
+						<p>The idea behind this project was to create a platform where Table Top Role Players can share the stories they are telling with their favorite game systems and fans can find other stories their favorite players are connected to.</p>
+					</div>
+				</div>
+				<div class="proj-block">
+					<a class="proj-link" href="projs/" target="_blank">
+						<div class="proj-img">
+							<img src="http://via.placeholder.com/300x300" alt="">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>Homebase Dashboard</h4>
+						<p>The purpose of this project is to develop a dashboard to be used in the home that could describe current financial status as well as vehicle diagnostics, utility usage, and other important information.</p>
+					</div>
+				</div>
+				<div class="proj-block">
+					<a class="proj-link" href="projs/" target="_blank">
+						<div class="proj-img">
+							<img src="http://via.placeholder.com/300x300">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>Health and Workout Dashboard</h4>
+						<p>This app pulls data from several devices to show current weight and strength goal progress.</p>
+					</div>
+				</div>
+				<div class="proj-block">
+					<a class="proj-link" href="projs/" target="_blank">
+						<div class="proj-img">
+							<img src="http://via.placeholder.com/300x300">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>Thingable</h4>
+						<p>The purpose of this project is to develop a web app that could be used to describe different ways a thing can be used such as a hammer being used to open a beer or the 100 uses for Duct Tape. The system utilizes a graph database to describe relationships between things.</p>
+					</div>
+				</div>
+				<div class="proj-block">
+					<a class="proj-link" href="docs/data-management.pdf" target="_blank">
+						<div class="proj-img">
+							<img src="docs/data-management.jpg">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>Data Management - Final Project</h4>
+						<p>Data management was a class that went into detail on the functions of a Microsoft SQL Server database as well as how those functions could help a business manage their data more efficiently. This semester long project required us to create an operational database for a fictitious organization. The database would have to meet several requirements and be a database that produces value for the organization. I chose to make a database based around a project management office doing primarily construction. This document details my final findings and some of my operational queries and procedures.</p>
+					</div>
+				</div>
+				<div class="proj-block">
+					<a class="proj-link" href="docs/ecommerce.pdf" target="_blank">
+						<div class="proj-img">
+							<img src="docs/ecommerce.jpg">
+						</div>
+					</a>
+					<div class="proj-info">
+						<h4>E-Commerce - Final Project</h4>
+						<p>As group projects go this was one of my favorite projects and one that I was very excited to lead. The project required us to invent a business that sells a product online via <a href="https://www.prestashop.com" target="_blank">PrestaShop</a>. We built a revenue model and marketing strategy as well as wrote out a detailed competitive analysis and operational details. We also created a product line. This document details our final findings and strategy.</p>
+					</div>
+				</div>
+			</div> <!-- This closes the proj-grid --> 
+		</div> <!-- This closes the content -->
+	</div> <!-- This closes the wrapper -->
+	<div id="scripts">
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+		<script type="text/javascript" src="js/mobile-detect.js"></script>
+		<script type="text/javascript" src="js/workhorse.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</div>
+</body>
+</html>

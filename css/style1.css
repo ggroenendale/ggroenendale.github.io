@@ -1,0 +1,1714 @@
+/**
+ * Title: Geoff Groenendale - Portfolio
+ * Author: Geoff Groenendale
+ * Date: 5/7/2018
+ * 
+ * Description: This is the style sheet for all tablet
+ * styles  
+ * 
+ * Sources:
+ *  - Media queries from
+ *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+ *  - CSS Reset
+ *    http://meyerweb.com/eric/tools/css/reset/
+ *  - Mobile CSS Reset
+ *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
+ *  - Big section letters are generated on this website using the "univers" style
+ *    http://www.messletters.com/en/big-text/
+ *    
+ * Standard Format Rules
+ *  #element-name {
+ *    display: ;      ---Display type always first
+ *    position: ;     ---Positioning next including top,left,right
+ *    top: ;
+ *    left: ;
+ *    floats: ;     ---floats will likely end up here 
+ *    width: ;      ---sizing of the actual element here
+ *    height: ;
+ *    margin: ;     ---Margin always before padding
+ *    padding: ;
+ *    overflow: ;     ---Overflow status
+ *    --fonts--       
+ *    font-family: ;    ---All font styles starting with font family then sizes then weights, decorations
+ *    font-size: ;
+ *    text-decoration: ;
+ *    list-styletypes: ;
+ *    --colors--  
+ *    color: ;      ---All colors fall in place after positions and size
+ *    background-color: ;
+ *  }
+ */
+
+/*
+=============================================
+      Root Styles
+=============================================
+===================================================================================================
+
+                        88888888ba                                      
+                        88      "8b                              ,d     
+                        88      ,8P                              88     
+                        88aaaaaa8P'   ,adPPYba,    ,adPPYba,   MM88MMM  
+                        88""""88'    a8"     "8a  a8"     "8a    88     
+                        88    `8b    8b       d8  8b       d8    88     
+                        88     `8b   "8a,   ,a8"  "8a,   ,a8"    88,    
+                        88      `8b   `"YbbdP"'    `"YbbdP"'     "Y888  
+===================================================================================================
+*/
+:root {
+  --port-head-co:  #A5C2AC;   /* --- Color for the portfolio header/logo */
+  --color-si-bg:   #403D39;   /* --- Color for the sidebar background */
+  --color-co-bg:   #DFEDE3;   /* --- Color for the content background */ 
+  --color-font-si: #DFEDE3;   /* --- Color for the sidebar font */
+  --co-font-sihov: #DFEDE3;   /* --- Color for the sidebar font on hover */
+  --color-font-co: #181715;   /* --- Color for the content font */
+  --co-font-cohov: #181715;   /* --- Color for the content font on hover */
+  --co-gall-bord:  #000000;   /* --- Color for the gallery borders */
+  --co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
+  --co-cube-bg:    #403D39;   /* --- Color for the cube faces */
+
+  --co-gray:     #74716F;
+  --co-gray2:    #6A6765; /* --- Color for the grays */
+  --co-gray3:    #8D8A89;
+
+  --co-yhigh:    #FFB997;
+  --co-yhigh2:   #FFC5A9;
+  --co-yhigh3:   #E6D1A5; /* --- Color for the highlights */
+  --co-yhigh4:   #E8D5AD;
+  --co-yhigh5:   #F2C47E;
+
+  --co-highlight2: #67D1FA;
+  --co-highlight3: #8DDCFB; /* --- Color for the other options */
+  --co-highlight4: #B3E8FC;
+
+  --color-green:   #5E926A;   /* --- Color for the green */
+  --color-green2:  #A5C2AC;
+  --color-green3:  #ADC7B3;
+  --color-green4:  #B5CDBB;
+  --color-green5:  #B7CEBD;
+
+  --font-header:   'Dosis', sans-serif;
+  --font-header2:  'Fira Sans', sans-serif;
+  --font-para:   'Arapey', serif;
+  --font-para2:  'Lora', serif;
+  --port-head-fo:  'Dosis', sans-serif;
+}
+
+.tgallery-img {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+=============================================
+			Media Queries
+=============================================
+ */
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/*
+=======================================================================================================
+oo  888888ba                 dP    d88     d8888b.       8888ba.88ba  oo          oo        .d888888  oo          
+    88    `8b                88     88         `88       88  `8b  `8b                      d8'    88              
+dP a88aaaa8P' .d8888b. .d888b88     88     .aaadP'       88   88   88 dP 88d888b. dP       88aaaaa88a dP 88d888b. 
+88  88        88'  `88 88'  `88     88     88'           88   88   88 88 88'  `88 88       88     88  88 88'  `88 
+88  88        88.  .88 88.  .88     88  dP 88.     dP    88   88   88 88 88    88 88 dP    88     88  88 88       
+dP  dP        `88888P8 `88888P8    d88P 88 Y88888P 88    dP   dP   dP dP dP    dP dP 88    88     88  dP dP       
+                                        .P         .P                                .P                           
+=======================================================================================================
+*/
+
+/* Portrait */
+/*
+===================================================================================================
+
+ 888888ba                      dP                     oo   dP   
+ 88    `8b                     88                          88   
+a88aaaa8P' .d8888b. 88d888b. d8888P 88d888b. .d8888b. dP d8888P 
+ 88        88'  `88 88'  `88   88   88'  `88 88'  `88 88   88   
+ 88        88.  .88 88         88   88       88.  .88 88   88   
+ dP        `88888P' dP         dP   dP       `88888P8 dP   dP   
+===================================================================================================
+*/
+
+@media only screen 
+  and (min-device-width: 768px)
+  and (max-device-width: 768px)
+  and (min-device-height: 1024px)
+  and (pointer: coarse)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      /*
+  =============================================
+        Grid Styles
+  =============================================
+  ===================================================================================================
+                                            
+                              ,ad8888ba,               88           88  
+                             d8"'    `"8b              ""           88  
+                            d8'                                     88  
+                            88             8b,dPPYba,  88   ,adPPYb,88  
+                            88      88888  88P'   "Y8  88  a8"    `Y88  
+                            Y8,        88  88          88  8b       88  
+                             Y8a.    .a88  88          88  "8a,   ,d88  
+                              `"Y88888P"   88          88   `"8bbdP"Y8  
+  ===================================================================================================
+  */
+
+  /*===== Primary grid Area - Sidebar and Content/Main ===== */
+  /* Declaring CSS Grid Areas*/
+  .grid-side    { grid-area: side; }
+  .grid-content   { grid-area: main; }
+
+  .grid-container {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+      'side main main main';
+    grid-auto-columns: calc(100% * 1 / 4);
+  }
+
+  /*===== Sidebar grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+  nav     { grid-area: top; }
+  #sidemid  { grid-area: mid; }
+  #sidefoot { grid-area: foot; }
+
+  #sidebar {
+    display: grid;
+    grid-template-areas: 
+      'top'
+      'mid'
+      'foot';
+    grid-auto-rows: calc(100% * 1 / 3);
+  }
+
+  /*===== Social Links grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+
+  #soc-links {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5%;
+  }
+
+  /*
+  =============================================
+        Body Styles
+  =============================================
+  ====================================================================================================
+                                                    
+                          88888888ba                         88               
+                          88      "8b                        88               
+                          88      ,8P                        88               
+                          88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+                          88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+                          88      `8b  8b       d8  8b       88   `8b   d8'   
+                          88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+                          88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+  ========================================================================================== d8' =====
+                                                                    d8'     
+  
+  */
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+
+  }
+
+  body {
+
+  }
+
+  #wrapper {
+
+  }
+
+  /*
+  =============================================
+        Sidebar Styles
+  =============================================
+  ===================================================================================================
+                                                                                             
+               ad88888ba   88           88              88                                   
+              d8"     "8b  ""           88              88                                   
+              Y8,                       88              88                                   
+              `Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+                `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+                      `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+              Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+               "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+  ===================================================================================================
+  */
+
+  #under-show {
+    display: none;
+  }
+
+  #show-menu {
+    display: none;
+  }
+
+  .slide-menu {
+    left: unset;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    width: calc(100% * 1 / 4);
+    height: 100%;
+    box-shadow: 2px 2px 25px 0px rgba(0,0,0,0.5);
+    border-radius: 1px;
+  }
+
+  #port-name {
+    font-size: 2.1em;
+  }
+
+  nav>ul>li {
+    font-size: 2.5em;
+  }
+
+
+  /*
+  =================================
+      Home Content Styles
+  =================================
+  ===================================================================================================
+                                                           
+                      88        88                                               
+                      88        88                                               
+                      88        88                                               
+                      88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+                      88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+                      88        88  8b       d8  88      88      88  8PP"""""""  
+                      88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+                      88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+  ===================================================================================================
+  */
+
+  #serv1 {
+    cursor: pointer;
+  }
+
+  .service-block {
+    width: 95%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .service-block h3 {
+    font-size: 2.2em;
+  }
+
+  .service-block img {
+    width: 75%;
+    cursor: pointer;
+  }
+
+  .serv-blurb p {
+    width: 80%;
+    margin: auto;
+  }
+
+  .serv-blurb ul {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+  }
+
+  /*
+  =================================
+    Photography Content Styles
+  =================================
+  ===================================================================================================
+                                                             
+                      88888888ba   88                                              
+                      88      "8b  88                          ,d                  
+                      88      ,8P  88                          88                  
+                      88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+                      88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+                      88           88       88  8b       d8    88     8b       d8  
+                      88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+                      88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+  ===================================================================================================
+  */
+
+  .gall-img-wrap {
+    width: 420px;
+    height: 300px;
+    max-height: 300px;
+  }
+
+  .gall-img {
+    width: 420px;
+    height: 300px;
+  }
+
+  .gall-info {
+    width: 420px;
+    height: 35px;
+  }
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    position: unset;
+    width: unset;
+    height: unset;
+    background-color: #000000;
+  }
+
+  #caro-container {
+    width: 440px;
+    height: 320px;
+    transform: translate(0, -50%);
+  }
+
+  .carousel-cell {
+    width: 420px;
+    height: 300px;
+  }
+
+  .tgallery-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*
+  =================================
+      About Styles
+  =================================
+  ===================================================================================================
+                                                                                    
+                         db         88                                              
+                        d88b        88                                       ,d     
+                       d8'`8b       88                                       88     
+                      d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+                     d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+                    d8""""""""8b    88       d8  8b       d8  88       88    88     
+                   d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+                  d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+  ===================================================================================================
+  */
+
+  #prof-infos>a {
+    width: 40%;
+    display: inline-block;
+  }
+
+  #prof-infos>#a-resume {
+    margin-right: 2%;
+    margin-left: 7.5%;
+  }
+
+  #prof-infos>#a-contact {
+    margin-left: 2%;
+    margin-right: 7.5%;
+  }
+
+    /*
+  =================================
+      Contact Styles
+  =================================
+  ===================================================================================================
+                                                                                             
+            ,ad8888ba,                                                                       
+           d8"'    `"8b                              ,d                               ,d     
+          d8'                                        88                               88     
+          88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+          88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+          Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+           Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+            `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+  ===================================================================================================
+  */
+
+  #cont-info p {
+    margin: unset;
+  }
+
+  .info-key {
+    margin: unset;
+  }
+
+}
+
+
+/* Landscape */
+/* ===================================================================================================
+    dP                                dP                                              
+    88                                88                                              
+    88        .d8888b. 88d888b. .d888b88 .d8888b. .d8888b. .d8888b. 88d888b. .d8888b. 
+    88        88'  `88 88'  `88 88'  `88 Y8ooooo. 88'  `"" 88'  `88 88'  `88 88ooood8 
+    88        88.  .88 88    88 88.  .88       88 88.  ... 88.  .88 88.  .88 88.  ... 
+    88888888P `88888P8 dP    dP `88888P8 `88888P' `88888P' `88888P8 88Y888P' `88888P' 
+                                                                    88                
+                                                                    dP                
+======================================================================================================
+*/
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px)
+  and (min-device-height: 768px) 
+  and (max-device-height: 768px) 
+  and (orientation: landscape)
+  and (pointer: coarse) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      /*
+  =============================================
+        Grid Styles
+  =============================================
+  ===================================================================================================
+                                            
+                              ,ad8888ba,               88           88  
+                             d8"'    `"8b              ""           88  
+                            d8'                                     88  
+                            88             8b,dPPYba,  88   ,adPPYb,88  
+                            88      88888  88P'   "Y8  88  a8"    `Y88  
+                            Y8,        88  88          88  8b       88  
+                             Y8a.    .a88  88          88  "8a,   ,d88  
+                              `"Y88888P"   88          88   `"8bbdP"Y8  
+  ===================================================================================================
+  */
+
+  /*===== Primary grid Area - Sidebar and Content/Main ===== */
+  /* Declaring CSS Grid Areas*/
+  .grid-side    { grid-area: side; }
+  .grid-content   { grid-area: main; }
+
+  .grid-container {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+      'side main main main';
+    grid-auto-columns: calc(100% * 1 / 4);
+  }
+
+  /*===== Sidebar grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+  nav     { grid-area: top; }
+  #sidemid  { grid-area: mid; }
+  #sidefoot { grid-area: foot; }
+
+  #sidebar {
+    display: grid;
+    grid-template-areas: 
+      'top'
+      'mid'
+      'foot';
+    grid-auto-rows: calc(100% * 1 / 3);
+  }
+
+  /*===== Social Links grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+
+  #soc-links {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5%;
+  }
+
+  /*
+  =============================================
+        Body Styles
+  =============================================
+  ====================================================================================================
+                                                    
+                          88888888ba                         88               
+                          88      "8b                        88               
+                          88      ,8P                        88               
+                          88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+                          88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+                          88      `8b  8b       d8  8b       88   `8b   d8'   
+                          88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+                          88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+  ========================================================================================== d8' =====
+                                                                    d8'     
+  
+  */
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+
+  }
+
+  body {
+
+  }
+
+  #wrapper {
+
+  }
+
+  /*
+  =============================================
+        Sidebar Styles
+  =============================================
+  ===================================================================================================
+                                                                                             
+               ad88888ba   88           88              88                                   
+              d8"     "8b  ""           88              88                                   
+              Y8,                       88              88                                   
+              `Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+                `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+                      `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+              Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+               "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+  ===================================================================================================
+  */
+
+  #under-show {
+    display: none;
+  }
+
+  #show-menu {
+    display: none;
+  }
+
+  .slide-menu {
+    left: unset;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    width: calc(100% * 1 / 4);
+    height: 100%;
+    box-shadow: 2px 2px 25px 0px rgba(0,0,0,0.5);
+    border-radius: 1px;
+  }
+
+  #port-name {
+    font-size: 2.1em;
+  }
+
+  nav>ul>a>li {
+    font-size: 2.5em;
+  }
+
+  /*
+  =================================
+    Photography Content Styles
+  =================================
+  ===================================================================================================
+                                                             
+                      88888888ba   88                                              
+                      88      "8b  88                          ,d                  
+                      88      ,8P  88                          88                  
+                      88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+                      88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+                      88           88       88  8b       d8    88     8b       d8  
+                      88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+                      88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+  ===================================================================================================
+  */
+
+  .gall-img-wrap {
+    width: 560px;
+    height: 400px;
+    max-height: 400px;
+  }
+
+  .gall-img {
+    width: 560px;
+    height: 400px; 
+  }
+
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    overflow: hidden;
+  }
+
+  #caro-container {
+    width: 650px;
+    height: 470px;
+  }
+/*504X360*/
+  .carousel-cell {
+    width: 630px;
+    height: 450px;
+  }
+
+  .tgallery-img {
+    width: 630px;
+    height: 450px;
+  }
+
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 1112px) 
+  and (max-device-width: 1112px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* ----------- iPad Pro 12.9" ----------- */
+/*
+===================================================================================================
+
+oo  888888ba                 dP     888888ba                       d88  d8888b.    .d888b. dP dP 
+    88    `8b                88     88    `8b                       88      `88    Y8' `88 dP dP 
+dP a88aaaa8P' .d8888b. .d888b88    a88aaaa8P' 88d888b. .d8888b.     88  .aaadP'    `8bad88       
+88  88        88'  `88 88'  `88     88        88'  `88 88'  `88     88  88'            `88       
+88  88        88.  .88 88.  .88     88        88       88.  .88     88  88.     dP d.  .88       
+dP  dP        `88888P8 `88888P8     dP        dP       `88888P'    d88P Y88888P 88 `8888P        
+===================================================================================================
+*/
+
+/* Portrait */
+/*
+===================================================================================================
+
+ 888888ba                      dP                     oo   dP   
+ 88    `8b                     88                          88   
+a88aaaa8P' .d8888b. 88d888b. d8888P 88d888b. .d8888b. dP d8888P 
+ 88        88'  `88 88'  `88   88   88'  `88 88'  `88 88   88   
+ 88        88.  .88 88         88   88       88.  .88 88   88   
+ dP        `88888P' dP         dP   dP       `88888P8 dP   dP   
+===================================================================================================
+*/
+
+@media only screen 
+  and (min-device-width: 1024px)
+  and (min-device-height: 1366px)
+  and (orientation: portrait) 
+  and (pointer: coarse)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      /*
+  =============================================
+        Grid Styles
+  =============================================
+  ===================================================================================================
+                                            
+                              ,ad8888ba,               88           88  
+                             d8"'    `"8b              ""           88  
+                            d8'                                     88  
+                            88             8b,dPPYba,  88   ,adPPYb,88  
+                            88      88888  88P'   "Y8  88  a8"    `Y88  
+                            Y8,        88  88          88  8b       88  
+                             Y8a.    .a88  88          88  "8a,   ,d88  
+                              `"Y88888P"   88          88   `"8bbdP"Y8  
+  ===================================================================================================
+  */
+
+  /*===== Primary grid Area - Sidebar and Content/Main ===== */
+  /* Declaring CSS Grid Areas*/
+  .grid-side    { grid-area: side; }
+  .grid-content   { grid-area: main; }
+
+  .grid-container {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+      'side main main main';
+    grid-auto-columns: calc(100% * 1 / 4);
+  }
+
+  /*===== Sidebar grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+  nav     { grid-area: top; }
+  #sidemid  { grid-area: mid; }
+  #sidefoot { grid-area: foot; }
+
+  #sidebar {
+    display: grid;
+    grid-template-areas: 
+      'top'
+      'mid'
+      'foot';
+    grid-auto-rows: calc(100% * 1 / 3);
+  }
+
+  /*===== Social Links grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+
+  #soc-links {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5%;
+  }
+
+  /*
+  =============================================
+        Body Styles
+  =============================================
+  ====================================================================================================
+                                                    
+                          88888888ba                         88               
+                          88      "8b                        88               
+                          88      ,8P                        88               
+                          88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+                          88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+                          88      `8b  8b       d8  8b       88   `8b   d8'   
+                          88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+                          88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+  ========================================================================================== d8' =====
+                                                                    d8'     
+  
+  */
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+
+  }
+
+  body {
+
+  }
+
+  #wrapper {
+
+  }
+
+  /*
+  =============================================
+        Sidebar Styles
+  =============================================
+  ===================================================================================================
+                                                                                             
+               ad88888ba   88           88              88                                   
+              d8"     "8b  ""           88              88                                   
+              Y8,                       88              88                                   
+              `Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+                `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+                      `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+              Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+               "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+  ===================================================================================================
+  */
+
+  #under-show {
+    display: none;
+  }
+
+  #show-menu {
+    display: none;
+  }
+
+  .slide-menu {
+    left: unset;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    width: calc(100% * 1 / 4);
+    height: 100%;
+    box-shadow: 2px 2px 25px 0px rgba(0,0,0,0.5);
+    border-radius: 1px;
+  }
+
+  #port-name {
+    font-size: 2.1em;
+  }
+
+  nav>ul>a>li {
+    font-size: 2.5em;
+  }
+
+
+  /*
+  =================================
+      Home Content Styles
+  =================================
+  ===================================================================================================
+                                                           
+                      88        88                                               
+                      88        88                                               
+                      88        88                                               
+                      88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+                      88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+                      88        88  8b       d8  88      88      88  8PP"""""""  
+                      88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+                      88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+  ===================================================================================================
+  */
+
+  #serv1 {
+    cursor: pointer;
+  }
+
+  .service-block {
+    width: 95%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .service-block h3 {
+    font-size: 2.2em;
+  }
+
+  .service-block img {
+    width: 75%;
+    cursor: pointer;
+  }
+
+  .serv-blurb p {
+    width: 80%;
+    margin: auto;
+  }
+
+  .serv-blurb ul {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+  }
+
+  /*
+  =================================
+    Photography Content Styles
+  =================================
+  ===================================================================================================
+                                                             
+                      88888888ba   88                                              
+                      88      "8b  88                          ,d                  
+                      88      ,8P  88                          88                  
+                      88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+                      88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+                      88           88       88  8b       d8    88     8b       d8  
+                      88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+                      88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+  ===================================================================================================
+  */
+
+  .gall-img-wrap {
+    width: 420px;
+    height: 300px;
+    max-height: 300px;
+  }
+
+  .gall-img {
+    width: 420px;
+    height: 300px;
+  }
+
+  .gall-info {
+    width: 420px;
+    height: 35px;
+  }
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    position: unset;
+    width: unset;
+    height: unset;
+    background-color: #000000;
+  }
+
+  #caro-container {
+    width: 440px;
+    height: 320px;
+    transform: translate(0, -50%);
+  }
+
+  .carousel-cell {
+    width: 420px;
+    height: 300px;
+  }
+
+  .tgallery-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*
+  =================================
+      About Styles
+  =================================
+  ===================================================================================================
+                                                                                    
+                         db         88                                              
+                        d88b        88                                       ,d     
+                       d8'`8b       88                                       88     
+                      d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+                     d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+                    d8""""""""8b    88       d8  8b       d8  88       88    88     
+                   d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+                  d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+  ===================================================================================================
+  */
+
+  #prof-infos>a {
+    width: 40%;
+    display: inline-block;
+  }
+
+  #prof-infos>#a-resume {
+    margin-right: 2%;
+    margin-left: 7.5%;
+  }
+
+  #prof-infos>#a-contact {
+    margin-left: 2%;
+    margin-right: 7.5%;
+  }
+
+    /*
+  =================================
+      Contact Styles
+  =================================
+  ===================================================================================================
+                                                                                             
+            ,ad8888ba,                                                                       
+           d8"'    `"8b                              ,d                               ,d     
+          d8'                                        88                               88     
+          88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+          88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+          Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+           Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+            `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+  ===================================================================================================
+  */
+
+  #cont-info p {
+    margin: unset;
+  }
+
+  .info-key {
+    margin: unset;
+  }
+
+}
+
+/* Landscape */
+/* ===================================================================================================
+    dP                                dP                                              
+    88                                88                                              
+    88        .d8888b. 88d888b. .d888b88 .d8888b. .d8888b. .d8888b. 88d888b. .d8888b. 
+    88        88'  `88 88'  `88 88'  `88 Y8ooooo. 88'  `"" 88'  `88 88'  `88 88ooood8 
+    88        88.  .88 88    88 88.  .88       88 88.  ... 88.  .88 88.  .88 88.  ... 
+    88888888P `88888P8 dP    dP `88888P8 `88888P' `88888P' `88888P8 88Y888P' `88888P' 
+                                                                    88                
+                                                                    dP                
+======================================================================================================
+*/
+
+@media only screen 
+  and (min-device-width: 1366px)
+  and (max-device-width: 1366px) 
+  and (min-device-height: 1024px) 
+  and (orientation: landscape) 
+  and (pointer: coarse)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+      /*
+  =============================================
+        Grid Styles
+  =============================================
+  ===================================================================================================
+                                            
+                              ,ad8888ba,               88           88  
+                             d8"'    `"8b              ""           88  
+                            d8'                                     88  
+                            88             8b,dPPYba,  88   ,adPPYb,88  
+                            88      88888  88P'   "Y8  88  a8"    `Y88  
+                            Y8,        88  88          88  8b       88  
+                             Y8a.    .a88  88          88  "8a,   ,d88  
+                              `"Y88888P"   88          88   `"8bbdP"Y8  
+  ===================================================================================================
+  */
+
+  /*===== Primary grid Area - Sidebar and Content/Main ===== */
+  /* Declaring CSS Grid Areas*/
+  .grid-side    { grid-area: side; }
+  .grid-content   { grid-area: main; }
+
+  .grid-container {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+      'side main main main';
+    grid-auto-columns: calc(100% * 1 / 4);
+  }
+
+  /*===== Sidebar grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+  nav     { grid-area: top; }
+  #sidemid  { grid-area: mid; }
+  #sidefoot { grid-area: foot; }
+
+  #sidebar {
+    display: grid;
+    grid-template-areas: 
+      'top'
+      'mid'
+      'foot';
+    grid-auto-rows: calc(100% * 1 / 3);
+  }
+
+  /*===== Social Links grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+
+  #soc-links {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5%;
+  }
+
+  /*
+  =============================================
+        Body Styles
+  =============================================
+  ====================================================================================================
+                                                    
+                          88888888ba                         88               
+                          88      "8b                        88               
+                          88      ,8P                        88               
+                          88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+                          88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+                          88      `8b  8b       d8  8b       88   `8b   d8'   
+                          88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+                          88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+  ========================================================================================== d8' =====
+                                                                    d8'     
+  
+  */
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+
+  }
+
+  body {
+
+  }
+
+  #wrapper {
+
+  }
+
+  /*
+  =============================================
+        Sidebar Styles
+  =============================================
+  ===================================================================================================
+                                                                                             
+               ad88888ba   88           88              88                                   
+              d8"     "8b  ""           88              88                                   
+              Y8,                       88              88                                   
+              `Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+                `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+                      `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+              Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+               "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+  ===================================================================================================
+  */
+
+  #under-show {
+    display: none;
+  }
+
+  #show-menu {
+    display: none;
+  }
+
+  .slide-menu {
+    left: unset;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    width: calc(100% * 1 / 4);
+    height: 100%;
+    box-shadow: 2px 2px 25px 0px rgba(0,0,0,0.5);
+    border-radius: 1px;
+  }
+
+  #port-name {
+    font-size: 2.1em;
+  }
+
+  nav>ul>a>li {
+    font-size: 2.5em;
+  }
+
+  /*
+  =================================
+    Photography Content Styles
+  =================================
+  ===================================================================================================
+                                                             
+                      88888888ba   88                                              
+                      88      "8b  88                          ,d                  
+                      88      ,8P  88                          88                  
+                      88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+                      88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+                      88           88       88  8b       d8    88     8b       d8  
+                      88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+                      88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+  ===================================================================================================
+  */
+
+  .gall-img-wrap {
+    width: 560px;
+    height: 400px;
+    max-height: 400px;
+  }
+
+  .gall-img {
+    width: 560px;
+    height: 400px; 
+  }
+
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    overflow: hidden;
+  }
+
+  #caro-container {
+    width: 650px;
+    height: 470px;
+  }
+/*504X360*/
+  .carousel-cell {
+    width: 630px;
+    height: 450px;
+  }
+
+  .tgallery-img {
+    width: 630px;
+    height: 450px;
+  }
+
+}
+
+/* ----------- Kindle fire ----------- */
+/* ----------- 800 X 1280  ----------- */
+/* ===================================================================================================
+
+dP     dP oo                dP dP              88888888b oo                      dP     dP  888888ba  
+88   .d8'                   88 88              88                                88     88  88    `8b 
+88aaa8P'  dP 88d888b. .d888b88 88 .d8888b.    a88aaaa    dP 88d888b. .d8888b.    88aaaaa88a 88     88 
+88   `8b. 88 88'  `88 88'  `88 88 88ooood8     88        88 88'  `88 88ooood8    88     88  88     88 
+88     88 88 88    88 88.  .88 88 88.  ...     88        88 88       88.  ...    88     88  88    .8P 
+dP     dP dP dP    dP `88888P8 dP `88888P'     dP        dP dP       `88888P'    dP     dP  8888888P  
+======================================================================================================
+*/
+
+/* Portrait */
+/*
+===================================================================================================
+
+ 888888ba                      dP                     oo   dP   
+ 88    `8b                     88                          88   
+a88aaaa8P' .d8888b. 88d888b. d8888P 88d888b. .d8888b. dP d8888P 
+ 88        88'  `88 88'  `88   88   88'  `88 88'  `88 88   88   
+ 88        88.  .88 88         88   88       88.  .88 88   88   
+ dP        `88888P' dP         dP   dP       `88888P8 dP   dP   
+===================================================================================================
+*/
+@media only screen 
+  and (min-device-width: 800px)
+  and (max-device-width: 800px)
+  and (max-device-height: 1280px) 
+  and (max-device-height: 1280px)
+  and (pointer: coarse)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+      /*
+  =============================================
+        Grid Styles
+  =============================================
+  ===================================================================================================
+                                            
+                              ,ad8888ba,               88           88  
+                             d8"'    `"8b              ""           88  
+                            d8'                                     88  
+                            88             8b,dPPYba,  88   ,adPPYb,88  
+                            88      88888  88P'   "Y8  88  a8"    `Y88  
+                            Y8,        88  88          88  8b       88  
+                             Y8a.    .a88  88          88  "8a,   ,d88  
+                              `"Y88888P"   88          88   `"8bbdP"Y8  
+  ===================================================================================================
+  */
+
+  /*===== Primary grid Area - Sidebar and Content/Main ===== */
+  /* Declaring CSS Grid Areas*/
+  .grid-side    { grid-area: side; }
+  .grid-content   { grid-area: main; }
+
+  .grid-container {
+    display: grid;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+      'side main main main';
+    grid-auto-columns: calc(100% * 1 / 4);
+  }
+
+  /*===== Sidebar grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+  nav     { grid-area: top; }
+  #sidemid  { grid-area: mid; }
+  #sidefoot { grid-area: foot; }
+
+  #sidebar {
+    display: grid;
+    grid-template-areas: 
+      'top'
+      'mid'
+      'foot';
+    grid-auto-rows: calc(100% * 1 / 3);
+  }
+
+  /*===== Social Links grid Area - Sidebar ===== */
+  /* Declaring CSS Grid Areas*/
+
+  #soc-links {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 5%;
+  }
+
+  /*
+  =============================================
+        Body Styles
+  =============================================
+  ====================================================================================================
+                                                    
+                          88888888ba                         88               
+                          88      "8b                        88               
+                          88      ,8P                        88               
+                          88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+                          88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+                          88      `8b  8b       d8  8b       88   `8b   d8'   
+                          88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+                          88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+  ========================================================================================== d8' =====
+                                                                    d8'     
+  
+  */
+
+  html, body {
+    height: 100%;
+  }
+
+  html {
+
+  }
+
+  body {
+
+  }
+
+  #wrapper {
+
+  }
+
+  /*
+  =============================================
+        Sidebar Styles
+  =============================================
+  ===================================================================================================
+                                                                                             
+               ad88888ba   88           88              88                                   
+              d8"     "8b  ""           88              88                                   
+              Y8,                       88              88                                   
+              `Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+                `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+                      `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+              Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+               "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+  ===================================================================================================
+  */
+
+  #under-show {
+    display: none;
+  }
+
+  #show-menu {
+    display: none;
+  }
+
+  .slide-menu {
+    left: unset;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0;
+    width: calc(100% * 1 / 4);
+    height: 100%;
+    box-shadow: 2px 2px 25px 0px rgba(0,0,0,0.5);
+    border-radius: 1px;
+  }
+
+  #port-name {
+    font-size: 2.1em;
+  }
+
+  nav>ul>a>li {
+    font-size: 2.5em;
+  }
+
+
+  /*
+  =================================
+      Home Content Styles
+  =================================
+  ===================================================================================================
+                                                           
+                      88        88                                               
+                      88        88                                               
+                      88        88                                               
+                      88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+                      88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+                      88        88  8b       d8  88      88      88  8PP"""""""  
+                      88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+                      88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+  ===================================================================================================
+  */
+
+  #serv1 {
+    cursor: pointer;
+  }
+
+  .service-block {
+    width: 95%;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .service-block h3 {
+    font-size: 2.2em;
+  }
+
+  .service-block img {
+    width: 75%;
+    cursor: pointer;
+  }
+
+  .serv-blurb p {
+    width: 80%;
+    margin: auto;
+  }
+
+  .serv-blurb ul {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+  }
+
+  /*
+  =================================
+    Photography Content Styles
+  =================================
+  ===================================================================================================
+                                                             
+                      88888888ba   88                                              
+                      88      "8b  88                          ,d                  
+                      88      ,8P  88                          88                  
+                      88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+                      88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+                      88           88       88  8b       d8    88     8b       d8  
+                      88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+                      88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+  ===================================================================================================
+  */
+
+  .gall-img-wrap {
+    width: 420px;
+    height: 300px;
+    max-height: 300px;
+  }
+
+  .gall-img {
+    width: 420px;
+    height: 300px;
+  }
+
+  .gall-info {
+    width: 420px;
+    height: 35px;
+  }
+
+  /*
+  =================================
+    Photography Gallery Styles
+  =================================
+  ===================================================================================================
+                                                                        
+                  ,ad8888ba,               88  88                                       
+                 d8"'    `"8b              88  88                                       
+                d8'                        88  88                                       
+                88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+                88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+                Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+                 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+                  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+  ========================================================================================== d8' ====
+                                                                              d8'       
+  */
+
+  #gall-viewer {
+    position: unset;
+    width: unset;
+    height: unset;
+    background-color: #000000;
+  }
+
+  #caro-container {
+    margin: 0 auto;
+    width: 440px;
+    height: 320px;
+    top: 50%;
+    transform: translate(0,-50%);
+  }
+
+  .carousel-cell {
+    width: 420px;
+    height: 300px;
+  }
+
+  .tgallery-img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /*
+  =================================
+      About Styles
+  =================================
+  ===================================================================================================
+                                                                                    
+                         db         88                                              
+                        d88b        88                                       ,d     
+                       d8'`8b       88                                       88     
+                      d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+                     d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+                    d8""""""""8b    88       d8  8b       d8  88       88    88     
+                   d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+                  d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+  ===================================================================================================
+  */
+
+  #prof-infos>a {
+    width: 40%;
+    display: inline-block;
+  }
+
+  #prof-infos>#a-resume {
+    margin-right: 2%;
+    margin-left: 7.5%;
+  }
+
+  #prof-infos>#a-contact {
+    margin-left: 2%;
+    margin-right: 7.5%;
+  }
+
+    /*
+  =================================
+      Contact Styles
+  =================================
+  ===================================================================================================
+                                                                                             
+            ,ad8888ba,                                                                       
+           d8"'    `"8b                              ,d                               ,d     
+          d8'                                        88                               88     
+          88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+          88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+          Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+           Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+            `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+  ===================================================================================================
+  */
+
+  #cont-info p {
+    margin: unset;
+  }
+
+  .info-key {
+    margin: unset;
+  }
+
+}
+
+/* Landscape */
+/* ===================================================================================================
+    dP                                dP                                              
+    88                                88                                              
+    88        .d8888b. 88d888b. .d888b88 .d8888b. .d8888b. .d8888b. 88d888b. .d8888b. 
+    88        88'  `88 88'  `88 88'  `88 Y8ooooo. 88'  `"" 88'  `88 88'  `88 88ooood8 
+    88        88.  .88 88    88 88.  .88       88 88.  ... 88.  .88 88.  .88 88.  ... 
+    88888888P `88888P8 dP    dP `88888P8 `88888P' `88888P' `88888P8 88Y888P' `88888P' 
+                                                                    88                
+                                                                    dP                
+======================================================================================================
+*/
+
+
+@media only screen 
+  and (min-device-width: 1280px) 
+  and (max-device-width: 1280px)
+  and (min-device-height: 800px)
+  and (max-device-height: 800px)
+  and (orientation: landscape)
+  and (pointer: coarse)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  #caro-container {
+      margin: 0 auto;
+      width: 622px;
+      height: 450px;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+
+  .carousel-cell {
+    width: 602px;
+    height: 430px;
+  }
+}
+

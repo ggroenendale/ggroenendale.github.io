@@ -1,0 +1,2927 @@
+/**
+ * Title: Geoff Groenendale - Portfolio
+ * Author: Geoff Groenendale
+ * Date: 5/7/2018
+ * 
+ * Description: This is the style sheet for all laptop
+ * and desktop styles. 
+ * 
+ * Sources:
+ *  - Media queries from
+ *    https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+ *  - CSS Reset
+ *    http://meyerweb.com/eric/tools/css/reset/
+ *  - Mobile CSS Reset
+ *    https://subvisual.co/blog/posts/53-a-better-reset-for-the-mobile-web/
+ *  - Big section letters are generated on this website using the "univers" style
+ *    http://www.messletters.com/en/big-text/
+ *    
+ * Standard Format Rules
+ * 	#element-name {
+ * 		display: ;  		---Display type always first
+ * 	 	position: ; 		---Positioning next including top,left,right
+ * 	 	top: ;
+ * 	 	left: ;
+ * 	 	floats: ;			---floats will likely end up here 
+ * 	 	width: ;			---sizing of the actual element here
+ * 	 	height: ;
+ * 	 	margin: ;			---Margin always before padding
+ * 	 	padding: ;
+ * 	 	overflow: ; 		---Overflow status
+ * 	 	--fonts-- 			
+ * 	 	font-family: ;		---All font styles starting with font family then sizes then weights, decorations
+ * 	 	font-size: ;
+ * 	 	text-decoration: ;
+ * 	 	list-styletypes: ;
+ * 	 	--colors--	
+ * 	 	color: ; 			---All colors fall in place after positions and size
+ * 	 	background-color: ;
+ * 	}
+ */
+
+/*
+=============================================
+			Root Styles
+=============================================
+===================================================================================================
+
+												88888888ba                                      
+												88      "8b                              ,d     
+												88      ,8P                              88     
+												88aaaaaa8P'   ,adPPYba,    ,adPPYba,   MM88MMM  
+												88""""88'    a8"     "8a  a8"     "8a    88     
+												88    `8b    8b       d8  8b       d8    88     
+												88     `8b   "8a,   ,a8"  "8a,   ,a8"    88,    
+												88      `8b   `"YbbdP"'    `"YbbdP"'     "Y888  
+===================================================================================================
+*/
+:root {
+	--port-head-co:  #A5C2AC; 	/* --- Color for the portfolio header/logo */
+	--color-si-bg: 	 #403D39; 	/* --- Color for the sidebar background */
+	--color-co-bg:   #DFEDE3; 	/* --- Color for the content background */ 
+	--color-font-si: #DFEDE3; 	/* --- Color for the sidebar font */
+	--co-font-sihov: #DFEDE3; 	/* --- Color for the sidebar font on hover */
+	--color-font-co: #181715; 	/* --- Color for the content font */
+	--co-font-cohov: #181715; 	/* --- Color for the content font on hover */
+	--co-gall-bord:	 #000000; 	/* --- Color for the gallery borders */
+	--co-copyright:  #B7C2BA;   /* --- Color for the copyright in the sidebar */
+	--co-cube-bg:    #403D39;   /* --- Color for the cube faces */
+	--co-home-bg:	 #514E4B;	/* --- Color option for content background */
+
+	--co-gray: 		 #74716F;
+	--co-gray2:		 #6A6765;	/* --- Color for the grays */
+	--co-gray3:		 #8D8A89;
+
+	--co-yhigh:		 #FFB997;
+	--co-yhigh2:	 #FFC5A9;
+	--co-yhigh3: 	 #E6D1A5;	/* --- Color for the highlights */
+	--co-yhigh4:	 #E8D5AD;
+	--co-yhigh5:	 #F2C47E;
+
+	--co-highlight2: #67D1FA;
+	--co-highlight3: #8DDCFB;	/* --- Color for the other options */
+	--co-highlight4: #B3E8FC;
+
+	--color-green: 	 #5E926A; 	/* --- Color for the green */
+	--color-green2:  #A5C2AC;
+	--color-green3:  #ADC7B3;
+	--color-green4:  #B5CDBB;
+	--color-green5:  #B7CEBD;
+
+	--font-header: 	 'Dosis', sans-serif;
+	--font-header2:	 'Fira Sans', sans-serif;
+	--font-para: 	 'Arapey', serif;
+	--font-para2:	 'Lora', serif;
+	--port-head-fo:	 'Dosis', sans-serif;
+}
+
+/*
+==========================================================================================================
+			Non-Retina Screen Styles
+==========================================================================================================
+ */
+
+@media screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1800px) 
+  and (pointer: fine)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+	/*
+	=============================================
+				Grid Styles
+	=============================================
+	===================================================================================================
+                                            
+														  ,ad8888ba,               88           88  
+														 d8"'    `"8b              ""           88  
+														d8'                                     88  
+														88             8b,dPPYba,  88   ,adPPYb,88  
+														88      88888  88P'   "Y8  88  a8"    `Y88  
+														Y8,        88  88          88  8b       88  
+														 Y8a.    .a88  88          88  "8a,   ,d88  
+														  `"Y88888P"   88          88   `"8bbdP"Y8  
+	===================================================================================================
+	*/
+
+	/*===== Primary grid Area - Sidebar and Content/Main ===== */
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		display: grid;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		grid-template-areas: 
+			'side main main main main main main';
+		grid-auto-columns: calc(100% * 1 / 7);
+	}
+
+	/*===== Sidebar grid Area - Sidebar ===== */
+	/* Declaring CSS Grid Areas*/
+	nav 		{ grid-area: top; }
+	#sidemid 	{ grid-area: mid; }
+	#sidefoot	{ grid-area: foot; }
+
+	#sidebar {
+		display: grid;
+		grid-template-areas: 
+			'top'
+			'top'
+			'mid'
+			'mid'
+			'mid'
+			'foot';
+		grid-auto-rows: calc(100% / 6);
+	}
+
+	/*===== Social Links grid Area - Sidebar ===== */
+	/* Declaring CSS Grid Areas*/
+
+	#soc-links {
+		display: inline-grid;
+		grid-template-columns: auto auto auto auto;
+		padding: 5%;
+	}
+
+	/*
+	=============================================
+				Laptop and Desktop Font Sizes
+	=============================================
+	===================================================================================================
+                                                           
+											88888888888                                                
+											88                                       ,d                
+											88                                       88                
+											88aaaaa       ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYba,  
+											88"""""      a8"     "8a  88P'   `"8a    88     I8[    ""  
+											88           8b       d8  88       88    88      `"Y8ba,   
+											88           "8a,   ,a8"  88       88    88,    aa    ]8I  
+											88            `"YbbdP"'   88       88    "Y888  `"YbbdP"' 
+	===================================================================================================
+	*/
+
+	h1 {
+		font-family: var(--font-header);
+		font-size: 32px;
+	}
+
+	h2 {
+		font-family: var(--font-header);
+		font-size: 1.45em;
+	}
+
+	h3 {
+		font-family: var(--font-header);
+		font-size: 1.1em;
+	}
+
+	h4 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	h5 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	h6 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	p {
+		font-family: var(--font-para2);
+		font-size: 1em;
+	}
+
+	li {
+		font-family: var(--font-para2);
+		font-size: 1em;	
+	}
+
+	/*
+	=============================================
+				Body Styles
+	=============================================
+	====================================================================================================
+                                                    
+													88888888ba                         88               
+													88      "8b                        88               
+													88      ,8P                        88               
+													88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+													88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+													88      `8b  8b       d8  8b       88   `8b   d8'   
+													88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+													88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+	========================================================================================== d8' =====
+													                                          d8'     
+	
+	*/
+
+	html, body {
+		height: 100%;
+	}
+
+	html {
+
+	}
+
+	body {
+
+	}
+
+	#wrapper {
+
+	}
+
+	/*
+	=============================================
+				Sidebar Styles
+	=============================================
+	===================================================================================================
+							                                                                               
+							 ad88888ba   88           88              88                                   
+							d8"     "8b  ""           88              88                                   
+							Y8,                       88              88                                   
+							`Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+							  `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+							        `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+							Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+							 "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+	===================================================================================================
+	*/
+
+	#under-show {
+		display: none;
+	}
+
+	#show-menu {
+		display: none;
+	}
+
+	.slide-menu	{
+		left: unset;
+	}
+
+	#sidebar {
+		position: fixed;
+		overflow: hidden;
+		width: calc(100% * 1 / 7);
+		height: 100%;
+		left: 0;
+		background-color: var(--color-si-bg);
+		box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);
+	}
+
+	nav {
+		width: 100%;
+		margin-top: 8%;
+		text-align: center;
+	}
+
+	#port-link {
+		text-decoration: none;
+	}
+
+	#port-name {
+		font-family: var(--port-head-fo);
+		color: var(--port-head-co);
+		font-size: 1.6em;
+	}
+
+	nav>ul {
+		display: inline-block;
+		text-align: left;
+		width: 80%;
+	}
+
+	#cur-page {
+		margin-top: 8%;
+		color: var(--color-font-si);
+		margin-left: 15%;
+	}
+
+	#gr-rect {
+		position: relative;
+		height: 5px;
+		width: 100%;
+		margin-top: 4%;
+		margin-bottom: 2%;
+		margin-left: auto;
+		margin-right: auto;
+		background: var(--color-green);
+	}
+
+	nav>ul>li {
+		display: block;
+		font-family: var(--font-header);
+		font-size: 1.4em;
+		margin-top: 6%;
+		margin-bottom: 6%;
+		color: var(--color-font-si);
+	}
+
+	nav>ul>li>a {
+		display: block;
+		text-decoration: none;
+		color: unset;
+		margin-left: 0%;
+	}
+
+	nav>ul>li:hover {
+		color: var(--co-font-sihov);
+		font-weight: bold;
+	}
+
+	nav>ul>li>a:visited {
+		color: unset;
+	}
+
+	#sidefoot {
+
+	}
+
+	#foot-inner {
+		position: unset;
+		left: unset;
+		bottom: unset;
+		width: unset;
+		transform: unset;
+	}
+
+	#soc-links {
+		width: 100%;
+		margin: auto;
+		list-style-type: none;
+	}
+
+	#soc-links>a {
+		
+	}
+
+	#soc-links>a>li {
+		width: 35px;
+		margin: auto;
+	}
+
+	#soc-links>a>li>img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	#copyright-div {
+		margin-top: 10px;
+		text-align: center;
+		color: var(--co-copyright);
+	}
+
+	#copyright-div h5{
+		font-family: var(--font-header);
+	}
+
+	/*
+	================================================
+					Content Styles
+	================================================
+	===================================================================================================
+					                                                                                    
+					  ,ad8888ba,                                                                        
+					 d8"'    `"8b                              ,d                                ,d     
+					d8'                                        88                                88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,   MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     a8P_____88  88P'   `"8a    88     
+					Y8,            8b       d8  88       88    88     8PP"""""""  88       88    88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    "8b,   ,aa  88       88    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888   `"Ybbd8"'  88       88    "Y888  
+	===================================================================================================
+	*/
+
+	#content {
+		background-color: var(--color-co-bg);
+		color: var(--color-font-co);
+	}
+
+	#content::-webkit-scrollbar {
+		display: none;
+	}
+
+	/*
+	=================================
+			Home Content Styles
+	=================================
+	===================================================================================================
+                                                           
+											88        88                                               
+											88        88                                               
+											88        88                                               
+											88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+											88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+											88        88  8b       d8  88      88      88  8PP"""""""  
+											88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+											88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+	===================================================================================================
+	*/
+
+	#splash-wrap {
+		position: relative;
+		padding-top: unset;
+		height: 160px;
+		width: 100%;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	#splash {
+		position: absolute;
+		margin: auto;
+		width: 100%;
+		top: 50%;
+		transform: translate( 0, -50%);
+	}
+
+	/*#splash::after {
+		content: ' ';
+		box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
+		width: 40%;
+		transform: translateX(-50%) translateY(120px);
+		position: absolute;
+	}*/
+
+
+	#greet {
+		font-size: 2.5em;
+		display: block;
+	}
+
+	#splash h4 {
+		padding-top: 10px;
+		font-weight: 200;
+		font-size: 1.8em;
+	}
+
+	#greet-blurb {
+		display: block;
+		margin-top: 10px;
+		font-size: 1.3em;
+	}
+
+	#service-wrap {
+		margin-top: 20px;
+		background-color: #514E4B;
+	}
+
+	#service-wrap h2 {
+		text-align: center;
+		font-size: 2.2em;
+	}
+
+	.services {
+		display: grid;
+		grid-template-rows: unset;
+		grid-template-columns: 26% 26% 26%;
+		grid-column-gap: 11%;
+		padding: 2% 5%;
+	}
+
+	.service-block {
+		width: unset;
+		padding-bottom: 20px;
+	}
+
+	.service-block h3 {
+		text-align: center;
+		font-size: 1.9em;
+		padding-bottom: 3%;
+		color: var(--co-yhigh3);
+	}
+
+	.serv-blurb {
+		display: block;
+		margin: auto;
+		width: 115%;
+	}
+
+	.serv-blurb p {
+		font-size: 1em;
+		color: var(--color-font-si);
+	}
+
+	.serv-blurb ul {
+		padding-top: 5px;
+		padding-left: 20px;
+		list-style-type: disc;
+		color: var(--color-font-si);
+		/*list-style-position: inside;*/
+	}
+
+	.serv-blurb ul li {
+		padding-top: 5px;
+		font-size: 1em;
+	}
+
+	.serv-blurb a {
+		color: white;
+	}
+
+	.serv-blurb a:visited {
+
+	}
+
+	/*
+	=================================
+		Photography Content Styles
+	=================================
+	===================================================================================================
+                                                             
+											88888888ba   88                                              
+											88      "8b  88                          ,d                  
+											88      ,8P  88                          88                  
+											88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+											88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+											88           88       88  8b       d8    88     8b       d8  
+											88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+											88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+	===================================================================================================
+	*/
+
+	[data-pagename="photography"]:root {
+		--column-width: 28%;
+		--column-gap: calc((100% - (var(--column-width) * 3)) / 2 );
+	}
+
+	#photo-greet {
+		padding-top: 4%;
+		padding-bottom: 2%;
+		font-size: 2em;
+	}
+
+	/*===== Photography Galleries Grid Area ===== */
+	/* Declaring CSS Grid Areas*/
+
+	#gall-wrapper {
+		display: grid;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		width: 90%;
+	}
+
+	#gall-container {
+		padding-top: 5%;
+		background-color: unset;
+		margin: auto;
+		display: grid;
+		grid-template-columns: var(--column-width) var(--column-width) var(--column-width);
+		grid-column-gap: var(--column-gap);
+		grid-row-gap: 60px;
+	}
+
+	.gall-block {
+		width: 350px;
+		height: 350px;
+		perspective: 1050px; 
+		margin: auto;
+	}
+
+	.cube {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: translateZ(-175px);
+		transition: transform 0.5s;
+	}
+
+	.cube-face {
+		position: absolute;
+		width: 358px;
+		height: 358px;
+		border: 4px solid var(--co-cube-bg);
+	}
+
+	.cube-face.front 	{ transform: rotateY(   0deg) translateZ(175px); } 
+	.cube-face.right 	{ transform: rotateY(  90deg) translateZ(175px); }
+	.cube-face.left 	{ transform: rotateY( -90deg) translateZ(175px); }
+	.cube-face.back 	{ transform: rotateY( 180deg) translateZ(175px); }
+	.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
+	.cubeface.bottom 	{ 
+		position: absolute;
+		transform: rotateX( -90deg) translateZ(315px); 
+		background-color: rgba(0,0,0,0.2);
+		box-shadow: 0px 0px 100px 50px rgba(0,0,0,0.2);
+		left: 75px;
+		width: 200px;
+		height: 200px;
+	}
+
+	.cube.show-front 	{ transform: translateZ(-175px) rotateY(    0deg); }
+	.cube.show-right 	{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-back 	{ transform: translateZ(-175px) rotateY( -180deg); }
+	.cube.show-left 	{ transform: translateZ(-175px) rotateY(   90deg); }
+	.cube.show-top 		{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-bottom 	{ transform: translateZ(-175px) rotateY(   90deg); }
+
+	.gall-header {
+		text-align: center;
+		font-size: 1.5em;
+		padding-bottom: 4px;
+		color: var(--co-yhigh4)
+	}
+
+	.gall-link {
+		display: block;
+	}
+
+	.gall-img-wrap {
+		display: flex;
+		background-color: var(--co-cube-bg);
+		width: 350px;
+		height: 350px;
+		max-height: unset;
+		margin: auto;
+		box-shadow: unset;
+	}
+
+	#tooltip {
+		display: none;
+	}
+
+	.gall-img-wrap:hover #tooltip {
+		display: block;
+		position: fixed;
+		overflow: hidden;
+	}
+
+	.gall-img {
+		width: 100%;
+		height: unset;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+
+	.gall-info {
+		width: 350px;
+		height: 350px;
+		background-color: var(--co-cube-bg);
+		top: unset;
+	}
+
+	.gall-blurb {
+		line-height: 1.1em;
+		width: 85%;
+		margin: auto;
+	}
+
+	/*
+	=================================
+		Photography Gallery Styles
+	=================================
+	===================================================================================================
+                                                                        
+								  ,ad8888ba,               88  88                                       
+								 d8"'    `"8b              88  88                                       
+								d8'                        88  88                                       
+								88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+								88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+								Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+								 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+								  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+	========================================================================================== d8' ====
+								                                                              d8'       
+	*/
+
+	.hidden-gall {
+		display: none;
+	}
+
+	#gall-viewer {
+		position: unset;
+		width: unset;
+		height: unset;
+		background-color: #000000;
+	}
+
+	#caro-container {
+		position: relative;
+		width: 720px;
+		height: 520px;
+		perspective: 1000px;
+		overflow: unset;
+	}
+
+	#carousel {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform: translateZ(-288px);
+		transform-style: preserve-3d;
+		transition: transform 1s;
+	}
+
+	.carousel-cell {
+		display: flex;
+		position: absolute;
+		width: 700px;
+		height: 500px;
+		left: 10px;
+		top: 10px;
+		align-items: center;
+		justify-content: center;
+		transition: transform 1s, opacity 1s;
+	}
+
+	.gallery-img {
+		width: 100%;
+		height: unset;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+
+	.no-img {
+		width: 700px;
+		height: 500px;
+		background-color: gray;
+	}
+
+	#controls {
+		position: relative;
+		width: 100%;
+		text-align: center;
+		bottom: 0%;
+		transform: translate(0, 150%);
+	}
+
+	.iter {
+		display: unset;
+		color: white;
+		font-size: 3em;
+		padding: 5px;
+	}
+
+	.gall-closer {
+		position: unset;
+		line-height: unset;
+		font-size: 3em;
+		font-weight: bold;
+		float: right;
+		color: white;
+		top: 0px;
+		right: 0px;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
+	/*
+	=================================
+			Contact Styles
+	=================================
+	===================================================================================================
+					                                                                                   
+					  ,ad8888ba,                                                                       
+					 d8"'    `"8b                              ,d                               ,d     
+					d8'                                        88                               88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+					Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+	===================================================================================================
+	*/
+
+	[data-pagename="contact"] #wrapper {
+		height: calc(100%);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-rows: 5% 10% 5% 70% 10%;
+	}
+
+	#cont-greet {
+		text-align: center;
+		width: 100%;
+		padding: 2%;
+	}
+
+	#message-wrap {
+		display: grid;
+		padding: 5%;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: unset;
+		margin-top: 20px;
+		background-color: var(--co-home-bg);
+	}
+
+	#cont-info-grid {
+		display: grid;
+		grid-template-columns: unset;
+		grid-row-gap: 10px;
+	}
+
+	#cont-info {
+		display: grid;
+	}
+
+	.info-key {
+		display: inline;
+		margin: unset;
+	}
+
+	#caddress {
+		display: inline;
+		vertical-align: top;
+	}
+
+	#address { 
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#c-soc-wrap {
+		margin: auto;
+	}
+
+	#c-soc-links {
+		display: grid;
+		grid-template-columns: 60px 60px 60px 60px;
+		grid-gap: 12px;
+		list-style-type: none;
+	}
+
+	#c-soc-links>a>li {
+		margin: auto;
+	}
+
+	#c-soc-links>a>li>img {
+		width: 100%;
+		max-height: 100%
+	}
+
+	#cont-info p {
+		font-size: 1.3em;
+		color: var(--color-co-bg);
+		text-align: left;
+		margin: unset;
+	}
+
+	form {
+		padding: 5%;
+		display: grid;
+		grid-template-rows: auto auto auto auto;
+		grid-gap: 15px;
+	}
+
+	.mess-comp {
+		border: 1px solid #AAA;
+		font-size: 1.2em;
+		padding: 8px;
+	}
+
+	form>button[type="submit"] {
+		margin: auto;
+		background-color: #74716F;
+		border: none;
+		line-height: unset;
+		height: 30px;
+		width: 50%;
+		font-size: unset;
+		z-index: 5;
+	}
+
+	form>button[type="submit"]>h3 {
+		line-height: 1.35em;
+		height: inherit;
+		color: white;
+		font-size: 1.35em;
+		width: 35%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	form>button[type="submit"]>#mail-icon {
+		display: inline-block;
+		width: 33%;
+		padding: 1%;
+		height: inherit;
+		margin: auto;
+	}
+
+	#message {
+		height: 200px;
+	}
+
+	#message-und {
+		background-color: var(--co-home-bg);
+	}
+
+	/*
+	=================================
+			About Styles
+	=================================
+	===================================================================================================
+									                                                                  
+									       db         88                                              
+									      d88b        88                                       ,d     
+									     d8'`8b       88                                       88     
+									    d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+									   d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+									  d8""""""""8b    88       d8  8b       d8  88       88    88     
+									 d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+									d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+	===================================================================================================
+	*/
+
+	/* ========= Start With Grids ============*/
+
+	.about-grid {
+		display: inline-grid;
+		grid-template-areas: 'prof-pic-info' 'cols';
+	}
+
+	#cols {
+		grid-area: cols;
+		display: grid;
+		grid-template: 
+				'exp educ' minmax(12.5%, auto)
+				'exp educ' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'extra certs'minmax(12.5%, auto) / 50% 50%;
+		background-color: var(--co-home-bg);
+		height: 100%;
+	}
+
+	/* ====== Prof pic and info ============ */
+
+	#prof-pic-info {
+		grid-area: prof-pic-info;
+		display: grid;
+		grid-template-areas: 'pic infos';
+		grid-template-columns: 50% 50%;
+		height: fit-content;
+	}
+
+	#prof-pic {
+		width: 270px;
+		height: 270px;
+		margin: 15% auto 15% auto;
+		padding: unset;
+	}
+
+	#prof-infos {
+		padding-top: 10px;
+		background-color: var(--color-co-bg);
+	}
+
+	#prof-infos-head {
+		margin: unset;
+	}
+
+	#prof-infos .infos {
+		font-size: 1.1em;
+		margin: 0.75%;
+	}
+
+	#bio {
+		width: 80%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		margin: 0.75%;
+	}
+
+	#bio span{
+		font-size: 1.1em;
+	}
+
+	#prof-infos>a {
+		box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.5);
+		width: 45%;
+		height: 30px;
+		margin-left: 1%;
+		display: inline-block;
+	}
+
+	#prof-infos>a:active {
+		box-shadow: unset;
+	}
+
+	#prof-infos>a:hover>#do-resume {
+		background-color: #B7CEBD;
+	}
+
+	#prof-infos-head h2 {
+		font-size: 2.6em;
+		color: var(--color-font-co);
+	}
+
+	#do-resume {
+		display: inline-block;
+		width: 100%;
+		height: 30px;
+		border: none;
+		color: var(--color-si-bg);
+		background-color: #A5C2AC;
+	}
+
+	#down-wrap {
+		display: inline-block;
+		height: inherit;
+		width: 100%;
+		text-align: center;
+	}
+
+	.icon-wrap {
+		display: inline-block;
+		width: 15%;
+		height: 100%;
+		padding: 0.75%;
+	}
+
+	.icon-wrap img { 
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+	}
+
+	#do-resume p {
+		width: 75%;
+		height: 100%;
+		display: inline-block;
+		line-height: 30px;
+		font-size: 1.1em;
+		transform: translate(0, -50%);
+		vertical-align: -webkit-baseline-middle;
+	}
+
+	/* =========================== Fonts ===================================*/
+
+	.resume-block h3{
+		color: var(--co-yhigh4);
+		font-size: 1.5em;
+		padding-bottom: 2%;
+		padding-top: 6%;
+	}
+
+	.resume-block h4{
+		font-family: var(--font-header2);
+		color: #fff;
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 1.25em;
+	}
+
+	.resume-block h5{
+		font-family: var(--font-header2);
+		color: var(--co-yhigh5);
+		padding-top: 0.5%;
+		padding-bottom: 0.5%;
+		padding-left: 2%;
+	}
+
+	.resume-block h6{
+		font-size: 1em;
+	}
+
+	.resume-block p{
+		padding-left: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		color: var(--color-font-si);
+	}
+
+	.resume-block ul {
+		padding-left: 20px;
+	}
+
+	.resume-block ul li {
+		font-size: 1em;
+		line-height: 1em;
+		padding-bottom: 1%;
+		color: var(--color-font-si);
+		list-style-type: circle;	
+	}
+
+	#achievements a{
+		text-decoration: none;
+		color: var(--color-font-si);
+	}
+
+	/* =================  Resume Styles ================= */
+
+	.resume-block {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	#achievements {
+		grid-area: unset;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	#achievements h4{
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	#achievements h5{
+		padding-top: 0.5%;
+		padding-bottom: 2%;
+		padding-left: unset;
+	}
+
+	#certs {
+		margin: unset;
+		grid-area: certs;
+	}
+
+	#education {
+		grid-area: educ;
+		margin: unset;
+		width: 95%;
+	}
+
+	#education>h5 {
+		padding-top: 2%;
+		padding-bottom: 1%;
+		padding-left: 2%;
+	}
+
+	#education>h6 {
+		padding-left: 2%;
+	}
+
+	#course-list {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-column-gap: 1%;
+	}
+
+	#experience {
+		grid-area: exp;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	.exp-block>h4 {
+		padding-top: 4%;
+		padding-bottom: 2%;
+	}
+
+	.exp-block>h5 {
+		padding-bottom: 1%;
+		padding-left: unset;
+	}
+
+	#extra {
+		margin: unset;
+		grid-area: extra;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	[data-pagename="about"] #extra a {
+		color: var(--color-green2);
+	}
+
+	[data-pagename="about"] #extra a:visited {
+		color: var(--color-green2);
+	}
+
+	#skills {
+		grid-area: skills;
+		width: 100%;
+	}
+
+	#skills h3{
+		padding-bottom: unset;
+	}
+
+	/**
+	 * ==========================================================================================
+	 * Below are all of the skill styles including skill
+	 * bars and skill bubbles
+	 * ==========================================================================================
+	 */
+
+	.skill {
+		padding-top: 1%;
+	}
+
+	.skillbar {
+		border: 2px solid #111;
+		height: 18px;
+		width: 75%;
+		overflow: hidden;
+	}
+
+	.skillfill {
+		background-color: #222;
+		height: inherit;
+		width: 60%;
+	}
+
+	/* Define specific skill fills here */
+
+	#pm-skill .skillbar .skillfill 		{ width: 75%; }
+	#dm-skill .skillbar .skillfill 		{ width: 85%; }
+	#da-skill .skillbar .skillfill 		{ width: 75%; }
+	#sa-skill .skillbar .skillfill 		{ width: 70%; }
+	#wb-skill .skillbar .skillfill 		{ width: 65%; }
+	#photo-skill .skillbar .skillfill 	{ width: 60%; }
+
+	#bi-skill .skillbar .skillfill 		{ width: 85%; }
+	#ta-skill .skillbar .skillfill 		{ width: 50%; }
+	#sf-skill .skillbar .skillfill 		{ width: 60%; }
+	#ps-skill .skillbar .skillfill 		{ width: 70%; }
+	#ill-skill .skillbar .skillfill 	{ width: 70%; }
+	#ind-skill .skillbar .skillfill 	{ width: 70%; }
+	#mo-skill .skillbar .skillfill 		{ width: 95%; }
+
+	/**
+	 * Below are a set of styles that display the program bubbles in a grid
+	 * The styles for these bubbles were adapted from a tutorial that 
+	 * can be found on a youtube video linked here:
+	 * Pure Css Water Wave Loading - Css Wave Effects - No Image or SVG for Wave effects
+	 * https://www.youtube.com/watch?v=dQw9v7bWbPE
+	 */
+
+	#prog-grid {
+		display: inline-grid;
+		width: 90%;
+		margin-top: 15px;
+		grid-template-columns: 18% 18% 18% 18% 18%;
+		grid-column-gap: 2.5%;
+		grid-row-gap: 20px; 
+	}
+
+	.circle {
+		margin: auto;
+		position: relative;
+		width: 50px;
+		height: 50px;
+		border: 2px solid #111;
+		border-radius: 50%;
+		background-color: #222;
+		overflow: hidden;
+	}
+
+	.wave {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	.wave:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		height: 200%;
+		width: 200%;
+		background-color: var(--co-home-bg);
+		transform: translate(-50%, -75%);
+	}
+
+	.circle:hover .wave:before {
+		border-radius: 35%;
+	}
+
+	/* Set specific bubble capacities here*/
+	#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -85%); }
+	#sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 1.5s ease 1; }
+
+	#neo-bubble .circle .wave:before 		{ transform: translate(-50%, -88%); }
+	#neo-bubble .circle:hover .wave:before 	{ animation: neo-wave 1.5s ease 1; }
+
+	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
+	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
+
+	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -95%); }
+	#python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
+
+	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
+	#r-bubble .circle:hover .wave:before 	{ animation: r-wave 1.5s ease 1; }
+
+	#html-bubble .circle .wave:before 		{ transform: translate(-50%, -94%); }
+	#html-bubble .circle:hover .wave:before { animation: html-wave 1.5s ease 1; }
+
+	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
+	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 1.5s ease 1; }
+
+	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
+	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
+
+	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -95%); }
+	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
+
+	#lua-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+	#lua-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
+
+	/**
+	 * Animations for above circles and waves. Note: The translates below match those above
+	 * Without the translate being in both places the circle goes to a default position
+	 * on the page
+	 */
+	@keyframes sql-wave {
+		from { transform: translate(-50%, -85%) rotate(0deg); }
+		to { transform: translate(-50%, -85%) rotate(180deg);	}
+	}
+
+	@keyframes neo-wave {
+		0% { transform: translate(-50%, -88%) rotate(0deg); }
+		100% { transform: translate(-50%, -88%) rotate(180deg);	}
+	}
+	@keyframes csharp-wave {
+		0% { transform: translate(-50%, -85%) rotate(0deg);	}
+		100% { transform: translate(-50%, -85%) rotate(180deg);	}
+	}
+	@keyframes python-wave {
+		0% { transform: translate(-50%, -95%) rotate(0deg);	}
+		100% { transform: translate(-50%, -95%) rotate(180deg); }
+	}
+	@keyframes r-wave {
+		0% { transform: translate(-50%, -64%) rotate(0deg); }
+		100% { transform: translate(-50%, -64%) rotate(180deg);	}
+	}
+	@keyframes html-wave {
+		0% { transform: translate(-50%, -94%) rotate(0deg);	}
+		100% { transform: translate(-50%, -94%) rotate(180deg);	}
+	}
+	@keyframes css-wave {
+		0% { transform: translate(-50%, -90%) rotate(0deg); }
+		100% { transform: translate(-50%, -90%) rotate(180deg); }
+	}
+	@keyframes js-wave {
+		0% { transform: translate(-50%, -84%) rotate(0deg);	}
+		100% { transform: translate(-50%, -84%) rotate(180deg); }
+	}
+	@keyframes php-wave {
+		0% { transform: translate(-50%, -95%) rotate(0deg); }
+		100% { transform: translate(-50%, -95%) rotate(180deg); }
+	}
+	@keyframes lua-wave {
+		0% { transform: translate(-50%, -75%) rotate(0deg); }
+		100% { transform: translate(-50%, -75%) rotate(180deg); }
+	}
+
+	/*
+		Animation Template
+	
+	 @keyframes css-wave {
+		0% {
+			transform: translate(-50%, -75%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-50%, -75%) rotate(360deg);
+		}
+	}*/
+
+	.prog-bubble h6{
+		margin-top: 5%;
+		text-align: center;
+		color: #B7CEBD;
+	}
+
+	.abouttool {
+		position: fixed;
+		display: none;
+		background-color: #5E926A;
+		color: white;
+		padding: 1%;
+		z-index: 200;
+		border-radius: 10% 10% 10% 0;
+	}
+
+	.abouttool h6{
+		padding-bottom: 5%;
+	}
+
+	.prog-bubble:hover .abouttool {
+		display: block;
+	}
+
+	/*
+	=================================
+			Project Styles
+	=================================
+	===================================================================================================
+                                                                                         
+			88888888ba                               88                                              
+			88      "8b                              ""                            ,d                
+			88      ,8P                                                            88                
+			88aaaaaa8P'  8b,dPPYba,   ,adPPYba,      88   ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+			88""""""'    88P'   "Y8  a8"     "8a     88  a8P_____88  a8"     ""    88     I8[    ""  
+			88           88          8b       d8     88  8PP"""""""  8b            88      `"Y8ba,   
+			88           88          "8a,   ,a8"     88  "8b,   ,aa  "8a,   ,aa    88,    aa    ]8I  
+			88           88           `"YbbdP"'      88   `"Ybbd8"'   `"Ybbd8"'    "Y888  `"YbbdP"'  
+	=============================================== ,88 ===============================================                                            
+			                                      888P"                                                
+	*/
+
+	[data-pagename="projects"] #content > h1 {
+		text-align: center;
+		margin-top: 2%;
+	}
+
+	#proj-grid {
+		display: grid;
+		margin-top: 5%;
+		padding-bottom: 5%;
+		background-color: var(--co-home-bg);
+	}
+
+	.proj-block {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin: 5%;
+	}
+
+	.proj-link {
+		width: 80%;
+		display: block;
+		margin: auto;
+	}
+
+	.proj-img{
+		margin: auto;
+		width: inherit;
+		height: inherit;
+	}
+
+	.proj-img img{
+		width: 100%;
+		height: 100%;
+	}
+
+	.proj-info {
+		margin-top: 3%;
+	}
+
+	.proj-info h4 {
+		font-size: 1.6em;
+		padding-bottom: 3%;
+		color: var(--co-yhigh3);
+	}
+
+	.proj-info p {
+		color: var(--color-font-si);
+		font-size: 1.1em;
+	}
+
+	#proj-grid a{
+		color: var(--color-font-si);
+	}
+
+}
+/*
+==========================================================================================================
+			Retina Screen Styles
+==========================================================================================================
+==========================================================================================================
+										                                                               
+										88888888ba                        88                           
+										88      "8b                ,d     ""                           
+										88      ,8P                88                                  
+										88aaaaaa8P'   ,adPPYba,  MM88MMM  88  8b,dPPYba,   ,adPPYYba,  
+										88""""88'    a8P_____88    88     88  88P'   `"8a  ""     `Y8  
+										88    `8b    8PP"""""""    88     88  88       88  ,adPPPPP88  
+										88     `8b   "8b,   ,aa    88,    88  88       88  88,    ,88  
+										88      `8b   `"Ybbd8"'    "Y888  88  88       88  `"8bbdP"Y8  
+==========================================================================================================
+*/
+
+@media screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1600px) 
+  and (pointer: fine)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) {
+
+	/*
+	=============================================
+				Grid Styles
+	=============================================
+	===================================================================================================
+                                            
+														  ,ad8888ba,               88           88  
+														 d8"'    `"8b              ""           88  
+														d8'                                     88  
+														88             8b,dPPYba,  88   ,adPPYb,88  
+														88      88888  88P'   "Y8  88  a8"    `Y88  
+														Y8,        88  88          88  8b       88  
+														 Y8a.    .a88  88          88  "8a,   ,d88  
+														  `"Y88888P"   88          88   `"8bbdP"Y8  
+	===================================================================================================
+	*/
+
+	/*===== Primary grid Area - Sidebar and Content/Main ===== */
+	/* Declaring CSS Grid Areas*/
+	.grid-side 		{ grid-area: side; }
+	.grid-content 	{ grid-area: main; }
+
+	.grid-container {
+		display: grid;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		grid-template-areas: 
+			'side main main main main main main';
+		grid-auto-columns: calc(100% * 1 / 7);
+	}
+
+	/*===== Sidebar grid Area - Sidebar ===== */
+	/* Declaring CSS Grid Areas*/
+	nav 		{ grid-area: top; }
+	#sidemid 	{ grid-area: mid; }
+	#sidefoot	{ grid-area: foot; }
+
+	#sidebar {
+		display: grid;
+		grid-template-areas: 
+			'top'
+			'top'
+			'mid'
+			'mid'
+			'mid'
+			'foot';
+		grid-auto-rows: calc(100% / 6);
+	}
+
+	/*===== Social Links grid Area - Sidebar ===== */
+	/* Declaring CSS Grid Areas*/
+
+	#soc-links {
+		display: inline-grid;
+		grid-template-columns: auto auto auto auto;
+		padding: 5%;
+	}
+
+	/*
+	=============================================
+				Laptop and Desktop Font Sizes
+	=============================================
+	===================================================================================================
+                                                           
+											88888888888                                                
+											88                                       ,d                
+											88                                       88                
+											88aaaaa       ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYba,  
+											88"""""      a8"     "8a  88P'   `"8a    88     I8[    ""  
+											88           8b       d8  88       88    88      `"Y8ba,   
+											88           "8a,   ,a8"  88       88    88,    aa    ]8I  
+											88            `"YbbdP"'   88       88    "Y888  `"YbbdP"' 
+	===================================================================================================
+	*/
+
+	h1 {
+		font-family: var(--font-header);
+		font-size: 32px;
+	}
+
+	h2 {
+		font-family: var(--font-header);
+		font-size: 1.45em;
+	}
+
+	h3 {
+		font-family: var(--font-header);
+		font-size: 1.1em;
+	}
+
+	h4 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	h5 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	h6 {
+		font-family: var(--font-header2);
+		font-size: 1.1em;
+	}
+
+	p {
+		font-family: var(--font-para2);
+		font-size: 1em;
+	}
+
+	li {
+		font-family: var(--font-para2);
+		font-size: 1em;	
+	}
+
+	/*
+	=============================================
+				Body Styles
+	=============================================
+	====================================================================================================
+                                                    
+													88888888ba                         88               
+													88      "8b                        88               
+													88      ,8P                        88               
+													88aaaaaa8P'   ,adPPYba,    ,adPPYb,88  8b       d8  
+													88""""""8b,  a8"     "8a  a8"    `Y88  `8b     d8'  
+													88      `8b  8b       d8  8b       88   `8b   d8'   
+													88      a8P  "8a,   ,a8"  "8a,   ,d88    `8b,d8'    
+													88888888P"    `"YbbdP"'    `"8bbdP"Y8      Y88'     
+	========================================================================================== d8' =====
+													                                          d8'     
+	
+	*/
+
+	html, body {
+		height: 100%;
+	}
+
+	html {
+
+	}
+
+	body {
+
+	}
+
+	#wrapper {
+
+	}
+
+	/*
+	=============================================
+				Sidebar Styles
+	=============================================
+	===================================================================================================
+							                                                                               
+							 ad88888ba   88           88              88                                   
+							d8"     "8b  ""           88              88                                   
+							Y8,                       88              88                                   
+							`Y8aaaaa,    88   ,adPPYb,88   ,adPPYba,  88,dPPYba,   ,adPPYYba,  8b,dPPYba,  
+							  `"""""8b,  88  a8"    `Y88  a8P_____88  88P'    "8a  ""     `Y8  88P'   "Y8  
+							        `8b  88  8b       88  8PP"""""""  88       d8  ,adPPPPP88  88          
+							Y8a     a8P  88  "8a,   ,d88  "8b,   ,aa  88b,   ,a8"  88,    ,88  88          
+							 "Y88888P"   88   `"8bbdP"Y8   `"Ybbd8"'  8Y"Ybbd8"'   `"8bbdP"Y8  88          
+	===================================================================================================
+	*/
+
+	#under-show {
+		display: none;
+	}
+
+	#show-menu {
+		display: none;
+	}
+
+	.slide-menu	{
+		left: unset;
+	}
+
+	#sidebar {
+		position: fixed;
+		overflow: hidden;
+		width: calc(100% * 1 / 7);
+		height: 100%;
+		left: 0;
+		background-color: var(--color-si-bg);
+		box-shadow: 2px 0px 7px 0px rgba(0,0,0,0.3);
+	}
+
+	nav {
+		width: 100%;
+		margin-top: 8%;
+		text-align: center;
+	}
+
+	#port-link {
+		text-decoration: none;
+	}
+
+	#port-name {
+		font-family: var(--port-head-fo);
+		color: var(--port-head-co);
+		font-size: 1.6em;
+	}
+
+	nav>ul {
+		display: inline-block;
+		text-align: left;
+		width: 80%;
+	}
+
+	#cur-page {
+		margin-top: 8%;
+		color: var(--color-font-si);
+		margin-left: 15%;
+	}
+
+	#gr-rect {
+		position: relative;
+		height: 5px;
+		width: 100%;
+		margin-top: 4%;
+		margin-bottom: 2%;
+		margin-left: auto;
+		margin-right: auto;
+		background: var(--color-green);
+	}
+
+	nav>ul>a>li {
+		display: inline-block;
+		font-family: var(--font-header);
+		font-size: 1.4em;
+		margin-top: 6%;
+		margin-bottom: 6%;
+		color: var(--color-font-si);
+	}
+
+	nav>ul>a {
+		display: block;
+		text-decoration: none;
+		color: unset;
+		margin-left: 0%;
+	}
+
+	nav>ul>a>li:hover {
+		color: var(--co-font-sihov);
+		font-weight: bold;
+	}
+
+	nav>ul>a:visited {
+		color: none;
+	}
+
+	#sidefoot {
+
+	}
+
+	#foot-inner {
+		position: unset;
+		left: unset;
+		bottom: unset;
+		width: unset;
+		transform: unset;
+	}
+
+	#soc-links {
+		width: 100%;
+		margin: auto;
+		list-style-type: none;
+	}
+
+	#soc-links>a {
+		
+	}
+
+	#soc-links>a>li {
+		width: 35px;
+		margin: auto;
+	}
+
+	#soc-links>a>li>img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	#copyright-div {
+		margin-top: 10px;
+		text-align: center;
+		color: var(--co-copyright);
+	}
+
+	#copyright-div h5{
+		font-family: var(--font-header);
+	}
+
+	/*
+	================================================
+					Content Styles
+	================================================
+	===================================================================================================
+					                                                                                    
+					  ,ad8888ba,                                                                        
+					 d8"'    `"8b                              ,d                                ,d     
+					d8'                                        88                                88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM   ,adPPYba,  8b,dPPYba,   MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     a8P_____88  88P'   `"8a    88     
+					Y8,            8b       d8  88       88    88     8PP"""""""  88       88    88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    "8b,   ,aa  88       88    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888   `"Ybbd8"'  88       88    "Y888  
+	===================================================================================================
+	*/
+
+	#content {
+		background-color: var(--color-co-bg);
+		color: var(--color-font-co);
+	}
+
+	#content::-webkit-scrollbar {
+		display: none;
+	}
+
+	/*
+	=================================
+			Home Content Styles
+	=================================
+	===================================================================================================
+                                                           
+											88        88                                               
+											88        88                                               
+											88        88                                               
+											88aaaaaaaa88   ,adPPYba,   88,dPYba,,adPYba,    ,adPPYba,  
+											88""""""""88  a8"     "8a  88P'   "88"    "8a  a8P_____88  
+											88        88  8b       d8  88      88      88  8PP"""""""  
+											88        88  "8a,   ,a8"  88      88      88  "8b,   ,aa  
+											88        88   `"YbbdP"'   88      88      88   `"Ybbd8"'  
+	===================================================================================================
+	*/
+
+	#splash-wrap {
+		position: relative;
+		padding-top: unset;
+		height: 160px;
+		width: 100%;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	#splash {
+		position: absolute;
+		margin: auto;
+		width: 100%;
+		top: 50%;
+		transform: translate( 0, -50%);
+	}
+
+	/*#splash::after {
+		content: ' ';
+		box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
+		width: 40%;
+		transform: translateX(-50%) translateY(120px);
+		position: absolute;
+	}*/
+
+
+	#greet {
+		font-size: 2.5em;
+		display: block;
+	}
+
+	#splash h4 {
+		padding-top: 10px;
+		font-weight: 200;
+		font-size: 1.8em;
+	}
+
+	#greet-blurb {
+		display: block;
+		margin-top: 10px;
+		font-size: 1.3em;
+	}
+
+	#service-wrap {
+		margin-top: 20px;
+		background-color: #514E4B;
+	}
+
+	#service-wrap h2 {
+		text-align: center;
+		font-size: 2.2em;
+	}
+
+	.services {
+		display: grid;
+		grid-template-rows: unset;
+		grid-template-columns: 26% 26% 26%;
+		grid-column-gap: 11%;
+		padding: 2% 5%;
+	}
+
+	.service-block {
+		width: unset;
+		padding-bottom: 20px;
+	}
+
+	.service-block h3 {
+		text-align: center;
+		font-size: 1.9em;
+		padding-bottom: 3%;
+		color: var(--co-yhigh3);
+	}
+
+	.serv-blurb {
+		display: block;
+		margin: auto;
+		width: 115%;
+	}
+
+	.serv-blurb p {
+		font-size: 1em;
+		color: var(--color-font-si);
+	}
+
+	.serv-blurb ul {
+		padding-top: 5px;
+		padding-left: 20px;
+		list-style-type: disc;
+		color: var(--color-font-si);
+		/*list-style-position: inside;*/
+	}
+
+	.serv-blurb ul li {
+		padding-top: 5px;
+		font-size: 1em;
+	}
+
+	.serv-blurb a {
+		color: white;
+	}
+
+	.serv-blurb a:visited {
+
+	}
+
+	/*
+	=================================
+		Photography Content Styles
+	=================================
+	===================================================================================================
+                                                             
+											88888888ba   88                                              
+											88      "8b  88                          ,d                  
+											88      ,8P  88                          88                  
+											88aaaaaa8P'  88,dPPYba,    ,adPPYba,   MM88MMM   ,adPPYba,   
+											88""""""'    88P'    "8a  a8"     "8a    88     a8"     "8a  
+											88           88       88  8b       d8    88     8b       d8  
+											88           88       88  "8a,   ,a8"    88,    "8a,   ,a8"  
+											88           88       88   `"YbbdP"'     "Y888   `"YbbdP"'   
+	===================================================================================================
+	*/
+
+	[data-pagename="photography"]:root {
+		--column-width: 28%;
+		--column-gap: calc((100% - (var(--column-width) * 3)) / 2 );
+	}
+
+	#photo-greet {
+		padding-top: 4%;
+		padding-bottom: 2%;
+		font-size: 2em;
+	}
+
+	/*===== Photography Galleries Grid Area ===== */
+	/* Declaring CSS Grid Areas*/
+
+	#gall-wrapper {
+		display: grid;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 40px;
+		width: 90%;
+	}
+
+	#gall-container {
+		padding-top: 5%;
+		background-color: unset;
+		margin: auto;
+		display: grid;
+		grid-template-columns: var(--column-width) var(--column-width) var(--column-width);
+		grid-column-gap: var(--column-gap);
+		grid-row-gap: 60px;
+	}
+
+	.gall-block {
+		width: 350px;
+		height: 350px;
+		perspective: 1050px; 
+		margin: auto;
+	}
+
+	.cube {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: translateZ(-175px);
+		transition: transform 0.5s;
+	}
+
+	.cube-face {
+		position: absolute;
+		width: 358px;
+		height: 358px;
+		border: 4px solid var(--co-cube-bg);
+	}
+
+	.cube-face.front 	{ transform: rotateY(   0deg) translateZ(175px); } 
+	.cube-face.right 	{ transform: rotateY(  90deg) translateZ(175px); }
+	.cube-face.left 	{ transform: rotateY( -90deg) translateZ(175px); }
+	.cube-face.back 	{ transform: rotateY( 180deg) translateZ(175px); }
+	.cube-face.top 		{ transform: rotateX(  90deg) translateZ(175px); }
+	.cubeface.bottom 	{ 
+		position: absolute;
+		transform: rotateX( -90deg) translateZ(315px); 
+		background-color: rgba(0,0,0,0.2);
+		box-shadow: 0px 0px 100px 50px rgba(0,0,0,0.2);
+		left: 75px;
+		width: 200px;
+		height: 200px;
+	}
+
+	.cube.show-front 	{ transform: translateZ(-175px) rotateY(    0deg); }
+	.cube.show-right 	{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-back 	{ transform: translateZ(-175px) rotateY( -180deg); }
+	.cube.show-left 	{ transform: translateZ(-175px) rotateY(   90deg); }
+	.cube.show-top 		{ transform: translateZ(-175px) rotateY(  -90deg); }
+	.cube.show-bottom 	{ transform: translateZ(-175px) rotateY(   90deg); }
+
+	.gall-header {
+		text-align: center;
+		font-size: 1.5em;
+		padding-bottom: 4px;
+		color: var(--co-yhigh4)
+	}
+
+	.gall-link {
+		display: block;
+	}
+
+	.gall-img-wrap {
+		display: flex;
+		background-color: var(--co-cube-bg);
+		width: 350px;
+		height: 350px;
+		max-height: unset;
+		margin: auto;
+		box-shadow: unset;
+	}
+
+	#tooltip {
+		display: none;
+	}
+
+	.gall-img-wrap:hover #tooltip {
+		display: block;
+		position: fixed;
+		overflow: hidden;
+	}
+
+	.gall-img {
+		width: 100%;
+		height: unset;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+
+	.gall-info {
+		width: 350px;
+		height: 350px;
+		background-color: var(--co-cube-bg);
+		top: unset;
+	}
+
+	.gall-blurb {
+		line-height: 1.1em;
+		width: 85%;
+		margin: auto;
+	}
+
+	/*
+	=================================
+		Photography Gallery Styles
+	=================================
+	===================================================================================================
+                                                                        
+								  ,ad8888ba,               88  88                                       
+								 d8"'    `"8b              88  88                                       
+								d8'                        88  88                                       
+								88             ,adPPYYba,  88  88   ,adPPYba,  8b,dPPYba,  8b       d8  
+								88      88888  ""     `Y8  88  88  a8P_____88  88P'   "Y8  `8b     d8'  
+								Y8,        88  ,adPPPPP88  88  88  8PP"""""""  88           `8b   d8'   
+								 Y8a.    .a88  88,    ,88  88  88  "8b,   ,aa  88            `8b,d8'    
+								  `"Y88888P"   `"8bbdP"Y8  88  88   `"Ybbd8"'  88              Y88'     
+	========================================================================================== d8' ====
+								                                                              d8'       
+	*/
+
+	.hidden-gall {
+		display: none;
+	}
+
+	#gall-viewer {
+		position: unset;
+		width: unset;
+		height: unset;
+		background-color: #000000;
+	}
+
+	#caro-container {
+		position: relative;
+		width: 720px;
+		height: 520px;
+		perspective: 1000px;
+		overflow: unset;
+	}
+
+	#carousel {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		transform: translateZ(-288px);
+		transform-style: preserve-3d;
+		transition: transform 1s;
+	}
+
+	.carousel-cell {
+		display: flex;
+		position: absolute;
+		width: 700px;
+		height: 500px;
+		left: 10px;
+		top: 10px;
+		align-items: center;
+		justify-content: center;
+		transition: transform 1s, opacity 1s;
+	}
+
+	.gallery-img {
+		width: 100%;
+		height: unset;
+		max-width: 100%;
+		max-height: 100%;
+		margin: auto;
+	}
+
+	.no-img {
+		width: 700px;
+		height: 500px;
+		background-color: gray;
+	}
+
+	#controls {
+		width: 100%;
+		text-align: center;
+	}
+
+	.iter {
+		display: unset;
+		color: white;
+		font-size: 3em;
+		padding: 5px;
+	}
+
+	.gall-closer {
+		position: unset;
+		line-height: unset;
+		font-size: 3em;
+		font-weight: bold;
+		float: right;
+		color: white;
+		top: 0px;
+		right: 0px;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
+	/*
+	=================================
+			Contact Styles
+	=================================
+	===================================================================================================
+					                                                                                   
+					  ,ad8888ba,                                                                       
+					 d8"'    `"8b                              ,d                               ,d     
+					d8'                                        88                               88     
+					88              ,adPPYba,   8b,dPPYba,   MM88MMM  ,adPPYYba,   ,adPPYba,  MM88MMM  
+					88             a8"     "8a  88P'   `"8a    88     ""     `Y8  a8"     ""    88     
+					Y8,            8b       d8  88       88    88     ,adPPPPP88  8b            88     
+					 Y8a.    .a8P  "8a,   ,a8"  88       88    88,    88,    ,88  "8a,   ,aa    88,    
+					  `"Y8888Y"'    `"YbbdP"'   88       88    "Y888  `"8bbdP"Y8   `"Ybbd8"'    "Y888  
+	===================================================================================================
+	*/
+
+	[data-pagename="contact"] #wrapper {
+		height: calc(100%);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-rows: 5% 10% 5% 70% 10%;
+	}
+
+	#cont-greet {
+		text-align: center;
+		width: 100%;
+		padding: 2%;
+	}
+
+	#message-wrap {
+		display: grid;
+		padding: 5%;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: unset;
+		margin-top: 20px;
+		background-color: var(--co-home-bg);
+	}
+
+	#cont-info-grid {
+		display: grid;
+		grid-template-columns: unset;
+		grid-row-gap: 10px;
+	}
+
+	#cont-info {
+		display: grid;
+	}
+
+	.info-key {
+		display: inline;
+		margin: unset;
+	}
+
+	#caddress {
+		display: inline;
+		vertical-align: top;
+	}
+
+	#address { 
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#c-soc-wrap {
+		margin: auto;
+	}
+
+	#c-soc-links {
+		display: grid;
+		grid-template-columns: 60px 60px 60px 60px;
+		grid-gap: 12px;
+		list-style-type: none;
+	}
+
+	#c-soc-links>a>li {
+		margin: auto;
+	}
+
+	#c-soc-links>a>li>img {
+		width: 100%;
+		max-height: 100%
+	}
+
+	#cont-info p {
+		font-size: 1.3em;
+		color: var(--color-co-bg);
+		text-align: left;
+		margin: unset;
+	}
+
+	form {
+		padding: 5%;
+		display: grid;
+		grid-template-rows: auto auto auto auto;
+		grid-gap: 15px;
+	}
+
+	.mess-comp {
+		border: 1px solid #AAA;
+		font-size: 1.2em;
+		padding: 8px;
+	}
+
+	form>button[type="submit"] {
+		margin: auto;
+		background-color: #74716F;
+		border: none;
+		line-height: unset;
+		height: 30px;
+		width: 50%;
+		font-size: unset;
+		z-index: 5;
+	}
+
+	form>button[type="submit"]>h3 {
+		line-height: 1.35em;
+		height: inherit;
+		color: white;
+		font-size: 1.35em;
+		width: 35%;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	form>button[type="submit"]>#mail-icon {
+		display: inline-block;
+		width: 33%;
+		padding: 1%;
+		height: inherit;
+		margin: auto;
+	}
+
+	#message {
+		height: 200px;
+	}
+
+	#message-und {
+		background-color: var(--co-home-bg);
+	}
+
+	/*
+	=================================
+			About Styles
+	=================================
+	===================================================================================================
+									                                                                  
+									       db         88                                              
+									      d88b        88                                       ,d     
+									     d8'`8b       88                                       88     
+									    d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+									   d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+									  d8""""""""8b    88       d8  8b       d8  88       88    88     
+									 d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+									d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888  
+	===================================================================================================
+	*/
+
+	/* ========= Start With Grids ============*/
+
+	.about-grid {
+		display: inline-grid;
+		grid-template-areas: 'prof-pic-info' 'cols';
+	}
+
+	#cols {
+		grid-area: cols;
+		display: grid;
+		grid-template: 
+				'exp educ' minmax(12.5%, auto)
+				'exp educ' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'exp skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'achieve skills' minmax(12.5%, auto)
+				'extra certs'minmax(12.5%, auto) / 50% 50%;
+		background-color: var(--co-home-bg);
+		height: 100%;
+	}
+
+	/* ====== Prof pic and info ============ */
+
+	#prof-pic-info {
+		grid-area: prof-pic-info;
+		display: grid;
+		grid-template-areas: 'pic infos';
+		grid-template-columns: 50% 50%;
+		height: fit-content;
+	}
+
+	#prof-pic {
+		width: 400px;
+		height: 400px;
+		margin: 5% auto 5% auto;
+		padding: unset;
+	}
+
+	#prof-infos {
+		padding-top: 10px;
+		background-color: var(--color-co-bg);
+	}
+
+	#prof-infos-head {
+		margin: unset;
+	}
+
+	#prof-infos .infos {
+		font-size: 1.1em;
+		margin: 0.75%;
+	}
+
+	#bio {
+		width: 80%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		margin: 0.75%;
+	}
+
+	#bio span{
+		font-size: 1.1em;
+	}
+
+	#prof-infos>a {
+		box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.5);
+		width: 45%;
+		height: 30px;
+		margin-left: 1%;
+		display: inline-block;
+	}
+
+	#prof-infos>a:active {
+		box-shadow: unset;
+	}
+
+	#prof-infos>a:hover>#do-resume {
+		background-color: #B7CEBD;
+	}
+
+	#prof-infos-head h2 {
+		font-size: 2.6em;
+		color: var(--color-font-co);
+	}
+
+	#do-resume {
+		display: inline-block;
+		width: 100%;
+		height: 30px;
+		border: none;
+		color: var(--color-si-bg);
+		background-color: #A5C2AC;
+	}
+
+	#down-wrap {
+		display: inline-block;
+		height: inherit;
+		width: 100%;
+		text-align: center;
+	}
+
+	.icon-wrap {
+		display: inline-block;
+		width: 15%;
+		height: 100%;
+		padding: 0.75%;
+	}
+
+	.icon-wrap img { 
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+	}
+
+	#do-resume p {
+		width: 75%;
+		height: 100%;
+		display: inline-block;
+		line-height: 30px;
+		font-size: 1.1em;
+		transform: translate(0, -50%);
+		vertical-align: -webkit-baseline-middle;
+	}
+
+	/* =========================== Fonts ===================================*/
+
+	.resume-block h3{
+		color: var(--co-yhigh4);
+		font-size: 1.5em;
+		padding-bottom: 2%;
+		padding-top: 6%;
+	}
+
+	.resume-block h4{
+		font-family: var(--font-header2);
+		color: #fff;
+		padding-top: 1%;
+		padding-bottom: 1%;
+		font-size: 1.25em;
+	}
+
+	.resume-block h5{
+		font-family: var(--font-header2);
+		color: var(--co-yhigh5);
+		padding-top: 0.5%;
+		padding-bottom: 0.5%;
+		padding-left: 2%;
+	}
+
+	.resume-block h6{
+		font-size: 1em;
+	}
+
+	.resume-block p{
+		padding-left: 10px;
+		font-size: 1em;
+		line-height: 1.2em;
+		color: var(--color-font-si);
+	}
+
+	.resume-block ul {
+		padding-left: 20px;
+	}
+
+	.resume-block ul li {
+		font-size: 1em;
+		line-height: 1em;
+		padding-bottom: 1%;
+		color: var(--color-font-si);
+		list-style-type: circle;	
+	}
+
+	#achievements a{
+		text-decoration: none;
+		color: var(--color-font-si);
+	}
+
+	/* =================  Resume Styles ================= */
+
+	.resume-block {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	#achievements {
+		grid-area: unset;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	#achievements h4{
+		padding-top: 2%;
+		padding-bottom: 2%;
+	}
+
+	#achievements h5{
+		padding-top: 0.5%;
+		padding-bottom: 2%;
+		padding-left: unset;
+	}
+
+	#certs {
+		margin: unset;
+		grid-area: certs;
+	}
+
+	#education {
+		grid-area: educ;
+		margin: unset;
+		width: 95%;
+	}
+
+	#education>h5 {
+		padding-top: 2%;
+		padding-bottom: 1%;
+		padding-left: 2%;
+	}
+
+	#education>h6 {
+		padding-left: 2%;
+	}
+
+	#course-list {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-column-gap: 1%;
+	}
+
+	#experience {
+		grid-area: exp;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	.exp-block>h4 {
+		padding-top: 4%;
+		padding-bottom: 2%;
+	}
+
+	.exp-block>h5 {
+		padding-bottom: 1%;
+		padding-left: unset;
+	}
+
+	#extra {
+		margin: unset;
+		grid-area: extra;
+		margin: 0 auto 0 auto;
+		width: 80%;
+	}
+
+	[data-pagename="about"] #extra a {
+		color: var(--color-green2);
+	}
+
+	[data-pagename="about"] #extra a:visited {
+		color: var(--color-green2);
+	}
+
+	#skills {
+		grid-area: skills;
+		width: 100%;
+	}
+
+	#skills h3{
+		padding-bottom: unset;
+	}
+
+	/**
+	 * ==========================================================================================
+	 * Below are all of the skill styles including skill
+	 * bars and skill bubbles
+	 * ==========================================================================================
+	 */
+
+	.skill {
+		padding-top: 1%;
+	}
+
+	.skillbar {
+		border: 2px solid #111;
+		height: 18px;
+		width: 75%;
+		overflow: hidden;
+	}
+
+	.skillfill {
+		background-color: #222;
+		height: inherit;
+		width: 60%;
+	}
+
+	/* Define specific skill fills here */
+
+	#pm-skill .skillbar .skillfill 		{ width: 75%; }
+	#dm-skill .skillbar .skillfill 		{ width: 85%; }
+	#da-skill .skillbar .skillfill 		{ width: 75%; }
+	#sa-skill .skillbar .skillfill 		{ width: 70%; }
+	#wb-skill .skillbar .skillfill 		{ width: 65%; }
+	#photo-skill .skillbar .skillfill 	{ width: 60%; }
+
+	#bi-skill .skillbar .skillfill 		{ width: 85%; }
+	#ta-skill .skillbar .skillfill 		{ width: 50%; }
+	#sf-skill .skillbar .skillfill 		{ width: 60%; }
+	#ps-skill .skillbar .skillfill 		{ width: 70%; }
+	#ill-skill .skillbar .skillfill 	{ width: 70%; }
+	#ind-skill .skillbar .skillfill 	{ width: 70%; }
+	#mo-skill .skillbar .skillfill 		{ width: 95%; }
+
+	/**
+	 * Below are a set of styles that display the program bubbles in a grid
+	 * The styles for these bubbles were adapted from a tutorial that 
+	 * can be found on a youtube video linked here:
+	 * Pure Css Water Wave Loading - Css Wave Effects - No Image or SVG for Wave effects
+	 * https://www.youtube.com/watch?v=dQw9v7bWbPE
+	 */
+
+	#prog-grid {
+		display: inline-grid;
+		width: 90%;
+		margin-top: 15px;
+		grid-template-columns: 18% 18% 18% 18% 18%;
+		grid-column-gap: 2.5%;
+		grid-row-gap: 20px; 
+	}
+
+	.circle {
+		margin: auto;
+		position: relative;
+		width: 50px;
+		height: 50px;
+		border: 2px solid #111;
+		border-radius: 50%;
+		background-color: #222;
+		overflow: hidden;
+	}
+
+	.wave {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+	}
+
+	.wave:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		height: 200%;
+		width: 200%;
+		background-color: var(--co-home-bg);
+		transform: translate(-50%, -75%);
+	}
+
+	.circle:hover .wave:before {
+		border-radius: 35%;
+	}
+
+	/* Set specific bubble capacities here*/
+	#sql-bubble .circle .wave:before 		{ transform: translate(-50%, -85%); }
+	#sql-bubble .circle:hover .wave:before 	{ animation: sql-wave 1.5s ease 1; }
+
+	#neo-bubble .circle .wave:before 		{ transform: translate(-50%, -88%); }
+	#neo-bubble .circle:hover .wave:before 	{ animation: neo-wave 1.5s ease 1; }
+
+	#csharp-bubble .circle .wave:before 	{ transform: translate(-50%, -85%); }
+	#csharp-bubble .circle:hover .wave:before{ animation: csharp-wave 1.5s ease 1; }
+
+	#python-bubble .circle .wave:before 	{ transform: translate(-50%, -90%); }
+	#python-bubble .circle:hover .wave:before{ animation: python-wave 1.5s ease 1; }
+
+	#r-bubble .circle .wave:before 			{ transform: translate(-50%, -64%); }
+	#r-bubble .circle:hover .wave:before 	{ animation: r-wave 1.5s ease 1; }
+
+	#html-bubble .circle .wave:before 		{ transform: translate(-50%, -94%); }
+	#html-bubble .circle:hover .wave:before { animation: html-wave 1.5s ease 1; }
+
+	#css-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
+	#css-bubble .circle:hover .wave:before 	{ animation: css-wave 1.5s ease 1; }
+
+	#js-bubble .circle .wave:before 		{ transform: translate(-50%, -90%); }
+	#js-bubble .circle:hover .wave:before 	{ animation: js-wave 1.5s ease 1; }
+
+	#php-bubble .circle .wave:before 		{ transform: translate(-50%, -95%); }
+	#php-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
+
+	#lua-bubble .circle .wave:before 		{ transform: translate(-50%, -75%); }
+	#lua-bubble .circle:hover .wave:before 	{ animation: php-wave 1.5s ease 1; }
+
+	/**
+	 * Animations for above circles and waves. Note: The translates below match those above
+	 * Without the translate being in both places the circle goes to a default position
+	 * on the page
+	 */
+	@keyframes sql-wave {
+		from { transform: translate(-50%, -85%) rotate(0deg); }
+		to { transform: translate(-50%, -85%) rotate(180deg);	}
+	}
+
+	@keyframes neo-wave {
+		0% { transform: translate(-50%, -88%) rotate(0deg); }
+		100% { transform: translate(-50%, -88%) rotate(180deg);	}
+	}
+	@keyframes csharp-wave {
+		0% { transform: translate(-50%, -85%) rotate(0deg);	}
+		100% { transform: translate(-50%, -85%) rotate(180deg);	}
+	}
+	@keyframes python-wave {
+		0% { transform: translate(-50%, -95%) rotate(0deg);	}
+		100% { transform: translate(-50%, -95%) rotate(180deg); }
+	}
+	@keyframes r-wave {
+		0% { transform: translate(-50%, -64%) rotate(0deg); }
+		100% { transform: translate(-50%, -64%) rotate(180deg);	}
+	}
+	@keyframes html-wave {
+		0% { transform: translate(-50%, -94%) rotate(0deg);	}
+		100% { transform: translate(-50%, -94%) rotate(180deg);	}
+	}
+	@keyframes css-wave {
+		0% { transform: translate(-50%, -90%) rotate(0deg); }
+		100% { transform: translate(-50%, -90%) rotate(180deg); }
+	}
+	@keyframes js-wave {
+		0% { transform: translate(-50%, -84%) rotate(0deg);	}
+		100% { transform: translate(-50%, -84%) rotate(180deg); }
+	}
+	@keyframes php-wave {
+		0% { transform: translate(-50%, -95%) rotate(0deg); }
+		100% { transform: translate(-50%, -95%) rotate(180deg); }
+	}
+
+	@keyframes lua-wave {
+		0% { transform: translate(-50%, -75%) rotate(0deg); }
+		100% { transform: translate(-50%, -75%) rotate(180deg); }
+	}
+
+	/*
+		Animation Template
+	
+	 @keyframes css-wave {
+		0% {
+			transform: translate(-50%, -75%) rotate(0deg);
+		}
+		100% {
+			transform: translate(-50%, -75%) rotate(360deg);
+		}
+	}*/
+
+	.prog-bubble h6{
+		margin-top: 5%;
+		text-align: center;
+		color: #B7CEBD;
+	}
+
+	.abouttool {
+		position: fixed;
+		display: none;
+		background-color: #5E926A;
+		color: white;
+		padding: 1%;
+		z-index: 200;
+		border-radius: 10% 10% 10% 0;
+	}
+
+	.abouttool h6{
+		padding-bottom: 5%;
+	}
+
+	.prog-bubble:hover .abouttool {
+		display: block;
+	}
+
+	/*
+	=================================
+			Project Styles
+	=================================
+	===================================================================================================
+                                                                                         
+			88888888ba                               88                                              
+			88      "8b                              ""                            ,d                
+			88      ,8P                                                            88                
+			88aaaaaa8P'  8b,dPPYba,   ,adPPYba,      88   ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+			88""""""'    88P'   "Y8  a8"     "8a     88  a8P_____88  a8"     ""    88     I8[    ""  
+			88           88          8b       d8     88  8PP"""""""  8b            88      `"Y8ba,   
+			88           88          "8a,   ,a8"     88  "8b,   ,aa  "8a,   ,aa    88,    aa    ]8I  
+			88           88           `"YbbdP"'      88   `"Ybbd8"'   `"Ybbd8"'    "Y888  `"YbbdP"'  
+	=============================================== ,88 ===============================================                                            
+			                                      888P"                                                
+	*/
+
+	[data-pagename="projects"] #content > h1 {
+		text-align: center;
+		margin-top: 2%;
+	}
+
+	#proj-grid {
+		display: grid;
+		margin-top: 5%;
+		padding-bottom: 5%;
+		background-color: var(--co-home-bg);
+	}
+
+	.proj-block {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin: 5%;
+	}
+
+	.proj-link {
+		width: 80%;
+		display: block;
+		margin: auto;
+	}
+
+	.proj-img{
+		margin: auto;
+		width: inherit;
+		height: inherit;
+	}
+
+	.proj-img img{
+		width: 100%;
+		height: 100%;
+	}
+
+	.proj-info {
+		margin-top: 3%;
+	}
+
+	.proj-info h4 {
+		font-size: 1.6em;
+		padding-bottom: 3%;
+		color: var(--co-yhigh3);
+	}
+
+	.proj-info p {
+		color: var(--color-font-si);
+		font-size: 1.1em;
+	}
+
+	#proj-grid a{
+		color: var(--color-font-si);
+	}
+
+}

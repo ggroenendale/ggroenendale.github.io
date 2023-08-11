@@ -454,10 +454,10 @@ function sidebar_slide() {
  */
 $('.service-block').on('click', function() {
 	if (MD.phone()) {
-		$(this).find('.serv-blurb').toggle(300);
+		$(this).children(".serv-blurb").toggle(300);
 	}
 	else if (MD.tablet()) {
-		$(this).find('.serv-blurb').toggle(300);
+		$(this).children('.serv-blurb').toggle(300);
 	}
 });
 

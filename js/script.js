@@ -323,7 +323,7 @@ function calcVH(element) {
  *
  * @desc
  */
-$(document).ready(function() {
+$(function() {
 	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
 		console.log('Change swipe setting when gallery open');
 	}

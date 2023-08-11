@@ -1191,7 +1191,7 @@ function position_cell(it) {
 /**
  *
  */
-$('.gall-closer').click(function(){
+$('.gall-closer').on('click', function(){
 	//Swap styles to normal
 	viewer.classList.remove('grid-content');
 	viewer.classList.add('hidden-gall');
@@ -1202,7 +1202,10 @@ $('.gall-closer').click(function(){
 	sidebar_slide();
 });
 
-$('#show-menu').click(function(){
+/**
+ *
+ */
+$('#show-menu').on('click', function(){
 	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
 		//Swap styles to normal
 		viewer.classList.remove('grid-content');
@@ -1215,13 +1218,13 @@ $('#show-menu').click(function(){
 	}
 });
 
-$('#photo-prev').click(function(){
+$('#photo-prev').on('click', function(){
 	selectedIndex--;
 	rotateCarousel();
 });
 
 
-$('#photo-next').click(function(){
+$('#photo-next').on('click', function(){
 	selectedIndex++;
 	rotateCarousel();
 });
@@ -1298,7 +1301,7 @@ function hide_tooltip() {
 /**
  *
  */
-$('.prog-bubble').mouseenter( function() {
+$('.prog-bubble').on('mouseenter', function() {
 	let progtip = $(this).find('.abouttool')[0];
 	let tip_h = $(this).find('.abouttool').outerHeight();
 	let limit = window.innerHeight;

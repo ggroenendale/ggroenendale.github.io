@@ -914,7 +914,7 @@ function gallery_click(event) {
 	if (MD.phone()) {
 		if ( ctarget[0].includes('gall-img')) {
 			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
+			gname = event.target.closest('.gall-block').getAttribute('data-gallname');
 		}
 		else {
 

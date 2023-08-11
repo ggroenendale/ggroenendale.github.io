@@ -630,6 +630,99 @@ window.onresize = function() {
 }
 
 /**
+ * @function
+ * @name setup_mobile_galleries
+ * @param {Gallery[]} galleries The array of gallery data
+ */
+function setup_mobile_galleries(galleries) {
+	let grid = document.getElementById('gall-container');
+	let html_payload = '';
+
+	// For each gallery make an html payload
+	galleries.forEach( function(gallery){
+		if(gallery.avail === true) {
+			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload += `<div class="gall-img-wrap">`;
+			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
+			html_payload += `<div class="gall-info">`;
+			html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+		}
+	});
+
+	// Insert all the gallery html into the grid
+	grid.innerHTML = html_payload;
+}
+
+/**
+ * @function
+ * @name setup_tablet_galleries
+ * @param {Gallery[]} galleries The array of gallery data
+ */
+function setup_tablet_galleries(galleries) {
+	let grid = document.getElementById('gall-container');
+	let html_payload = '';
+
+	// For each gallery make an html payload
+	galleries.forEach( function(gallery){
+		if(gallery.avail === true) {
+			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload += `<div class="gall-img-wrap">`;
+			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
+			html_payload += `<div class="gall-info">`;
+			html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+		}
+	});
+
+	// Insert all the gallery html into the grid
+	grid.innerHTML = html_payload;
+}
+
+/**
+ * @function
+ * @name setup_desktop_galleries
+ * @param {Gallery[]} galleries
+ */
+function setup_desktop_galleries(galleries) {
+	let grid = document.getElementById('gall-container');
+	let html_payload = '';
+
+	// For each gallery make an html payload
+	galleries.forEach( function(gallery){
+		if(gallery.avail === true) {
+			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload +=	`<div class="cube">`;
+			html_payload += `<div class="cube-face front">`;
+			html_payload += `<div class="gall-img-wrap">`;
+			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}" alt="${gallery.mainalt}">`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+			html_payload += `<div class="cube-face right">`;
+			html_payload += `<div class="gall-info">`;
+			html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
+			html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+			html_payload += `<div class="cube-face back"></div>`;
+			html_payload += `<div class="cube-face left"></div>`;
+			html_payload += `<div class="cube-face top"></div>`;
+			html_payload += `<div class="cubeface bottom"></div>`;
+			html_payload += `</div>`;
+			html_payload += `</div>`;
+		}
+	});
+
+	// Insert all the gallery html into the grid
+	grid.innerHTML = html_payload;
+}
+
+
+/**
  * @desc
  * @return
  */
@@ -700,8 +793,7 @@ function load_galleries() {
 		adjust_cubes();
 	}
 	else {
-		html_payload += `<p>There was an error loading galleries!</p>`;
-		grid.innerHTML = html_payload;
+		$('#gall-container').innerHTML = `<p>There was an error loading galleries!</p>`;
 	}
 }
 

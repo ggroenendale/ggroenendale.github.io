@@ -889,9 +889,8 @@ function changeSide() {
  * @name reveal_right
  * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
-function reveal_right(block) {
-	console.log()
-	block.childNodes[0].classList.add('show-right');
+function reveal_right(gallery_cube) {
+	$(gallery_cube).children(".cube").addClass('show-right')
 }
 
 /**
@@ -899,8 +898,8 @@ function reveal_right(block) {
  * @name reveal_norm
  * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
-function reveal_norm(block) {
-	block.childNodes[0].classList.remove('show-right');
+function reveal_norm(gallery_cube) {
+	$(gallery_cube).children(".cube").removeClass('show-right');
 }
 
 /**

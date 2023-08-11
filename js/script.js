@@ -1,9 +1,8 @@
 /**
- * Title: Geoff Groenendale - Portfolio
- * Author: Geoff Groenendale
- * Date: 5/7/2018
- * Description: This is a javascript file for primary
- * functions for the portfolio website. These functions
+ * @file Geoff Groenendale - Portfolio
+ * @since 5/7/2018
+ * @author: Geoff Groenendale
+ * @description This is a javascript file for primary functions for the portfolio website. These functions
  * are unique to the portfolio site but this file references
  * the workhorse.js file that has several clerical functions.
  * 
@@ -51,8 +50,9 @@ if (base === 'localhost') {
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 
 /**
- *
+ * @name SWidth
  * @type {number}
+ * @desc Contains the pixel value of window.innerWidth
  */
 let SWidth = window.innerWidth;
 
@@ -69,7 +69,7 @@ let MD = new MobileDetect(window.navigator.userAgent);
 let ORI = orientationcheck();
 
 /**
- *
+ * @desc
  * @returns {string|*}
  */
 function orientationcheck() {
@@ -87,12 +87,23 @@ function orientationcheck() {
 	return orient;
 }
 
-window.addEventListener('orientationchange', function(){
+/**
+ * @name orientation_callback
+ * @function
+ * @desc This function is fired by the event listener waiting for an orientation change.
+ */
+function orientation_callback(){
 	ORI = orientationcheck();
 	console.log(`Changed orientation to ${ORI}`);
 	sidebar_slide();
 	window.scrollTo(0,1);
-},true);
+}
+
+/**
+ * @event orientationchange
+ * @desc
+ */
+window.addEventListener('orientationchange', orientation_callback,true);
 
 window.onload = function() {
 	setup();
@@ -102,6 +113,11 @@ window.onresize = function() {
 
 }
 
+/**
+ * @function
+ * @name setup
+ * @desc
+ */
 function setup() {
 	//change_page_name();
 }
@@ -444,7 +460,7 @@ $('.service-block').on('click', function() {
  * @return {[type]}        [description]
  * ========================================================================================
  */
-$('#show-menu').click(function(){
+$('#show-menu').on('click', function(){
 	if (this.classList[0] === 'slide-in') {
 		if (ORI === 'port') {
 			$(this)
@@ -549,18 +565,14 @@ if ( cur_name === 'photography' ) {
 }
 
 /**
- * ========================================================================================
- * [load_galleries description]
+ * @desc
  * @return {[type]} [description]
- * ========================================================================================
+ *
  */
 function load_galleries() {
 	let grid = document.getElementById('gall-container');
 	let html_payload = '';
 	let gallery = set.galleries;
-
-	// console.log(MD.phone());
-	// console.log(MD.is('DesktopMode'));
 	
 	//Conditional on screen width 
 	//Target for Mobile
@@ -630,13 +642,12 @@ function load_galleries() {
 }
 
 /**
- * ========================================================================================
- * This code was required in order to run specific math calculations
- * that could not be handled through css. For instance calculating a
- * perspective value that is based on the width of the area
- * and the ratio of the available width to the desired perspective
+ *
+ * @desc This code was required in order to run specific math calculations that could not be handled through css.
+ * For instance calculating a perspective value that is based on the width of the area and the ratio of the available
+ * width to the desired perspective
  * @return {[type]} [description]
- * ========================================================================================
+ *
  */
 function adjust_cubes() {
 	//Run code to perfectly space the cube elements
@@ -755,6 +766,9 @@ function adjust_cubes() {
 let cube = document.querySelector('.cube')
 let currentClass = '';
 
+/**
+ *
+ */
 function changeSide() {
 	let showClass = 'show-';
 	if ( currentClass ) {
@@ -764,22 +778,34 @@ function changeSide() {
 	currentClass = showClass;
 }
 
+/**
+ *
+ * @param block
+ */
 function reveal_right(block) {
 	block.childNodes[0].classList.add('show-right');
 }
 
+/**
+ *
+ * @param block
+ */
 function reveal_norm(block) {
 	block.childNodes[0].classList.remove('show-right');
 }
 
 /**
- * ========================================================================================
- * Adds a listener to each gallery image that will load the gallery view
+ * @function
  * @param  {Object} event) {	let        gallery [description]
  * @return {[type]}        [description]
- * ========================================================================================
+ *
  */
-$(".gall-block").click(function(event) {
+/**
+ * @function gallery_click
+ * @desc Adds a listener to each gallery image that will load the gallery view
+ * @param {ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>} event
+ */
+function gallery_click(event) {
 	let ctarget = event.target.classList;
 	//console.log(event.target);
 	let gname;
@@ -802,7 +828,7 @@ $(".gall-block").click(function(event) {
 			gname = event.target.getAttribute('data-gallname');
 		}
 	}
-	else if (!MD.tablet() && !MD.phone()) { 
+	else if (!MD.tablet() && !MD.phone()) {
 		if ( ctarget[0].includes('gall-info')) {
 			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
 			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
@@ -821,8 +847,9 @@ $(".gall-block").click(function(event) {
 		}
 		open_gallery(gallery);
 	}
-	
-});
+}
+
+$(".gall-block").on('click', gallery_click);
 
 /**
  * ========================================================================================
@@ -843,41 +870,56 @@ a88aaaa8P' 88d888b. .d8888b. d8888P .d8888b.    88        .d8888b. 88 88 .d8888b
  */
 
 /**
- * @name Gallery Viewer HTML Div
+ * @name viewer
  * @desc This HTML Div contains the gallery carousel and gallery control buttons
  * @type {HTMLElement}
  */
 let viewer = document.getElementById('gall-viewer');
 
 /**
- * @name Main Content Div
+ * @name content
  * @desc This HTML Div is the main Content Div inside the Wrapper that is not the sidebar
  * @type {HTMLElement}
  */
 let content = document.getElementById('content');
 
 /**
- * @name Carousel Div
+ * @name carousel
  * @desc This HTML Div is the Carousel that will contain the actual photos
  * @type {HTMLElement}
  */
 let carousel = document.getElementById('carousel');
 
 /**
- * @name Gallery Swipe Instance Object
- * @desc Instance of Swipe class
+ * @name gswipe
+ * @desc Instance of {@link Swipe} class
+ * @type {Swipe}
  */
 let gswipe;
 if (viewer) {
 	gswipe = new Swipe(viewer);
 }
 
+/**
+ * @name selectedIndex
+ * @type {number}
+ */
 let selectedIndex = 0;
 
+/**
+ * @name radius
+ * @type {number}
+ */
 let radius;
 
+/**
+ *
+ */
 let theta;
 
+/**
+ *
+ */
 let gall_size;
 
 /**
@@ -891,8 +933,8 @@ function rotateCarousel() {
 }
 
 /**
- * This function will load the gallery view with images
- * and thumbnails. Thumbnails get inserted into a slider
+ * @function
+ * @desc This function will load the gallery view with images and thumbnails. Thumbnails get inserted into a slider
  * with event listeners to change to the appropriate photo.
  * 1) Load info from JSON file associated with gallery object
  * @param  {Object} gal_set 		This is an object parameter with required info
@@ -910,93 +952,123 @@ function open_gallery(gal_set) {
 	viewer.classList.remove('hidden-gall');
 	//Reveal the images
 	if (SWidth < 768 ) {
-		galleries.forEach(function(gall){
-			if (gall.name === gallery) {
-				gall_size = gall.images.length;
-				gall.images.forEach(function(img,i){
-					let source = `photos/galleries/${gallery}/${img.filename}`;
-					$.get(source)
-						.done(function(){
-							$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="mgallery-img" src="${source}" alt="${img.alttext}">
-								</div
-								`);
-							position_cell(i);
-						})
-						.fail(function(err){
-							$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-							position_cell(i);
-						});
-				});
-			}
-		});
-		if (viewer.classList[0].includes('grid-content')) {
-			sidebar_slide();
-		}
+		open_mobile_gallery(galleries, gallery);
 	}
 	else if ((SWidth >= 768) && (SWidth <= 1366)) { 
-		galleries.forEach(function(gall){
-			if (gall.name === gallery) {
-				gall_size = gall.images.length;
-				gall.images.forEach(function(img,i){
-					let source = `photos/galleries/${gallery}/${img.filename}`;
-					$.get(source)
-						.done(function(){
-							$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="tgallery-img" src="${source}">
-								</div>
-								`);
-							position_cell(i);
-						})
-						.fail(function(err){
-							$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-							position_cell(i);
-						});
-				});
-			}
-		});
+		open_midsize_gallery(galleries, gallery);
 	}
 	else if ((SWidth > 1366) && (SWidth < 1600)) { 
-		galleries.forEach(function(gall){
-			if (gall.name === gallery) {
-				gall_size = gall.images.length;
-				gall.images.forEach(function(img,i){
-					let source = `photos/galleries/${gallery}/${img.filename}`;
-					$.get(source)
-						.done(function(){
-							$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="gallery-img" src="${source}">
-								</div>
-								`);
-							position_cell(i);
-						})
-						.fail(function(err){
-							$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-							position_cell(i);
-						});
-				});
-			}
-		});
+		open_large_gallery(galleries, gallery);
+	}
+	else {
+		console.log("Heres your problem")
+		console.log(`Device width is ${SWidth}`)
 	}
 }
 
 /**
  *
+ * @param {Gallery[]} galleries
+ * @param gallery
+ */
+function open_mobile_gallery(galleries, gallery) {
+	galleries.forEach(function(gall){
+		if (gall.name === gallery) {
+			gall_size = gall.images.length;
+			gall.images.forEach(function(img,i){
+				let source = `photos/galleries/${gallery}/${img.filename}`;
+				$.get(source)
+					.done(function(){
+						$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="mgallery-img" src="${source}" alt="${img.alttext}">
+								</div
+								`);
+						position_cell(i);
+					})
+					.fail(function(err){
+						$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
+							`);
+						position_cell(i);
+					});
+			});
+		}
+	});
+	if (viewer.classList[0].includes('grid-content')) {
+		sidebar_slide();
+	}
+}
+
+/**
+ *
+ * @param galleries
+ * @param gallery
+ */
+function open_midsize_gallery(galleries, gallery) {
+	galleries.forEach(function(gall){
+		if (gall.name === gallery) {
+			gall_size = gall.images.length;
+			gall.images.forEach(function(img,i){
+				let source = `photos/galleries/${gallery}/${img.filename}`;
+				$.get(source)
+					.done(function(){
+						$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="tgallery-img" src="${source}">
+								</div>
+								`);
+						position_cell(i);
+					})
+					.fail(function(err){
+						$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
+							`);
+						position_cell(i);
+					});
+			});
+		}
+	});
+}
+
+/**
+ *
+ */
+function open_large_gallery(galleries, gallery) {
+	galleries.forEach(function(gall){
+		if (gall.name === gallery) {
+			gall_size = gall.images.length;
+			gall.images.forEach(function(img,i){
+				let source = `photos/galleries/${gallery}/${img.filename}`;
+				$.get(source)
+					.done(function(){
+						$('#carousel').append(`
+								<div id="img${i+1}" class="carousel-cell">
+									<img class="gallery-img" src="${source}">
+								</div>
+								`);
+						position_cell(i);
+					})
+					.fail(function(err){
+						$('#carousel').append(`
+								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+									<div class="no-img"></div>
+								</div>
+							`);
+						position_cell(i);
+					});
+			});
+		}
+	});
+}
+
+/**
+ * @function position_cell
+ * @desc
  * @param it
  */
 function position_cell(it) {
@@ -1071,10 +1143,14 @@ if (viewer) {
 
 /**
  * Add Coolio tooltips to each gallery image
+ * @type HTMLElement
  */
-
 let tooltip = document.getElementById('tooltip');
 
+/**
+ *
+ * @param event
+ */
 window.onmousemove = function(event) {
 	let x = event.clientX;
 	let y = event.clientY;
@@ -1084,11 +1160,18 @@ window.onmousemove = function(event) {
 	}
 }
 
+/**
+ *
+ * @param gall
+ */
 function change_tooltip(gall) {
 	//tooltip.innerHTML =
 	//console.log('bracket_fix') ;
 }
 
+/**
+ *
+ */
 function hide_tooltip() {
 
 }
@@ -1110,6 +1193,9 @@ function hide_tooltip() {
  * ========================================================================================
  */
 
+/**
+ *
+ */
 $('.prog-bubble').mouseenter( function() {
 	let progtip = $(this).find('.abouttool')[0];
 	let tip_h = $(this).find('.abouttool').outerHeight();

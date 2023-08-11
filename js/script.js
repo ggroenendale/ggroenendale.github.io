@@ -461,37 +461,6 @@ $('.service-block').on('click', function() {
 	}
 });
 
-/* All of this here was trying to figure out why blocks wouldn't expand on an iPad tablet.
-   The problem actually had to do with screens that were exactly 768 pixels wide which
-   required a >= comparator in the conditional statement. In doing this I also discovered'
-   the "touchstart" event and utilizing it with pure javaScript.
-*/
-
-// let servblock = document.getElementById('serv1');
-// 	if (!servblock == null) {
-// 	servblock.ontouchstart = function(){
-// 		console.log(servblock.childNodes[5]);
-// 		servblock.childNodes[5].style.display = 'block';
-// 	}
-// }
-
-// $('.service-block').bind('touchstart', function(){
-// 	if (SWidth < 768) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// 	else if (SWidth >= 768 && SWidth <= 1366) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// });
-
-// $('.service-block').bind('tap', function(){
-// 	if (SWidth < 768) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// 	else if (SWidth >= 768 && SWidth <= 1366) {
-// 		$(this).find('.serv-blurb').toggle(300);
-// 	}
-// });
 
 /**
  * ========================================================================================
@@ -766,30 +735,8 @@ function load_galleries() {
 	}
 	//Target for Desktop
 	else if (!MD.phone() && !MD.tablet()) {
-		gallery.forEach( function(gallery){
-			if(gallery.avail === true) {
-				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
-				html_payload +=	`<div class="cube">`;
-				html_payload += `<div class="cube-face front">`;
-				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mainimg}" alt="${gallery.mainalt}">`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `<div class="cube-face right">`;
-				html_payload += `<div class="gall-info">`;
-				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-				html_payload += `<p class="gall-blurb">${gallery.desc}</p>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `<div class="cube-face back"></div>`;
-				html_payload += `<div class="cube-face left"></div>`;
-				html_payload += `<div class="cube-face top"></div>`;
-				html_payload += `<div class="cubeface bottom"></div>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-			}
-		});
-		grid.innerHTML = html_payload;
+		setup_desktop_galleries(galleries);
+
 		adjust_cubes();
 	}
 	else {

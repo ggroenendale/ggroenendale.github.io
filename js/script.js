@@ -871,7 +871,9 @@ let cube = document.querySelector('.cube')
 let currentClass = '';
 
 /**
- *
+ * @function
+ * @name changeSide
+ * @desc
  */
 function changeSide() {
 	let showClass = 'show-';

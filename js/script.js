@@ -250,7 +250,7 @@ class Swipe {
 	 * @desc
 	 * @param {TouchEvent} event
 	 */
-    handleTouchMove(evt) {
+    handleTouchMove(event) {
         if ( ! this.xDown || ! this.yDown ) {
             return;
         }
@@ -285,8 +285,8 @@ class Swipe {
 	 * @desc
 	 */
     run() {
-        this.element.addEventListener('touchmove', function(evt) {
-            this.handleTouchMove(evt);
+        $(this).on('touchmove', function(event) {
+            this.handleTouchMove(event);
         }.bind(this), false);
     }
 }

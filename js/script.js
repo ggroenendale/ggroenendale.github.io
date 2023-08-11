@@ -1035,40 +1035,6 @@ function rotateCarousel() {
 }
 
 /**
- * @function
- * @desc This function will load the gallery view with images and thumbnails. Thumbnails get inserted into a slider
- * with event listeners to change to the appropriate photo.
- * 1) Load info from JSON file associated with gallery object
- * @param  {Object} gal_set 		This is an object parameter with required info
- * @param  {string} gal_set.name  	Name of the gallery
- * @return {[type]}         [description]
- */
-function open_gallery(gal_set) {
-	//console.log('opening gallery ' + gal_set.name);
-	let galleries = set.galleries;
-	let gallery = gal_set.name;
-	//Reveal the gallery viewer
-	content.classList.remove('grid-content');
-	content.classList.add('hidden-gall');
-	viewer.classList.add('grid-content');
-	viewer.classList.remove('hidden-gall');
-	//Reveal the images
-	if (SWidth < 768 ) {
-		open_mobile_gallery(galleries, gallery);
-	}
-	else if ((SWidth >= 768) && (SWidth <= 1366)) { 
-		open_midsize_gallery(galleries, gallery);
-	}
-	else if ((SWidth > 1366) && (SWidth < 1600)) { 
-		open_large_gallery(galleries, gallery);
-	}
-	else {
-		console.log("Heres your problem")
-		console.log(`Device width is ${SWidth}`)
-	}
-}
-
-/**
  *
  * @param {Gallery[]} galleries
  * @param gallery
@@ -1166,6 +1132,39 @@ function open_large_gallery(galleries, gallery) {
 			});
 		}
 	});
+}
+
+/**
+ * @function
+ * @desc 	This function will load the gallery view with images and thumbnails. Thumbnails get inserted into a slider
+ * 			with event listeners to change to the appropriate photo.
+ * 				1) Load info from JSON file associated with gallery object
+ * @param  {string} 	gallery_name 	Name of the gallery
+ */
+function open_gallery(gallery_name) {
+	// Grab all the galleries from the data file
+	let galleries = set.galleries;
+
+	//Reveal the gallery viewer
+	content.classList.remove('grid-content');
+	content.classList.add('hidden-gall');
+	viewer.classList.add('grid-content');
+	viewer.classList.remove('hidden-gall');
+	//Reveal the images
+	if (SWidth < 768 ) {
+		open_mobile_gallery(galleries, gallery_name);
+	}
+	else if ((SWidth >= 768) && (SWidth <= 1366)) {
+		open_midsize_gallery(galleries, gallery_name);
+	}
+	else if ((SWidth > 1366) && (SWidth < 1600)) {
+		open_large_gallery(galleries, gallery_name);
+	}
+	else {
+		// FIXME: This is why the carousel doesn't work for large screens
+		console.log("Heres your problem")
+		console.log(`Device width is ${SWidth}`)
+	}
 }
 
 /**

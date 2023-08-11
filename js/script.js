@@ -587,16 +587,7 @@ $('#show-menu').on('click', function(){
 	                             dP                                                       
  */
 
-/**
- *
- */
-window.onresize = function() {
-	if (cur_name === 'photography') {
-		if(!MD.phone() && !MD.tablet()){
-			adjust_cubes();
-		}
-	}
-}
+
 
 
 /**
@@ -617,8 +608,25 @@ a88aaaa8P' 88d888b. .d8888b. d8888P .d8888b. .d8888b. 88d888b. .d8888b. 88d888b.
                                               d8888P                    dP                 d8888P  
  */
 
-if ( cur_name === 'photography' ) {
-	load_galleries();
+/**
+ * If on the Photography page run the load_galleries() function
+ */
+$(() => {
+	if ( cur_name === 'photography' ) {
+		load_galleries();
+	}
+});
+
+/**
+ * @function
+ * @desc Checks if the browser is on the photography page and that the device is not a phone or tablet
+ */
+window.onresize = function() {
+	if (cur_name === 'photography') {
+		if(!MD.phone() && !MD.tablet()){
+			adjust_cubes();
+		}
+	}
 }
 
 /**

@@ -904,12 +904,6 @@ function reveal_norm(block) {
 }
 
 /**
- * @function
- * @param  {Object} event) {	let        gallery [description]
- * @return {[type]}        [description]
- *
- */
-/**
  * @function gallery_click
  * @desc Adds a listener to each gallery image that will load the gallery view
  * @param {ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>} event

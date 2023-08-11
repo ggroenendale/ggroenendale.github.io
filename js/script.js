@@ -186,7 +186,8 @@ function change_page_name() {
  */
 class Swipe {
 	/**
-	 *
+	 * @constructor
+	 * @desc
 	 * @param element
 	 */
     constructor(element) {
@@ -201,7 +202,8 @@ class Swipe {
     }
 
 	/**
-	 *
+	 * @method
+	 * @desc
 	 * @param callback
 	 * @returns {Swipe}
 	 */
@@ -211,7 +213,8 @@ class Swipe {
     }
 
 	/**
-	 *
+	 * @method
+	 * @desc
 	 * @param callback
 	 * @returns {Swipe}
 	 */
@@ -221,7 +224,8 @@ class Swipe {
     }
 
 	/**
-	 *
+	 * @method
+	 * @desc
 	 * @param callback
 	 * @returns {Swipe}
 	 */
@@ -231,7 +235,8 @@ class Swipe {
     }
 
 	/**
-	 *
+	 * @method
+	 * @desc
 	 * @param callback
 	 * @returns {Swipe}
 	 */
@@ -241,16 +246,17 @@ class Swipe {
     }
 
 	/**
-	 *
-	 * @param evt
+	 * @method
+	 * @desc
+	 * @param {TouchEvent} event
 	 */
     handleTouchMove(evt) {
         if ( ! this.xDown || ! this.yDown ) {
             return;
         }
 
-        let xUp = evt.touches[0].clientX;
-        let yUp = evt.touches[0].clientY;
+        let xUp = event.touches[0].clientX;
+        let yUp = event.touches[0].clientY;
 
         this.xDiff = this.xDown - xUp;
         this.yDiff = this.yDown - yUp;
@@ -275,7 +281,8 @@ class Swipe {
     }
 
 	/**
-	 *
+	 * @method
+	 * @desc
 	 */
     run() {
         this.element.addEventListener('touchmove', function(evt) {
@@ -329,7 +336,7 @@ $(document).ready(function() {
  * @function
  * @name sidebar_slide
  * @desc
- * @return {[type]} [description]
+ * @return
  *
  */
 function sidebar_slide(prov) {
@@ -442,6 +449,9 @@ function sidebar_slide(prov) {
 	}
 }
 
+/**
+ * @desc Toggles the blurb block for the offered service on the index page
+ */
 $('.service-block').on('click', function() {
 	if (MD.phone()) {
 		$(this).find('.serv-blurb').toggle(300);
@@ -502,11 +512,10 @@ $('.service-block').on('click', function() {
  */
 
 /**
- * ========================================================================================
- * [description]
- * @param  {[type]} ){	if (this.classList[0] [description]
- * @return {[type]}        [description]
- * ========================================================================================
+ * @desc
+ * @param  {}
+ * @return {}
+ *
  */
 $('#show-menu').on('click', function(){
 	if (this.classList[0] === 'slide-in') {
@@ -614,8 +623,7 @@ if ( cur_name === 'photography' ) {
 
 /**
  * @desc
- * @return {[type]} [description]
- *
+ * @return
  */
 function load_galleries() {
 	let grid = document.getElementById('gall-container');
@@ -690,11 +698,12 @@ function load_galleries() {
 }
 
 /**
- *
+ * @function
+ * @name adjust_cubes
  * @desc This code was required in order to run specific math calculations that could not be handled through css.
  * For instance calculating a perspective value that is based on the width of the area and the ratio of the available
  * width to the desired perspective
- * @return {[type]} [description]
+ * @return
  *
  */
 function adjust_cubes() {
@@ -827,8 +836,9 @@ function changeSide() {
 }
 
 /**
- *
- * @param {} block
+ * @function
+ * @name reveal_right
+ * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
 function reveal_right(block) {
 	console.log()
@@ -836,8 +846,9 @@ function reveal_right(block) {
 }
 
 /**
- *
- * @param block
+ * @function
+ * @name reveal_norm
+ * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
 function reveal_norm(block) {
 	block.childNodes[0].classList.remove('show-right');

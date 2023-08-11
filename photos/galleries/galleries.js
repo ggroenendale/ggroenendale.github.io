@@ -18,6 +18,7 @@
  * @property {String} desc A description of the gallery to view from the frontend
  * @property {String} mainimg The filename of an image to display to the user before opening the gallery
  * @property {String} mobmainimg The filename of an image to display a mobile user before opening the gallery
+ * @property {String} mainalt Alternate text used for the gallery thumbnail.
  * @property {Array<GalleryImage>} images The set of images to display
  */
 
@@ -38,6 +39,7 @@ const template = {
 	"desc" : "Description here is placed onto right cube face",
 	"mainimg" : 'filename.jpg|png This file should be 350px BY 350px',
 	"mobmainimg" : 'filename.jpg|png This file should be 300px BY 215px',
+	"mainalt": "Alt text for the gallery image that shows on the cube or as a thumbnail",
 	"images" : [
 		{
 			"name": "Bread",
@@ -69,6 +71,7 @@ const blackWhite = {
 	"desc" : "What portfolio is complete without some photos done in black in white.<br><br>Click here to view the gallery.",
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
+	"mainalt": "Front image for the black and white gallery.",
 	"images" : [
 		{
 			"name": "Bread",
@@ -99,6 +102,7 @@ const design = {
 	"desc" : "This is a collection of some of favorite designs I have created over the years.<br><br>Click here to view the gallery.",
 	"mainimg" : 'uiux.svg',
 	"mobmainimg" : 'uiux.svg',
+	"mainalt": "Front image for the design gallery featuring the UI/UX image of a phone with hexagons on the screen.",
 	"images" : [
 		{
 			"name": "UI / UX",
@@ -123,7 +127,7 @@ const food = {
 	"desc" : "I like to make food presentable enough for the camera and take photos of it before I eat it. When you spend so much time for a good meal it's nice to get cool pictures along with a full belly.<br><br>Click here to see more.",
 	"mainimg" : 'main.jpg',
 	"mobmainimg" : 'img2.jpg',
-	"mainalt" : "",
+	"mainalt": "Front image for the food gallery featuring a loaf of bread.",
 	"images" : [
 		{
 			"name": "Parsley",
@@ -188,6 +192,7 @@ const hobbies = {
 	"desc" : "Just a collection of photos of my favorite hobbies. I often enjoy the process of learning and making cooling things more than creating a finished good.<br><br>The journey is often more colorful than the destination.<br><br>Click here to view the gallery.",
 	"mainimg" : 'woodmug.jpg',
 	"mobmainimg" : 'woodmug.jpg',
+	"mainalt": "Front image for the hobby gallery featuring a lathed wooden travel mug.",
 	"images" : [
 		{
 			"name": "Wooden Travel Mug",
@@ -211,6 +216,7 @@ const landscapes = {
 	"desc" : "Landscape photography is different from nature photography in that I try to take wide angle shots of beautiful areas.<br><br>Click here to view more.",
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
+	"mainalt": "Front image for the landscape gallery.",
 	"images" : [
 		{
 			"name": "Bread",
@@ -241,6 +247,7 @@ const macro = {
 	"desc" : "Macro photography is all about making the smaller things visible and vivid. Here is a collection of photos in which I tried to get quality close up shots.<br><br>Click here to view the gallery.",
 	"mainimg" : 'img1.png',
 	"mobmainimg" : 'img1.png',
+	"mainalt": "Front image for the macro gallery featuring a red dragonfly sitting on a car antenna.",
 	"images" : [
 		{
 			"name": "Death Metal Dragonfly",
@@ -264,6 +271,7 @@ const nature = {
 	"desc" : "I like nature and here are some of my shots. Click here to view the gallery.",
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
+	"mainalt": "Front image for the nature gallery.",
 	"images" : [
 		{
 			"name": "Bread",
@@ -294,6 +302,7 @@ const urban = {
 	"desc" : "Urban Photography is a new adventure of mine. I like the gritty and visceral look of it all.<br><br>Click here to view the gallery.",
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
+	"mainalt": "Front image for the urban gallery.",
 	"images" : [
 		{
 			"name": "Bread",

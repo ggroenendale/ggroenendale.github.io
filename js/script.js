@@ -301,7 +301,7 @@ class Swipe {
  */
 function calcVH(element) {
 	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-	//alert(height);
+
 	$(`#${element}`).innerHeight( height );
 }
 

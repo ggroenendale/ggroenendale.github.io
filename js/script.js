@@ -29,23 +29,17 @@
  */
 
 /**
+ * @name base
+ * @type {String}
  * @desc Just like in the html files specify a base variable that holds the domain and hostname
- * @type {string}
  */
 let base = document.location.hostname;
 
 /**
- *
- * @type {string}
- */
-let folio = '';
-if (base === 'localhost') {
-	folio = '/newfolio';
-}
-
-/**
- *
- * @type {string}
+ * @name curname
+ * @type {String}
+ * @desc Grabs the data-pagename attribute from the html element to be used as a logic check to separate functions
+ * based on the current portfolio page that is loaded.
  */
 let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagename');
 
@@ -57,39 +51,40 @@ let cur_name = document.getElementsByTagName('html')[0].getAttribute('data-pagen
 let SWidth = window.innerWidth;
 
 /**
- *
+ * @name MD
  * @type {MobileDetect}
+ * @desc Used to determine the type of device being used based on the User Agent value. <br><br>
+ * Uses the open source Mobile Detect JavaScript port found at {@link https://github.com/hgoebl/mobile-detect.js/}
  */
 let MD = new MobileDetect(window.navigator.userAgent);
 
 /**
- *
- * @type {string|*}
+ * @name orientationcheck
+ * @desc Uses the Screen.orientation property to determine landscape vs portrait
+ * @returns {String}
+ */
+function orientationcheck() {
+	if (screen.orientation.type === 'portrait-primary' ) {
+		return 'port';
+	}
+	else if (screen.orientation.type === 'landscape-primary') {
+		return 'land';
+	}
+	else {
+		return 'port';
+	}
+}
+
+/**
+ * @name ORI
+ * @type {String}
+ * @desc Contains the string value returned from the orientationcheck function, used in later functions
  */
 let ORI = orientationcheck();
 
 /**
- * @desc
- * @returns {string|*}
- */
-function orientationcheck() {
-	console.log(screen.orientation)
-	let ori_theta = screen.orientation;
-	if (ori_theta === 0 ) {
-		orient = 'port';
-	}
-	else if (ori_theta === 90) {
-		orient = 'land';
-	}
-	else {
-		orient = 'desk';
-	}
-	return orient;
-}
-
-/**
- * @name orientation_callback
  * @function
+ * @name orientation_callback
  * @desc This function is fired by the event listener waiting for an orientation change.
  */
 function orientation_callback(){
@@ -105,23 +100,41 @@ function orientation_callback(){
  */
 window.addEventListener('orientationchange', orientation_callback,true);
 
-window.onload = function() {
-	setup();
-}
-
-window.onresize = function() {
+/**
+ * @event onresize
+ * @param {UIEvent} event
+ * @desc An event listener that fires when the window is resized
+ */
+window.onresize = function(event) {
 
 }
 
 /**
  * @function
  * @name setup
- * @desc
+ * @desc A function that fires when the window is loading.
  */
 function setup() {
 	//change_page_name();
 }
 
+/**
+ * @event onload
+ * @param {Event} event
+ * @desc When the window loads this fires off the setup function
+ */
+window.onload = function(event) {
+	console.log(event)
+	setup();
+}
+
+/**
+ * @function
+ * @name change_page_name
+ * @desc I'm not sure why this function is. Maybe I wanted to dynamically change pages? This targets an h2 element
+ * in the sidebar and would update its innerText when it is fired and depends on the cur_name and data-pagename
+ * values/variables.
+ */
 function change_page_name() {
 	let new_name = first_l_UP(cur_name);
 	let page_name = document.getElementById('cur-page');
@@ -172,6 +185,10 @@ function change_page_name() {
  * @desc This Class borrowed from stackoverflow answer found at https://stackoverflow.com/a/39545306
  */
 class Swipe {
+	/**
+	 *
+	 * @param element
+	 */
     constructor(element) {
         this.xDown = null;
         this.yDown = null;
@@ -183,33 +200,57 @@ class Swipe {
         }.bind(this), false);
     }
 
+	/**
+	 *
+	 * @param callback
+	 * @returns {Swipe}
+	 */
     onLeft(callback) {
         this.onLeft = callback;
         return this;
     }
 
+	/**
+	 *
+	 * @param callback
+	 * @returns {Swipe}
+	 */
     onRight(callback) {
         this.onRight = callback;
         return this;
     }
 
+	/**
+	 *
+	 * @param callback
+	 * @returns {Swipe}
+	 */
     onUp(callback) {
         this.onUp = callback;
         return this;
     }
 
+	/**
+	 *
+	 * @param callback
+	 * @returns {Swipe}
+	 */
     onDown(callback) {
         this.onDown = callback;
         return this;
     }
 
+	/**
+	 *
+	 * @param evt
+	 */
     handleTouchMove(evt) {
         if ( ! this.xDown || ! this.yDown ) {
             return;
         }
 
-        var xUp = evt.touches[0].clientX;
-        var yUp = evt.touches[0].clientY;
+        let xUp = evt.touches[0].clientX;
+        let yUp = evt.touches[0].clientY;
 
         this.xDiff = this.xDown - xUp;
         this.yDiff = this.yDown - yUp;
@@ -233,6 +274,9 @@ class Swipe {
         this.yDown = null;
     }
 
+	/**
+	 *
+	 */
     run() {
         this.element.addEventListener('touchmove', function(evt) {
             this.handleTouchMove(evt);
@@ -241,20 +285,25 @@ class Swipe {
 }
 
 /**
- * ========================================================================================
- * This function enables the sidebar to resize depending on orientation or device
+ * @desc This function enables the sidebar to resize depending on orientation or device
  * and is the way I got around the chrome mobile address bar. The link for this
  * solution comes from a forum post on stackoverflow https://stackoverflow.com/a/40156488.
+ *
  * I had to modify the jquery function slightly to allow for the address bar in chrome.
- * @param  {[type]} element [description]
- * @return {[type]}         [description]
- * ========================================================================================
+ * @param {String} element
  */
 function calcVH(element) {
 	let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 	//alert(height);
 	$(`#${element}`).innerHeight( height );
 }
+
+/**
+ * @function
+ * @param {JQueryStatic | jQuery | HTMLElement} $
+ * @desc This fires when the window is resized or the orientation is changed. It then calls
+ * the calcVH function which takes the string element and updates its inner height.
+ */
 (function($) {
 	calcVH('sidebar');
 	$(window).on('orientationchange resize', function() {
@@ -263,11 +312,9 @@ function calcVH(element) {
 })(jQuery);
 
 /**
- * ========================================================================================
- * [description]
- * @param  {[type]} ) {	if         ((viewer) && (viewer.classList[0].includes('grid-content'))) {		console.log('Change swipe setting when gallery open');	}	else {		sidebar_slide();	}} [description]
- * @return {[type]}   [description]
- * ========================================================================================
+ *
+ *
+ * @desc
  */
 $(document).ready(function() {
 	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
@@ -279,10 +326,11 @@ $(document).ready(function() {
 })
 
 /**
- * ========================================================================================
- * [sidebar_slide description]
+ * @function
+ * @name sidebar_slide
+ * @desc
  * @return {[type]} [description]
- * ========================================================================================
+ *
  */
 function sidebar_slide(prov) {
 	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
@@ -608,7 +656,7 @@ function load_galleries() {
 		grid.innerHTML = html_payload;
 	}
 	//Target for Desktop
-	else if (!MD.phone() && !MD.tablet()) {  
+	else if (!MD.phone() && !MD.tablet()) {
 		gallery.forEach( function(gallery){
 			if(gallery.avail === true) {
 				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
@@ -780,9 +828,10 @@ function changeSide() {
 
 /**
  *
- * @param block
+ * @param {} block
  */
 function reveal_right(block) {
+	console.log()
 	block.childNodes[0].classList.add('show-right');
 }
 

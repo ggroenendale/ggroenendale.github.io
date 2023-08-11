@@ -858,7 +858,7 @@ function adjust_cubes() {
 	sty_mu += `		height: ${col_wid}px;\n`;
 	sty_mu += `}\n\n`;
 	
-	//4)Load all of the styles into the new sheet element
+	//4)Load all the styles into the new sheet element
 	//sheet.innerHTML = "#content{border: 2px solid yellow;}";
 	// console.log(sty_mu);
 	sheet.innerHTML = sty_mu;

@@ -339,7 +339,7 @@ $(document).ready(function() {
  * @return
  *
  */
-function sidebar_slide(prov) {
+function sidebar_slide() {
 	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
 		if (MD.phone()) {
 			let sideswipe = new Swipe('#wrapper');

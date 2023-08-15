@@ -848,8 +848,8 @@ nav>ul>li>a:visited {
 }
 
 .mgallery-img {
-	width: 320px;
-	height: 229px;
+	width: 100%;
+	height: fit-content;
 }
 
 .no-img {

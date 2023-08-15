@@ -181,14 +181,14 @@
                             classDef label stroke-width:15px,stroke:#ffffde
                             classDef subgraph_padding fill:none,stroke:none
                             subgraph adclient [<span style="font-weight: bold">Admin Client</span>]
-                                admin[Admin]
+                                admin((Admin))
                             end
                             style adclient stroke-width:15px,stroke:#0cbd53,fill:#0cbd53;
                             classDef clientsty stroke-width:15px,stroke:#0cbd53,fill:#0cbd53;
                             subgraph client [<span style="font-weight: bold">User Clients</span>]
                                 direction TB
-                                users[Users]
-                                contm[Content Managers]
+                                users((Users))
+                                contm((Content<br>Managers))
                             end
                             class client clientsty
                             contm --> lb
@@ -254,7 +254,7 @@
                             class log logsty
                             classDef datsty stroke-width:15px,stroke:#69d2e5,fill:#69d2e5;
                             subgraph dat [<span style="font-weight: bold">Database</span>]
-                                pgsql((PostgresQL))
+                                pgsql[(PostgresQL)]
                             end
                             class dat datsty
                             be --> dat
@@ -265,9 +265,9 @@
                             class cdn cdnsty
                             classDef extsty stroke-width:15px,stroke:#95e865,fill:#95e865;
                             subgraph ext [<span style="font-weight: bold">External Data</span>]
-                                vid[Videos]
-                                pod[Podcasts]
-                                game[Gaming Shops]
+                                vid>Videos]
+                                pod>Podcasts]
+                                game>Gaming Product Info]
                                 vid ~~~ pod
                                 pod ~~~ game
                             end

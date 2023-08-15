@@ -1,175 +1,133 @@
 <!DOCTYPE html>
-<html data-pagename="home" lang="en">
+<html data-pagename="home">
 <head>
-	<base href="https://ggroenendale.github.io/">
-	<script type="text/javascript">
-		//This is a bit of development code in order to modify
-		//the base href depending on where the site is hosted.
-		let current_host = document.location.hostname;
-		console.log(current_host);
-		if (current_host === 'localhost') {
-			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
-		}
-		else if (current_host === '0.0.0.0') {
-			document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://0.0.0.0:8000/");
-		}
-		else {
-			console.log('On github');
-		}
-	</script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119421108-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <base href="https://ggroenendale.github.io/">
+    <script type="text/javascript">
+        //This is a bit of development code in order to modify
+        //the base href depending on where the site is hosted.
+        let current_host = document.location.hostname;
+        console.log(current_host);
+        if (current_host === 'localhost') {
+            document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://localhost/newfolio/");
+        }
+        else if (current_host === '0.0.0.0') {
+            document.getElementsByTagName('head')[0].getElementsByTagName('base')[0].setAttribute('href', "http://0.0.0.0:8000/");
+        }
+        else {
+            console.log('On github');
+        }
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119421108-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-	  gtag('config', 'UA-119421108-1');
-	</script>
-	<title>Geoff Groenendale - Portfolio</title>
-	<link rel="alternate" href="https://ggroenendale.github.io" hreflang="en-us">
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Portland, OR based tech consultant specializing in design and information services. Web development, data management, analysis, and content creation are some of the available services.">
-	<link rel="shortcut icon" href="img/icons/fav.png" type="image/png">
-	<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/style1.css">
-	<link rel="stylesheet" type="text/css" href="css/style2.css">
-	<link rel="stylesheet" type="text/css" href="css/style3.css">
-	<link href="https://fonts.googleapis.com/css?family=Arapey|Dosis|Lora|Fira+Sans:300,400" rel="stylesheet">
+        gtag('config', 'UA-119421108-1');
+    </script>
+    <title>Geoff Groenendale - Portfolio</title>
+    <link rel="alternate" href="https://ggroenendale.github.io" hreflang="en-us">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get a hold of me and let's start making something!">
+    <link rel="shortcut icon" href="icons/fav.png" type="image/png">
+    <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/style3.css">
+    <link href="https://fonts.googleapis.com/css?family=Arapey|Dosis|Lora|Fira+Sans:300,400" rel="stylesheet">
 </head>
 <body>
-	<div id="under-show">
-		<div id="show-menu">
-			<div id="bar-grid">
-				<div class="bar"></div>
-				<div class="bar"></div>
-				<div class="bar"></div>
-			</div>
-		</div>
-	</div>
-	<div id="wrapper" class="grid-container">
-		<aside id="sidebar" class="grid-side slide-menu">
-			<nav>
-				<a href="" id="port-link"><h1 id="port-name">Geoff Groenendale Portfolio</h1></a>
-				<div id="gr-rect"></div>
-				<ul>
-					<li><a href="pages/projs.html">Projects</a></li>
-					<li><a href="pages/photog.html">Galleries</a></li>
-					<li><a href="pages/about.html">About</a></li>
-					<!-- <a href="blog/blog.html"><li>Blog</li></a> -->
-					<li><a href="pages/contact.html">Contact</a></li>
-				</ul>
-			</nav>
-			<div id="sidemid">
-				<h2 id="cur-page"></h2>
-			</div>
-			<div id="sidefoot">
-				<div id="foot-inner">
-					<div id="soc-links">
-						<a class="soc-in" href="https://www.linkedin.com/in/ggroenendale/"><li><img src="img/icons/in.png"></li></a>
-						<a class="soc-git" href="https://github.com/ggroenendale"><li><img src="img/icons/git.png"></li></a>
-						<a class="soc-inst" href="https://www.instagram.com/ggroenendale/"><li><img src="img/icons/inst.png"></li></a>
-						<a class="soc-tu" href="https://www.youtube.com/channel/UCPYuKG1N9rvx6xceztT37Jg"><li><img src="img/icons/tube.png"></li></a>
-					</div>
-					<div id="copyright-div"><h5 id="copyright">
-						<span>&copy;</span> 2018 Geoff Groenendale</h5>
-						<p>All Rights Reserved</p>
-					</div>
-				</div>
-			</div>
-		</aside> <!-- This closes the sidebar -->
-		<div id="content" class="grid-content">
-			<div id="splash-wrap">
-				<div id="splash">
-					<h1 id="greet">Hi, my name is Geoff.</h1>
-					<h4>Developer, Designer, Entrepreneur</h4>
-					<p id="greet-blurb">Let's build something better.</p>
-<!--					TODO: Write a better tagline-->
-				</div>
-			</div>
-			<div id="service-wrap">
-				<div id="iservices" class="services">
-					<div id="serv1" class="service-block" onclick="">
-						<h3>Data Modeling</h3>
-						<img src="img/icons/data.svg" onclick="" >
-						<div class="serv-blurb">
-							<p>I utilize </p>
-							<ul>
-								<li>Neo4j Graph Databases</li>
-								<li>SQL Server</li>
-								<li>MySQL</li>
-								<li>MS Access</li>
-							</ul>
-						</div>
-					</div>
-					<div id="serv2" class="service-block" onclick="">
-						<h3>Data Validation</h3>
-						<img src="img/icons/analysis.svg" onclick="">
-						<div class="serv-blurb">
-							<p>I'll analyze your data and help you find more value in your endeavors.</p>
-							<ul>
-								<li>R Studio</li>
-								<li>Python</li>
-								<li>MS Power BI</li>
-								<li>MS Excel</li>
-							</ul>
-						</div>
-					</div>
-					<div id="serv3" class="service-block" onclick="">
-						<h3>Machine Learning</h3>
-						<img src="img/icons/web.svg" onclick="">
-						<div class="serv-blurb">
-							<p>Website development and desktop applications for any purpose.</p>
-							<ul>
-								<li>HTML, CSS, JavaScript, PHP</li>
-								<li>Applications in C#</li>
-								<li>Visual Basic</li>
-								<li>Python</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div id="dservices" class="services">
-					<div id="serv4" class="service-block" onclick="">
-						<h3>Graphic Design</h3>
-						<img src="img/icons/graphic.svg" onclick="">
-						<div class="serv-blurb">
-							<p>Latest tech solutions and design principles. <a href="pages/photog.html">See my work here!</a></p>
-							<ul>
-								<li>Adobe Photoshop</li>
-								<li>Adobe Illustrator</li>
-								<li>Adobe InDesign</li>
-							</ul>
-						</div>
-					</div>
-					<div id="serv5" class="service-block" onclick="">
-						<h3>UI & UX Design</h3>
-						<img src="img/icons/uiux.svg" onclick="">
-						<div class="serv-blurb">
-							<p>Results that are usable and effective. I make sure to pay attention to all details in my projects. User requirements and resource limitations are considered in my design process.</p>
-						</div>
-					</div>
-					<div id="serv6" class="service-block" onclick="">
-						<h3>Photography</h3>
-						<img src="img/icons/camera.svg" onclick="">
-						<div class="serv-blurb">
-							<p>Check out my <a href="pages/photog.html">galleries</a> for examples of my work.</p>
-						</div>
-					</div>
-				</div>
-			</div> <!-- This closes the service wrap -->
-		</div> <!-- This closes the content -->
-	</div> <!-- This closes the wrapper -->
-	<div id="scripts">
-		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui.js"></script>
-		<script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
-		<script type="text/javascript" src="js/mobile-detect.js"></script>
-		<script type="text/javascript" src="js/workhorse.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
-	</div>
+<div id="under-show">
+    <div id="show-menu">
+        <div id="bar-grid">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</div>
+<div id="wrapper" class="grid-container">
+    <aside id="sidebar" class="grid-side">
+        <nav>
+            <a href="" id="port-link"><h1 id="port-name">Geoff Groenendale Portfolio</h1></a>
+            <div id="gr-rect"></div>
+            <ul>
+                <li><a href="pages/projs.html">Projects</a></li>
+                <li><a href="pages/photog.html">Galleries</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <!-- <a href="blog/blog.html"><li>Blog</li></a> -->
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="sidemid">
+            <h2 id="cur-page"></h2>
+        </div>
+        <div id="sidefoot">
+            <div id="foot-inner">
+                <div id="soc-links">
+                    <a class="soc-in" href="https://www.linkedin.com/in/ggroenendale/"><li><img src="img/icons/in.png"></li></a>
+                    <a class="soc-git" href="https://github.com/ggroenendale"><li><img src="img/icons/git.png"></li></a>
+                    <a class="soc-inst" href="https://www.instagram.com/ggroenendale/"><li><img src="img/icons/inst.png"></li></a>
+                    <a class="soc-tu" href="https://www.youtube.com/channel/UCPYuKG1N9rvx6xceztT37Jg"><li><img src="img/icons/tube.png"></li></a>
+                </div>
+                <div id="copyright-div"><h5 id="copyright">
+                    <span>&copy;</span> 2018 Geoff Groenendale</h5>
+                    <p>All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </aside> <!-- This closes the sidebar -->
+    <div id="content" class="grid-content home-content">
+        <div class="value-statement">
+            <div class="prim-statement">
+                <h1>"People do the best they can with the information they have."</h1>
+                <h2>So let's ensure they have the best information</h2>
+            </div>
+            <div class="sub-statement">
+<!--            <p>This statement is my fundamental core belief. It may be a naive perspective that's easy to poke holes in. If all it takes is information, then why do we so often make such harmful decisions.</p>-->
+                <p>What drives me in life and my career is helping people find the right information. But how do we determine what information is right and what information is wrong. And this is where my second core belief comes in.</p>
+            </div>
+            <div class="">
+                <h2>Trust the Process</h2>
+            </div>
+            <div class="sub-statement">
+            <p>And these are the processes that I believe in to create the right information</p>
+                <ul>
+                        <li>Requirements Gathering</li>
+                        <li>Data Modeling and Governance</li>
+                        <li>Building Normalized Schemas</li>
+                        <li>Secure Backups and Timely Redundancy</li>
+                        <li>Data Validation</li>
+                </ul>
+            </div>
+            <div class="process-grid row">
+                <div class="">
+                    <img src="/img/icons/data.svg" alt="">
+                </div>
+                <div class="">
+                    <img src="/img/icons/web.svg" alt="">
+                </div>
+                <div class="">
+                    <img src="/img/icons/uiux.svg" alt="">
+                </div>
+                <div class="">
+                    <img src="/img/icons/analysis.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div> <!-- This closes the content -->
+</div> <!-- This closes the wrapper -->
+<div id="scripts">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.js"></script>
+    <script type="text/javascript" src="js/mobile-detect.js"></script>
+    <script type="text/javascript" src="js/workhorse.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</div>
 </body>
 </html>

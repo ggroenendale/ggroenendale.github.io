@@ -1121,22 +1121,99 @@ function open_gallery(gallery_name) {
 }
 
 /**
- * @function position_cell
- * @desc
- * @param it
+ * @function
+ * @name rotateCarousel
+ * @desc Rotates the photo carousel based on the direction string value and theta and index variables
+ * @param {String}	direction	Can be default, left, or right
  */
-function position_cell(it) {
-	//Arrange pictures
-	theta = 360 / gall_size;
+function rotateCarousel(direction="default") {
+	// Grab the gallery size from the carousel
+	let gallery_size = Number($('#carousel').attr('data-gallery-size'))
+
+	// Initialize current index as 0, allows for a default value and no direction
+	let current_index = 0;
+
+	// If there is a direction, update the current index value
+	if (direction === "right") {
+		// Grab the current index data attribute in the carousel
+		current_index = Number($('#carousel').attr('data-current-index')) + 1
+	}
+	else if (direction === "left") {
+		// Grab the current index data attribute in the carousel
+		current_index= Number($('#carousel').attr('data-current-index')) - 1
+	}
+
+	// Grab the image theta value stored in the carousel attribute
+	let theta = Number($('#carousel').attr('data-image-theta'))
+
+	// Grab the radius value that determines the size of the image relative to the
+	let radius = Number($('#carousel').attr('data-carousel-radius'))
+
+	// Determine what the current angle of the carousel should be based on the current index
+	let angle = theta * current_index * -1;
+
+	// Set the carousel attributes
+	$('#carousel').attr('data-current-index', `${current_index}`)
+		.css({"transform": `translateZ(-${radius}px) rotateY(${angle}deg`})
+
+	// Update the image meta
+	let image_index = current_index % gallery_size;
+	update_image_meta(image_index)
+}
+
+/**
+ * @function
+ * @name update_image_meta
+ * @param {number} index
+ */
+function update_image_meta(index) {
+	let gallery_name = $(`#carousel`).attr('data-gallery-name')
+	let current_gallery = set.galleries.find(gallery => (gallery.name === gallery_name) ? gallery : null);
+	let image = current_gallery.images.at(index)
+
+	console.log($(`.carousel-cell[data-num='${index}']`).attr('data-name'))
+	$('#img-name').text(image.name)
+	$('#img-desc').text(image.blurb)
+}
+
+/**
+ * @function
+ * @name position_cell
+ * @desc Positions the cells
+ * @param {number}	gallery_size
+ */
+function position_cell(gallery_size) {
+	// Arrange pictures
+	let theta = 360 / gallery_size;
+
+	//
 	let cellsize = carousel.offsetWidth;
-	radius = Math.round(( cellsize / 2 ) / Math.tan( Math.PI / gall_size ));
+
+	//
+	radius = Math.round(( cellsize / 2 ) / Math.tan( Math.PI / gallery_size ));
+
+	//
 	let cells = document.getElementsByClassName('carousel-cell');
+
+	$('#carousel').addClass('testclass');
+	// 	.each(function(index, element) {
+	// 	console.log(index)
+	// 	console.log(this)
+	// 	console.log("Carousel cell load")
+	// 	let cell_angle = 111;
+	// 	this.css('transform', `rotateY(${cell_angle}deg) translateZ(${radius}px)`)
+	// });
+
+
+	//
 	for (let i=0; i < cells.length; i++) {
 		let cell = cells[i];
 		let cell_angle = theta * i;
+
 		cell.style.transform = `rotateY(${cell_angle}deg) translateZ(${radius}px)`;
 	}
-	//let style = window.getComputedStyle($(''))
+
+	//
 	rotateCarousel();
 }
 
@@ -1145,44 +1222,46 @@ function position_cell(it) {
  * @name gallery_closer
  * @param {MouseEvent} event
  */
-$('.gall-closer').on('click', function(){
-	//Swap styles to normal
-	viewer.classList.remove('grid-content');
-	viewer.classList.add('hidden-gall');
-	content.classList.add('grid-content');
-	content.classList.remove('hidden-gall');
-	//empty the carousel
-	carousel.innerHTML = '';
-	sidebar_slide();
-});
-
-/**
- *
- */
-$('#show-menu').on('click', function(){
+function gallery_closer(event) {
 	if ((viewer) && (viewer.classList[0].includes('grid-content'))) {
-		//Swap styles to normal
+		// Swap styles to normal
 		viewer.classList.remove('grid-content');
 		viewer.classList.add('hidden-gall');
 		content.classList.add('grid-content');
 		content.classList.remove('hidden-gall');
-		//empty the carousel
+
+		// Empty the carousel
 		carousel.innerHTML = '';
 		sidebar_slide();
 	}
-});
+}
 
+/**
+ * @event
+ */
+$('.gall-closer').on('click', gallery_closer);
+
+/**
+ * @event
+ */
+$('#show-menu').on('click', gallery_closer);
+
+/**
+ *
+ */
 $('#photo-prev').on('click', function(){
+	console.log("photo prev")
 	selectedIndex--;
-	rotateCarousel();
+	rotateCarousel("left");
 });
 
 /**
  *
  */
 $('#photo-next').on('click', function(){
+	console.log("photo next")
 	selectedIndex++;
-	rotateCarousel();
+	rotateCarousel("right");
 });
 
 
@@ -1193,11 +1272,11 @@ $('#photo-next').on('click', function(){
 if (viewer) {
 	gswipe.onLeft(function(){
 		selectedIndex++;
-		rotateCarousel();
+		rotateCarousel("left");
 	});
 	gswipe.onRight(function(){
 		selectedIndex--;
-		rotateCarousel();
+		rotateCarousel("right");
 	});
 	gswipe.run();
 }
@@ -1221,21 +1300,21 @@ window.onmousemove = function(event) {
 	}
 }
 
-/**
- *
- * @param gall
- */
-function change_tooltip(gall) {
-	//tooltip.innerHTML =
-	//console.log('bracket_fix') ;
-}
-
-/**
- *
- */
-function hide_tooltip() {
-
-}
+// /**
+//  *
+//  * @param gall
+//  */
+// function change_tooltip(gall) {
+// 	//tooltip.innerHTML =
+// 	//console.log('bracket_fix') ;
+// }
+//
+// /**
+//  *
+//  */
+// function hide_tooltip() {
+//
+// }
 
 /**
  * ========================================================================================

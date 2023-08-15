@@ -570,6 +570,50 @@ nav>ul>li>a:visited {
 ===================================================================================================
 */
 
+#content.home-content {
+	background-color: #6A6765;
+}
+
+.value-statement {
+	width: 75%;
+	margin: 10dvh auto;
+}
+
+.prim-statement {
+	margin-bottom: 3dvh;
+	padding: 2dvh 1dvh;
+	background-color: #42423f;
+	border-radius: 0.7dvh;
+	border: 0.3dvh solid #343431;
+	box-shadow: 1.6dvh 1.6dvh 1.9dvh 0.3dvh #3b3b3a;
+}
+
+.sub-statement {
+	margin: 5dvh auto;
+	width: 90%;
+}
+
+.sub-statement p {
+	font-size: 1.4dvh;
+	color: white;
+	text-shadow: 0.1dvh 0.1dvh #1c2115;
+	line-height: 1.8dvh;
+}
+
+.value-statement h1 {
+	color: white;
+	font-size: 5dvh;
+	text-align: center;
+	margin: 3dvh 0;
+}
+
+.value-statement h2 {
+	color: white;
+	font-size: 3.5dvh;
+	text-align: center;
+	margin: 3dvh 0;
+}
+
 #splash-wrap {
 	padding-top: 8%;
 	text-align: center
@@ -651,6 +695,12 @@ nav>ul>li>a:visited {
 
 .serv-blurb a:visited {
 
+}
+
+.process-grid {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	grid-template-rows: 49% 49%;
 }
 
 /*
@@ -1010,13 +1060,12 @@ form>button[type="submit"]>h3 {
 	display: grid;
 }
 
-/* =========================== Fonts ===================================*/
+/* =========================== Fonts ==================================================== */
 
 .resume-block h3{
 	color: var(--co-yhigh4);
 	font-size: 1.5em;
 	padding-bottom: 2%;
-	padding-top: 6%;
 }
 
 .resume-block h4{
@@ -1065,23 +1114,22 @@ form>button[type="submit"]>h3 {
 	color: var(--color-font-si);
 }
 
-/* =========================== Fonts ===================================*/
+/* =========================== Name and Pic Top Block =================================== */
 
 #prof-pic-info {
-	
+
 }
 
 #prof-pic {
-	width: 65%;
-	height: 100%;
-	grid-area: pic;
+	width: 75%;
+	height: auto;
 	margin: auto;
-	padding: 10%;
+	padding: 3dvh;
 }
 
 #prof-pic-img {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 #prof-infos {
@@ -1109,7 +1157,7 @@ form>button[type="submit"]>h3 {
 #prof-infos .infos {
 	font-size: 1.05em;
 	width: 80%;
-	margin:	auto;	
+	margin:	auto;
 }
 
 #prof-infos>p>span {
@@ -1133,7 +1181,7 @@ form>button[type="submit"]>h3 {
 #prof-infos>a {
 	box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.5);
 	width: 70%;
-	height: 30px;
+	height: 4.5dvh;
 	margin: 5% auto 5% auto;
 	display: block;
 }
@@ -1146,17 +1194,23 @@ form>button[type="submit"]>h3 {
 	background-color: #B7CEBD;
 }
 
+#prof-infos a p {
+	font-size: 2.2dvh;
+	line-height: 4.5dvh;
+}
+
 .do-resume {
 	display: inline-block;
 	width: 100%;
-	height: 30px;
+	height: 100%;
 	border: none;
 	color: var(--color-si-bg);
 	background-color: #A5C2AC;
 }
 
 .down-wrap {
-	display: inline-block;
+	display: grid;
+	grid-template-columns: 33% 65%;
 	height: inherit;
 	width: 100%;
 	text-align: center;
@@ -1164,12 +1218,13 @@ form>button[type="submit"]>h3 {
 
 .icon-wrap {
 	display: inline-block;
-	width: 20%;
+	width: 7dvw;
 	height: 100%;
+	margin: auto;
 	padding: 0.75%;
 }
 
-.icon-wrap img { 
+.icon-wrap img {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
@@ -1183,12 +1238,10 @@ form>button[type="submit"]>h3 {
 	font-size: 1em;
 }
 
-#cols div div h3{
-	color: white;
-}
+/* =========================== Resume Content Block =============================================== */
 
 #cols div div p{
-	
+
 }
 
 #cols {
@@ -1197,7 +1250,21 @@ form>button[type="submit"]>h3 {
 	display: grid;
 	grid-template-areas: 'exp' 'educ' 'skills' 'achieve' 'extra' 'certs';
 	background-color: #74716F;
+	padding-top: 2dvh;
 }
+
+.resume-block {
+	padding-top: 1dvh;
+	padding-bottom: 1dvh;
+}
+
+.resume-block .bar {
+	height: 0.1dvh;
+	margin: 1dvh 0;
+	width: 70%;
+}
+
+/* =========================== Experience =============================================== */
 
 #experience {
 	grid-area: exp;
@@ -1205,51 +1272,59 @@ form>button[type="submit"]>h3 {
 	margin:	auto;
 }
 
+.exp-block>h4 {
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.exp-block>h5 {
+	padding-bottom: 1%;
+	padding-left: unset;
+}
+
+/* =========================== Education ================================================ */
+
 #education {
 	grid-area: educ;
 	width: 90%;
 	margin:	auto;
 }
 
-#skills {
-	grid-area: skills;
-	width: 90%;
-	margin:	auto;
+#education>h5 {
+	padding-top: 2%;
+	padding-bottom: 1%;
+	padding-left: 2%;
 }
 
-#certs {
-	grid-area: certs;
-	width: 90%;
-	margin:	auto;
+#education>h6 {
+	padding-left: 2%;
 }
+
+.edu-block-wrap {
+	display: grid;
+	grid-template-columns: 49% 49%;
+}
+
+.edu-block {
+
+}
+
+.course-wrap {
+	padding-top: 2dvh;
+}
+
+#course-list {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-column-gap: 1%;
+}
+
+/* =========================== Achievements ============================================= */
 
 #achievements {
 	grid-area: achieve;
 	width: 90%;
-	margin:	auto;
-}
-
-#extra {
-	grid-area: extra;
-	width: 90%;
-	margin:	auto;
-}
-
-
-/* =========================== Prof pic and info ============ */
-/* =========================== Prof pic and info ============ */
-/* =========================== Prof pic and info ============ */
-/* =========================== Prof pic and info ============ */
-/* =========================== Prof pic and info ============ */
-
-
-
-
-/* =================  Resume Styles ================= */
-
-.resume-block {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin: auto;
 }
 
 #achievements h4{
@@ -1263,41 +1338,16 @@ form>button[type="submit"]>h3 {
 	padding-left: unset;
 }
 
-#education>h5 {
-	padding-top: 2%;
-	padding-bottom: 1%;
-	padding-left: 2%;
-}
+/* =========================== Skills =================================================== */
 
-#education>h6 {
-	padding-left: 2%;
-}
-
-#course-list {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-column-gap: 1%;
-}
-
-.exp-block>h4 {
-	padding-top: 2%;
-	padding-bottom: 2%;
-}
-
-.exp-block>h5 {
-	padding-bottom: 1%;
-	padding-left: unset;
-}
-
-[data-pagename="about"] #extra a {
-	color: var(--color-green2);
-}
-
-[data-pagename="about"] #extra a:visited {
-	color: var(--color-green2);
+#skills {
+	grid-area: skills;
+	width: 90%;
+	margin:	0 auto;
 }
 
 #skills h3{
+	padding-top: 2dvh;
 	padding-bottom: unset;
 }
 
@@ -1344,7 +1394,7 @@ form>button[type="submit"]>h3 {
 
 /**
  * Below are a set of styles that display the program bubbles in a grid
- * The styles for these bubbles were adapted from a tutorial that 
+ * The styles for these bubbles were adapted from a tutorial that
  * can be found on a youtube video linked here:
  * Pure Css Water Wave Loading - Css Wave Effects - No Image or SVG for Wave effects
  * https://www.youtube.com/watch?v=dQw9v7bWbPE
@@ -1356,7 +1406,7 @@ form>button[type="submit"]>h3 {
 	margin-top: 15px;
 	grid-template-columns: 18% 18% 18% 18% 18%;
 	grid-column-gap: 1%;
-	grid-row-gap: 20px; 
+	grid-row-gap: 20px;
 }
 
 .circle {
@@ -1498,6 +1548,32 @@ form>button[type="submit"]>h3 {
 	display: block;
 }
 
+
+
+/*#cols div div h3{*/
+/*	color: white;*/
+/*}*/
+
+/*#certs {*/
+/*	grid-area: certs;*/
+/*	width: 90%;*/
+/*	margin:	auto;*/
+/*}*/
+
+/*#extra {*/
+/*	grid-area: extra;*/
+/*	width: 90%;*/
+/*	margin:	auto;*/
+/*}*/
+
+/*[data-pagename="about"] #extra a {*/
+/*	color: var(--color-green2);*/
+/*}*/
+
+/*[data-pagename="about"] #extra a:visited {*/
+/*	color: var(--color-green2);*/
+/*}*/
+
 /*
 =================================
 		Project Styles
@@ -1519,6 +1595,7 @@ form>button[type="submit"]>h3 {
 [data-pagename="projects"] #content > h1 {
 	text-align: center;
 	padding-top: 2%;
+	font-size: 5dvh;
 }
 
 #proj-grid {
@@ -1548,6 +1625,7 @@ form>button[type="submit"]>h3 {
 .proj-img img{
 	width: 100%;
 	height: 100%;
+	box-shadow: 0 0 6px 3px #2f2f2f;
 }
 
 .proj-info {
@@ -1555,14 +1633,40 @@ form>button[type="submit"]>h3 {
 }
 
 .proj-info h4 {
-	font-size: 1.6em;
+	font-size: 3dvh;
 	padding-bottom: 3%;
 	color: var(--co-yhigh3);
+	text-shadow: 1px 1px 1px #403d39;
+}
+
+.proj-info h5 {
+	font-size: 2dvh;
+	padding-bottom: 3%;
+	color: var(--color-green5);
+	text-shadow: 1px 1px 1px #403d39;
 }
 
 .proj-info p {
 	color: var(--color-font-si);
-	font-size: 1.1em;
+	font-size: 2dvh;
+	text-shadow: 1px 1px 1px #403d39;
+}
+
+.proj-info li {
+	color: var(--color-font-si);
+	font-size: 2dvh;
+	text-shadow: 1px 1px 1px #403d39;
+	list-style-type: disc;
+	list-style-position: inside;
+	text-indent: -2dvh;
+	line-height: 2.5dvh;
+}
+
+.proj-info>a {
+	color: var(--color-font-si);
+	font-size: 2.2dvh;
+	line-height: 4.6dvh;
+	text-shadow: 1px 1px 1px #403d39;
 }
 
 #proj-grid a{
@@ -1591,10 +1695,27 @@ form>button[type="submit"]>h3 {
 [data-pagename="project-summary"] #content > h1 {
 	text-align: center;
 	padding-top: 2%;
+	font-size: 3dvh;
+}
+
+#proj-desc-grid {
+	height: fit-content;
+	display: grid;
+	margin-top: 6dvh;
+	padding-bottom: 5%;
+	background-color: #514e4b;
 }
 
 .desc-block {
-	margin: 2% 5%;
+	margin: 0% 5%;
+	padding: 2dvh;
+	background-color: #3f3c3c;
+}
+
+.desc-block-inner {
+	border: 2px solid #2f3332;
+	background-color: #404341;
+	padding: 2dvh 1dvh;
 }
 
 .desc-block h3 {
@@ -1603,35 +1724,111 @@ form>button[type="submit"]>h3 {
 	color: var(--co-yhigh3);
 }
 
+.desc-block h5 {
+	font-family: var(--font-header2);
+	color: var(--co-yhigh5);
+	padding-bottom: 1dvh;
+}
+
 .desc-block .bar {
 	height: 0.1dvh;
-	margin-bottom: 1dvh;
+	margin-bottom: 2dvh;
 }
 
 .desc-block p {
 	color: var(--color-font-si);
-	font-size: 1.1em;
+	font-size: 1.35dvh;
+	text-shadow: #1c2115 1px 1px 2px;
+	line-height: 1.75dvh;
 }
 
-.desc-block li {
+.desc-block-inner li {
 	color: var(--color-font-si);
-	font-size: 1.1em;
+	font-size: 1.35dvh;
 	list-style-type: circle;
+	padding: 1dvh 2.5dvh;
+	list-style-position: inside;
+	text-shadow: #1c2115 1px 1px 2px;
+	text-indent: -2dvh;
+	line-height: 1.75dvh;
+}
+
+.desc-block-inner>ol {
+	padding-left: 1.5dvh
+}
+
+.desc-block-inner>ol>li {
+	color: var(--color-font-si);
+	font-size: 1.35dvh;
+	list-style-type: decimal;
 	padding: 1dvh;
 }
 
-.desc-block>ol>li {
-	color: var(--color-font-si);
-	font-size: 1.1em;
-	list-style-type: upper-roman;
-	padding: 1dvh;
+.desc-block-inner>ol>li>ol {
+	padding: 0.5dvh;
+	margin-left: 1dvh;
 }
 
-.desc-block>ol>li>ol>li {
+.desc-block-inner>ol>li>ol>li {
 	color: var(--color-font-si);
-	font-size: 1.1em;
+	font-size: 1.35dvh;
 	list-style-type: lower-roman;
-	padding: 1dvh;
+	padding: 0.5dvh;
+}
+
+.desc-block pre {
+	background-color: #565b58;
+	padding: 2dvh;
+	width: 90%;
+	margin: 2dvh auto;
+	box-shadow: 0 0 4px 4px #363632;
+}
+
+.desc-block pre text {
+	font-size: 30px;
+}
+
+.desc-block-inner dl{
+	color: var(--color-font-si);
+	font-size: 1.35dvh;
+	text-shadow: #1c2115 1px 1px 2px;
+	line-height: 1.75dvh;
+}
+
+.desc-block-inner dt {
+	padding-top: 1.5dvh;
+}
+
+.desc-block-inner dt:after {
+	content: ' ';
+	display: block;
+	background-color: #849590;
+	height: 3px;
+	width: 16em;
+	margin-bottom: 0.5dvh;
+}
+
+.desc-block-inner dd{
+	margin: auto;
+	margin-inline-start: 2dvw;
+}
+
+.desc-block-inner dl>dl{
+	margin: auto;
+	margin-inline-start: 2dvw;
+}
+
+.sub-req dd>dt>dd{
+	margin: auto;
+	margin-inline-start: 4dvw;
+}
+
+.stakeholders {
+
+}
+
+.stakeholders li {
+	padding: 0.2dvh 2.5dvh;
 }
 
 /*

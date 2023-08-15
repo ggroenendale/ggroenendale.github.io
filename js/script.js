@@ -561,6 +561,7 @@ window.onresize = function() {
 /**
  * @function
  * @name setup_mobile_galleries
+ * @desc Setup the galleries for the mobile view.
  * @param {Gallery[]} galleries The array of gallery data
  */
 function setup_mobile_galleries(galleries) {
@@ -588,6 +589,7 @@ function setup_mobile_galleries(galleries) {
 /**
  * @function
  * @name setup_tablet_galleries
+ * @desc Setup the galleries for the tablet view.
  * @param {Gallery[]} galleries The array of gallery data
  */
 function setup_tablet_galleries(galleries) {
@@ -615,6 +617,7 @@ function setup_tablet_galleries(galleries) {
 /**
  * @function
  * @name setup_desktop_galleries
+ * @desc Setup the galleries for the desktop view.
  * @param {Gallery[]} galleries
  */
 function setup_desktop_galleries(galleries) {
@@ -822,6 +825,7 @@ function changeSide() {
 /**
  * @function
  * @name reveal_right
+ * @desc Reveal the right side of the cube
  * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
 function reveal_right(gallery_cube) {
@@ -831,6 +835,7 @@ function reveal_right(gallery_cube) {
 /**
  * @function
  * @name reveal_norm
+ * @desc Returns the cube back to the normal side of the cube
  * @param {HTMLElement} gallery_cube The gallery cube HTML element that wraps the cube and face elements
  */
 function reveal_norm(gallery_cube) {
@@ -955,7 +960,10 @@ let radius;
 let theta;
 
 /**
- *
+ * @function
+ * @name open_mobile_gallery
+ * @desc	Opens the mobile gallery view
+ * @param 	{Gallery}	gallery
  */
 let gall_size;
 
@@ -1006,9 +1014,10 @@ function open_mobile_gallery(galleries, gallery) {
 }
 
 /**
- *
- * @param galleries
- * @param gallery
+ * @function
+ * @name open_midsize_gallery
+ * @desc	Opens the midsize gallery view
+ * @param 	{Gallery}	gallery
  */
 function open_midsize_gallery(galleries, gallery) {
 	galleries.forEach(function(gall){
@@ -1039,7 +1048,10 @@ function open_midsize_gallery(galleries, gallery) {
 }
 
 /**
- *
+ * @function
+ * @name open_large_gallery
+ * @desc	Opens the large gallery view
+ * @param 	{Gallery}	gallery
  */
 function open_large_gallery(galleries, gallery) {
 	galleries.forEach(function(gall){
@@ -1123,7 +1135,9 @@ function position_cell(it) {
 }
 
 /**
- *
+ * @function
+ * @name gallery_closer
+ * @param {MouseEvent} event
  */
 $('.gall-closer').on('click', function(){
 	//Swap styles to normal
@@ -1157,7 +1171,9 @@ $('#photo-prev').on('click', function(){
 	rotateCarousel();
 });
 
-
+/**
+ *
+ */
 $('#photo-next').on('click', function(){
 	selectedIndex++;
 	rotateCarousel();
@@ -1232,8 +1248,13 @@ function hide_tooltip() {
  * ========================================================================================
  */
 
+
 /**
- *
+ * @function
+ * @name skill_tooltip
+ * @desc 	This function is for showing and positioning a skill tooltip. It fires if a mouseenter event
+ * 			happens on a progress bubble.
+ * @param {MouseEvent} event
  */
 $('.prog-bubble').on('mouseenter', function() {
 	let progtip = $(this).find('.abouttool')[0];

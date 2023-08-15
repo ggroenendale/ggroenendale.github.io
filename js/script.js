@@ -56,6 +56,7 @@ let SWidth = window.innerWidth;
  * @desc Used to determine the type of device being used based on the User Agent value. <br><br>
  * Uses the open source Mobile Detect JavaScript port found at {@link https://github.com/hgoebl/mobile-detect.js/}
  */
+console.log(window.navigator.userAgent)
 let MD = new MobileDetect(window.navigator.userAgent);
 
 /**

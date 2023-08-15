@@ -476,55 +476,41 @@ $('.service-block').on('click', function() {
 
 /**
  * @desc
- * @param  {}
- * @return {}
  *
  */
 $('#show-menu').on('click', function(){
 	if (this.classList[0] === 'slide-in') {
 		if (ORI === 'port') {
-			$(this)
-			.removeClass('slide-in')
-			.css({'left':'0px','transition':'0.5s'})
+			$(this).removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
 			$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
 			$('html').css({'position':'unset','overflow':'unset'});
 		}
 		else if (ORI === 'land') {
-			$(this)
-			.removeClass('slide-in')
-			.css({'left':'0px','transition':'0.5s'})
+			$(this).removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
 			$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
 			$('html').css({'position':'unset','overflow':'unset'});	
 		}
 		else {
 			console.log('Could not detect orientation')
-			$(this)
-			.removeClass('slide-in')
-			.css({'left':'0px','transition':'0.5s'})
+			$(this).removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
 			$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
 			$('html').css({'position':'unset','overflow':'unset'});
 		}
 	}
 	else {
 		if (ORI === 'port') {
-			$(this)
-			.addClass('slide-in')
-			.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+			$(this).addClass('slide-in').css({'left':'calc(80% - 1px)','transition':'0.5s'});
 			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
 			$('html').css({'position':'fixed','overflow':'hidden'});
 		}
 		else if (ORI === 'land') {
-			$(this)
-			.addClass('slide-in')
-			.css({'left':'calc(50% - 1px)','transition':'0.5s'});
+			$(this).addClass('slide-in').css({'left':'calc(50% - 1px)','transition':'0.5s'});
 			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
 			$('html').css({'position':'fixed','overflow':'hidden'});	
 		}
 		else {
 			console.log('Could not detect orientation')
-			$(this)
-			.addClass('slide-in')
-			.css({'left':'calc(80% - 1px)','transition':'0.5s'});
+			$(this).addClass('slide-in').css({'left':'calc(80% - 1px)','transition':'0.5s'});
 			$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
 			$('html').css({'position':'fixed','overflow':'hidden'});
 		}

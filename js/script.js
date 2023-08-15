@@ -940,49 +940,34 @@ let theta;
  * @desc	Opens the mobile gallery view
  * @param 	{Gallery}	gallery
  */
-let gall_size;
+function open_mobile_gallery(gallery) {
+	// Get the size of the gallery
+	let gallery_size = gallery.images.length;
 
-/**
- * @desc Rotates the photo carousel based on the theta and index variables
- * @return {[type]} [description]
- */
-function rotateCarousel() {
-	let angle = theta * selectedIndex * -1;
-	$('#carousel').css({"transform": `translateZ(-${radius}px) rotateY(${angle}deg`})
-	//console.log(`I rotated ${angle} degrees my theta is ${theta} my index is ${selectedIndex}`);
-}
+	// Load each image in the array
+	gallery.images.forEach(function(img, i){
+		// Create the image source
+		let source = `photos/galleries/${gallery.name}/${img.filename}`;
 
-/**
- *
- * @param {Gallery[]} galleries
- * @param gallery
- */
-function open_mobile_gallery(galleries, gallery) {
-	galleries.forEach(function(gall){
-		if (gall.name === gallery) {
-			gall_size = gall.images.length;
-			gall.images.forEach(function(img,i){
-				let source = `photos/galleries/${gallery}/${img.filename}`;
-				$.get(source)
-					.done(function(){
-						$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="mgallery-img" src="${source}" alt="${img.alttext}">
-								</div
-								`);
-						position_cell(i);
-					})
-					.fail(function(err){
-						$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-						position_cell(i);
-					});
-			});
-		}
+		// On successful load from source create an image element
+		// On failure create an empty div.
+		$.get(source).done(function(){
+			$('#carousel').append(`
+				<div id="img${i+1}" class="carousel-cell">
+					<img class="mgallery-img" src="${source}" alt="${img.alttext}">
+				</div>`);
+		}).fail(function(err){
+			$('#carousel').append(`
+				<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+					<div class="no-img">Error loading Image</div>
+				</div>`);
+		});
 	});
+
+	// // Position the cells after the images are loaded.
+	// position_cell(gallery_size);
+
+	//
 	if (viewer.classList[0].includes('grid-content')) {
 		sidebar_slide();
 	}
@@ -994,32 +979,37 @@ function open_mobile_gallery(galleries, gallery) {
  * @desc	Opens the midsize gallery view
  * @param 	{Gallery}	gallery
  */
-function open_midsize_gallery(galleries, gallery) {
-	galleries.forEach(function(gall){
-		if (gall.name === gallery) {
-			gall_size = gall.images.length;
-			gall.images.forEach(function(img,i){
-				let source = `photos/galleries/${gallery}/${img.filename}`;
-				$.get(source)
-					.done(function(){
-						$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="tgallery-img" src="${source}">
-								</div>
-								`);
-						position_cell(i);
-					})
-					.fail(function(err){
-						$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-						position_cell(i);
-					});
-			});
-		}
+function open_midsize_gallery(gallery) {
+	// Get the size of the gallery
+	let gallery_size = gallery.images.length;
+
+	// Load each image
+	gallery.images.forEach(function(img,i){
+		// Create the image source
+		let source = `photos/galleries/${gallery.name}/${img.filename}`;
+
+		// On successful load from source create an image element
+		// On failure create an empty div.
+		$.get(source).done(function(){
+			$('#carousel').append(`
+				<div id="img${i+1}" class="carousel-cell">
+					<img class="tgallery-img" src="${source}">
+				</div>`);
+		}).fail(function(err){
+			$('#carousel').append(`
+				<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+					<div class="no-img">Error loading Image</div>
+				</div>`);
+		});
 	});
+
+	// // Position the cells after the images are loaded.
+	// position_cell(gallery_size);
+
+	//
+	if (viewer.classList[0].includes('grid-content')) {
+		sidebar_slide();
+	}
 }
 
 /**
@@ -1028,32 +1018,69 @@ function open_midsize_gallery(galleries, gallery) {
  * @desc	Opens the large gallery view
  * @param 	{Gallery}	gallery
  */
-function open_large_gallery(galleries, gallery) {
-	galleries.forEach(function(gall){
-		if (gall.name === gallery) {
-			gall_size = gall.images.length;
-			gall.images.forEach(function(img,i){
-				let source = `photos/galleries/${gallery}/${img.filename}`;
-				$.get(source)
-					.done(function(){
-						$('#carousel').append(`
-								<div id="img${i+1}" class="carousel-cell">
-									<img class="gallery-img" src="${source}">
-								</div>
-								`);
-						position_cell(i);
-					})
-					.fail(function(err){
-						$('#carousel').append(`
-								<div id="img${i+1}" data-num="${i}" class="carousel-cell">
-									<div class="no-img"></div>
-								</div>
-							`);
-						position_cell(i);
-					});
-			});
-		}
+function open_large_gallery(gallery) {
+	// Get the size of the gallery
+	let gallery_size = gallery.images.length;
+
+	// Determine the angle theta for each image based on the gallery size
+	let theta = 360 / gallery_size;
+
+	// Determine the cellsize based on the carousel width
+	let cellsize = $('#carousel').width();
+	console.log(cellsize)
+
+	// Determine the radius with math
+	let radius = Math.round(( cellsize / 2 ) / Math.tan( Math.PI / gallery_size ));
+
+	// Load each image
+	gallery.images.forEach(function(img,i){
+		// Create the image source
+		let source = `photos/galleries/${gallery.name}/${img.filename}`;
+
+		// On successful load from source create an image element
+		// On failure create an empty div.
+		$.get(source).done(function(){
+			// Determine the  angle of the indexed image
+			let cell_angle = theta * i;
+
+			// Create the image element and its wrapper
+			let imgWrap = $('<div>', {id: `img${i+1}`, "class": 'carousel-cell', "data-num": i, "data-name": img.name})
+				.css('transform', `rotateY(${cell_angle}deg) translateZ(${radius}px)`)
+			let imgElem = $('<img>', {"class": 'gallery-img', "src": source, "alt": img.alttext})
+
+			// Add the image to the carousel
+			$('#carousel').append(imgWrap.append(imgElem));
+		}).fail(function(err){
+			$('#carousel').append(`
+				<div id="img${i+1}" data-num="${i}" class="carousel-cell">
+					<div class="no-img"></div>
+				</div>`);
+		});
 	});
+
+	// Set some data values in the carousel
+	$('#carousel').attr('data-current-index', '0')
+		.attr('data-image-theta', theta)
+		.attr('data-gallery-size', gallery_size)
+		.attr('data-carousel-radius', radius)
+		.attr('data-gallery-name', gallery.name);
+
+	// Fire the rotate carousel function to begin
+	rotateCarousel()
+
+	$('#img-name').text(gallery.images[0].name)
+	$('#img-desc').text(gallery.images[0].blurb)
+
+	// Get the height of the gallery and use it to determine the position of the controls and the
+	// image metadata
+	let gallery_height = $('#gall-viewer').height()
+	$('#img-meta').css({top: gallery_height/4})
+	$('#controls').css({top: gallery_height/3.2})
+
+	//
+	if (viewer.classList[0].includes('grid-content')) {
+		sidebar_slide();
+	}
 }
 
 /**
@@ -1072,19 +1099,23 @@ function open_gallery(gallery_name) {
 	content.classList.add('hidden-gall');
 	viewer.classList.add('grid-content');
 	viewer.classList.remove('hidden-gall');
+
+	let gallery = galleries.find(gallery => (gallery.name === gallery_name) ? gallery : null);
+
 	//Reveal the images
 	if (SWidth < 768 ) {
-		open_mobile_gallery(galleries, gallery_name);
+		open_mobile_gallery(gallery);
 	}
 	else if ((SWidth >= 768) && (SWidth <= 1366)) {
-		open_midsize_gallery(galleries, gallery_name);
+		open_midsize_gallery(gallery);
 	}
 	else if ((SWidth > 1366) && (SWidth < 1600)) {
-		open_large_gallery(galleries, gallery_name);
+		open_large_gallery(gallery);
 	}
-	else {
+	else if (SWidth > 1600){
 		// FIXME: This is why the carousel doesn't work for large screens
-		console.log("Heres your problem")
+		open_large_gallery(gallery);
+		console.log("Here's your problem")
 		console.log(`Device width is ${SWidth}`)
 	}
 }

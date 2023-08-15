@@ -842,6 +842,7 @@
 	.info-key {
 		display: inline;
 		margin: unset;
+		font-size: 1.1em;
 	}
 
 	#caddress {
@@ -855,6 +856,7 @@
 	}
 
 	#c-soc-wrap {
+		padding-top: 2dvh;
 		margin: auto;
 	}
 
@@ -875,10 +877,10 @@
 	}
 
 	#cont-info p {
-		font-size: 1.3em;
+		font-size: 2dvh;
 		color: var(--color-co-bg);
 		text-align: left;
-		margin: unset;
+		margin: 0.5dvh;
 	}
 
 	form {
@@ -897,19 +899,21 @@
 	form>button[type="submit"] {
 		margin: auto;
 		background-color: #74716F;
-		border: none;
+		border: 2px solid #807c7b;
+		border-radius: 0.3dvh;
+		box-shadow: 0px 0px 5px 1px #2d2d2a;
 		line-height: unset;
-		height: 30px;
-		width: 50%;
+		height: 4dvh;
+		width: 30%;
 		font-size: unset;
 		z-index: 5;
 	}
 
 	form>button[type="submit"]>h3 {
-		line-height: 1.35em;
-		height: inherit;
+		line-height: 3.5dvh;
+		height: 2dvh;
 		color: white;
-		font-size: 1.35em;
+		font-size: 2dvh;
 		width: 35%;
 		display: inline-block;
 		vertical-align: top;
@@ -917,8 +921,8 @@
 
 	form>button[type="submit"]>#mail-icon {
 		display: inline-block;
-		width: 33%;
-		padding: 1%;
+		width: 4dvh;
+		padding: 0.2dvh;
 		height: inherit;
 		margin: auto;
 	}

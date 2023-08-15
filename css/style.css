@@ -871,6 +871,21 @@ nav>ul>li>a:visited {
 	display: grid;
 	grid-template-rows: 30% 70%;
 	margin-top: 20px;
+	background-color: var(--co-home-bg);
+}
+
+#message-und {
+	background-color: var(--co-home-bg);
+}
+
+#message-und:after {
+	height: 3dvh;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	content: ' ';
+	display: block;
+	background-color: var(--co-home-bg);
 }
 
 #cont-info-grid {
@@ -918,7 +933,8 @@ nav>ul>li>a:visited {
 }
 
 #cont-info p {
-	font-size: 1.3em;
+	font-size: 2.7dvh;
+	color: var(--color-co-bg);
 	margin: unset;
 }
 

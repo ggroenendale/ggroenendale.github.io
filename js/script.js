@@ -672,51 +672,26 @@ function setup_desktop_galleries(galleries) {
 
 
 /**
- * @desc
- * @return
+ * @function
+ * @name load_galleries
+ * @desc Retrieve gallery data then calls setup function depending on device flag.
  */
 function load_galleries() {
-	let grid = document.getElementById('gall-container');
-	let html_payload = '';
-	let gallery = set.galleries;
+	// Retrieve the gallery data
+	let galleries = set.galleries;
 	
 	//Conditional on screen width 
-	//Target for Mobile
-	if (MD.phone()) {  
-		gallery.forEach( function(gallery){
-			if(gallery.avail === true) {
-				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
-				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}">`;
-				html_payload += `<div class="gall-info">`;
-				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-			}
-		});
-		grid.innerHTML = html_payload;
+	// Target for Mobile
+	if (MD.phone()) {
+		setup_mobile_galleries(galleries);
 	}
 	//Target for tablets
 	else if (MD.tablet()) { 
-		gallery.forEach( function(gallery){
-			if(gallery.avail === true) {
-				html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
-				html_payload += `<div class="gall-img-wrap">`;
-				html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
-				html_payload += `<div class="gall-info">`;
-				html_payload += `<h3 class="gall-header">${gallery.display_name}</h3>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-				html_payload += `</div>`;
-			}
-		});
-		grid.innerHTML = html_payload;
+		setup_tablet_galleries(galleries);
 	}
 	//Target for Desktop
 	else if (!MD.phone() && !MD.tablet()) {
 		setup_desktop_galleries(galleries);
-
 		adjust_cubes();
 	}
 	else {

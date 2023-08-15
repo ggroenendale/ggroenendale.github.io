@@ -955,7 +955,6 @@ function open_mobile_gallery(gallery) {
 
 	// Determine the cellsize based on the carousel width
 	let cellsize = $('#carousel').width();
-	console.log(cellsize)
 
 	// Determine the radius with math
 	let radius = Math.round(( cellsize / 2 ) / Math.tan( Math.PI / gallery_size ));

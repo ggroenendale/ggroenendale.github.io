@@ -1341,22 +1341,88 @@ window.onmousemove = function(event) {
  * 			happens on a progress bubble.
  * @param {MouseEvent} event
  */
-$('.prog-bubble').on('mouseenter', function() {
-	let progtip = $(this).find('.abouttool')[0];
-	let tip_h = $(this).find('.abouttool').outerHeight();
+function skill_tooltip(event) {
+
+	let progtip = $(event.target).children('.abouttool')[0];
+	let tip_h = $(event.target).children('.abouttool').outerHeight();
 	let limit = window.innerHeight;
+
+	// This onmousemove event listener loads for the specific prog-bubble
 	window.onmousemove = function(event) {
-		//console.log(event.pageX + ', ' + event.pageY + 'client' + event.clientX + ', ' + event.clientY + 'screen height' + window.innerHeight);
+		// Grab the x and y of the client mouse
 		let x = event.clientX;
 		let y = event.clientY;
+
+		// Position the tooltip based on client position and some math
 		if (progtip) {
-			( y + tip_h + 15 < limit)
-			? (progtip.style.top = ((y + 20) + 'px'),
-			  progtip.style.borderRadius = '0 10px 10px 10px')
-			: ( progtip.style.top = ((y - 10 - tip_h) + 'px'),
-			  progtip.style.borderRadius = '10px 10px 10px 0');
-			progtip.style.left = 
-				(x + 20) + 'px';
+			if ( y + tip_h + 15 < limit) {
+				progtip.style.top = (y + 20) + 'px';
+				progtip.style.borderRadius = '0 10px 10px 10px'
+			}
+			else {
+				progtip.style.top = (y - 10 - tip_h) + 'px';
+				progtip.style.borderRadius = '10px 10px 10px 0';
+			}
+			// Regardless of the current position state, make it 20 additional pixels to the left
+			progtip.style.left = (x + 20) + 'px';
 		}
 	}
-})
+}
+
+/**
+ *
+ */
+$('.prog-bubble').on('mouseenter', skill_tooltip)
+
+/**
+ *
+ * @param id_from
+ * @param id_contents
+ * @param id_to
+ */
+function createFunction(id_from, id_contents, id_to) {
+
+	//Container is just a wrapper for the element we want to point towards
+	let create_container = '<div id="container" style="position: relative;">';
+
+	//Wrap the element in the wrapper so as not to affect the state of the element
+	$( "#"+id_to).wrap(function() {
+		return create_container;
+	});
+
+	//New element (can be modified to dynamically position as well)
+	let create_element = '<div id="'+id_from+'" style="display:block; position: absolute;  left: 350px; top: 100px;"> '+id_contents+' </div>';
+
+	//SVG that will not appear until points towards the element that we want is given
+	let create_svg = '<span style="position: absolute;"> <svg width="1000" height="1000" >    <defs>    <marker id="arrow" markerWidth="13" markerHeight="13" refx="2" refy="6" orient="auto">        <path d="M2,1 L2,10 L10,6 L2,2" style="fill:red;" />      </marker>    </defs>    <path id="test" d="" style="stroke:red; stroke-width: 1.25px; fill: none; marker-end: url(#arrow);"/>  </svg> </span>';
+
+	//Add elements arround the original element
+	$( "#"+id_to).before(create_element);
+	$( "#"+id_to).before(create_svg);
+	$("#"+id_to).after("</div>");
+
+	//Create a style for the element
+	let att = document.createAttribute("style");   // Create a "style" Atttribute
+	att.value = "display:block; position: absolute; outline:5px solid black;";
+	document.getElementById(id_to).setAttributeNode(att);
+
+	//Give the locations of the two elements
+	let test1 = document.getElementById(id_from);
+	let test2 = document.getElementById(id_to);
+	let test1_loc = test1.getBoundingClientRect();
+	let test2_loc = test2.getBoundingClientRect();
+
+	//Input into SVG
+	document.getElementById("test").setAttribute("d", "M"+(test1_loc.right - (test1_loc.right - test1_loc.left)) + "," + (test1_loc.top - (test1_loc.bottom - test1_loc.top))+" L"+ (test2_loc.left + (test2_loc.right - test2_loc.left)) + "," + (test2_loc.top - (test2_loc.bottom - test2_loc.top)));
+
+}
+
+//function(ID of new element,Contents of new element, element to point towards)
+$("#run_button").on( "click", function() {
+	new createFunction("test2","This is a test","test1");
+});
+
+//Display current HTML
+$("#result").on( "click", function() {
+	alert(document.getElementsByTagName("body")[0].outerHTML);
+});

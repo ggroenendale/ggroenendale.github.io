@@ -1081,6 +1081,10 @@ function open_large_gallery(gallery) {
 	if (viewer.classList[0].includes('grid-content')) {
 		sidebar_slide();
 	}
+
+	document.onkeydown = function(event) {
+		keyboard_gallery(event)
+	}
 }
 
 /**
@@ -1247,7 +1251,7 @@ $('.gall-closer').on('click', gallery_closer);
 $('#show-menu').on('click', gallery_closer);
 
 /**
- *
+ * @desc Adds event listener to the left arrow to fire off carousel function
  */
 $('#photo-prev').on('click', function(){
 	console.log("photo prev")
@@ -1256,7 +1260,7 @@ $('#photo-prev').on('click', function(){
 });
 
 /**
- *
+ * @desc Adds event listener to the right arrow to fire off carousel function
  */
 $('#photo-next').on('click', function(){
 	console.log("photo next")
@@ -1279,6 +1283,22 @@ if (viewer) {
 		rotateCarousel("right");
 	});
 	gswipe.run();
+}
+
+/**
+ * @function
+ * @name keyboard_gallery
+ * @param {KeyboardEvent} event
+ */
+function keyboard_gallery(event) {
+	if (event.key === "ArrowRight") {
+		console.log("Advancing carousel right")
+		rotateCarousel("right")
+	}
+	else if (event.key === "ArrowLeft") {
+		console.log("Advancing carousel left")
+		rotateCarousel("left")
+	}
 }
 
 /**

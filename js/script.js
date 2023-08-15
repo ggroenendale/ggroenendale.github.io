@@ -347,6 +347,7 @@ function sidebar_slide() {
 	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
 		console.log("Changing size here???")
 		console.log(MD.phone())
+		console.log(MD.mobile())
 		if (MD.phone()) {
 			console.log("Do you think phone?")
 			let sideswipe = new Swipe('#wrapper');
@@ -401,6 +402,7 @@ function sidebar_slide() {
 		}
 	}
 	else if (viewer.classList[0].includes('grid-content')){
+		console.log("Otherwise changing here???")
 		if (MD.phone()) {
 			let sideswipe = new Swipe('#wrapper');
 			//console.log('reset here');

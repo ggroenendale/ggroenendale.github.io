@@ -1007,9 +1007,9 @@
 	}
 
 	#prof-pic {
-		width: 270px;
-		height: 270px;
-		margin: 15% auto 15% auto;
+		width: 35dvh;
+		height: auto;
+		margin: 6% auto 6% auto;
 		padding: unset;
 	}
 

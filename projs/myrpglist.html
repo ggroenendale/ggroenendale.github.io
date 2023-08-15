@@ -81,74 +81,481 @@
             </div>
         </div>
     </aside> <!-- This closes the sidebar -->
-    <div id="content" class="grid-content contact-grid">
+    <div id="content" class="grid-content">
         <h1>My RPG List</h1>
-        <div id="proj-grid" class="">
+        <div id="proj-desc-grid" class="">
             <div class="desc-block">
                 <h3>Summary</h3>
                 <div class="bar"></div>
-                <p>The idea behind this project was to create a platform where Table Top Role Players can share the stories they are telling with their favorite game systems and fans can find other stories their favorite players are connected to.</p>
+                <div class="desc-block-inner">
+                    <p>The idea of this project is to create a platform where Table Top Role Players can share the stories they are telling with their favorite game systems and fans can find other stories their favorite players are connected to.</p>
+                    <br>
+                    <p>Stakeholders:</p>
+                    <ul class="stakeholders">
+                        <li>Fans</li>
+                        <li>Players and Game Masters</li>
+                        <li>Game Creators and Content Writers</li>
+                    </ul>
+                </div>
             </div>
             <div class="desc-block">
                 <h3>Problem</h3>
                 <div class="bar"></div>
-                <ul>
-                    <li>Content Creators and players are often at mercy of the algorithms in YouTube, Twitch, Instagram, and TikTok for getting their content out.</li>
-                    <li>Players often play in one campaign without viewers knowing where else they can find their other appearances.</li>
-                    <li>Game Designers, Module Writers, Artists also have to fight the algorithms for getting their creations into the spotlight. There are many more game systems than D&D and Pathfinder.</li>
-                    <li>Viewers have a hard time finding characters and stories they most associate with. Western themes, characters with similar gender identities and sexuality's, certain species or races and character classes.</li>
-                </ul>
+                <div class="desc-block-inner">
+                    <ul>
+                        <li>Content Creators and Players are often at the mercy of content algorithms on video platforms and social media for drawing fans to their content.</li>
+                        <li>Players often play in one campaign without viewers knowing where else they can find other appearances.</li>
+                        <li>Game Designers, Module Writers, Artists also have to fight the algorithms for getting their creations into the spotlight. There are many more game systems than D&D and Pathfinder.</li>
+                        <li>Viewers have a hard time finding characters, genres, and stories they most associate with. Western themes, characters with similar gender identities and sexuality, certain species or races and character classes.</li>
+                    </ul>
+                </div>
             </div>
             <div class="desc-block">
                 <h3>Requirements</h3>
                 <div class="bar"></div>
-                <ol>
-                    <li>A frontend view for each type of content - Campaign, Character, Game System, Actor, etc.</li>
-                    <li>
-                        Users are able to login to the platform
-                        <ol>
-                            <li>Some users will have ownership over some content they are assigned to</li>
-                        </ol>
-                    </li>
-                    <li style="list-style-type: none">
-
-                    </li>
-                </ol>
+                <div class="desc-block-inner">
+                    <ol>
+                        <li>The entire system is secure
+                            <ol>
+                                <li>SSL Certificates</li>
+                                <li>Secret Keys</li>
+                                <li>Secure Passwords for Services</li>
+                            </ol>
+                        </li>
+                        <li>Users are able to log in to the platform:
+                            <ol>
+                                <li>Normal users with favorite content</li>
+                                <li>Content Owner users who are able to edit content they are associated with</li>
+                                <li>Administrative users who have elevated privileges to delete content</li>
+                            </ol>
+                        </li>
+                        <li>A frontend view for each type of content - Campaign, Character, Game System, Actor, etc.</li>
+                        <li>Content can be searched and results displayed</li>
+                        <li>File Storage for images and a Content Delivery Network (CDN) that caches these files geographically near users</li>
+                        <li>A Data Storage solution that makes content relationships easily queryable</li>
+                        <li>Data Validation built into the API for creating and retrieving records</li>
+                        <li>Data Pipeline for
+                            <ol>
+                                <li>Updating new episodes</li>
+                                <li>Finding new campaigns and channels</li>
+                                <li>Finding game systems</li>
+                                <li>Finding new campaign settings and adventure modules</li>
+                                <li>Finding newly created character classes and species</li>
+                            </ol>
+                        </li>
+                        <li>Content and information can be created for different languages as well as searchable by language.
+                            <ol>
+                                <li>This means localization and internationalization to display the same text in different languages.</li>
+                                <li>Also content should be searchable by what language is spoken in the episode so users can find it.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
             </div>
             <div class="desc-block">
                 <h3>System Design Overview</h3>
                 <div class="bar"></div>
-                <p></p>
+                <div class="desc-block-inner">
+                    <p>The below diagram details the basic system design behind this platform.</p>
+                    <br>
+                    <p>On the far left are the user inputs. The three types of users satisfies the user requirements in Requirement 2. The diagram also depicts 2 types of front end platforms for Users and Admins.</p>
+                    <br>
+                    <ul>
+                        <li>The User Front End WebApp allows normal users to view various types of content and link to their sources. This app also allows content creators and content managers to show and hide content as well as edit metadata. To manage traffic demand the front end app will be containerized and behind a load balancer.</li>
+                        <li>The Admin Front End allows administrators to view all records and assign content managers as well as edit metadata. Additionally, this web app includes analytics and viewable logs.</li>
+                    </ul>
+                    <br>
+                    <p>The Front End WebApps are written in Python using the Flask library for routes and view templates written with Jinja to insert data onto the webpages. In order for a view to have different data for records of the same content type, the webapp and api utilize text slugs instead of id's to request and retrieve data. Using text slugs in the urls for content pages makes them more seo friendly. This satisfies Requirement 3.</p>
+                    <br>
+                    <p>In order to satisfy the search feature in Requirement 4, ElasticSearch is used for text searches and returns a text slug or uuid in order to link to the specific view.</p>
+                    <br>
+                    <p>The Content Delivery Network caches images and frequent web pages to make the user experience smoother. This satisfies Requirement 5.</p>
+                    <br>
+                    <p>The data storage solution depends on a relational database to find relationships with foreign keys. The model is built using the SQLAlchemy library as the ORM. This has additional features to make some relationships easy to manage. Additionally, the Alembic library makes it easy to handle additions and changes to the database. This satisfies Requirement 6.</p>
+                    <br>
+                    <p>Data Validation is handled using the Pydantic library which comes with FastAPI. This will validate data when creating and updating records and requesting records.</p>
+                    <br>
+                    <p>There are a few options for a data pipeline and this project will use a combination of Python scripts and Apache Airflow. Workflows and tasks in Airflow are written in Python, but additional scripts may be developed outside of Airflow to retrieve data.</p>
+                    <pre class="mermaid">
+                        flowchart LR
+                            classDef label stroke-width:15px,stroke:#ffffde
+                            classDef subgraph_padding fill:none,stroke:none
+                            subgraph adclient [<span style="font-weight: bold">Admin Client</span>]
+                                admin[Admin]
+                            end
+                            style adclient stroke-width:15px,stroke:#47bd0c,fill:#47bd0c;
+                            classDef clientsty stroke-width:15px,stroke:#0cbd53,fill:#0cbd53;
+                            subgraph client [<span style="font-weight: bold">User Clients</span>]
+                                direction TB
+                                users[Users]
+                                contm[Content Managers]
+                            end
+                            class client clientsty
+                            contm --> lb
+                            users --> lb[<br><br><br><br><br><span style="font-weight: bold">Load Balancer</span><br><br><br><br><br><br>]
+                            style lb fill:#de7513;
+                            classDef admine stroke-width:15px,stroke:#4493d5,fill:#4493d5;
+                            classDef pipesty stroke-width:15px,stroke:#4468da,fill:#4468da;
+                            subgraph afe [<span style="font-weight: bold">Admin Front End</span>]
+                                flaska[Flask]
+                                subgraph pipe [<span style="font-weight: bold; color: white;">Data Pipeline</span>]
+                                    pand[Pandas]
+                                    apache[?Apache Airflow?]
+                                    pand ~~~ apache
+                                end
+                                subgraph dbak [<span style="font-weight: bold; color: white;">Data Backup / Restore</span>]
+
+                                end
+                            end
+                            class pipe pipesty
+                            class dbak pipesty
+                            class afe admine
+                            classDef fronte stroke-width:15px,stroke:#F2C47E,fill:#F2C47E;
+                            subgraph fe2 [<span style="font-weight: bold">Front End WebApp</span>]
+                                flask2[Flask]
+                            end
+                            class fe2 fronte
+                            subgraph fe1 [<span style="font-weight: bold">Front End WebApp</span>]
+                                flask1[Flask]
+                            end
+                            class fe1 fronte
+                            subgraph fe3 [<span style="font-weight: bold">Front End WebApp</span>]
+                                flask3[Flask]
+                            end
+                            class fe3 fronte
+                            lb --> fe2
+                            lb --> fe1
+                            lb --> fe3
+                            classDef besty stroke-width:15px,stroke:#2066ff,fill:#2066ff;
+                            subgraph be [<span style="font-weight: bold; color: white;">Back End API</span>]
+                                    direction TB
+                                    alem[Alembic]
+                                    fastapi[FastAPI]
+                                    aps[APScheduler]
+                                    pyd[Pydantic]
+                                    sqla[SQLAlchemy]
+                                    pytest ~~~ alem
+                                    alem ~~~ aps
+                                    aps ~~~ fastapi
+                                    fastapi ~~~ pyd
+                                    pyd ~~~ sqla
+                            end
+                            class be besty
+                            fe1 --> be
+                            fe2 --> be
+                            be --> log
+                            classDef logsty stroke-width:15px,stroke:#d93d4a,fill:#d93d4a;
+                            subgraph log [<span style="font-weight: bold">Logging</span>]
+                                direction TB
+                                logst[Logstash]
+                                el[ElasticSearch]
+                                logst -->el
+                            end
+                            class log logsty
+                            classDef datsty stroke-width:15px,stroke:#69d2e5,fill:#69d2e5;
+                            subgraph dat [<span style="font-weight: bold">Database</span>]
+                                pgsql((PostgresQL))
+                            end
+                            class dat datsty
+                            be --> dat
+                            classDef cdnsty stroke-width:15px,stroke:#f68f32,fill:#f68f32;
+                            subgraph cdn [<span style="font-weight: bold">Content Delivery Network</span>]
+                                img{{Images}}
+                            end
+                            class cdn cdnsty
+                            classDef extsty stroke-width:15px,stroke:#95e865,fill:#95e865;
+                            subgraph ext [<span style="font-weight: bold">External Data</span>]
+                                vid[Videos]
+                                pod[Podcasts]
+                                game[Gaming Shops]
+                                vid ~~~ pod
+                                pod ~~~ game
+                            end
+                            class ext extsty
+                            ext --> pipe
+                            admin ---> afe
+                            pipe --> be
+                            dbak <--> be
+                            fe3 <---> cdn
+                            class subgraph_padding_2 subgraph_padding
+                    </pre>
+                </div>
+                <script type="module">
+                    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+                    mermaid.initialize({ startOnLoad: true });
+                </script>
+            </div>
+            <div class="desc-block">
+                <h3>Success Metrics</h3>
+                <div class="bar"></div>
+                <div class="desc-block-inner">
+                    <ul>
+                        <li>Number of Users</li>
+                        <li>Time on platform</li>
+                        <li>Number of Content Manager Accounts</li>
+                        <li>Number of Content Articles (Players, Campaigns, Characters, Game Systems, etc.)</li>
+                        <li>System Uptime</li>
+                        <li>Featured Show view trends</li>
+                    </ul>
+                </div>
             </div>
             <div class="desc-block">
                 <h3>Data Model and Storage</h3>
                 <div class="bar"></div>
-                <p></p>
+                <div class="desc-block-inner">
+                    <p>This schema details the relationships between the SQL tables in the PostgresQL database. The ORM model is built using SQLAlchemy which adds some functionality to make the relationships easier to manage. For example, content managers are handled using a mixin relationship table. So instead of creating a special model for each content and user association, a class is implemented for each content which creates an intersection table for each content type that will need a content manager.</p>
+                    <pre class="mermaid">
+                        erDiagram
+                            GameMaster }|--|| Campaign : manages
+                            Player }|--|| Campaign : plays_in
+                            Actor }o--|| Player : joins_campaign
+                            Character }|--|| Player : plays
+                            Actor ||--|| GameMaster : makes_campaign
+                            Character ||--|| Species : is
+                            Campaign }|--|{ Genre : tags
+                            Episode ||--|{ Channel : has
+                            CampaignSetting }|--|| Realm : is_in
+                            Campaign }|--|| CampaignSetting : occurs_in
+                            Realm ||--o{ Deity : in
+                            Campaign }o--|| Episode : has
+                            GameSystem ||--|| Campaign : uses
+                            Character }|--|| CharacterClass : is
+                            CharacterClass }|--|| GameSystem : from
+                            Species }|--|| GameSystem : from
+                            Actor {
+                                uuid actor_uuid PK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Campaign {
+                                uuid campaign_uuid PK
+                                uuid game_master_uuid FK
+                                uuid player_uuid FK
+                                uuid game_system_uuid FK
+                                uuid campaign_setting_uuid FK
+                                uuid[] genre_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            CampaignSetting {
+                                uuid campaign_setting_uuid PK
+                                uuid realm_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Channel {
+                                uuid channel_uuid PK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Character {
+                                uuid character_uuid PK
+                                uuid species_uuid FK
+                                uuid character_class_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            CharacterClass {
+                                uuid character_class_uuid PK
+                                uuid game_system_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Deity {
+                                uuid deity_uuid PK
+                                uuid realm_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Episode {
+                                uuid episode_uuid PK
+                                uuid campaign_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            GameMaster {
+                                uuid game_master_uuid PK
+                                uuid actor_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            GameSystem {
+                                uuid game_system_uuid PK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Genre {
+                                uuid genre_uuid PK
+                            }
+                            Player {
+                                uuid player_uuid PK
+                                uuid actor_uuid FK
+                                uuid character_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Species {
+                                uuid species_uuid PK
+                                uuid game_system_uuid FK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            Realm {
+                                uuid realm_uuid PK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                    </pre>
+                    <pre class="mermaid">
+                        erDiagram
+                            ExampleContent {
+                                uuid example_content_uuid PK
+                                uuid[] content_manager_uuid FK "A list of user uuid's"
+                            }
+                            ContentManager_AssocTableTemplate {
+                                uuid association_uuid PK
+                                uuid user_uuid FK
+                                uuid content_uuid FK
+                            }
+                            Users {
+                                uuid user_uuid PK
+                            }
+                            Users ||--o{ ContentManager_AssocTableTemplate : is
+                            ContentManager_AssocTableTemplate }o--o{ ExampleContent : manages
+                    </pre>
+                </div>
             </div>
             <div class="desc-block">
                 <h3>Data Pipeline</h3>
                 <div class="bar"></div>
-                <p></p>
+                <div class="desc-block-inner">
+                    <p>This diagram details the workings of the data pipeline.</p>
+                    <br>
+                    <p>Video and Podcast data will be pulled from various platform api's. This metadata will be sent through the pipeline and matched to other data entity uuid's.</p>
+                    <br>
+                    <p>Campaign Settings and Game System information may be pulled from an API or scraped using the BeautifulSoup library.</p>
+                    <br>
+                    <pre class="mermaid">
+                        flowchart LR
+                            classDef extsty stroke-width:15px,stroke:#95e865,fill:#95e865;
+                            classDef srcsty stroke-width:15px,stroke:#ffffde;
+                            subgraph gsrc [<span style="font-weight: bold;">Game Content Sources</span>]
+                                subgraph subgraph_1 [ ]
+                                    subgraph csetting [Campaign Setting Sources]
+                                        subgraph subgraph_1a [ ]
+                                            direction TB
+                                            capi[API]
+                                            cweb[Web Page]
+                                            capi ~~~ cweb
+                                        end
+                                    end
+                                    subgraph gsys [Game System Sources]
+                                        subgraph subgraph_1b [ ]
+                                            direction TB
+                                            gapi[API]
+                                            gweb[Web Page]
+                                            gapi ~~~ gweb
+                                        end
+                                    end
+                                end
+                                class csetting srcsty
+                                class gsys srcsty
+                            end
+                            csetting ---> csfile[/"<br>Campaign Setting<br>Deity<br>Realm<br><br>"/]
+                            gsys ---> gfile[/"<br>Game System<br>Character Class<br>Species<br><br>"/]
+                            subgraph esrc [<span style="font-weight: bold">Episode Sources</span>]
+                                subgraph subgraph_2 [ ]
+                                    direction TB
+                                    subgraph video [Video Sources]
+                                        vapi[API]
+                                    end
+                                    subgraph podcast [Podcast Sources]
+                                        papi[API]
+                                    end
+                                end
+                                class podcast srcsty
+                                class video srcsty
+                            end
+                            class esrc extsty
+                            class gsrc extsty
+                            vapi ---> cfile[/"<br>Channel<br>Campaign<br>Actor<br>Episode<br><br>"/]
+                            papi ---> cfile
+                            classDef pipesty stroke-width:15px,stroke:#4468da,fill:#4468da;
+                            subgraph pipe [<span style="font-weight: bold; color: white;">Data Pipeline</span>]
+                                subgraph subgraph_3 [ ]
+                                    direction TB
+                                    spacer1[ ]
+                                    apache[?Apache Airflow?]
+                                    pand[Pandas]
+                                    bsoup[BeautifulSoup]
+                                    spacer2[ ]
+                                    spacer1 ~~~~~ apache
+                                    apache ~~~~ pand
+                                    pand ~~~~ bsoup
+                                    bsoup ~~~~ spacer2
+                                end
+                            end
+                            class pipe pipesty
+                            cfile ---> pipe
+                            csfile ---> pipe
+                            gfile ---> pipe
+                            classDef besty stroke-width:15px,stroke:#2066ff,fill:#2066ff;
+                            subgraph be [<span style="font-weight: bold; color: white;">Back End API</span>]
+                                pyd[Pydantic]
+                                fastapi[FastAPI]
+                                sqla[SQLAlchemy]
+                                pyd ~~~ fastapi
+                                fastapi ~~~ sqla
+                            end
+                            class be besty
+                            classDef datsty stroke-width:15px,stroke:#69d2e5,fill:#69d2e5;
+                            subgraph dat [<span style="font-weight: bold">Database</span>]
+                                sql((PostgresQL))
+                            end
+                            class dat datsty
+                            pipe --> be
+                            be --> dat
+                            classDef label stroke-width:15px,stroke:#ffffde;
+                            classDef subgraph_padding fill:none,stroke:none;
+                            classDef file fill:#6A6765,color:white,stroke:#000;
+                            class cfile file
+                            class csfile file
+                            class gfile file
+                            class subgraph_1 subgraph_padding
+                            class subgraph_1a subgraph_padding
+                            class subgraph_1b subgraph_padding
+                            class subgraph_2 subgraph_padding
+                            class subgraph_3 subgraph_padding
+                            class src label
+                            class spacer1 subgraph_padding
+                            class spacer2 subgraph_padding
+                    </pre>
+                </div>
             </div>
             <div class="desc-block">
-                <h3>Frontend</h3>
+                <h3>Progress</h3>
                 <div class="bar"></div>
-                <p></p>
-            </div>
-            <div class="desc-block">
-                <h3>Backend</h3>
-                <div class="bar"></div>
-                <p></p>
-            </div>
-            <div class="desc-block">
-                <h3>CI/CD</h3>
-                <div class="bar"></div>
-                <p></p>
+                <div class="desc-block-inner">
+                    <dl>
+                        <h5>Progress - Aug 13, 2023</h5>
+                        <dl>
+                            <dt>Requirement 1 - <span style="color: #ad4d24">Not Started</span></dt>
+                            <dd>While in development SSL Certificates and server security has not been necessary. A plan for security by server and by service is in development. A well documented data security plan for ElasticSearch and PostgresQL will be the most critical.</dd>
+                            <dt>Requirement 2 </dt>
+                            <dl>
+                                <dt>Requirement 2.1 - <span style="color: #ad6d24">Initial Development</span></dt>
+                                <dd>A front end platform for regular users is in the early stages of design and development.</dd>
+                                <dt>Requirement 2.2 - <span style="color: #24ad24">Complete</span></dt>
+                                <dd>Additionally, the ability to assign content ownership of content to a user is complete.</dd>
+                                <dt>Requirement 2.2 - <span style="color: #d9cb31">Usable</span></dt>
+                                <dd>The admin front end is much further along than the normal front end. Data can be edited and managed using the admin front end. Logs are also viewable, while pipeline information and management needs further development.</dd>
+                            </dl>
+                            <dt>Requirement 3 - <span style="color: #ad6d24">Initial Development</span></dt>
+                            <dd>As the user front end is in early development, views have not been completed. There's also an expectation that as the data pipeline is further developed some data will be added to the model to eventually be displayed on the front end.</dd>
+                            <dt>Requirement 4 - <span style="color: #24ad24">Complete</span></dt>
+                            <dd>This is mostly implemented. A search route on the backend API has been created to consume search terms and sent to elastic for results. There are indexes for each type of content in elastic and the indexes are periodically updated on a time basis from the backend. The schema for each index could be modified to enable more search results for the same term. For example making sure an actor name is in a campaign record so when searching for the actor a campaign result is displayed as well as the actor result. But the feature of the search route returning a slug to then be linked to a view route works.</dd>
+                            <dt>Requirement 5 - <span style="color: #ad4d24">Not Started</span></dt>
+                            <dd>While developing the basic system and data model images have taken a low priority. A CDN won't be implemented until a basic system is deployed and working for users.</dd>
+                            <dt>Requirement 6 - <span style="color: #62ad24">Operational</span></dt>
+                            <dd>The data model and storage solution has been thoroughly developed for each content type. Indexes and relationship properties are built into the model. A plan to backup and restore data needs to be finalized and documented. Currently, the admin front end web application stores flat files for each content type for data backup. Data restore needs to be finalized especially in cases where data entities have several foreign keys.</dd>
+                            <dt>Requirement 7 - <span style="color: #62ad24">Operational</span></dt>
+                            <dd>Data validation is also thoroughly handled with specific Pydantic models for creating and updating records. Pytest tests need to be completed for each type of content to ensure things likes special characters and realistic date limits.</dd>
+                            <dt>Requirement 8 - <span style="color: #ad6d24">Initial Development</span></dt>
+                            <dd>The data pipeline is one of the next features to be developed. At this time some proof of concept functions have been written into the admin front end but as some external service api's do charge for access or usage this has had a lower priority than the back end system and front end design.</dd>
+                            <dt>Requirement 9 - <span style="color: #ad4d24">Not Started</span></dt>
+                            <dd>Localization and Internationalization has also taken a low priority as the back end and front end systems need to be completed.</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
     </div> <!-- This closes the content -->
 </div> <!-- This closes the wrapper -->
 <div id="scripts">

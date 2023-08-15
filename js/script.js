@@ -343,73 +343,53 @@ function sidebar_slide() {
 	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
 		if (MD.phone()) {
 			let sideswipe = new Swipe('#wrapper');
-			//console.log('Sidebar slide');
-				//console.log('actually its thisone is on');
-				if(ORI === 'port') {
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
-						sideswipe.onLeft(function(){
-							$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-						});
-						sideswipe.onRight(function(){
-							$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});
-						});
-				}
-				else if (ORI === 'land') {
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
-						sideswipe.onLeft(function(){
-							$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-						});
-						sideswipe.onRight(function(){
-							$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(50% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});	
-						});
+			if(ORI === 'port') {
+				$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+				$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+				$('html').css({'position':'unset','overflow':'unset'});
+				sideswipe.onLeft(function(){
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
+				});
+				sideswipe.onRight(function(){
+					$('#show-menu').addClass('slide-in').css({'left':'calc(80% - 1px)','transition':'0.5s'});
+					$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+					$('html').css({'position':'fixed','overflow':'hidden'});
+				});
+			}
+			else if (ORI === 'land') {
+				$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+				$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+				$('html').css({'position':'unset','overflow':'unset'});
+				sideswipe.onLeft(function(){
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
+				});
+				sideswipe.onRight(function(){
+					$('#show-menu').addClass('slide-in').css({'left':'calc(50% - 1px)','transition':'0.5s'});
+					$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+					$('html').css({'position':'fixed','overflow':'hidden'});
+				});
 
-				}
-				else {
-					console.log('Could not detect orientation')
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
-						sideswipe.onLeft(function(){
-							$('#show-menu')
-							.removeClass('slide-in')
-							.css({'left':'0px','transition':'0.5s'})
-							$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-							$('html').css({'position':'unset','overflow':'unset'});
-						});
-						sideswipe.onRight(function(){
-							$('#show-menu')
-							.addClass('slide-in')
-							.css({'left':'calc(80% - 1px)','transition':'0.5s'});
-							$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
-							$('html').css({'position':'fixed','overflow':'hidden'});
-						});
-				}
+			}
+			else {
+				console.log('Could not detect orientation')
+				$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+				$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+				$('html').css({'position':'unset','overflow':'unset'});
+				sideswipe.onLeft(function(){
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
+				});
+				sideswipe.onRight(function(){
+					$('#show-menu').addClass('slide-in').css({'left':'calc(80% - 1px)','transition':'0.5s'});
+					$('#sidebar').css({'box-shadow': '2px 0px 15px 1px rgba(0,0,0,0.5)','left':'0','transition':'0.5s'});
+					$('html').css({'position':'fixed','overflow':'hidden'});
+				});
+			}
 			sideswipe.run();
 		}
 	}

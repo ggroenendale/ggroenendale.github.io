@@ -858,13 +858,27 @@ nav>ul>li>a:visited {
 	background-color: gray;
 }
 
+#img-meta {
+	position: relative;
+	width: 60%;
+	margin: auto;
+	bottom: 0%;
+	color: white;
+}
+
+#img-meta h4 {
+	margin-bottom: 2dvh;
+}
+
 #controls {
+	position: relative;
 	width: 100%;
 	text-align: center;
+	bottom: 0%;
 }
 
 .iter {
-	display: none;
+	display: unset;
 	color: white;
 	font-size: 3em;
 	padding: 5px;

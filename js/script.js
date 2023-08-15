@@ -1309,7 +1309,10 @@ $('#photo-next').on('click', function(){
  */
 
 if (viewer) {
+	console.log("Viewer swiper active")
+	console.log(gswipe)
 	gswipe.onLeft(function(){
+		console.log("Swipe detected")
 		selectedIndex++;
 		rotateCarousel("left");
 	});

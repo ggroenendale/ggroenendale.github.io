@@ -1000,7 +1000,6 @@ function open_mobile_gallery(gallery) {
 	// image metadata
 	let gallery_height = $('#gall-viewer').height()
 	$('#img-meta').css({top: gallery_height/3})
-	$('#controls').css({top: gallery_height/2.5})
 
 	//
 	if (viewer.classList[0].includes('grid-content')) {

@@ -571,7 +571,7 @@ function setup_mobile_galleries(galleries) {
 	// For each gallery make an html payload
 	galleries.forEach( function(gallery){
 		if(gallery.avail === true) {
-			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload += `<div class="gall-block gall1" onclick="gallery_click(this)" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
 			html_payload += `<div class="gall-img-wrap">`;
 			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
 			html_payload += `<div class="gall-info">`;
@@ -599,7 +599,7 @@ function setup_tablet_galleries(galleries) {
 	// For each gallery make an html payload
 	galleries.forEach( function(gallery){
 		if(gallery.avail === true) {
-			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload += `<div class="gall-block gall1" onclick="gallery_click(this)" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
 			html_payload += `<div class="gall-img-wrap">`;
 			html_payload += `<img class="gall-img" src="photos/galleries/${gallery.name}/${gallery.mobmainimg}" alt="${gallery.mainalt}">`;
 			html_payload += `<div class="gall-info">`;

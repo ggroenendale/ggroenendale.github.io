@@ -793,7 +793,7 @@
 	.iter {
 		display: unset;
 		color: white;
-		font-size: 3em;
+		font-size: 2dvh;
 		padding: 5px;
 	}
 

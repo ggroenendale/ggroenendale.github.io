@@ -860,27 +860,32 @@ nav>ul>li>a:visited {
 
 #img-meta {
 	position: relative;
-	width: 60%;
+	width: 90%;
 	margin: auto;
 	bottom: 0%;
 	color: white;
 }
 
 #img-meta h4 {
-	margin-bottom: 2dvh;
+	font-size: 1.8dvh;
+	margin-bottom: 1dvh;
+}
+
+#img-meta p {
+	font-size: 1.8dvh;
 }
 
 #controls {
-	position: relative;
+	position: fixed;
 	width: 100%;
 	text-align: center;
-	bottom: 0%;
+	bottom: 2dvh;
 }
 
 .iter {
 	display: unset;
 	color: white;
-	font-size: 3em;
+	font-size: 4dvh;
 	padding: 5px;
 }
 

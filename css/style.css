@@ -756,7 +756,7 @@ nav>ul>li>a:visited {
 .gall-img-wrap {
 	overflow: hidden;
 	width: 300px;
-	max-height: 215px;
+	max-height: fit-content;
 	margin: auto;
 	box-shadow: 1px 1px 10px 1px #222;
 }

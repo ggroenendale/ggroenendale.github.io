@@ -420,25 +420,19 @@ function sidebar_slide() {
 			sideswipe.onRight(function(){
 				//console.log('Setting new function');
 				if(ORI === 'port') {
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
 				}
 				else if (ORI === 'land') {
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-50%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
 				}
 				else {
-					$('#show-menu')
-						.removeClass('slide-in')
-						.css({'left':'0px','transition':'0.5s'})
-						$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
-						$('html').css({'position':'unset','overflow':'unset'});
+					$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})
+					$('#sidebar').css({'left':'-80%','transition':'0.5s','box-shadow':'unset'});
+					$('html').css({'position':'unset','overflow':'unset'});
 				}
 			});
 			sideswipe.onLeft(function(){ 

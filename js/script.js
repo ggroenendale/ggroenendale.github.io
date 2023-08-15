@@ -341,8 +341,14 @@ $(function() {
  *
  */
 function sidebar_slide() {
+	console.log("I may be hiding the sidebar")
+	// This logic is for the gallery stuff
+	console.log(viewer)
 	if (!viewer || viewer.classList[0].includes('hidden-gall')) {
+		console.log("Changing size here???")
+		console.log(MD.phone())
 		if (MD.phone()) {
+			console.log("Do you think phone?")
 			let sideswipe = new Swipe('#wrapper');
 			if(ORI === 'port') {
 				$('#show-menu').removeClass('slide-in').css({'left':'0px','transition':'0.5s'})

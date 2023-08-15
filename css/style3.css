@@ -738,11 +738,11 @@
 	#carousel:after {
 		display: block;
 		content: '';
-		transform: rotateX( -90deg) translateZ(600px) translateY(0px) translateX(300px);
-		box-shadow: 0px 0px 600px 600px rgba(0, 0, 0, 0.55);
-		border-radius: 300px;
-		width: 400px;
-		height: 400px;
+		transform: rotateX( -90deg) translateZ(24dvw) translateY(0px) translateX(12dvw);
+		box-shadow: 0 0 24dvw 24dvw rgba(0, 0, 0, 0.55);
+		border-radius: 12dvw;
+		width: 15dvw;
+		height: 15dvw;
 	}
 
 	.carousel-cell {

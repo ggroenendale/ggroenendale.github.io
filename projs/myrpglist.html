@@ -183,7 +183,7 @@
                             subgraph adclient [<span style="font-weight: bold">Admin Client</span>]
                                 admin[Admin]
                             end
-                            style adclient stroke-width:15px,stroke:#47bd0c,fill:#47bd0c;
+                            style adclient stroke-width:15px,stroke:#0cbd53,fill:#0cbd53;
                             classDef clientsty stroke-width:15px,stroke:#0cbd53,fill:#0cbd53;
                             subgraph client [<span style="font-weight: bold">User Clients</span>]
                                 direction TB
@@ -194,16 +194,16 @@
                             contm --> lb
                             users --> lb[<br><br><br><br><br><span style="font-weight: bold">Load Balancer</span><br><br><br><br><br><br>]
                             style lb fill:#de7513;
-                            classDef admine stroke-width:15px,stroke:#4493d5,fill:#4493d5;
-                            classDef pipesty stroke-width:15px,stroke:#4468da,fill:#4468da;
+                            classDef admine stroke-width:15px,stroke:#F2C47E,fill:#F2C47E;
+                            classDef pipesty stroke-width:15px,stroke:#7fadea,fill:#7fadea;
                             subgraph afe [<span style="font-weight: bold">Admin Front End</span>]
                                 flaska[Flask]
-                                subgraph pipe [<span style="font-weight: bold; color: white;">Data Pipeline</span>]
+                                subgraph pipe [<span style="font-weight: bold;">Data Pipeline</span>]
                                     pand[Pandas]
                                     apache[?Apache Airflow?]
                                     pand ~~~ apache
                                 end
-                                subgraph dbak [<span style="font-weight: bold; color: white;">Data Backup / Restore</span>]
+                                subgraph dbak [<span style="font-weight: bold;">Data Backup / Restore</span>]
 
                                 end
                             end
@@ -226,7 +226,7 @@
                             lb --> fe2
                             lb --> fe1
                             lb --> fe3
-                            classDef besty stroke-width:15px,stroke:#2066ff,fill:#2066ff;
+                            classDef besty stroke-width:15px,stroke:#1e7694,fill:#1e7694;
                             subgraph be [<span style="font-weight: bold; color: white;">Back End API</span>]
                                     direction TB
                                     alem[Alembic]
@@ -244,7 +244,7 @@
                             fe1 --> be
                             fe2 --> be
                             be --> log
-                            classDef logsty stroke-width:15px,stroke:#d93d4a,fill:#d93d4a;
+                            classDef logsty stroke-width:15px,stroke:#18a1d3,fill:#18a1d3;
                             subgraph log [<span style="font-weight: bold">Logging</span>]
                                 direction TB
                                 logst[Logstash]
@@ -467,8 +467,8 @@
                             class gsrc extsty
                             vapi ---> cfile[/"<br>Channel<br>Campaign<br>Actor<br>Episode<br><br>"/]
                             papi ---> cfile
-                            classDef pipesty stroke-width:15px,stroke:#4468da,fill:#4468da;
-                            subgraph pipe [<span style="font-weight: bold; color: white;">Data Pipeline</span>]
+                            classDef pipesty stroke-width:15px,stroke:#7fadea,fill:#7fadea;
+                            subgraph pipe [<span style="font-weight: bold;">Data Pipeline</span>]
                                 subgraph subgraph_3 [ ]
                                     direction TB
                                     spacer1[ ]
@@ -486,7 +486,7 @@
                             cfile ---> pipe
                             csfile ---> pipe
                             gfile ---> pipe
-                            classDef besty stroke-width:15px,stroke:#2066ff,fill:#2066ff;
+                            classDef besty stroke-width:15px,stroke:#1e7694,fill:#1e7694;
                             subgraph be [<span style="font-weight: bold; color: white;">Back End API</span>]
                                 pyd[Pydantic]
                                 fastapi[FastAPI]

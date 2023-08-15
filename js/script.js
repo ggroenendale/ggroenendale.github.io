@@ -941,8 +941,21 @@ let theta;
  * @param 	{Gallery}	gallery
  */
 function open_mobile_gallery(gallery) {
+	// Debug
+	console.log("Opening Mobile gallery")
+
 	// Get the size of the gallery
 	let gallery_size = gallery.images.length;
+
+	// Determine the angle theta for each image based on the gallery size
+	let theta = 360 / gallery_size;
+
+	// Determine the cellsize based on the carousel width
+	let cellsize = $('#carousel').width();
+	console.log(cellsize)
+
+	// Determine the radius with math
+	let radius = Math.round(( cellsize / 2 ) / Math.tan( Math.PI / gallery_size ));
 
 	// Load each image in the array
 	gallery.images.forEach(function(img, i){
@@ -952,10 +965,16 @@ function open_mobile_gallery(gallery) {
 		// On successful load from source create an image element
 		// On failure create an empty div.
 		$.get(source).done(function(){
-			$('#carousel').append(`
-				<div id="img${i+1}" class="carousel-cell">
-					<img class="mgallery-img" src="${source}" alt="${img.alttext}">
-				</div>`);
+			// Determine the  angle of the indexed image
+			let cell_angle = theta * i;
+
+			// Create the image element and its wrapper
+			let imgWrap = $('<div>', {id: `img${i+1}`, "class": 'carousel-cell', "data-num": i, "data-name": img.name})
+				.css('transform', `rotateY(${cell_angle}deg) translateZ(${radius}px)`)
+			let imgElem = $('<img>', {"class": 'mgallery-img', "src": source, "alt": img.alttext})
+
+			// Add the image to the carousel
+			$('#carousel').append(imgWrap.append(imgElem));
 		}).fail(function(err){
 			$('#carousel').append(`
 				<div id="img${i+1}" data-num="${i}" class="carousel-cell">
@@ -964,8 +983,24 @@ function open_mobile_gallery(gallery) {
 		});
 	});
 
-	// // Position the cells after the images are loaded.
-	// position_cell(gallery_size);
+	// Set some data values in the carousel
+	$('#carousel').attr('data-current-index', '0')
+		.attr('data-image-theta', theta)
+		.attr('data-gallery-size', gallery_size)
+		.attr('data-carousel-radius', radius)
+		.attr('data-gallery-name', gallery.name);
+
+	// Fire the rotate carousel function to begin
+	rotateCarousel()
+
+	$('#img-name').text(gallery.images[0].name)
+	$('#img-desc').text(gallery.images[0].blurb)
+
+	// Get the height of the gallery and use it to determine the position of the controls and the
+	// image metadata
+	let gallery_height = $('#gall-viewer').height()
+	$('#img-meta').css({top: gallery_height/3})
+	$('#controls').css({top: gallery_height/2.5})
 
 	//
 	if (viewer.classList[0].includes('grid-content')) {

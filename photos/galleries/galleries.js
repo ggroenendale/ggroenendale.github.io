@@ -72,23 +72,7 @@ const blackWhite = {
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
 	"mainalt": "Front image for the black and white gallery.",
-	"images" : [
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		},
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		}
-
-	]
+	"images" : []
 }
 
 /**
@@ -99,7 +83,7 @@ const design = {
 	"name" : "design",
 	"avail": true,
 	"display_name" : "Graphic Design",
-	"desc" : "This is a collection of some of favorite designs I have created over the years.<br><br>Click here to view the gallery.",
+	"desc" : "This is a collection of some of my favorite designs I have created over the years.<br><br>Click here to view the gallery.",
 	"mainimg" : 'uiux.svg',
 	"mobmainimg" : 'uiux.svg',
 	"mainalt": "Front image for the design gallery featuring the UI/UX image of a phone with hexagons on the screen.",
@@ -112,6 +96,39 @@ const design = {
 			"date": "2018-01-12T00:00:00.000Z",
 			"location": "NULL"
 		},
+		{
+			"name": "Analysis",
+			"blurb": "I used Adobe Illustrator to create the vector graphic",
+			"filename": "analysis.svg",
+			"alttext": "A simple design with a magnifying glass over graph bars.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Web",
+			"blurb": "A simple design that looks like a gear in a computer monitor. I used Adobe Illustrator to create the vector graphic",
+			"filename": "web.svg",
+			"alttext": "A simple design that looks like a gear in a computer monitor.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Graphic",
+			"blurb": "A simple design that looks like a pen tool drawing a graphic. I used Adobe Illustrator to create the vector graphic",
+			"filename": "graphic.svg",
+			"alttext": "A simple design that looks like a pen tool drawing a graphic.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Data",
+			"blurb": "A simple design that looks like a gear in a computer monitor. I used Adobe Illustrator to create the vector graphic",
+			"filename": "data.svg",
+			"alttext": "A simple design that looks like a gear in a computer monitor.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+
 	]
 }
 
@@ -202,6 +219,38 @@ const hobbies = {
 			"date": "2018-01-12T00:00:00.000Z",
 			"location": "NULL"
 		},
+		{
+			"name": "Wooden Wine Glass",
+			"blurb": "This was a gift for a friend where I spun some wooden wine stems from fruit cherry wood.",
+			"filename": "woodwineglass.jpg",
+			"alttext": "A modified contigo travel mug with a thin wooden exterior instead of plastic.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Commissioned Wooden Wine Glasses",
+			"blurb": "",
+			"filename": "commissionedglasses.jpg",
+			"alttext": "A modified contigo travel mug with a thin wooden exterior instead of plastic.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Neice Christmas Ornament",
+			"blurb": "",
+			"filename": "neiceornament.jpg",
+			"alttext": "A modified contigo travel mug with a thin wooden exterior instead of plastic.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
+		{
+			"name": "Wooden Pen and Case",
+			"blurb": "",
+			"filename": "woodpen.jpg",
+			"alttext": "A modified contigo travel mug with a thin wooden exterior instead of plastic.",
+			"date": "2018-01-12T00:00:00.000Z",
+			"location": "NULL"
+		},
 	]
 }
 
@@ -217,23 +266,7 @@ const landscapes = {
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
 	"mainalt": "Front image for the landscape gallery.",
-	"images" : [
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		},
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		}
-
-	]
+	"images" : []
 }
 
 /**
@@ -272,23 +305,7 @@ const nature = {
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
 	"mainalt": "Front image for the nature gallery.",
-	"images" : [
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		},
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		}
-
-	]
+	"images" : []
 }
 
 /**
@@ -303,23 +320,7 @@ const urban = {
 	"mainimg" : 'main',
 	"mobmainimg" : 'main',
 	"mainalt": "Front image for the urban gallery.",
-	"images" : [
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		},
-		{
-			"name": "Bread",
-			"blurb": "This is a picture of a loaf of bread I took",
-			"filename": "img1",
-			"date": "2018-01-12T00:00:00.000Z",
-			"location": "NULL"
-		}
-
-	]
+	"images" : []
 }
 
 /**

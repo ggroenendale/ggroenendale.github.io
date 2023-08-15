@@ -627,7 +627,7 @@ function setup_desktop_galleries(galleries) {
 	// For each gallery make an html payload
 	galleries.forEach( function(gallery){
 		if(gallery.avail === true) {
-			html_payload += `<div class="gall-block gall1" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
+			html_payload += `<div class="gall-block gall1" onclick="gallery_click(this)" onmouseover="reveal_right(this)" onmouseout="reveal_norm(this)" data-gallname="${gallery.name}">`;
 			html_payload +=	`<div class="cube">`;
 			html_payload += `<div class="cube-face front">`;
 			html_payload += `<div class="gall-img-wrap">`;
@@ -844,54 +844,29 @@ function reveal_norm(gallery_cube) {
 
 /**
  * @function gallery_click
- * @desc Adds a listener to each gallery image that will load the gallery view
- * @param {ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>} event
+ * @desc After the click event load the gallery view for the clicked gallery
+ * @param {HTMLElement} gallery_block
  */
-function gallery_click(event) {
-	let ctarget = event.target.classList;
-	//console.log(event.target);
-	let gname;
-	if (MD.phone()) {
-		if ( ctarget[0].includes('gall-img')) {
-			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.closest('.gall-block').getAttribute('data-gallname');
-		}
-		else {
+function gallery_click(gallery_block) {
+	console.log("Gallery has been clicked")
+	// Grab the name of the gallery
+	let gallery_name = gallery_block.closest('.gall-block').getAttribute('data-gallname');
 
-		}
-	}
-	else if (MD.tablet()) {
-		if ( ctarget[0].includes('gall-img')) {
-			//console.log(event.target.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.parentNode.parentNode.getAttribute('data-gallname');
-		}
-		else if ( ctarget[0].includes('gall-block')) {
-			//console.log(event.target.getAttribute('data-gallname'))
-			gname = event.target.getAttribute('data-gallname');
-		}
-	}
-	else if (!MD.tablet() && !MD.phone()) {
-		if ( ctarget[0].includes('gall-info')) {
-			//console.log(event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname'));
-			gname = event.target.parentNode.parentNode.parentNode.getAttribute('data-gallname');
-		}
-		else if ( ctarget[0].includes('gall-block')) {
-			//console.log(event.target.getAttribute('data-gallname'))
-			gname = event.target.getAttribute('data-gallname');
-		}
-	}
-	else {
-
-	}
-	if (gname != null) {
-		let gallery = {
-			name : gname
-		}
-		open_gallery(gallery);
-	}
+	open_gallery(gallery_name)
 }
 
-$(".gall-block").on('click', gallery_click);
+// /** I think all of this can be removed after adding the gallery click function to the onclick event in the element
+//  * @desc Adds a listener to each gallery image that will load the gallery view
+//  */
+// $(".gall-block").on('click', function (){
+// 	console.log("Test the click")
+// });
+// $(".cube").on('click', function (){
+// 	console.log("Test the click")
+// });
+// $(".cube-face.right").on('click', function (){
+// 	console.log("Test the click")
+// });
 
 /**
  * ========================================================================================

@@ -439,109 +439,158 @@
 	===================================================================================================
 	*/
 
-	#splash-wrap {
-		position: relative;
-		padding-top: unset;
-		height: 160px;
-		width: 100%;
-		vertical-align: middle;
-		text-align: center;
+	#content.home-content {
+		background-color: #6A6765;
 	}
 
-	#splash {
-		position: absolute;
-		margin: auto;
-		width: 100%;
-		top: 50%;
-		transform: translate( 0, -50%);
-	}
-
-	/*#splash::after {
-		content: ' ';
-		box-shadow: 0px 0px 40px 5px rgba(0,0,0,0.4);
-		width: 40%;
-		transform: translateX(-50%) translateY(120px);
-		position: absolute;
-	}*/
-
-
-	#greet {
-		font-size: 2.5em;
-		display: block;
-	}
-
-	#splash h4 {
-		padding-top: 10px;
-		font-weight: 200;
-		font-size: 1.8em;
-	}
-
-	#greet-blurb {
-		display: block;
-		margin-top: 10px;
-		font-size: 1.3em;
-	}
-
-	#service-wrap {
-		margin-top: 20px;
-		background-color: #514E4B;
-	}
-
-	#service-wrap h2 {
-		text-align: center;
-		font-size: 2.2em;
-	}
-
-	.services {
+	.top-content {
 		display: grid;
-		grid-template-rows: unset;
-		grid-template-columns: 26% 26% 26%;
-		grid-column-gap: 11%;
-		padding: 2% 5%;
+		width: 90%;
+		grid-template-columns: 30% 64%;
+		grid-template-rows: 70% 29%;
+		grid-column-gap: 5%;
+		margin: 8dvh auto;
 	}
 
-	.service-block {
+	.front-prof-wrap{
+		width: 18dvw;
+		margin: 3dvh;
+	}
+
+	.front-prof-wrap img {
 		width: 100%;
-		padding-bottom: 20px;
+		height: fit-content;
+		box-shadow: 1.6dvh 1.6dvh 1.9dvh 0.3dvh #3b3b3a;
+		border-radius: 1dvw;
+		border: 0.3dvh solid #3b3b3a;
 	}
 
-	.service-block h3 {
+	.front-meta {
 		text-align: center;
-		font-size: 1.9em;
-		padding-bottom: 3%;
-		color: var(--co-yhigh3);
+		text-shadow: 0.1dvh 0.1dvh 0.5dvh #1c2115;
+		line-height: 1.8dvh;
 	}
 
-	.serv-blurb {
-		display: block;
-		margin: auto;
-		width: 115%;
+	.front-meta h5 {
+		font-size: 1.6dvh;
+		color: #A5C2AC;
+		padding-bottom: 0.4dvh;
 	}
 
-	.serv-blurb p {
-		font-size: 1em;
-		color: var(--color-font-si);
-	}
-
-	.serv-blurb ul {
-		padding-top: 5px;
-		padding-left: 20px;
-		list-style-type: disc;
-		color: var(--color-font-si);
-		/*list-style-position: inside;*/
-	}
-
-	.serv-blurb ul li {
-		padding-top: 5px;
-		font-size: 1em;
-	}
-
-	.serv-blurb a {
+	.front-meta p {
+		font-size: 1.3dvh;
 		color: white;
 	}
 
-	.serv-blurb a:visited {
+	.front-meta-wrap #a-contact {
+		display: block;
+		margin: 2dvh auto;
+		width: 75%;
+	}
 
+	.front-meta-wrap #a-contact .do-resume {
+		height: 4dvh;
+		border-radius: 0.5dvh;
+		box-shadow: 0.1dvh 0.1dvh 0.4dvh 0.1dvh #333431;
+	}
+
+	.front-meta-wrap #a-contact p {
+		font-size: 1.5dvh;
+		line-height: 4dvh;
+	}
+
+	.prim-statement {
+		margin: auto;
+		padding: 2dvh 1dvh;
+		background-color: #42423f;
+		border-radius: 0.7dvh;
+		border: 0.3dvh solid #343431;
+		box-shadow: 1.6dvh 1.6dvh 1.9dvh 0.3dvh #3b3b3a;
+	}
+
+	.prim-statement h1 {
+		color: white;
+		font-size: 5dvh;
+		text-align: center;
+		margin: 3dvh 0;
+		text-shadow: 3px 4px 11px black;
+	}
+
+	.prim-statement h2 {
+		color: white;
+		font-size: 3.5dvh;
+		text-align: center;
+		margin: 3dvh 0;
+		text-shadow: 2px 3px 7px black;
+	}
+
+	.value-statement {
+		margin: 10dvh auto 0;
+		padding: 2dvh 2dvh 8dvh;
+		background-color: #343431;
+	}
+
+	.sub-statement {
+		margin: 5dvh auto;
+		width: 90%;
+	}
+
+	.sub-statement p {
+		font-size: 1.4dvh;
+		color: white;
+		text-shadow: 0.1dvh 0.1dvh #1c2115;
+		line-height: 1.8dvh;
+	}
+
+	.sub-statement p span {
+		font-style: italic;
+	}
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: 22% 22% 22% 22%;
+		grid-column-gap: 4%;
+		height: 50dvh;
+		margin: 1dvh 0 7dvh;
+	}
+
+	.process-grid div {
+		text-align: center;
+		color: white;
+	}
+
+	.process-grid>div {
+		display: grid;
+		grid-template-rows: 20% 55% 20%;
+		grid-row-gap: 2%;
+	}
+
+	.process-grid h4 {
+		font-size: 2.5dvh;
+	}
+
+	.process-img-wrap {
+		margin: auto;
+		width: 75%;
+		height: 100%;
+	}
+
+	.process-img-wrap img {
+		width: 100%;
+		height: inherit;
+		margin: auto;
+	}
+
+	.process-blurb ul {
+		margin: auto;
+		width: 70%;
+	}
+
+	.process-blurb li {
+		list-style-type: disc;
+		text-align: left;
+		font-size: 1.5dvh;
+		line-height: 1.8dvh;
 	}
 
 	/*

@@ -576,16 +576,16 @@ nav>ul>li>a:visited {
 
 .top-content {
 	display: grid;
-	width: 90%;
-	grid-template-columns: 30% 64%;
-	grid-template-rows: 70% 29%;
-	grid-column-gap: 5%;
-	margin: 8dvh auto;
+	grid-template-areas:
+			"profwrap"
+			"frontmeta"
+			"statement";
 }
 
 .front-prof-wrap{
-	width: 18dvw;
-	margin: 3dvh;
+	grid-area: profwrap;
+	width: 60dvw;
+	margin: 3dvh auto;
 }
 
 .front-prof-wrap img {
@@ -594,6 +594,10 @@ nav>ul>li>a:visited {
 	box-shadow: 1.6dvh 1.6dvh 1.9dvh 0.3dvh #3b3b3a;
 	border-radius: 1dvw;
 	border: 0.3dvh solid #3b3b3a;
+}
+
+.front-meta-wrap {
+	grid-area: frontmeta;
 }
 
 .front-meta {
@@ -631,8 +635,9 @@ nav>ul>li>a:visited {
 }
 
 .prim-statement {
+	grid-area: statement;
+	width: 90%;
 	margin: auto;
-	padding: 2dvh 1dvh;
 	background-color: #42423f;
 	border-radius: 0.7dvh;
 	border: 0.3dvh solid #343431;
@@ -641,7 +646,7 @@ nav>ul>li>a:visited {
 
 .prim-statement h1 {
 	color: white;
-	font-size: 5dvh;
+	font-size: 3dvh;
 	text-align: center;
 	margin: 3dvh 0;
 	text-shadow: 3px 4px 11px black;
@@ -649,21 +654,21 @@ nav>ul>li>a:visited {
 
 .prim-statement h2 {
 	color: white;
-	font-size: 3.5dvh;
+	font-size: 2dvh;
 	text-align: center;
 	margin: 3dvh 0;
 	text-shadow: 2px 3px 7px black;
 }
 
 .value-statement {
-	margin: 10dvh auto 0;
+	margin: 2dvh auto 0;
 	padding: 2dvh 2dvh 8dvh;
 	background-color: #343431;
 }
 
 .sub-statement {
-	margin: 5dvh auto;
-	width: 90%;
+	margin: 1dvh auto 3dvh;
+	width: 95%;
 }
 
 .sub-statement p {
@@ -681,8 +686,8 @@ nav>ul>li>a:visited {
 	display: grid;
 	grid-template-columns: 22% 22% 22% 22%;
 	grid-column-gap: 4%;
-	height: 50dvh;
-	margin: 1dvh 0 7dvh;
+	height: 25dvh;
+	margin: 1dvh 0 1dvh;
 }
 
 .process-grid div {
@@ -692,17 +697,17 @@ nav>ul>li>a:visited {
 
 .process-grid>div {
 	display: grid;
-	grid-template-rows: 20% 55% 20%;
+	grid-template-rows: 18% 40% 38%;
 	grid-row-gap: 2%;
 }
 
 .process-grid h4 {
-	font-size: 2.5dvh;
+	font-size: 1.3dvh;
 }
 
 .process-img-wrap {
 	margin: auto;
-	width: 75%;
+	width: 95%;
 	height: 100%;
 }
 
@@ -714,14 +719,14 @@ nav>ul>li>a:visited {
 
 .process-blurb ul {
 	margin: auto;
-	width: 70%;
+	width: 95%;
 }
 
 .process-blurb li {
 	list-style-type: disc;
 	text-align: left;
-	font-size: 1.5dvh;
-	line-height: 1.8dvh;
+	font-size: 0.9dvh;
+	line-height: 1.1dvh;
 }
 
 

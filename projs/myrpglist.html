@@ -199,9 +199,7 @@
                             subgraph afe [<span style="font-weight: bold">Admin Front End</span>]
                                 flaska[Flask]
                                 subgraph pipe [<span style="font-weight: bold;">Data Pipeline</span>]
-                                    pand[Pandas]
                                     apache[Apache Airflow]
-                                    pand ~~~ apache
                                 end
                                 subgraph dbak [<span style="font-weight: bold;">Data Backup / Restore</span>]
 
@@ -472,7 +470,11 @@
                                 subgraph subgraph_3 [ ]
                                     direction TB
                                     spacer1[ ]
-                                    apache[Apache Airflow]
+                                    subgraph apache [Apache Airflow]
+                                        gsdag[Game System DAG]
+                                        actdag[Channel DAG]
+                                        epdag[Episode DAG]
+                                    end
                                     bsoup[BeautifulSoup]
                                     spacer2[ ]
                                     spacer1 ~~~~~ apache

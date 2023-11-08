@@ -444,6 +444,13 @@
 	===================================================================================================
 	*/
 
+	.top-content {
+		display: grid;
+		grid-template-areas:
+		"profwrap statement"
+		"frontmeta statement";
+	}
+
 	#splash-wrap {
 		position: relative;
 		padding-top: unset;

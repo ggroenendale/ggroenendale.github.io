@@ -446,9 +446,9 @@
 	.top-content {
 		display: grid;
 		width: 90%;
-		grid-template-columns: 30% 64%;
-		grid-template-rows: 70% 29%;
-		grid-column-gap: 5%;
+		grid-template-areas:
+		"profwrap statement"
+		"frontmeta statement";
 		margin: 8dvh auto;
 	}
 
